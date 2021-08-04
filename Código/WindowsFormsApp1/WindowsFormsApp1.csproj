@@ -46,6 +46,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlesFerroviario\CarroControlControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesFerroviario\CarroControlControl.Designer.cs">
+      <DependentUpon>CarroControlControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesFerroviario\ContenedorFerroviarioControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesFerroviario\ContenedorFerroviarioControl.Designer.cs">
+      <DependentUpon>ContenedorFerroviarioControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesFerroviario\DerechosPasoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesFerroviario\DerechosPasoControl.Designer.cs">
+      <DependentUpon>DerechosPasoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesGenerales\DomicilioControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesGenerales\DomicilioControl.Designer.cs">
+      <DependentUpon>DomicilioControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesTerrestre\AutotransporteFederalControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesTerrestre\AutotransporteFederalControl.Designer.cs">
+      <DependentUpon>AutotransporteFederalControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesTerrestre\IdentificacionVehicularControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesTerrestre\IdentificacionVehicularControl.Designer.cs">
+      <DependentUpon>IdentificacionVehicularControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesTerrestre\RemolqueControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesTerrestre\RemolqueControl.Designer.cs">
+      <DependentUpon>RemolqueControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +100,54 @@
     <Compile Include="Formularios.Designer.cs">
       <DependentUpon>Formularios.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMercancias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMercancias.Designer.cs">
+      <DependentUpon>FrmMercancias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOperador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOperador.Designer.cs">
+      <DependentUpon>FrmOperador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTransporteAereo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransporteAereo.Designer.cs">
+      <DependentUpon>FrmTransporteAereo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTransporteFerroviario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransporteFerroviario.Designer.cs">
+      <DependentUpon>FrmTransporteFerroviario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTransporteMaritimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransporteMaritimo.Designer.cs">
+      <DependentUpon>FrmTransporteMaritimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTransporteTerrestre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransporteTerrestre.Designer.cs">
+      <DependentUpon>FrmTransporteTerrestre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUbicaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUbicaciones.Designer.cs">
+      <DependentUpon>FrmUbicaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesGenerales\MercanciaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesGenerales\MercanciaControl.Designer.cs">
+      <DependentUpon>MercanciaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransporteFederal.cs">
@@ -66,11 +156,50 @@
     <Compile Include="TransporteFederal.Designer.cs">
       <DependentUpon>TransporteFederal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ControlesFerroviario\CarroControlControl.resx">
+      <DependentUpon>CarroControlControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesFerroviario\ContenedorFerroviarioControl.resx">
+      <DependentUpon>ContenedorFerroviarioControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesFerroviario\DerechosPasoControl.resx">
+      <DependentUpon>DerechosPasoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesGenerales\DomicilioControl.resx">
+      <DependentUpon>DomicilioControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesTerrestre\AutotransporteFederalControl.resx">
+      <DependentUpon>AutotransporteFederalControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesTerrestre\IdentificacionVehicularControl.resx">
+      <DependentUpon>IdentificacionVehicularControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesTerrestre\RemolqueControl.resx">
+      <DependentUpon>RemolqueControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios.resx">
       <DependentUpon>Formularios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMercancias.resx">
+      <DependentUpon>FrmMercancias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOperador.resx">
+      <DependentUpon>FrmOperador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransporteFerroviario.resx">
+      <DependentUpon>FrmTransporteFerroviario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransporteTerrestre.resx">
+      <DependentUpon>FrmTransporteTerrestre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUbicaciones.resx">
+      <DependentUpon>FrmUbicaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesGenerales\MercanciaControl.resx">
+      <DependentUpon>MercanciaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -97,5 +226,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

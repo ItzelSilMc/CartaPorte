@@ -17,17 +17,28 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-   
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGUbicaciones.Rows.Add("","","","");
+            FrmUbicaciones ubi = new FrmUbicaciones();
+            ubi.ShowDialog();
+            int midato;
+            if (ubi.GuardadoCorrectamente)
+            {
+                midato = ubi.ObtenerDatos();
+
+                dataGUbicaciones.Rows.Add("", "", "", "");
+            }
         }
 
         
 
         private void button2_Click(object sender, EventArgs e)
         {
+            FrmMercancias frmMerca = new FrmMercancias();
+            frmMerca.ShowDialog();
+
             dataGridView1.Rows.Add("","","","","","","","");
         }
 
@@ -45,13 +56,21 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            TransporteFederal tf = new TransporteFederal();
-            tf.ShowDialog();
+            // Se va a poner dependiente del tipo de transporte
+
+            //FrmTransporteFerroviario tf = new FrmTransporteFerroviario();
+            //tf.ShowDialog();
+
+
+            FrmTransporteTerrestre tt = new FrmTransporteTerrestre();
+            tt.ShowDialog();
+
+
         }
     }
 }
