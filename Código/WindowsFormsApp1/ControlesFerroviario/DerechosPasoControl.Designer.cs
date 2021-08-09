@@ -30,17 +30,17 @@ namespace WindowsFormsApp1.ControlesFerroviario
         private void InitializeComponent()
         {
             this.GBDerechoPaso = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CmbDerechosPaso = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.GBDerechoPaso.SuspendLayout();
             this.SuspendLayout();
             // 
             // GBDerechoPaso
             // 
             this.GBDerechoPaso.Controls.Add(this.textBox1);
-            this.GBDerechoPaso.Controls.Add(this.comboBox1);
+            this.GBDerechoPaso.Controls.Add(this.CmbDerechosPaso);
             this.GBDerechoPaso.Controls.Add(this.label2);
             this.GBDerechoPaso.Controls.Add(this.label1);
             this.GBDerechoPaso.Location = new System.Drawing.Point(10, 7);
@@ -49,14 +49,20 @@ namespace WindowsFormsApp1.ControlesFerroviario
             this.GBDerechoPaso.TabIndex = 0;
             this.GBDerechoPaso.TabStop = false;
             // 
-            // label1
+            // textBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo derecho de paso:";
+            this.textBox1.Location = new System.Drawing.Point(194, 37);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // CmbDerechosPaso
+            // 
+            this.CmbDerechosPaso.FormattingEnabled = true;
+            this.CmbDerechosPaso.Location = new System.Drawing.Point(10, 37);
+            this.CmbDerechosPaso.Name = "CmbDerechosPaso";
+            this.CmbDerechosPaso.Size = new System.Drawing.Size(149, 21);
+            this.CmbDerechosPaso.TabIndex = 2;
             // 
             // label2
             // 
@@ -67,20 +73,14 @@ namespace WindowsFormsApp1.ControlesFerroviario
             this.label2.TabIndex = 1;
             this.label2.Text = "Kilometraje pagado:";
             // 
-            // comboBox1
+            // label1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(10, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(194, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tipo derecho de paso:";
             // 
             // DerechosPasoControl
             // 
@@ -99,7 +99,7 @@ namespace WindowsFormsApp1.ControlesFerroviario
 
         private System.Windows.Forms.GroupBox GBDerechoPaso;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CmbDerechosPaso;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

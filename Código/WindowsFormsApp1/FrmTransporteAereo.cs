@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static WindowsFormsApp1.Modelos.EstructurasFunciones;
 
 namespace WindowsFormsApp1
 {
@@ -15,6 +16,16 @@ namespace WindowsFormsApp1
         public FrmTransporteAereo()
         {
             InitializeComponent();
+        }
+
+        private void FrmTransporteAereo_Load(object sender, EventArgs e)
+        {
+
+            Dictionary<string, string> Permisos = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.TipoPermiso);
+
+            transporteAereoControl1.CargarComboPermisos(Permisos);
+
+            
         }
     }
 }

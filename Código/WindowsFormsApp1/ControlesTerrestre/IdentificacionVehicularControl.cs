@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Modelos;
 
 namespace WindowsFormsApp1.ControlesTerrestre
 {
@@ -15,6 +16,10 @@ namespace WindowsFormsApp1.ControlesTerrestre
         public IdentificacionVehicularControl()
         {
             InitializeComponent();
+        }
+        public void CargarComboConfigVehicular(Dictionary<string, string> ConfiguracionesVehiculares)
+        {
+            EstructurasFunciones.CargarComboValores(CmbConfigVehicular, ConfiguracionesVehiculares);
         }
     }
 }

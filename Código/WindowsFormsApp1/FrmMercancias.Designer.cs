@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             this.label4 = new System.Windows.Forms.Label();
             this.GBMercancias = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TxtNumTotalMercancias = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.PNMercancias = new System.Windows.Forms.Panel();
@@ -81,7 +81,7 @@ namespace WindowsFormsApp1
             // GBMercancias
             // 
             this.GBMercancias.Controls.Add(this.comboBox1);
-            this.GBMercancias.Controls.Add(this.textBox4);
+            this.GBMercancias.Controls.Add(this.TxtNumTotalMercancias);
             this.GBMercancias.Controls.Add(this.textBox3);
             this.GBMercancias.Controls.Add(this.textBox1);
             this.GBMercancias.Controls.Add(this.label1);
@@ -103,13 +103,13 @@ namespace WindowsFormsApp1
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 8;
             // 
-            // textBox4
+            // TxtNumTotalMercancias
             // 
-            this.textBox4.Location = new System.Drawing.Point(404, 57);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
-            this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
+            this.TxtNumTotalMercancias.Location = new System.Drawing.Point(404, 57);
+            this.TxtNumTotalMercancias.Name = "TxtNumTotalMercancias";
+            this.TxtNumTotalMercancias.Size = new System.Drawing.Size(100, 20);
+            this.TxtNumTotalMercancias.TabIndex = 7;
+            this.TxtNumTotalMercancias.Leave += new System.EventHandler(this.TxtNumTotalMercancias_Leave);
             // 
             // textBox3
             // 
@@ -155,7 +155,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox GBMercancias;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TxtNumTotalMercancias;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel PNMercancias;

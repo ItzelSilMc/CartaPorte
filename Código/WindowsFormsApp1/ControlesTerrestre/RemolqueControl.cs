@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Modelos;
 
 namespace WindowsFormsApp1.ControlesTerrestre
 {
@@ -15,6 +16,11 @@ namespace WindowsFormsApp1.ControlesTerrestre
         public RemolqueControl()
         {
             InitializeComponent();
+        }
+
+        public void CargarComboTipoRemolque(Dictionary<string, string> Remolques)
+        {
+            EstructurasFunciones.CargarComboValores(CmbTipoRemolque, Remolques);
         }
     }
 }

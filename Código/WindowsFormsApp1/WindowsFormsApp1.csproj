@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Conexion">
+      <HintPath>..\..\..\..\..\..\..\CFDILite\CFDILite\CFDI_EDICOM\bin\Debug\Conexion.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlesAereo\TransporteAereoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesAereo\TransporteAereoControl.Designer.cs">
+      <DependentUpon>TransporteAereoControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlesFerroviario\CarroControlControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,17 +97,11 @@
     <Compile Include="ControlesTerrestre\RemolqueControl.Designer.cs">
       <DependentUpon>RemolqueControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios.Designer.cs">
-      <DependentUpon>Formularios.cs</DependentUpon>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMercancias.cs">
       <SubType>Form</SubType>
@@ -106,11 +109,11 @@
     <Compile Include="FrmMercancias.Designer.cs">
       <DependentUpon>FrmMercancias.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmOperador.cs">
+    <Compile Include="FrmPersona.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmOperador.Designer.cs">
-      <DependentUpon>FrmOperador.cs</DependentUpon>
+    <Compile Include="FrmPersona.Designer.cs">
+      <DependentUpon>FrmPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTransporteAereo.cs">
       <SubType>Form</SubType>
@@ -148,14 +151,14 @@
     <Compile Include="ControlesGenerales\MercanciaControl.Designer.cs">
       <DependentUpon>MercanciaControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metodos.cs" />
+    <Compile Include="Modelos\Catalogos.cs" />
+    <Compile Include="Modelos\EstructurasFunciones.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TransporteFederal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TransporteFederal.Designer.cs">
-      <DependentUpon>TransporteFederal.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="ControlesAereo\TransporteAereoControl.resx">
+      <DependentUpon>TransporteAereoControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlesFerroviario\CarroControlControl.resx">
       <DependentUpon>CarroControlControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,17 +180,17 @@
     <EmbeddedResource Include="ControlesTerrestre\RemolqueControl.resx">
       <DependentUpon>RemolqueControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios.resx">
-      <DependentUpon>Formularios.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMercancias.resx">
       <DependentUpon>FrmMercancias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmOperador.resx">
-      <DependentUpon>FrmOperador.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPersona.resx">
+      <DependentUpon>FrmPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransporteAereo.resx">
+      <DependentUpon>FrmTransporteAereo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTransporteFerroviario.resx">
       <DependentUpon>FrmTransporteFerroviario.cs</DependentUpon>
@@ -210,9 +213,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TransporteFederal.resx">
-      <DependentUpon>TransporteFederal.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

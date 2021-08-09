@@ -36,11 +36,11 @@ namespace WindowsFormsApp1
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CmbBienes = new System.Windows.Forms.ComboBox();
+            this.CmbClaveSTCC = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.CmbClaveUnidad = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.Embalaje = new System.Windows.Forms.Label();
@@ -51,10 +51,10 @@ namespace WindowsFormsApp1
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.CmbMaterialPeligroso = new System.Windows.Forms.ComboBox();
+            this.CmbClaveMaterialPeligroso = new System.Windows.Forms.ComboBox();
+            this.CmbEmbalaje = new System.Windows.Forms.ComboBox();
+            this.CmbFraccionArancelaria = new System.Windows.Forms.ComboBox();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -92,7 +92,7 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(165, 59);
+            this.label3.Location = new System.Drawing.Point(174, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 2;
@@ -101,7 +101,7 @@ namespace WindowsFormsApp1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(293, 59);
+            this.label4.Location = new System.Drawing.Point(316, 59);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 3;
@@ -110,7 +110,7 @@ namespace WindowsFormsApp1
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(526, 59);
+            this.label5.Location = new System.Drawing.Point(549, 59);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 4;
@@ -119,49 +119,49 @@ namespace WindowsFormsApp1
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(629, 59);
+            this.label6.Location = new System.Drawing.Point(621, 59);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Clave unidad:";
             // 
-            // comboBox1
+            // CmbBienes
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 76);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 6;
+            this.CmbBienes.FormattingEnabled = true;
+            this.CmbBienes.Location = new System.Drawing.Point(6, 76);
+            this.CmbBienes.Name = "CmbBienes";
+            this.CmbBienes.Size = new System.Drawing.Size(163, 21);
+            this.CmbBienes.TabIndex = 6;
             // 
-            // comboBox2
+            // CmbClaveSTCC
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(168, 76);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(95, 21);
-            this.comboBox2.TabIndex = 7;
+            this.CmbClaveSTCC.FormattingEnabled = true;
+            this.CmbClaveSTCC.Location = new System.Drawing.Point(177, 77);
+            this.CmbClaveSTCC.Name = "CmbClaveSTCC";
+            this.CmbClaveSTCC.Size = new System.Drawing.Size(136, 21);
+            this.CmbClaveSTCC.TabIndex = 7;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(296, 76);
+            this.textBox1.Location = new System.Drawing.Point(319, 76);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(215, 20);
             this.textBox1.TabIndex = 8;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(529, 77);
+            this.textBox2.Location = new System.Drawing.Point(552, 77);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(65, 20);
+            this.textBox2.Size = new System.Drawing.Size(46, 20);
             this.textBox2.TabIndex = 9;
             // 
-            // comboBox3
+            // CmbClaveUnidad
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(632, 77);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(69, 21);
-            this.comboBox3.TabIndex = 10;
+            this.CmbClaveUnidad.FormattingEnabled = true;
+            this.CmbClaveUnidad.Location = new System.Drawing.Point(624, 77);
+            this.CmbClaveUnidad.Name = "CmbClaveUnidad";
+            this.CmbClaveUnidad.Size = new System.Drawing.Size(88, 21);
+            this.CmbClaveUnidad.TabIndex = 10;
             // 
             // label7
             // 
@@ -175,7 +175,7 @@ namespace WindowsFormsApp1
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(190, 131);
+            this.label8.Location = new System.Drawing.Point(151, 130);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 13);
             this.label8.TabIndex = 12;
@@ -193,7 +193,7 @@ namespace WindowsFormsApp1
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(324, 130);
+            this.label10.Location = new System.Drawing.Point(285, 129);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(121, 13);
             this.label10.TabIndex = 14;
@@ -202,7 +202,7 @@ namespace WindowsFormsApp1
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(190, 187);
+            this.label11.Location = new System.Drawing.Point(151, 186);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(108, 13);
             this.label11.TabIndex = 15;
@@ -211,7 +211,7 @@ namespace WindowsFormsApp1
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(324, 186);
+            this.label12.Location = new System.Drawing.Point(285, 185);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 13);
             this.label12.TabIndex = 16;
@@ -220,7 +220,7 @@ namespace WindowsFormsApp1
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(426, 186);
+            this.label13.Location = new System.Drawing.Point(387, 185);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(106, 13);
             this.label13.TabIndex = 17;
@@ -249,59 +249,62 @@ namespace WindowsFormsApp1
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(16, 147);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(70, 21);
+            this.comboBox4.Size = new System.Drawing.Size(118, 21);
             this.comboBox4.TabIndex = 20;
             // 
-            // comboBox5
+            // CmbMaterialPeligroso
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(193, 147);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(70, 21);
-            this.comboBox5.TabIndex = 21;
+            this.CmbMaterialPeligroso.FormattingEnabled = true;
+            this.CmbMaterialPeligroso.Items.AddRange(new object[] {
+            "SI",
+            "NO"});
+            this.CmbMaterialPeligroso.Location = new System.Drawing.Point(154, 146);
+            this.CmbMaterialPeligroso.Name = "CmbMaterialPeligroso";
+            this.CmbMaterialPeligroso.Size = new System.Drawing.Size(100, 21);
+            this.CmbMaterialPeligroso.TabIndex = 21;
             // 
-            // comboBox6
+            // CmbClaveMaterialPeligroso
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(323, 147);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(198, 21);
-            this.comboBox6.TabIndex = 22;
+            this.CmbClaveMaterialPeligroso.FormattingEnabled = true;
+            this.CmbClaveMaterialPeligroso.Location = new System.Drawing.Point(284, 146);
+            this.CmbClaveMaterialPeligroso.Name = "CmbClaveMaterialPeligroso";
+            this.CmbClaveMaterialPeligroso.Size = new System.Drawing.Size(291, 21);
+            this.CmbClaveMaterialPeligroso.TabIndex = 22;
             // 
-            // comboBox7
+            // CmbEmbalaje
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(16, 202);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(70, 21);
-            this.comboBox7.TabIndex = 23;
+            this.CmbEmbalaje.FormattingEnabled = true;
+            this.CmbEmbalaje.Location = new System.Drawing.Point(16, 202);
+            this.CmbEmbalaje.Name = "CmbEmbalaje";
+            this.CmbEmbalaje.Size = new System.Drawing.Size(118, 21);
+            this.CmbEmbalaje.TabIndex = 23;
             // 
-            // comboBox8
+            // CmbFraccionArancelaria
             // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(429, 202);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(96, 21);
-            this.comboBox8.TabIndex = 24;
+            this.CmbFraccionArancelaria.FormattingEnabled = true;
+            this.CmbFraccionArancelaria.Location = new System.Drawing.Point(390, 201);
+            this.CmbFraccionArancelaria.Name = "CmbFraccionArancelaria";
+            this.CmbFraccionArancelaria.Size = new System.Drawing.Size(96, 21);
+            this.CmbFraccionArancelaria.TabIndex = 24;
             // 
             // comboBox9
             // 
             this.comboBox9.FormattingEnabled = true;
             this.comboBox9.Location = new System.Drawing.Point(193, 254);
             this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(70, 21);
+            this.comboBox9.Size = new System.Drawing.Size(119, 21);
             this.comboBox9.TabIndex = 25;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(193, 203);
+            this.textBox3.Location = new System.Drawing.Point(154, 202);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 26;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(323, 202);
+            this.textBox4.Location = new System.Drawing.Point(284, 201);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(78, 20);
             this.textBox4.TabIndex = 27;
@@ -321,10 +324,10 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.comboBox9);
-            this.Controls.Add(this.comboBox8);
-            this.Controls.Add(this.comboBox7);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.CmbFraccionArancelaria);
+            this.Controls.Add(this.CmbEmbalaje);
+            this.Controls.Add(this.CmbClaveMaterialPeligroso);
+            this.Controls.Add(this.CmbMaterialPeligroso);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -335,11 +338,11 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.Embalaje);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.CmbClaveUnidad);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CmbClaveSTCC);
+            this.Controls.Add(this.CmbBienes);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -348,6 +351,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.panel1);
             this.Name = "MercanciaControl";
             this.Size = new System.Drawing.Size(732, 291);
+            this.Load += new System.EventHandler(this.MercanciaControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -364,11 +368,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox CmbBienes;
+        private System.Windows.Forms.ComboBox CmbClaveSTCC;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox CmbClaveUnidad;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label Embalaje;
@@ -379,10 +383,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox CmbMaterialPeligroso;
+        private System.Windows.Forms.ComboBox CmbClaveMaterialPeligroso;
+        private System.Windows.Forms.ComboBox CmbEmbalaje;
+        private System.Windows.Forms.ComboBox CmbFraccionArancelaria;
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;

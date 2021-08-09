@@ -38,16 +38,16 @@ namespace WindowsFormsApp1
             this.label7 = new System.Windows.Forms.Label();
             this.Colonia = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TxtCalle = new System.Windows.Forms.TextBox();
+            this.TxtNumeroExt = new System.Windows.Forms.TextBox();
+            this.TxtNumeroInt = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.CmbPais = new System.Windows.Forms.ComboBox();
+            this.CmbEstado = new System.Windows.Forms.ComboBox();
+            this.CmbMunicipio = new System.Windows.Forms.ComboBox();
+            this.CmbLocalidad = new System.Windows.Forms.ComboBox();
+            this.TxtCodigoPostal = new System.Windows.Forms.TextBox();
+            this.CmbColonia = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -132,26 +132,26 @@ namespace WindowsFormsApp1
             this.label9.TabIndex = 8;
             this.label9.Text = "Código Postal:";
             // 
-            // textBox1
+            // TxtCalle
             // 
-            this.textBox1.Location = new System.Drawing.Point(37, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(211, 20);
-            this.textBox1.TabIndex = 9;
+            this.TxtCalle.Location = new System.Drawing.Point(37, 42);
+            this.TxtCalle.Name = "TxtCalle";
+            this.TxtCalle.Size = new System.Drawing.Size(211, 20);
+            this.TxtCalle.TabIndex = 9;
             // 
-            // textBox2
+            // TxtNumeroExt
             // 
-            this.textBox2.Location = new System.Drawing.Point(254, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(79, 20);
-            this.textBox2.TabIndex = 10;
+            this.TxtNumeroExt.Location = new System.Drawing.Point(254, 42);
+            this.TxtNumeroExt.Name = "TxtNumeroExt";
+            this.TxtNumeroExt.Size = new System.Drawing.Size(79, 20);
+            this.TxtNumeroExt.TabIndex = 10;
             // 
-            // textBox3
+            // TxtNumeroInt
             // 
-            this.textBox3.Location = new System.Drawing.Point(344, 42);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(79, 20);
-            this.textBox3.TabIndex = 11;
+            this.TxtNumeroInt.Location = new System.Drawing.Point(344, 42);
+            this.TxtNumeroInt.Name = "TxtNumeroInt";
+            this.TxtNumeroInt.Size = new System.Drawing.Size(79, 20);
+            this.TxtNumeroInt.TabIndex = 11;
             // 
             // label10
             // 
@@ -162,67 +162,68 @@ namespace WindowsFormsApp1
             this.label10.TabIndex = 12;
             this.label10.Text = "Domicilio :";
             // 
-            // comboBox1
+            // CmbPais
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(37, 105);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 13;
+            this.CmbPais.FormattingEnabled = true;
+            this.CmbPais.Location = new System.Drawing.Point(37, 105);
+            this.CmbPais.Name = "CmbPais";
+            this.CmbPais.Size = new System.Drawing.Size(121, 21);
+            this.CmbPais.TabIndex = 13;
             // 
-            // comboBox2
+            // CmbEstado
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(192, 105);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 14;
+            this.CmbEstado.FormattingEnabled = true;
+            this.CmbEstado.Location = new System.Drawing.Point(192, 105);
+            this.CmbEstado.Name = "CmbEstado";
+            this.CmbEstado.Size = new System.Drawing.Size(121, 21);
+            this.CmbEstado.TabIndex = 14;
             // 
-            // comboBox3
+            // CmbMunicipio
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(341, 105);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 15;
+            this.CmbMunicipio.FormattingEnabled = true;
+            this.CmbMunicipio.Location = new System.Drawing.Point(341, 105);
+            this.CmbMunicipio.Name = "CmbMunicipio";
+            this.CmbMunicipio.Size = new System.Drawing.Size(121, 21);
+            this.CmbMunicipio.TabIndex = 15;
             // 
-            // comboBox4
+            // CmbLocalidad
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(37, 155);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 16;
+            this.CmbLocalidad.FormattingEnabled = true;
+            this.CmbLocalidad.Location = new System.Drawing.Point(37, 155);
+            this.CmbLocalidad.Name = "CmbLocalidad";
+            this.CmbLocalidad.Size = new System.Drawing.Size(121, 21);
+            this.CmbLocalidad.TabIndex = 16;
             // 
-            // textBox5
+            // TxtCodigoPostal
             // 
-            this.textBox5.Location = new System.Drawing.Point(192, 156);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 18;
+            this.TxtCodigoPostal.Location = new System.Drawing.Point(192, 156);
+            this.TxtCodigoPostal.Name = "TxtCodigoPostal";
+            this.TxtCodigoPostal.Size = new System.Drawing.Size(100, 20);
+            this.TxtCodigoPostal.TabIndex = 18;
+            this.TxtCodigoPostal.Leave += new System.EventHandler(this.TxtCodigoPostal_Leave);
             // 
-            // comboBox5
+            // CmbColonia
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(341, 154);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 19;
+            this.CmbColonia.FormattingEnabled = true;
+            this.CmbColonia.Location = new System.Drawing.Point(341, 154);
+            this.CmbColonia.Name = "CmbColonia";
+            this.CmbColonia.Size = new System.Drawing.Size(121, 21);
+            this.CmbColonia.TabIndex = 19;
             // 
             // DomicilioControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CmbColonia);
+            this.Controls.Add(this.TxtCodigoPostal);
+            this.Controls.Add(this.CmbLocalidad);
+            this.Controls.Add(this.CmbMunicipio);
+            this.Controls.Add(this.CmbEstado);
+            this.Controls.Add(this.CmbPais);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtNumeroInt);
+            this.Controls.Add(this.TxtNumeroExt);
+            this.Controls.Add(this.TxtCalle);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Colonia);
             this.Controls.Add(this.label7);
@@ -234,6 +235,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Name = "DomicilioControl";
             this.Size = new System.Drawing.Size(513, 186);
+            this.Load += new System.EventHandler(this.DomicilioControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,15 +252,15 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label Colonia;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TxtCalle;
+        private System.Windows.Forms.TextBox TxtNumeroExt;
+        private System.Windows.Forms.TextBox TxtNumeroInt;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox CmbPais;
+        private System.Windows.Forms.ComboBox CmbEstado;
+        private System.Windows.Forms.ComboBox CmbMunicipio;
+        private System.Windows.Forms.ComboBox CmbLocalidad;
+        private System.Windows.Forms.TextBox TxtCodigoPostal;
+        private System.Windows.Forms.ComboBox CmbColonia;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Modelos;
 
 namespace WindowsFormsApp1.ControlesFerroviario
 {
@@ -15,6 +16,11 @@ namespace WindowsFormsApp1.ControlesFerroviario
         public ContenedorFerroviarioControl()
         {
             InitializeComponent();
+        }
+
+        public void CargarComboTipoContenedor(Dictionary<string, string> TipoContenedores)
+        {
+            EstructurasFunciones.CargarComboValores(CmbTipoContenedor, TipoContenedores);
         }
     }
 }

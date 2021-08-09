@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class FrmPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -42,7 +42,7 @@
             this.DistanciaRecorrida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnUbicacionNueva = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -59,9 +59,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BtnConfigurarTransporte = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CmbViaEntradaSalida = new System.Windows.Forms.ComboBox();
             this.GBTransporte = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGUbicaciones)).BeginInit();
@@ -139,7 +139,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 214);
+            this.label6.Location = new System.Drawing.Point(16, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 13);
             this.label6.TabIndex = 12;
@@ -153,7 +153,7 @@
             this.DistanciaRecorrida,
             this.TipoEstacion,
             this.idUbicacion});
-            this.dataGUbicaciones.Location = new System.Drawing.Point(21, 246);
+            this.dataGUbicaciones.Location = new System.Drawing.Point(12, 190);
             this.dataGUbicaciones.Name = "dataGUbicaciones";
             this.dataGUbicaciones.Size = new System.Drawing.Size(776, 150);
             this.dataGUbicaciones.TabIndex = 13;
@@ -179,19 +179,19 @@
             this.idUbicacion.HeaderText = "idUbicacion";
             this.idUbicacion.Name = "idUbicacion";
             // 
-            // button1
+            // BtnUbicacionNueva
             // 
-            this.button1.Location = new System.Drawing.Point(119, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Añadir Ubicación";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnUbicacionNueva.Location = new System.Drawing.Point(110, 153);
+            this.BtnUbicacionNueva.Name = "BtnUbicacionNueva";
+            this.BtnUbicacionNueva.Size = new System.Drawing.Size(144, 23);
+            this.BtnUbicacionNueva.TabIndex = 14;
+            this.BtnUbicacionNueva.Text = "Añadir Ubicación";
+            this.BtnUbicacionNueva.UseVisualStyleBackColor = true;
+            this.BtnUbicacionNueva.Click += new System.EventHandler(this.BtnUbicacionNueva_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(119, 414);
+            this.button2.Location = new System.Drawing.Point(119, 362);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(144, 23);
             this.button2.TabIndex = 16;
@@ -202,7 +202,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 419);
+            this.label7.Location = new System.Drawing.Point(25, 367);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 15;
@@ -220,7 +220,7 @@
             this.PesoEnKg,
             this.ValorMercancia,
             this.IdDetalleMercancia});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 452);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 400);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(776, 150);
             this.dataGridView1.TabIndex = 17;
@@ -271,14 +271,14 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(542, 425);
+            this.textBox6.Location = new System.Drawing.Point(542, 373);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(108, 20);
             this.textBox6.TabIndex = 18;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(672, 425);
+            this.textBox7.Location = new System.Drawing.Point(672, 373);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(106, 20);
             this.textBox7.TabIndex = 19;
@@ -286,7 +286,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(539, 410);
+            this.label8.Location = new System.Drawing.Point(530, 354);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(111, 13);
             this.label8.TabIndex = 20;
@@ -295,7 +295,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(680, 409);
+            this.label9.Location = new System.Drawing.Point(671, 353);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(98, 13);
             this.label9.TabIndex = 21;
@@ -309,15 +309,15 @@
             this.label10.Size = new System.Drawing.Size(0, 13);
             this.label10.TabIndex = 22;
             // 
-            // button3
+            // BtnConfigurarTransporte
             // 
-            this.button3.Location = new System.Drawing.Point(19, 26);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 23);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Configurar Transporte";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.BtnConfigurarTransporte.Location = new System.Drawing.Point(19, 26);
+            this.BtnConfigurarTransporte.Name = "BtnConfigurarTransporte";
+            this.BtnConfigurarTransporte.Size = new System.Drawing.Size(144, 23);
+            this.BtnConfigurarTransporte.TabIndex = 28;
+            this.BtnConfigurarTransporte.Text = "Configurar Transporte";
+            this.BtnConfigurarTransporte.UseVisualStyleBackColor = true;
+            this.BtnConfigurarTransporte.Click += new System.EventHandler(this.BtnConfigurarTransporte_Click);
             // 
             // comboBox1
             // 
@@ -330,18 +330,19 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 29;
             // 
-            // comboBox2
+            // CmbViaEntradaSalida
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(134, 61);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 30;
+            this.CmbViaEntradaSalida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbViaEntradaSalida.FormattingEnabled = true;
+            this.CmbViaEntradaSalida.Location = new System.Drawing.Point(134, 61);
+            this.CmbViaEntradaSalida.Name = "CmbViaEntradaSalida";
+            this.CmbViaEntradaSalida.Size = new System.Drawing.Size(121, 21);
+            this.CmbViaEntradaSalida.TabIndex = 30;
             // 
             // GBTransporte
             // 
-            this.GBTransporte.Controls.Add(this.button3);
-            this.GBTransporte.Location = new System.Drawing.Point(15, 621);
+            this.GBTransporte.Controls.Add(this.BtnConfigurarTransporte);
+            this.GBTransporte.Location = new System.Drawing.Point(15, 569);
             this.GBTransporte.Name = "GBTransporte";
             this.GBTransporte.Size = new System.Drawing.Size(179, 63);
             this.GBTransporte.TabIndex = 31;
@@ -352,7 +353,7 @@
             // 
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.CmbViaEntradaSalida);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label3);
@@ -365,11 +366,11 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Carta Porte";
             // 
-            // Form1
+            // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 785);
+            this.ClientSize = new System.Drawing.Size(800, 644);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GBTransporte);
             this.Controls.Add(this.label10);
@@ -380,13 +381,12 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnUbicacionNueva);
             this.Controls.Add(this.dataGUbicaciones);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox3);
-            this.Name = "Form1";
-            this.Text = "f";
+            this.Name = "FrmPrincipal";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGUbicaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -414,7 +414,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DistanciaRecorrida;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoEstacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUbicacion;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnUbicacionNueva;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -431,9 +431,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtnConfigurarTransporte;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox CmbViaEntradaSalida;
         private System.Windows.Forms.GroupBox GBTransporte;
         private System.Windows.Forms.GroupBox groupBox1;
     }

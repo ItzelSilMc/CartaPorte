@@ -29,54 +29,54 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GBTransporteFerroviario = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CmbTipoServicio = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnInformacion = new System.Windows.Forms.Panel();
-            this.PnDerechosPaso = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.PnCarro = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.PnCarro = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.PnDerechosPaso = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.contenedorFerroviarioControl1 = new WindowsFormsApp1.ControlesFerroviario.ContenedorFerroviarioControl();
             this.carroControlControl1 = new WindowsFormsApp1.ControlesFerroviario.CarroControlControl();
             this.derechosPasoControl1 = new WindowsFormsApp1.ControlesFerroviario.DerechosPasoControl();
-            this.groupBox1.SuspendLayout();
+            this.GBTransporteFerroviario.SuspendLayout();
             this.PnInformacion.SuspendLayout();
-            this.PnDerechosPaso.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.PnCarro.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.PnCarro.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.PnDerechosPaso.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // GBTransporteFerroviario
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 22);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(658, 100);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Transporte ferroviario";
+            this.GBTransporteFerroviario.Controls.Add(this.textBox3);
+            this.GBTransporteFerroviario.Controls.Add(this.textBox2);
+            this.GBTransporteFerroviario.Controls.Add(this.textBox1);
+            this.GBTransporteFerroviario.Controls.Add(this.CmbTipoServicio);
+            this.GBTransporteFerroviario.Controls.Add(this.label4);
+            this.GBTransporteFerroviario.Controls.Add(this.label3);
+            this.GBTransporteFerroviario.Controls.Add(this.label2);
+            this.GBTransporteFerroviario.Controls.Add(this.label1);
+            this.GBTransporteFerroviario.Location = new System.Drawing.Point(13, 22);
+            this.GBTransporteFerroviario.Name = "GBTransporteFerroviario";
+            this.GBTransporteFerroviario.Size = new System.Drawing.Size(658, 100);
+            this.GBTransporteFerroviario.TabIndex = 0;
+            this.GBTransporteFerroviario.TabStop = false;
+            this.GBTransporteFerroviario.Text = "Transporte ferroviario";
             // 
             // textBox3
             // 
@@ -99,13 +99,13 @@ namespace WindowsFormsApp1
             this.textBox1.Size = new System.Drawing.Size(126, 20);
             this.textBox1.TabIndex = 5;
             // 
-            // comboBox1
+            // CmbTipoServicio
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(21, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
+            this.CmbTipoServicio.FormattingEnabled = true;
+            this.CmbTipoServicio.Location = new System.Drawing.Point(21, 57);
+            this.CmbTipoServicio.Name = "CmbTipoServicio";
+            this.CmbTipoServicio.Size = new System.Drawing.Size(121, 21);
+            this.CmbTipoServicio.TabIndex = 4;
             // 
             // label4
             // 
@@ -153,36 +153,35 @@ namespace WindowsFormsApp1
             this.PnInformacion.Size = new System.Drawing.Size(607, 434);
             this.PnInformacion.TabIndex = 1;
             // 
-            // PnDerechosPaso
+            // panel2
             // 
-            this.PnDerechosPaso.AutoScroll = true;
-            this.PnDerechosPaso.Controls.Add(this.derechosPasoControl1);
-            this.PnDerechosPaso.Controls.Add(this.panel1);
-            this.PnDerechosPaso.Location = new System.Drawing.Point(4, 4);
-            this.PnDerechosPaso.Name = "PnDerechosPaso";
-            this.PnDerechosPaso.Size = new System.Drawing.Size(603, 134);
-            this.PnDerechosPaso.TabIndex = 0;
+            this.panel2.Controls.Add(this.contenedorFerroviarioControl1);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Location = new System.Drawing.Point(3, 270);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(603, 138);
+            this.panel2.TabIndex = 2;
             // 
-            // panel1
+            // panel4
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(176, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(427, 35);
-            this.panel1.TabIndex = 0;
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Location = new System.Drawing.Point(179, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(424, 35);
+            this.panel4.TabIndex = 2;
             // 
-            // label5
+            // label7
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(84, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Derecho de paso";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(84, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Contenedor";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PnCarro
             // 
@@ -214,35 +213,36 @@ namespace WindowsFormsApp1
             this.label6.Text = "Carro";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
+            // PnDerechosPaso
             // 
-            this.panel2.Controls.Add(this.contenedorFerroviarioControl1);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Location = new System.Drawing.Point(3, 270);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(603, 138);
-            this.panel2.TabIndex = 2;
+            this.PnDerechosPaso.AutoScroll = true;
+            this.PnDerechosPaso.Controls.Add(this.derechosPasoControl1);
+            this.PnDerechosPaso.Controls.Add(this.panel1);
+            this.PnDerechosPaso.Location = new System.Drawing.Point(4, 4);
+            this.PnDerechosPaso.Name = "PnDerechosPaso";
+            this.PnDerechosPaso.Size = new System.Drawing.Size(603, 134);
+            this.PnDerechosPaso.TabIndex = 0;
             // 
-            // panel4
+            // panel1
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Location = new System.Drawing.Point(179, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(424, 35);
-            this.panel4.TabIndex = 2;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(176, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(427, 35);
+            this.panel1.TabIndex = 0;
             // 
-            // label7
+            // label5
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(84, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Contenedor";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(84, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Derecho de paso";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // contenedorFerroviarioControl1
             // 
@@ -271,32 +271,33 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 574);
             this.Controls.Add(this.PnInformacion);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GBTransporteFerroviario);
             this.Name = "FrmTransporteFerroviario";
             this.Text = "FrmTransporteFerroviario";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.FrmTransporteFerroviario_Load);
+            this.GBTransporteFerroviario.ResumeLayout(false);
+            this.GBTransporteFerroviario.PerformLayout();
             this.PnInformacion.ResumeLayout(false);
-            this.PnDerechosPaso.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.PnCarro.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.PnCarro.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.PnDerechosPaso.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GBTransporteFerroviario;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CmbTipoServicio;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

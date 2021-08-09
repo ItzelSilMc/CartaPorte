@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Modelos;
 
 namespace WindowsFormsApp1.ControlesFerroviario
 {
@@ -15,6 +16,11 @@ namespace WindowsFormsApp1.ControlesFerroviario
         public DerechosPasoControl()
         {
             InitializeComponent();
+        }
+
+        public void CargarComboDerechosPaso(Dictionary<string, string> DerechosPaso)
+        {
+            EstructurasFunciones.CargarComboValores(CmbDerechosPaso, DerechosPaso);
         }
     }
 }

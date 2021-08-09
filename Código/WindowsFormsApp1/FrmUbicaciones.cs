@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Modelos;
+using static WindowsFormsApp1.Modelos.EstructurasFunciones;
 
 namespace WindowsFormsApp1
 {
@@ -17,8 +19,14 @@ namespace WindowsFormsApp1
         Size TamVentana;
         public bool GuardadoCorrectamente = false;
 
+        string ClaveTransporte = "";
         public FrmUbicaciones()
         {
+            InitializeComponent();
+        }
+        public FrmUbicaciones(string ClaveTransporte)
+        {
+            this.ClaveTransporte = ClaveTransporte;
             InitializeComponent();
         }
 
@@ -44,7 +52,7 @@ namespace WindowsFormsApp1
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "02 Intermedia")
+            if (CmbTipoEstaciones.Text.Split('-')[0].Trim() == "02" /*Corresponde a intermedia*/)
             {
                 domicilioControl1.Visible = false;
 
@@ -58,9 +66,9 @@ namespace WindowsFormsApp1
                 GBOrigen.Size = tamGB;
                 Size = TamVentana;
             }
-            switch(comboBox1.Text)
+            switch(CmbTipoEstaciones.Text.Split('-')[0].Trim())
             {
-                case "02 Intermedia":
+                case "02":
                     break;
 
                 case "":
@@ -81,6 +89,18 @@ namespace WindowsFormsApp1
         {
             tamGB = GBOrigen.Size;
             TamVentana = Size;
+
+            Dictionary<string, string> TipoEstaciones = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.TipoEstacion);
+
+            
+            EstructurasFunciones.CargarComboValores(CmbTipoEstaciones, TipoEstaciones);
+
+            Dictionary<string, string> Estaciones = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.Estaciones, "", ClaveTransporte);
+
+           
+            EstructurasFunciones.CargarComboValores(CmbNumeroEstacion, Estaciones);
+
+
         }
         public int ObtenerDatos()
         {
