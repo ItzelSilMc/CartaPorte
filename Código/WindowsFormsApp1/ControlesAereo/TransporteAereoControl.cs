@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Modelos;
 
 namespace WindowsFormsApp1.ControlesAereo
 {
@@ -19,10 +20,7 @@ namespace WindowsFormsApp1.ControlesAereo
 
         public void CargarComboPermisos(Dictionary<string, string> Permisos)
         {
-
-            CmbPermisoSCT.DataSource = new BindingSource(Permisos, null);
-            CmbPermisoSCT.DisplayMember = "Descripcion";
-            CmbPermisoSCT.ValueMember = "IdCatalogo";
+            EstructurasFunciones.CargarComboValores(CmbPermisoSCT, Permisos);
 
         }
     }

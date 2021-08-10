@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
         private void BtnConfigurarOperador_Click(object sender, EventArgs e)
         {
             FrmPersona frmOperador = new FrmPersona();
-            frmOperador.SetTipo("Operador");
+            frmOperador.SetTipo(TipoPersona.Operador);
             frmOperador.ShowDialog();
         }
     }

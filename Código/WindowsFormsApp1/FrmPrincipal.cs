@@ -123,6 +123,8 @@ namespace WindowsFormsApp1
                         MessageBox.Show("No hay configuración para ese tipo de transporte", "Carta Porte", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                 }
+
+                BtnConfigurarTransporte.BackColor = Color.LightCyan;
             }
             else
             {

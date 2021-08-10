@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static WindowsFormsApp1.Modelos.EstructurasFunciones;
 
 namespace WindowsFormsApp1
 {
@@ -20,12 +21,37 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        public  void SetTipo(string Tipo)
+        public  void SetTipo(TipoPersona tipo)
         {
-            this.Tipo = Tipo;
-            this.Text = Tipo;
-            LblRFC.Text = LblRFC.Text.Replace("-", Tipo);
-            LblNombre.Text = LblNombre.Text.Replace("-", Tipo);
+            string cadenaTipo =  "";
+            switch(tipo)
+            {
+                case TipoPersona.Arrendatario:
+                    cadenaTipo = "Arrendatario";
+                    break;
+
+                case TipoPersona.Embarcador:
+                    cadenaTipo = "Embarcador";
+                    break;
+
+                case TipoPersona.Operador:
+                    cadenaTipo = "Operador";
+                    break;
+
+                case TipoPersona.Transportista:
+                    cadenaTipo = "Transportista";
+                    break;
+
+                case TipoPersona.Propietario:
+                    cadenaTipo = "Propietario";
+                    break;
+
+
+            }
+            this.Tipo = cadenaTipo;
+            this.Text = cadenaTipo;
+            LblRFC.Text = LblRFC.Text.Replace("-", cadenaTipo);
+            LblNombre.Text = LblNombre.Text.Replace("-", cadenaTipo);
         }
 
 

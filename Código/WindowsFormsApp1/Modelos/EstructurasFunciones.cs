@@ -33,12 +33,24 @@ namespace WindowsFormsApp1.Modelos
             TipoContenedor
         }
 
+        public enum TipoPersona
+        {
+            Transportista,
+            Embarcador,
+            Arrendatario,
+            Operador,
+            Propietario
+        }
+
 
         public static void CargarComboValores(ComboBox combo, Dictionary<string, string> Valores)
         {
-            combo.DataSource = new BindingSource(Valores, null);
-            combo.DisplayMember = "Value";
-            combo.ValueMember = "Key";
+            if (Valores.Count > 0)
+            {
+                combo.DataSource = new BindingSource(Valores, null);
+                combo.DisplayMember = "Value";
+                combo.ValueMember = "Key";
+            }
         }
     }
 
