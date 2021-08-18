@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TxtTotalDistRecorrida = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGUbicaciones = new System.Windows.Forms.DataGridView();
+            this.DgvUbicaciones = new System.Windows.Forms.DataGridView();
             this.TipoUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DistanciaRecorrida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BtnUbicacionNueva = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnMercancia = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.NumTotalMercancias = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,22 +61,19 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.BtnConfigurarTransporte = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CmbEntradaSalidaMercancia = new System.Windows.Forms.ComboBox();
             this.CmbViaEntradaSalida = new System.Windows.Forms.ComboBox();
             this.GBTransporte = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGUbicaciones)).BeginInit();
+            this.CmbInternacional = new System.Windows.Forms.ComboBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BtnGuardar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvUbicaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.GBTransporte.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(134, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(103, 20);
-            this.textBox1.TabIndex = 0;
             // 
             // textBox3
             // 
@@ -84,12 +82,13 @@
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 2;
             // 
-            // textBox4
+            // TxtTotalDistRecorrida
             // 
-            this.textBox4.Location = new System.Drawing.Point(461, 63);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 20);
-            this.textBox4.TabIndex = 3;
+            this.TxtTotalDistRecorrida.Location = new System.Drawing.Point(461, 63);
+            this.TxtTotalDistRecorrida.Name = "TxtTotalDistRecorrida";
+            this.TxtTotalDistRecorrida.Size = new System.Drawing.Size(121, 20);
+            this.TxtTotalDistRecorrida.TabIndex = 3;
+            this.TxtTotalDistRecorrida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTotalDistRecorrida_KeyPress);
             // 
             // label1
             // 
@@ -145,19 +144,24 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "UBICACIONES";
             // 
-            // dataGUbicaciones
+            // DgvUbicaciones
             // 
-            this.dataGUbicaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGUbicaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvUbicaciones.AllowUserToAddRows = false;
+            this.DgvUbicaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvUbicaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TipoUbicacion,
             this.DistanciaRecorrida,
             this.TipoEstacion,
-            this.idUbicacion});
-            this.dataGUbicaciones.Location = new System.Drawing.Point(12, 190);
-            this.dataGUbicaciones.Name = "dataGUbicaciones";
-            this.dataGUbicaciones.Size = new System.Drawing.Size(776, 150);
-            this.dataGUbicaciones.TabIndex = 13;
-            this.dataGUbicaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGUbicaciones_CellDoubleClick);
+            this.idUbicacion,
+            this.Modificar});
+            this.DgvUbicaciones.Location = new System.Drawing.Point(12, 190);
+            this.DgvUbicaciones.Name = "DgvUbicaciones";
+            this.DgvUbicaciones.RowHeadersVisible = false;
+            this.DgvUbicaciones.Size = new System.Drawing.Size(776, 150);
+            this.DgvUbicaciones.TabIndex = 13;
+            this.DgvUbicaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUbicaciones_CellContentClick);
+            this.DgvUbicaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGUbicaciones_CellDoubleClick);
+            this.DgvUbicaciones.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DgvUbicaciones_CellPainting);
             // 
             // TipoUbicacion
             // 
@@ -179,6 +183,11 @@
             this.idUbicacion.HeaderText = "idUbicacion";
             this.idUbicacion.Name = "idUbicacion";
             // 
+            // Modificar
+            // 
+            this.Modificar.HeaderText = "";
+            this.Modificar.Name = "Modificar";
+            // 
             // BtnUbicacionNueva
             // 
             this.BtnUbicacionNueva.Location = new System.Drawing.Point(110, 153);
@@ -189,15 +198,15 @@
             this.BtnUbicacionNueva.UseVisualStyleBackColor = true;
             this.BtnUbicacionNueva.Click += new System.EventHandler(this.BtnUbicacionNueva_Click);
             // 
-            // button2
+            // BtnMercancia
             // 
-            this.button2.Location = new System.Drawing.Point(119, 362);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Añadir Mercancia";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.BtnMercancia.Location = new System.Drawing.Point(119, 362);
+            this.BtnMercancia.Name = "BtnMercancia";
+            this.BtnMercancia.Size = new System.Drawing.Size(144, 23);
+            this.BtnMercancia.TabIndex = 16;
+            this.BtnMercancia.Text = "Añadir Mercancia";
+            this.BtnMercancia.UseVisualStyleBackColor = true;
+            this.BtnMercancia.Click += new System.EventHandler(this.BtnMercancia_Click);
             // 
             // label7
             // 
@@ -319,16 +328,17 @@
             this.BtnConfigurarTransporte.UseVisualStyleBackColor = true;
             this.BtnConfigurarTransporte.Click += new System.EventHandler(this.BtnConfigurarTransporte_Click);
             // 
-            // comboBox1
+            // CmbEntradaSalidaMercancia
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CmbEntradaSalidaMercancia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbEntradaSalidaMercancia.FormattingEnabled = true;
+            this.CmbEntradaSalidaMercancia.Items.AddRange(new object[] {
             "ENTRADA",
             "SALIDA"});
-            this.comboBox1.Location = new System.Drawing.Point(461, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 29;
+            this.CmbEntradaSalidaMercancia.Location = new System.Drawing.Point(461, 33);
+            this.CmbEntradaSalidaMercancia.Name = "CmbEntradaSalidaMercancia";
+            this.CmbEntradaSalidaMercancia.Size = new System.Drawing.Size(121, 21);
+            this.CmbEntradaSalidaMercancia.TabIndex = 29;
             // 
             // CmbViaEntradaSalida
             // 
@@ -351,11 +361,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CmbInternacional);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.CmbViaEntradaSalida);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.TxtTotalDistRecorrida);
+            this.groupBox1.Controls.Add(this.CmbEntradaSalidaMercancia);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
@@ -366,11 +376,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Carta Porte";
             // 
+            // CmbInternacional
+            // 
+            this.CmbInternacional.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbInternacional.FormattingEnabled = true;
+            this.CmbInternacional.Location = new System.Drawing.Point(134, 33);
+            this.CmbInternacional.Name = "CmbInternacional";
+            this.CmbInternacional.Size = new System.Drawing.Size(121, 21);
+            this.CmbInternacional.TabIndex = 31;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.Location = new System.Drawing.Point(692, 595);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.BtnGuardar.TabIndex = 33;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.UseVisualStyleBackColor = true;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 644);
+            this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GBTransporte);
             this.Controls.Add(this.label10);
@@ -379,43 +412,38 @@
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BtnMercancia);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.BtnUbicacionNueva);
-            this.Controls.Add(this.dataGUbicaciones);
+            this.Controls.Add(this.DgvUbicaciones);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox3);
             this.Name = "FrmPrincipal";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGUbicaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvUbicaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.GBTransporte.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TxtTotalDistRecorrida;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGUbicaciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoUbicacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DistanciaRecorrida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoEstacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idUbicacion;
+        private System.Windows.Forms.DataGridView DgvUbicaciones;
         private System.Windows.Forms.Button BtnUbicacionNueva;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnMercancia;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumTotalMercancias;
@@ -432,10 +460,18 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button BtnConfigurarTransporte;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CmbEntradaSalidaMercancia;
         private System.Windows.Forms.ComboBox CmbViaEntradaSalida;
         private System.Windows.Forms.GroupBox GBTransporte;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Button BtnGuardar;
+        private System.Windows.Forms.ComboBox CmbInternacional;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoUbicacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DistanciaRecorrida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoEstacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUbicacion;
+        private System.Windows.Forms.DataGridViewButtonColumn Modificar;
     }
 }
 

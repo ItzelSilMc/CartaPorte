@@ -14,9 +14,15 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
+            try { 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmPrincipal());
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -153,9 +153,12 @@
     </Compile>
     <Compile Include="Metodos.cs" />
     <Compile Include="Modelos\Catalogos.cs" />
+    <Compile Include="Modelos\ObjetoDireccion.cs" />
     <Compile Include="Modelos\EstructurasFunciones.cs" />
+    <Compile Include="Modelos\ObjetoPersona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Modelos\Ubicaciones.cs" />
     <EmbeddedResource Include="ControlesAereo\TransporteAereoControl.resx">
       <DependentUpon>TransporteAereoControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +198,9 @@
     <EmbeddedResource Include="FrmTransporteFerroviario.resx">
       <DependentUpon>FrmTransporteFerroviario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransporteMaritimo.resx">
+      <DependentUpon>FrmTransporteMaritimo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTransporteTerrestre.resx">
       <DependentUpon>FrmTransporteTerrestre.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +218,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -226,6 +233,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\editar32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar24.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

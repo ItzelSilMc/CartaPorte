@@ -59,5 +59,16 @@ namespace WindowsFormsApp1
                 PosicionY = PosicionY + mc.Size.Height + 10;
             }
         }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            foreach(Control c in PNMercancias.Controls)
+            {
+                if(c is MercanciaControl )
+                {
+
+                }
+            }
+        }
     }
 }

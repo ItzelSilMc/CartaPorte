@@ -39,6 +39,7 @@ namespace WindowsFormsApp1
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.PNMercancias = new System.Windows.Forms.Panel();
+            this.BtnGuardar = new System.Windows.Forms.Button();
             this.GBMercancias.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,11 +134,22 @@ namespace WindowsFormsApp1
             this.PNMercancias.Size = new System.Drawing.Size(778, 241);
             this.PNMercancias.TabIndex = 5;
             // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.Location = new System.Drawing.Point(700, 406);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.BtnGuardar.TabIndex = 6;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
             // FrmMercancias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 450);
+            this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.PNMercancias);
             this.Controls.Add(this.GBMercancias);
             this.Name = "FrmMercancias";
@@ -159,5 +171,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel PNMercancias;
+        private System.Windows.Forms.Button BtnGuardar;
     }
 }

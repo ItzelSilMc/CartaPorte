@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Modelos;
 using static WindowsFormsApp1.Modelos.EstructurasFunciones;
 
 namespace WindowsFormsApp1
 {
     public partial class FrmTransporteAereo : Form
     {
+        public bool GuardadoExitoso = false;
+        
         public FrmTransporteAereo()
         {
             InitializeComponent();
@@ -34,7 +37,12 @@ namespace WindowsFormsApp1
             FrmPer.SetTipo(TipoPersona.Transportista);
             FrmPer.ShowDialog();
 
-            BtnTransportista.BackColor = Color.LightCyan;
+            if (FrmPer.GuardadoExitoso)
+            {
+                ObjetoPersona transportista = FrmPer.RetornarInformacionPersona();
+                BtnTransportista.BackColor = Color.Cyan;
+                BtnTransportista.Text = BtnTransportista.Text.Replace("Añadir", "Modificar");
+            }
         }
 
         private void BtnEmbarcador_Click(object sender, EventArgs e)
@@ -43,7 +51,7 @@ namespace WindowsFormsApp1
             FrmPer.SetTipo(TipoPersona.Embarcador);
             FrmPer.ShowDialog();
 
-            BtnEmbarcador.BackColor = Color.LightCyan;
+            BtnEmbarcador.BackColor = Color.Cyan;
         }
 
         private void BtnArrendatario_Click(object sender, EventArgs e)
@@ -52,7 +60,7 @@ namespace WindowsFormsApp1
             FrmPer.SetTipo(TipoPersona.Arrendatario);
             FrmPer.ShowDialog();
 
-            BtnEmbarcador.BackColor = Color.LightCyan;
+            BtnArrendatario.BackColor = Color.Cyan;
         }
 
         private void BtnPropietario_Click(object sender, EventArgs e)
@@ -61,12 +69,22 @@ namespace WindowsFormsApp1
             FrmPer.SetTipo(TipoPersona.Propietario);
             FrmPer.ShowDialog();
 
-            BtnEmbarcador.BackColor = Color.LightCyan;
+            BtnPropietario.BackColor = Color.Cyan;
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            
+            if(ValidarDatosTransporteAereo())
+            {
+                GuardadoExitoso = true;
+            }
             Close();
+        }
+
+        private bool ValidarDatosTransporteAereo()
+        {
+            return true;
         }
     }
 }

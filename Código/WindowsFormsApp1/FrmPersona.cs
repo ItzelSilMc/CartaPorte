@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Modelos;
 using static WindowsFormsApp1.Modelos.EstructurasFunciones;
 
 namespace WindowsFormsApp1
@@ -16,6 +17,7 @@ namespace WindowsFormsApp1
 
         string Tipo = "";
 
+        public bool GuardadoExitoso = false;
         public FrmPersona()
         {
             InitializeComponent();
@@ -60,10 +62,35 @@ namespace WindowsFormsApp1
             return true;
         }
 
-        public string RetornarInformacion()
+        private bool ValidacionCorrectaPersona()
         {
-            return Tipo;
+            return true;
         }
 
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            if(ValidacionCorrectaPersona())
+            {
+                GuardadoExitoso = true;
+            }
+            this.Close();
+        }
+
+        public ObjetoPersona RetornarInformacionPersona()
+        {
+            ObjetoPersona objetoPersona = new ObjetoPersona();
+
+
+            objetoPersona.objDireccion = domicilioControl1.RetornarDireccion();
+
+            objetoPersona.RFC = TxtRFC.Text;
+            objetoPersona.Nombre = TxtNombre.Text;
+            objetoPersona.NumLicencia = TxtLicencia.Text;
+            objetoPersona.NumRegistro = TxtNumeroIdentificacion.Text;
+
+
+
+            return objetoPersona;
+        }
     }
 }

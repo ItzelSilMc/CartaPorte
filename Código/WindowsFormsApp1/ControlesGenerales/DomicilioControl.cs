@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Modelos;
 using static WindowsFormsApp1.Modelos.EstructurasFunciones;
 
 namespace WindowsFormsApp1
@@ -18,6 +19,16 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+
+        public void CargarInformacionPrevia(Ubicaciones ubicacion)
+        {
+            TxtCalle.Text = ubicacion.dir.calle;
+            TxtCodigoPostal.Text = ubicacion.dir.CodigoPostal;
+            TxtNumeroExt.Text = ubicacion.dir.NumeroExterior;
+            TxtNumeroInt.Text = ubicacion.dir.NumeroInterior;
+
+
+        }
         public void InsertarTipoDmicilio(string tipo)
         {
             label10.Text = "Domicilio " + tipo;
@@ -26,7 +37,7 @@ namespace WindowsFormsApp1
         private void DomicilioControl_Load(object sender, EventArgs e)
         {
             CargarCombos();
-
+            
         }
         private void CargarCombos()
         {
@@ -53,12 +64,27 @@ namespace WindowsFormsApp1
 
             Dictionary<string, string> Colonias = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.Colonia , TxtCodigoPostal.Text);
 
+            EstructurasFunciones.CargarComboValores(CmbColonia, Colonias);
 
-            CmbColonia.DataSource = new BindingSource(Colonias, null);
-            CmbColonia.DisplayMember = "Value";
-            CmbColonia.ValueMember = "Key";
+        }
+        public  ObjetoDireccion RetornarDireccion()
+        {
+            ObjetoDireccion dire = new ObjetoDireccion
+            {
+                calle = TxtCalle.Text,
+                NumeroExterior = TxtNumeroExt.Text,
+                NumeroInterior = TxtNumeroInt.Text,
+                Estado = CmbEstado.Text,
+                CodigoPostal = TxtCodigoPostal.Text,
+                Localidad = CmbLocalidad.Text,
+                Pais = CmbPais.Text,
+                Colonia = CmbColonia.Text,
+
+
+            };
             
 
+            return dire;
         }
     }
 }

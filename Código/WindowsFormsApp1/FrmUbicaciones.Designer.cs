@@ -31,24 +31,24 @@ namespace WindowsFormsApp1
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUbicaciones));
             this.GBOrigen = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtNombreEstacion = new System.Windows.Forms.TextBox();
+            this.TxtNombreRemitente = new System.Windows.Forms.TextBox();
+            this.TxtRFC = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DtpHora = new System.Windows.Forms.DateTimePicker();
+            this.DtpFecha = new System.Windows.Forms.DateTimePicker();
             this.CmbNumeroEstacion = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtDistanciaRecorrida = new System.Windows.Forms.TextBox();
             this.CmbTipoEstaciones = new System.Windows.Forms.ComboBox();
+            this.domicilioControl1 = new WindowsFormsApp1.DomicilioControl();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnGuardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.domicilioControl1 = new WindowsFormsApp1.DomicilioControl();
             this.GBOrigen.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,16 +56,16 @@ namespace WindowsFormsApp1
             // GBOrigen
             // 
             this.GBOrigen.AutoSize = true;
-            this.GBOrigen.Controls.Add(this.textBox4);
-            this.GBOrigen.Controls.Add(this.textBox3);
-            this.GBOrigen.Controls.Add(this.textBox2);
+            this.GBOrigen.Controls.Add(this.TxtNombreEstacion);
+            this.GBOrigen.Controls.Add(this.TxtNombreRemitente);
+            this.GBOrigen.Controls.Add(this.TxtRFC);
             this.GBOrigen.Controls.Add(this.label7);
             this.GBOrigen.Controls.Add(this.label6);
             this.GBOrigen.Controls.Add(this.label4);
-            this.GBOrigen.Controls.Add(this.dateTimePicker2);
-            this.GBOrigen.Controls.Add(this.dateTimePicker1);
+            this.GBOrigen.Controls.Add(this.DtpHora);
+            this.GBOrigen.Controls.Add(this.DtpFecha);
             this.GBOrigen.Controls.Add(this.CmbNumeroEstacion);
-            this.GBOrigen.Controls.Add(this.textBox1);
+            this.GBOrigen.Controls.Add(this.TxtDistanciaRecorrida);
             this.GBOrigen.Controls.Add(this.CmbTipoEstaciones);
             this.GBOrigen.Controls.Add(this.domicilioControl1);
             this.GBOrigen.Controls.Add(this.label5);
@@ -80,26 +80,26 @@ namespace WindowsFormsApp1
             this.GBOrigen.Text = "Ubicacion";
             this.GBOrigen.AutoSizeChanged += new System.EventHandler(this.GBOrigen_AutoSizeChanged);
             // 
-            // textBox4
+            // TxtNombreEstacion
             // 
-            this.textBox4.Location = new System.Drawing.Point(362, 37);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(198, 20);
-            this.textBox4.TabIndex = 17;
+            this.TxtNombreEstacion.Location = new System.Drawing.Point(362, 37);
+            this.TxtNombreEstacion.Name = "TxtNombreEstacion";
+            this.TxtNombreEstacion.Size = new System.Drawing.Size(198, 20);
+            this.TxtNombreEstacion.TabIndex = 17;
             // 
-            // textBox3
+            // TxtNombreRemitente
             // 
-            this.textBox3.Location = new System.Drawing.Point(185, 155);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(227, 20);
-            this.textBox3.TabIndex = 16;
+            this.TxtNombreRemitente.Location = new System.Drawing.Point(185, 155);
+            this.TxtNombreRemitente.Name = "TxtNombreRemitente";
+            this.TxtNombreRemitente.Size = new System.Drawing.Size(227, 20);
+            this.TxtNombreRemitente.TabIndex = 16;
             // 
-            // textBox2
+            // TxtRFC
             // 
-            this.textBox2.Location = new System.Drawing.Point(38, 155);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 20);
-            this.textBox2.TabIndex = 15;
+            this.TxtRFC.Location = new System.Drawing.Point(38, 155);
+            this.TxtRFC.Name = "TxtRFC";
+            this.TxtRFC.Size = new System.Drawing.Size(129, 20);
+            this.TxtRFC.TabIndex = 15;
             // 
             // label7
             // 
@@ -128,23 +128,23 @@ namespace WindowsFormsApp1
             this.label4.TabIndex = 12;
             this.label4.Text = "Fecha y hora";
             // 
-            // dateTimePicker2
+            // DtpHora
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(185, 91);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(87, 20);
-            this.dateTimePicker2.TabIndex = 11;
+            this.DtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.DtpHora.Location = new System.Drawing.Point(185, 91);
+            this.DtpHora.Name = "DtpHora";
+            this.DtpHora.ShowUpDown = true;
+            this.DtpHora.Size = new System.Drawing.Size(87, 20);
+            this.DtpHora.TabIndex = 11;
             // 
-            // dateTimePicker1
+            // DtpFecha
             // 
-            this.dateTimePicker1.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(32, 91);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.DtpFecha.CustomFormat = "MM/dd/yyyy";
+            this.DtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DtpFecha.Location = new System.Drawing.Point(32, 91);
+            this.DtpFecha.Name = "DtpFecha";
+            this.DtpFecha.Size = new System.Drawing.Size(121, 20);
+            this.DtpFecha.TabIndex = 10;
             // 
             // CmbNumeroEstacion
             // 
@@ -154,12 +154,12 @@ namespace WindowsFormsApp1
             this.CmbNumeroEstacion.Size = new System.Drawing.Size(146, 21);
             this.CmbNumeroEstacion.TabIndex = 8;
             // 
-            // textBox1
+            // TxtDistanciaRecorrida
             // 
-            this.textBox1.Location = new System.Drawing.Point(303, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
+            this.TxtDistanciaRecorrida.Location = new System.Drawing.Point(303, 91);
+            this.TxtDistanciaRecorrida.Name = "TxtDistanciaRecorrida";
+            this.TxtDistanciaRecorrida.Size = new System.Drawing.Size(100, 20);
+            this.TxtDistanciaRecorrida.TabIndex = 7;
             // 
             // CmbTipoEstaciones
             // 
@@ -170,6 +170,14 @@ namespace WindowsFormsApp1
             this.CmbTipoEstaciones.Size = new System.Drawing.Size(121, 21);
             this.CmbTipoEstaciones.TabIndex = 6;
             this.CmbTipoEstaciones.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // domicilioControl1
+            // 
+            this.domicilioControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.domicilioControl1.Location = new System.Drawing.Point(3, 187);
+            this.domicilioControl1.Name = "domicilioControl1";
+            this.domicilioControl1.Size = new System.Drawing.Size(605, 200);
+            this.domicilioControl1.TabIndex = 5;
             // 
             // label5
             // 
@@ -207,38 +215,30 @@ namespace WindowsFormsApp1
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo de estacion*:";
             // 
-            // button1
+            // BtnGuardar
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(0, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 56);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Guardar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnGuardar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnGuardar.FlatAppearance.BorderSize = 0;
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuardar.Image")));
+            this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnGuardar.Location = new System.Drawing.Point(0, 358);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(82, 56);
+            this.BtnGuardar.TabIndex = 2;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.BtnGuardar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(628, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(82, 414);
             this.panel1.TabIndex = 3;
-            // 
-            // domicilioControl1
-            // 
-            this.domicilioControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.domicilioControl1.Location = new System.Drawing.Point(3, 187);
-            this.domicilioControl1.Name = "domicilioControl1";
-            this.domicilioControl1.Size = new System.Drawing.Size(605, 200);
-            this.domicilioControl1.TabIndex = 5;
             // 
             // FrmUbicaciones
             // 
@@ -266,19 +266,19 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtDistanciaRecorrida;
         private System.Windows.Forms.ComboBox CmbTipoEstaciones;
         private DomicilioControl domicilioControl1;
         private System.Windows.Forms.ComboBox CmbNumeroEstacion;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker DtpFecha;
+        private System.Windows.Forms.DateTimePicker DtpHora;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtNombreEstacion;
+        private System.Windows.Forms.TextBox TxtNombreRemitente;
+        private System.Windows.Forms.TextBox TxtRFC;
     }
 }

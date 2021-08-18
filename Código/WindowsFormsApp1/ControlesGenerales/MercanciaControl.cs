@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Modelos;
 
 namespace WindowsFormsApp1
 {
@@ -21,50 +22,32 @@ namespace WindowsFormsApp1
         {
             CargarCombos();
         }
+
         private void CargarCombos()
         {
 
         }
+
         private void CargarComboServicioSTCC(Dictionary<string, string> ClaveSTCC)
         {
-
-            //foreach (Modelos.Catalogos CSTCC in ClaveSTCC)
-            //{
-            //    CmbClaveSTCC.Items.Add(CSTCC.Descripcion);
-            //}
-
-            CmbClaveSTCC.DataSource = new BindingSource(ClaveSTCC, null);
-            CmbClaveSTCC.DisplayMember = "Value";
-            CmbClaveSTCC.ValueMember = "Key";
-
+            EstructurasFunciones.CargarComboValores(CmbClaveSTCC, ClaveSTCC);
         }
+
         private void CargarComboProdServ(List<string> ClavesProdServ)
         {
-            
+            if (ClavesProdServ.Count > 0)
+            {
                 CmbBienes.Items.AddRange(ClavesProdServ.ToArray());
-            
-
+            }
         }
         private void CargarCombosMaterialesPeligrosos(Dictionary<string, string> MaterialesPeligrosos)
-        {
-            //foreach(Modelos.Catalogos mp in MaterialesPeligrosos)
-            //{
-            //    CmbClaveMaterialPeligroso.Items.Add(mp.Descripcion);
-            //}
-            CmbClaveMaterialPeligroso.DataSource = new BindingSource(MaterialesPeligrosos, null);
-            CmbClaveMaterialPeligroso.DisplayMember = "Value";
-            CmbClaveMaterialPeligroso.ValueMember = "Key";
+        { 
+            EstructurasFunciones.CargarComboValores(CmbClaveMaterialPeligroso, MaterialesPeligrosos);  
         }
 
-        private void CargarCombosEmbalaje(Dictionary<string, string> MaterialesPeligrosos)
+        private void CargarCombosEmbalaje(Dictionary<string, string> Embalajes)
         {
-            //foreach (Modelos.Catalogos mp in MaterialesPeligrosos)
-            //{
-            //    CmbEmbalaje.Items.Add(mp.Descripcion);
-            //}
-            CmbEmbalaje.DataSource = new BindingSource(MaterialesPeligrosos, null);
-            CmbEmbalaje.DisplayMember = "Value";
-            CmbEmbalaje.ValueMember = "Key";
+            EstructurasFunciones.CargarComboValores(CmbEmbalaje, Embalajes);
         }
 
         /// <summary>
@@ -76,7 +59,10 @@ namespace WindowsFormsApp1
             List<string> ClavesProdServ, Dictionary<string, string> MaterialesPeligrosos,
             Dictionary<string, string> Embalajes)
         {
-            CmbClaveUnidad.Items.AddRange(ClavesUnidad.ToArray());
+            if (ClavesUnidad.Count > 0)
+            {
+                CmbClaveUnidad.Items.AddRange(ClavesUnidad.ToArray());
+            }
 
             CargarComboServicioSTCC(ClaveSTCC);
             CargarComboProdServ(ClavesProdServ);

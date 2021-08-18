@@ -30,18 +30,19 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.domicilioControl1 = new WindowsFormsApp1.DomicilioControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtResidenciaFiscal = new System.Windows.Forms.TextBox();
+            this.TxtNumeroIdentificacion = new System.Windows.Forms.TextBox();
+            this.TxtLicencia = new System.Windows.Forms.TextBox();
+            this.TxtNombre = new System.Windows.Forms.TextBox();
+            this.TxtRFC = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.LblRFC = new System.Windows.Forms.Label();
             this.LblNombre = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.domicilioControl1 = new WindowsFormsApp1.DomicilioControl();
+            this.BtnGuardar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -55,13 +56,20 @@ namespace WindowsFormsApp1
             this.panel1.Size = new System.Drawing.Size(626, 345);
             this.panel1.TabIndex = 0;
             // 
+            // domicilioControl1
+            // 
+            this.domicilioControl1.Location = new System.Drawing.Point(3, 142);
+            this.domicilioControl1.Name = "domicilioControl1";
+            this.domicilioControl1.Size = new System.Drawing.Size(513, 186);
+            this.domicilioControl1.TabIndex = 5;
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.TxtResidenciaFiscal);
+            this.groupBox1.Controls.Add(this.TxtNumeroIdentificacion);
+            this.groupBox1.Controls.Add(this.TxtLicencia);
+            this.groupBox1.Controls.Add(this.TxtNombre);
+            this.groupBox1.Controls.Add(this.TxtRFC);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.LblRFC);
@@ -73,40 +81,40 @@ namespace WindowsFormsApp1
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
-            // textBox5
+            // TxtResidenciaFiscal
             // 
-            this.textBox5.Location = new System.Drawing.Point(232, 105);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(167, 20);
-            this.textBox5.TabIndex = 10;
+            this.TxtResidenciaFiscal.Location = new System.Drawing.Point(232, 105);
+            this.TxtResidenciaFiscal.Name = "TxtResidenciaFiscal";
+            this.TxtResidenciaFiscal.Size = new System.Drawing.Size(167, 20);
+            this.TxtResidenciaFiscal.TabIndex = 10;
             // 
-            // textBox4
+            // TxtNumeroIdentificacion
             // 
-            this.textBox4.Location = new System.Drawing.Point(19, 105);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(167, 20);
-            this.textBox4.TabIndex = 9;
+            this.TxtNumeroIdentificacion.Location = new System.Drawing.Point(19, 105);
+            this.TxtNumeroIdentificacion.Name = "TxtNumeroIdentificacion";
+            this.TxtNumeroIdentificacion.Size = new System.Drawing.Size(167, 20);
+            this.TxtNumeroIdentificacion.TabIndex = 9;
             // 
-            // textBox3
+            // TxtLicencia
             // 
-            this.textBox3.Location = new System.Drawing.Point(435, 43);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
+            this.TxtLicencia.Location = new System.Drawing.Point(435, 43);
+            this.TxtLicencia.Name = "TxtLicencia";
+            this.TxtLicencia.Size = new System.Drawing.Size(100, 20);
+            this.TxtLicencia.TabIndex = 8;
             // 
-            // textBox2
+            // TxtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(137, 43);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(271, 20);
-            this.textBox2.TabIndex = 7;
+            this.TxtNombre.Location = new System.Drawing.Point(137, 43);
+            this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.Size = new System.Drawing.Size(271, 20);
+            this.TxtNombre.TabIndex = 7;
             // 
-            // textBox1
+            // TxtRFC
             // 
-            this.textBox1.Location = new System.Drawing.Point(19, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.TxtRFC.Location = new System.Drawing.Point(19, 43);
+            this.TxtRFC.Name = "TxtRFC";
+            this.TxtRFC.Size = new System.Drawing.Size(100, 20);
+            this.TxtRFC.TabIndex = 6;
             // 
             // label4
             // 
@@ -153,18 +161,22 @@ namespace WindowsFormsApp1
             this.label3.TabIndex = 2;
             this.label3.Text = "Número de licencia";
             // 
-            // domicilioControl1
+            // BtnGuardar
             // 
-            this.domicilioControl1.Location = new System.Drawing.Point(3, 142);
-            this.domicilioControl1.Name = "domicilioControl1";
-            this.domicilioControl1.Size = new System.Drawing.Size(513, 186);
-            this.domicilioControl1.TabIndex = 5;
+            this.BtnGuardar.Location = new System.Drawing.Point(564, 364);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.BtnGuardar.TabIndex = 1;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // FrmPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 398);
+            this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.panel1);
             this.Name = "FrmPersona";
             this.panel1.ResumeLayout(false);
@@ -180,15 +192,16 @@ namespace WindowsFormsApp1
         private ControlesTerrestre.IdentificacionVehicularControl identificacionVehicularControl1;
         private DomicilioControl domicilioControl1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtResidenciaFiscal;
+        private System.Windows.Forms.TextBox TxtNumeroIdentificacion;
+        private System.Windows.Forms.TextBox TxtLicencia;
+        private System.Windows.Forms.TextBox TxtNombre;
+        private System.Windows.Forms.TextBox TxtRFC;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label LblRFC;
         private System.Windows.Forms.Label LblNombre;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button BtnGuardar;
     }
 }

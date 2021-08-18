@@ -18,6 +18,10 @@ namespace WindowsFormsApp1
         Size tamGB;
         Size TamVentana;
         public bool GuardadoCorrectamente = false;
+        string Accion = "Nuevo";
+
+
+        Ubicaciones ubicacion = null;
 
         string ClaveTransporte = "";
         public FrmUbicaciones()
@@ -28,6 +32,32 @@ namespace WindowsFormsApp1
         {
             this.ClaveTransporte = ClaveTransporte;
             InitializeComponent();
+        }
+
+
+        public FrmUbicaciones(string ClaveTransporte, Ubicaciones ubicacion, string  Accion )
+        {
+            
+            InitializeComponent();
+
+            this.Accion = Accion;
+            this.ClaveTransporte = ClaveTransporte;
+            this.ubicacion = ubicacion;
+            LlenarInformacionPrevia();
+            //ElegirComboTipoEStacion();
+
+        }
+
+        private void ElegirComboTipoEstacion()
+        {
+            if (ubicacion != null)
+            {
+                CmbTipoEstaciones.SelectedValue = ubicacion.TipoEstacion;
+            }
+        }
+        private void LlenarInformacionPrevia()
+        {
+            domicilioControl1.CargarInformacionPrevia(ubicacion);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,7 +77,13 @@ namespace WindowsFormsApp1
 
         public void GenerarUbicacionNueva()
         {
+            Ubicaciones ubicacionNueva = new Ubicaciones();
+            ubicacionNueva.NombreEstacion = TxtNombreEstacion.Text;
+            ubicacionNueva.idUbicacion = 0;
+            ubicacionNueva.dir = domicilioControl1.RetornarDireccion();
 
+
+            ubicacion = ubicacionNueva;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,7 +112,7 @@ namespace WindowsFormsApp1
                 case " ":
                     break;
             }
-            textBox1.Visible = false;
+            TxtDistanciaRecorrida.Visible = false;
             label2.Visible = false;
         }
 
@@ -101,10 +137,16 @@ namespace WindowsFormsApp1
             EstructurasFunciones.CargarComboValores(CmbNumeroEstacion, Estaciones);
 
 
+            ElegirComboTipoEstacion();
         }
         public int ObtenerDatos()
         {
             return 1;
+        }
+
+        public  Ubicaciones retornarUbicacion()
+        {
+            return ubicacion;
         }
     }
 }
