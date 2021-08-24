@@ -73,6 +73,12 @@
     <Compile Include="ControlesFerroviario\DerechosPasoControl.Designer.cs">
       <DependentUpon>DerechosPasoControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlesGenerales\BotonesPersonasControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesGenerales\BotonesPersonasControl.Designer.cs">
+      <DependentUpon>BotonesPersonasControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlesGenerales\DomicilioControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,9 +159,16 @@
     </Compile>
     <Compile Include="Metodos.cs" />
     <Compile Include="Modelos\Catalogos.cs" />
+    <Compile Include="Modelos\ObjetoAutotransporte.cs" />
+    <Compile Include="Modelos\ObjetoAutoTransporteFederal.cs" />
+    <Compile Include="Modelos\ObjetoCarro.cs" />
+    <Compile Include="Modelos\ObjetoContenedorFerroviario.cs" />
+    <Compile Include="Modelos\ObjetoDerechosPaso.cs" />
     <Compile Include="Modelos\ObjetoDireccion.cs" />
     <Compile Include="Modelos\EstructurasFunciones.cs" />
+    <Compile Include="Modelos\ObjetoIdentificacionVehicular.cs" />
     <Compile Include="Modelos\ObjetoPersona.cs" />
+    <Compile Include="Modelos\ObjetoRemolque.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelos\Ubicaciones.cs" />
@@ -170,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlesFerroviario\DerechosPasoControl.resx">
       <DependentUpon>DerechosPasoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesGenerales\BotonesPersonasControl.resx">
+      <DependentUpon>BotonesPersonasControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlesGenerales\DomicilioControl.resx">
       <DependentUpon>DomicilioControl.cs</DependentUpon>

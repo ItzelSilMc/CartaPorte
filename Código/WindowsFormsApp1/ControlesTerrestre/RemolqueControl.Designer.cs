@@ -30,7 +30,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
         private void InitializeComponent()
         {
             this.GBRemolque = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtPlacaRemolque = new System.Windows.Forms.TextBox();
             this.CmbTipoRemolque = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
             // 
             // GBRemolque
             // 
-            this.GBRemolque.Controls.Add(this.textBox1);
+            this.GBRemolque.Controls.Add(this.TxtPlacaRemolque);
             this.GBRemolque.Controls.Add(this.CmbTipoRemolque);
             this.GBRemolque.Controls.Add(this.label2);
             this.GBRemolque.Controls.Add(this.label1);
@@ -49,12 +49,12 @@ namespace WindowsFormsApp1.ControlesTerrestre
             this.GBRemolque.TabIndex = 0;
             this.GBRemolque.TabStop = false;
             // 
-            // textBox1
+            // TxtPlacaRemolque
             // 
-            this.textBox1.Location = new System.Drawing.Point(160, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.TxtPlacaRemolque.Location = new System.Drawing.Point(160, 28);
+            this.TxtPlacaRemolque.Name = "TxtPlacaRemolque";
+            this.TxtPlacaRemolque.Size = new System.Drawing.Size(100, 20);
+            this.TxtPlacaRemolque.TabIndex = 3;
             // 
             // CmbTipoRemolque
             // 
@@ -98,7 +98,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
         #endregion
 
         private System.Windows.Forms.GroupBox GBRemolque;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtPlacaRemolque;
         private System.Windows.Forms.ComboBox CmbTipoRemolque;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

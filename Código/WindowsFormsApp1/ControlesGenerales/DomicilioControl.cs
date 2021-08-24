@@ -20,12 +20,32 @@ namespace WindowsFormsApp1
         }
 
 
-        public void CargarInformacionPrevia(Ubicaciones ubicacion)
+        public void CargarInformacionPrevia(ObjetoDireccion dir)
         {
-            TxtCalle.Text = ubicacion.dir.calle;
-            TxtCodigoPostal.Text = ubicacion.dir.CodigoPostal;
-            TxtNumeroExt.Text = ubicacion.dir.NumeroExterior;
-            TxtNumeroInt.Text = ubicacion.dir.NumeroInterior;
+            TxtCalle.Text = dir.calle;
+            TxtCodigoPostal.Text = dir.CodigoPostal;
+            TxtNumeroExt.Text = dir.NumeroExterior;
+            TxtNumeroInt.Text = dir.NumeroInterior;
+            TxtCodigoPostal.Text = dir.CodigoPostal;
+
+            if(!string.IsNullOrEmpty(dir.Pais))
+            {
+                CmbPais.SelectedValue = dir.Pais;
+            }
+            if(!string.IsNullOrEmpty(dir.Estado))
+            {
+                CmbEstado.SelectedValue = dir.Estado;
+            }
+            if(!string.IsNullOrEmpty(dir.Municipio))
+            {
+                CmbMunicipio.SelectedValue = dir.Municipio;
+            }
+            if(!string.IsNullOrEmpty(dir.Localidad))
+            {
+                CmbLocalidad.SelectedValue = dir.Localidad;
+            }
+            
+
 
 
         }
@@ -67,18 +87,20 @@ namespace WindowsFormsApp1
             EstructurasFunciones.CargarComboValores(CmbColonia, Colonias);
 
         }
-        public  ObjetoDireccion RetornarDireccion()
+        public  ObjetoDireccion ObtenerDireccion()
         {
+
+
             ObjetoDireccion dire = new ObjetoDireccion
             {
                 calle = TxtCalle.Text,
                 NumeroExterior = TxtNumeroExt.Text,
                 NumeroInterior = TxtNumeroInt.Text,
-                Estado = CmbEstado.Text,
+                Estado = CmbEstado.SelectedValue == null ? "": CmbEstado.SelectedValue.ToString(),
                 CodigoPostal = TxtCodigoPostal.Text,
-                Localidad = CmbLocalidad.Text,
-                Pais = CmbPais.Text,
-                Colonia = CmbColonia.Text,
+                Localidad =  CmbLocalidad.SelectedValue == null ? "" : CmbLocalidad.SelectedValue.ToString(),
+                Pais = CmbPais.SelectedValue == null ? "" : CmbPais.SelectedValue.ToString(),
+                Colonia =  CmbColonia.SelectedValue == null ? "" : CmbColonia.SelectedValue.ToString(),
 
 
             };

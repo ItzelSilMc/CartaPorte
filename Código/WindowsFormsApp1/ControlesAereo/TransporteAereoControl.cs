@@ -23,5 +23,14 @@ namespace WindowsFormsApp1.ControlesAereo
             EstructurasFunciones.CargarComboValores(CmbPermisoSCT, Permisos);
 
         }
+
+
+
+        public void CargarDatosPrevios()
+        {
+
+        }
+
+
     }
 }

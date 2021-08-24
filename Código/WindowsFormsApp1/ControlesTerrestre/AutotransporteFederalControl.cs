@@ -21,5 +21,26 @@ namespace WindowsFormsApp1.ControlesTerrestre
         {
             EstructurasFunciones.CargarComboValores(CmbPermisoSCT, Permisos);
         }
+
+        public ObjetoAutotransporte ObtenerAutotransporte()
+        {
+            ObjetoAutotransporte objAutoTransporte = new ObjetoAutotransporte();
+            objAutoTransporte.PermisoSCT = string.IsNullOrEmpty(CmbPermisoSCT.Text)? "": CmbPermisoSCT.SelectedValue.ToString()  ;
+            objAutoTransporte.NumPermisoSCT = TxtNumeroPermisoSCT.Text;
+            objAutoTransporte.NombreAseguradora = TxtNombreAseguradora.Text;
+            objAutoTransporte.NumPolizaSeguro = TxtNumeroPolizaSeguro.Text;
+            return objAutoTransporte;
+        }
+        public void CargarDatosPrevios(ObjetoAutotransporte objAuto)
+        {
+            if (!string.IsNullOrEmpty(objAuto.PermisoSCT))
+            {
+                CmbPermisoSCT.SelectedValue = objAuto.PermisoSCT;
+            }
+            TxtNumeroPermisoSCT.Text = objAuto.NumPermisoSCT;
+            TxtNombreAseguradora.Text = objAuto.NombreAseguradora;
+            TxtNumeroPolizaSeguro.Text = objAuto.NumPolizaSeguro;
+           
+        }
     }
 }

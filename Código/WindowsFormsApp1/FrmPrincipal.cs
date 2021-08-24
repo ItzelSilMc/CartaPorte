@@ -20,6 +20,9 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+        bool ExisteTransporteConfigurado = false;
+
+        ObjetoAutoTransporteFederal transporteTerrestre;
 
         List<Ubicaciones> ListaUbicaciones = new List<Ubicaciones>();
 
@@ -111,7 +114,7 @@ namespace WindowsFormsApp1
                
                 if (ubi.GuardadoCorrectamente)
                 {
-                    Ubicaciones ubicacionNueva = ubi.retornarUbicacion();
+                    Ubicaciones ubicacionNueva = ubi.ObtenerUbicacion();
 
 
                     //añadir al grid.
@@ -138,11 +141,24 @@ namespace WindowsFormsApp1
                 //02  Transporte Marítimo
                 //03  Transporte Aéreo
                 //04  Transporte Ferroviario
+
+                bool guardadoCorrectamente = false;
                 switch (CmbViaEntradaSalida.Text.Split('-')[0].Trim())
                 {
                     case "01":
                         FrmTransporteTerrestre tt = new FrmTransporteTerrestre();
+                        if(ExisteTransporteConfigurado)
+                        {
+                            tt.CargarDatosPrevios(transporteTerrestre);
+                        }
                         tt.ShowDialog();
+
+                        if (tt.GuardadoCorrectamente)
+                        {
+                            guardadoCorrectamente = true;
+                            transporteTerrestre = tt.ObtenerInfoTransporteTerreste();
+                            ExisteTransporteConfigurado = true;
+                        }
                         break;
 
                     case "02":
@@ -164,8 +180,11 @@ namespace WindowsFormsApp1
                         MessageBox.Show("No hay configuración para ese tipo de transporte", "Carta Porte", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                 }
-
-                BtnConfigurarTransporte.BackColor = Color.Cyan;
+                if (guardadoCorrectamente)
+                {
+                    BtnConfigurarTransporte.Text = BtnConfigurarTransporte.Text.Replace("Configurar", "Modificar");
+                    BtnConfigurarTransporte.BackColor = Color.Cyan;
+                }
             }
             else
             {

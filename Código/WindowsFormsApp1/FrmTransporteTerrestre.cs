@@ -1,30 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Modelos;
 using static WindowsFormsApp1.Modelos.EstructurasFunciones;
 
 namespace WindowsFormsApp1
 {
     public partial class FrmTransporteTerrestre : Form
     {
+
+
+        public  bool GuardadoCorrectamente = false;
+
+        ObjetoAutoTransporteFederal autoTransporteFederal = new ObjetoAutoTransporteFederal();
+
         public FrmTransporteTerrestre()
         {
             InitializeComponent();
-        }
 
-        private void FrmTransporteTerrestre_Load(object sender, EventArgs e)
-        {
             Dictionary<string, string> Permisos = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.TipoPermiso);
             Dictionary<string, string> ConfiguracionesVehiculares = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.ConfigAutoFederal);
             Dictionary<string, string> Remolques = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.TipoRemolque);
 
             CargarCombos(Permisos, ConfiguracionesVehiculares, Remolques);
+        }
+
+
+        private void FrmTransporteTerrestre_Load(object sender, EventArgs e)
+        {
+            
 
             
         }
@@ -35,6 +40,16 @@ namespace WindowsFormsApp1
             remolqueControl1.CargarComboTipoRemolque(Remolques);
         }
 
+        public void CargarDatosPrevios(ObjetoAutoTransporteFederal transporteFederal)
+        {
+            autotransporteFederalControl1.CargarDatosPrevios(transporteFederal.transporte);
+            identificacionVehicularControl1.CargarDatosPrevios(transporteFederal.identidicacion);
+            remolqueControl1.CargarDatosPrevios(transporteFederal.remolque);
+
+            botonesPersonasControl1.CargarDatosPrevios(transporteFederal.listaPersonas);
+
+        }
+
         private void BtnConfigurarOperador_Click(object sender, EventArgs e)
         {
             FrmPersona frmOperador = new FrmPersona();
@@ -42,39 +57,30 @@ namespace WindowsFormsApp1
             frmOperador.ShowDialog();
         }
 
-        private void BtnTransportista_Click(object sender, EventArgs e)
+      
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            FrmPersona FrmPer = new FrmPersona();
-            FrmPer.SetTipo(TipoPersona.Transportista);
-            FrmPer.ShowDialog();
-            BtnTransportista.BackColor = Color.Cyan;
+            autoTransporteFederal.identidicacion = identificacionVehicularControl1.ObtenerIdentificacionVehicular();
+            autoTransporteFederal.remolque = remolqueControl1.ObtenerRemolque();
+            autoTransporteFederal.transporte = autotransporteFederalControl1.ObtenerAutotransporte();
+            autoTransporteFederal.listaPersonas = botonesPersonasControl1.ObtenerPersonas();
+            GuardadoCorrectamente = true;
+
+            this.Close();
         }
 
-        private void BtnEmbarcador_Click(object sender, EventArgs e)
+        public ObjetoAutoTransporteFederal ObtenerInfoTransporteTerreste()
         {
-            FrmPersona FrmPer = new FrmPersona();
-            FrmPer.SetTipo(TipoPersona.Embarcador);
-            FrmPer.ShowDialog();
-
-            BtnEmbarcador.BackColor = Color.Cyan;
+            return autoTransporteFederal;
         }
 
-        private void BtnPropietario_Click(object sender, EventArgs e)
+        private void botonesPersonasControl1_Load(object sender, EventArgs e)
         {
-            FrmPersona FrmPer = new FrmPersona();
-            FrmPer.SetTipo(TipoPersona.Propietario);
-            FrmPer.ShowDialog();
 
-            BtnPropietario.BackColor = Color.Cyan;
         }
 
-        private void BtnArrendatario_Click(object sender, EventArgs e)
-        {
-            FrmPersona FrmPer = new FrmPersona();
-            FrmPer.SetTipo(TipoPersona.Arrendatario);
-            FrmPer.ShowDialog();
 
-            BtnArrendatario.BackColor = Color.Cyan;
-        }
+
     }
 }

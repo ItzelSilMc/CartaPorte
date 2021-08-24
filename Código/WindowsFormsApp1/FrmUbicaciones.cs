@@ -57,7 +57,7 @@ namespace WindowsFormsApp1
         }
         private void LlenarInformacionPrevia()
         {
-            domicilioControl1.CargarInformacionPrevia(ubicacion);
+            domicilioControl1.CargarInformacionPrevia(ubicacion.dir);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace WindowsFormsApp1
             Ubicaciones ubicacionNueva = new Ubicaciones();
             ubicacionNueva.NombreEstacion = TxtNombreEstacion.Text;
             ubicacionNueva.idUbicacion = 0;
-            ubicacionNueva.dir = domicilioControl1.RetornarDireccion();
+            ubicacionNueva.dir = domicilioControl1.ObtenerDireccion();
 
 
             ubicacion = ubicacionNueva;
@@ -144,7 +144,7 @@ namespace WindowsFormsApp1
             return 1;
         }
 
-        public  Ubicaciones retornarUbicacion()
+        public  Ubicaciones ObtenerUbicacion()
         {
             return ubicacion;
         }

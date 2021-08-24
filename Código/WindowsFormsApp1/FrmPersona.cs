@@ -14,13 +14,32 @@ namespace WindowsFormsApp1
 {
     public partial class FrmPersona : Form
     {
-
-        string Tipo = "";
-
         public bool GuardadoExitoso = false;
+        public string Tipo = "";
+
         public FrmPersona()
         {
             InitializeComponent();
+        }
+
+
+        public FrmPersona(ObjetoPersona Persona)
+        {
+            InitializeComponent();
+
+            LlenarInformacion(Persona);
+        }
+
+        private void LlenarInformacion(ObjetoPersona Persona)
+        {
+            domicilioControl1.CargarInformacionPrevia(Persona.objDireccion);
+
+            TxtRFC.Text = Persona.RFC;
+            TxtNombre.Text = Persona.Nombre;
+            TxtLicencia.Text = Persona.NumLicencia;
+            TxtNumeroIdentificacion.Text = Persona.NumRegistro;
+            TxtResidenciaFiscal.Text = Persona.ResidenciaFiscal;
+
         }
 
         public  void SetTipo(TipoPersona tipo)
@@ -76,17 +95,15 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        public ObjetoPersona RetornarInformacionPersona()
+        public ObjetoPersona ObtenerInformacionPersona()
         {
             ObjetoPersona objetoPersona = new ObjetoPersona();
-
-
-            objetoPersona.objDireccion = domicilioControl1.RetornarDireccion();
-
+            objetoPersona.objDireccion = domicilioControl1.ObtenerDireccion();
             objetoPersona.RFC = TxtRFC.Text;
             objetoPersona.Nombre = TxtNombre.Text;
             objetoPersona.NumLicencia = TxtLicencia.Text;
             objetoPersona.NumRegistro = TxtNumeroIdentificacion.Text;
+            objetoPersona.ResidenciaFiscal = TxtResidenciaFiscal.Text;
 
 
 

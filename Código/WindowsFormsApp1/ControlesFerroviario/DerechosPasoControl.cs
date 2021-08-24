@@ -22,5 +22,30 @@ namespace WindowsFormsApp1.ControlesFerroviario
         {
             EstructurasFunciones.CargarComboValores(CmbDerechosPaso, DerechosPaso);
         }
+
+        public ObjetoDerechosPaso ObtenerDerechosPaso()
+        {
+            ObjetoDerechosPaso odp = new ObjetoDerechosPaso
+            {
+                DerechosPaso = CmbDerechosPaso.SelectedValue == null ? "" : CmbDerechosPaso.SelectedValue.ToString(),
+                KilometrajePagado = decimal.TryParse(TxtKilometrajePagado.Text, out decimal valorConvertir) ? 0m : valorConvertir
+            };
+
+
+
+            return odp;
+        }
+
+        public void CargarValoresPrevios(ObjetoDerechosPaso objetoDerechosPaso)
+        {
+            if (!string.IsNullOrEmpty(objetoDerechosPaso.DerechosPaso))
+            {
+                CmbDerechosPaso.SelectedValue = objetoDerechosPaso.DerechosPaso;
+            }
+            if (objetoDerechosPaso.KilometrajePagado != 0m)
+            {
+                TxtKilometrajePagado.Text = objetoDerechosPaso.KilometrajePagado.ToString();
+            }
+        }
     }
 }

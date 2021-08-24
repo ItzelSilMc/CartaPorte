@@ -38,8 +38,8 @@ namespace WindowsFormsApp1
             this.label6 = new System.Windows.Forms.Label();
             this.CmbBienes = new System.Windows.Forms.ComboBox();
             this.CmbClaveSTCC = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtDescripcion = new System.Windows.Forms.TextBox();
+            this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.CmbClaveUnidad = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,15 +50,15 @@ namespace WindowsFormsApp1
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.CmbUnidad = new System.Windows.Forms.ComboBox();
             this.CmbMaterialPeligroso = new System.Windows.Forms.ComboBox();
             this.CmbClaveMaterialPeligroso = new System.Windows.Forms.ComboBox();
             this.CmbEmbalaje = new System.Windows.Forms.ComboBox();
             this.CmbFraccionArancelaria = new System.Windows.Forms.ComboBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.CmbMoneda = new System.Windows.Forms.ComboBox();
+            this.TxtDescripcionEmbalaje = new System.Windows.Forms.TextBox();
+            this.TxtPesoEnKG = new System.Windows.Forms.TextBox();
+            this.TxtValorMercancia = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,19 +141,19 @@ namespace WindowsFormsApp1
             this.CmbClaveSTCC.Size = new System.Drawing.Size(136, 21);
             this.CmbClaveSTCC.TabIndex = 7;
             // 
-            // textBox1
+            // TxtDescripcion
             // 
-            this.textBox1.Location = new System.Drawing.Point(319, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 20);
-            this.textBox1.TabIndex = 8;
+            this.TxtDescripcion.Location = new System.Drawing.Point(319, 76);
+            this.TxtDescripcion.Name = "TxtDescripcion";
+            this.TxtDescripcion.Size = new System.Drawing.Size(215, 20);
+            this.TxtDescripcion.TabIndex = 8;
             // 
-            // textBox2
+            // TxtCantidad
             // 
-            this.textBox2.Location = new System.Drawing.Point(552, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(46, 20);
-            this.textBox2.TabIndex = 9;
+            this.TxtCantidad.Location = new System.Drawing.Point(552, 77);
+            this.TxtCantidad.Name = "TxtCantidad";
+            this.TxtCantidad.Size = new System.Drawing.Size(46, 20);
+            this.TxtCantidad.TabIndex = 9;
             // 
             // CmbClaveUnidad
             // 
@@ -244,13 +244,13 @@ namespace WindowsFormsApp1
             this.label15.TabIndex = 19;
             this.label15.Text = "Moneda:";
             // 
-            // comboBox4
+            // CmbUnidad
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(16, 147);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(118, 21);
-            this.comboBox4.TabIndex = 20;
+            this.CmbUnidad.FormattingEnabled = true;
+            this.CmbUnidad.Location = new System.Drawing.Point(16, 147);
+            this.CmbUnidad.Name = "CmbUnidad";
+            this.CmbUnidad.Size = new System.Drawing.Size(118, 21);
+            this.CmbUnidad.TabIndex = 20;
             // 
             // CmbMaterialPeligroso
             // 
@@ -287,48 +287,48 @@ namespace WindowsFormsApp1
             this.CmbFraccionArancelaria.Size = new System.Drawing.Size(96, 21);
             this.CmbFraccionArancelaria.TabIndex = 24;
             // 
-            // comboBox9
+            // CmbMoneda
             // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(193, 254);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(119, 21);
-            this.comboBox9.TabIndex = 25;
+            this.CmbMoneda.FormattingEnabled = true;
+            this.CmbMoneda.Location = new System.Drawing.Point(193, 254);
+            this.CmbMoneda.Name = "CmbMoneda";
+            this.CmbMoneda.Size = new System.Drawing.Size(119, 21);
+            this.CmbMoneda.TabIndex = 25;
             // 
-            // textBox3
+            // TxtDescripcionEmbalaje
             // 
-            this.textBox3.Location = new System.Drawing.Point(154, 202);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 26;
+            this.TxtDescripcionEmbalaje.Location = new System.Drawing.Point(154, 202);
+            this.TxtDescripcionEmbalaje.Name = "TxtDescripcionEmbalaje";
+            this.TxtDescripcionEmbalaje.Size = new System.Drawing.Size(100, 20);
+            this.TxtDescripcionEmbalaje.TabIndex = 26;
             // 
-            // textBox4
+            // TxtPesoEnKG
             // 
-            this.textBox4.Location = new System.Drawing.Point(284, 201);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(78, 20);
-            this.textBox4.TabIndex = 27;
+            this.TxtPesoEnKG.Location = new System.Drawing.Point(284, 201);
+            this.TxtPesoEnKG.Name = "TxtPesoEnKG";
+            this.TxtPesoEnKG.Size = new System.Drawing.Size(78, 20);
+            this.TxtPesoEnKG.TabIndex = 27;
             // 
-            // textBox5
+            // TxtValorMercancia
             // 
-            this.textBox5.Location = new System.Drawing.Point(16, 254);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(153, 20);
-            this.textBox5.TabIndex = 28;
+            this.TxtValorMercancia.Location = new System.Drawing.Point(16, 254);
+            this.TxtValorMercancia.Name = "TxtValorMercancia";
+            this.TxtValorMercancia.Size = new System.Drawing.Size(153, 20);
+            this.TxtValorMercancia.TabIndex = 28;
             // 
             // MercanciaControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.comboBox9);
+            this.Controls.Add(this.TxtValorMercancia);
+            this.Controls.Add(this.TxtPesoEnKG);
+            this.Controls.Add(this.TxtDescripcionEmbalaje);
+            this.Controls.Add(this.CmbMoneda);
             this.Controls.Add(this.CmbFraccionArancelaria);
             this.Controls.Add(this.CmbEmbalaje);
             this.Controls.Add(this.CmbClaveMaterialPeligroso);
             this.Controls.Add(this.CmbMaterialPeligroso);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.CmbUnidad);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -339,8 +339,8 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.CmbClaveUnidad);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtCantidad);
+            this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.CmbClaveSTCC);
             this.Controls.Add(this.CmbBienes);
             this.Controls.Add(this.label6);
@@ -370,8 +370,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox CmbBienes;
         private System.Windows.Forms.ComboBox CmbClaveSTCC;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtDescripcion;
+        private System.Windows.Forms.TextBox TxtCantidad;
         private System.Windows.Forms.ComboBox CmbClaveUnidad;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -382,14 +382,14 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox CmbUnidad;
         private System.Windows.Forms.ComboBox CmbMaterialPeligroso;
         private System.Windows.Forms.ComboBox CmbClaveMaterialPeligroso;
         private System.Windows.Forms.ComboBox CmbEmbalaje;
         private System.Windows.Forms.ComboBox CmbFraccionArancelaria;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ComboBox CmbMoneda;
+        private System.Windows.Forms.TextBox TxtDescripcionEmbalaje;
+        private System.Windows.Forms.TextBox TxtPesoEnKG;
+        private System.Windows.Forms.TextBox TxtValorMercancia;
     }
 }

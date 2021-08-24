@@ -30,9 +30,9 @@ namespace WindowsFormsApp1.ControlesTerrestre
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtNumeroPolizaSeguro = new System.Windows.Forms.TextBox();
+            this.TxtNombreAseguradora = new System.Windows.Forms.TextBox();
+            this.TxtNumeroPermisoSCT = new System.Windows.Forms.TextBox();
             this.CmbPermisoSCT = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,9 +43,9 @@ namespace WindowsFormsApp1.ControlesTerrestre
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.TxtNumeroPolizaSeguro);
+            this.groupBox1.Controls.Add(this.TxtNombreAseguradora);
+            this.groupBox1.Controls.Add(this.TxtNumeroPermisoSCT);
             this.groupBox1.Controls.Add(this.CmbPermisoSCT);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -57,26 +57,26 @@ namespace WindowsFormsApp1.ControlesTerrestre
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // textBox3
+            // TxtNumeroPolizaSeguro
             // 
-            this.textBox3.Location = new System.Drawing.Point(487, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.TxtNumeroPolizaSeguro.Location = new System.Drawing.Point(487, 47);
+            this.TxtNumeroPolizaSeguro.Name = "TxtNumeroPolizaSeguro";
+            this.TxtNumeroPolizaSeguro.Size = new System.Drawing.Size(100, 20);
+            this.TxtNumeroPolizaSeguro.TabIndex = 7;
             // 
-            // textBox2
+            // TxtNombreAseguradora
             // 
-            this.textBox2.Location = new System.Drawing.Point(326, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(116, 20);
-            this.textBox2.TabIndex = 6;
+            this.TxtNombreAseguradora.Location = new System.Drawing.Point(326, 46);
+            this.TxtNombreAseguradora.Name = "TxtNombreAseguradora";
+            this.TxtNombreAseguradora.Size = new System.Drawing.Size(116, 20);
+            this.TxtNombreAseguradora.TabIndex = 6;
             // 
-            // textBox1
+            // TxtNumeroPermisoSCT
             // 
-            this.textBox1.Location = new System.Drawing.Point(174, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.TxtNumeroPermisoSCT.Location = new System.Drawing.Point(174, 46);
+            this.TxtNumeroPermisoSCT.Name = "TxtNumeroPermisoSCT";
+            this.TxtNumeroPermisoSCT.Size = new System.Drawing.Size(100, 20);
+            this.TxtNumeroPermisoSCT.TabIndex = 5;
             // 
             // CmbPermisoSCT
             // 
@@ -140,12 +140,12 @@ namespace WindowsFormsApp1.ControlesTerrestre
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtNumeroPermisoSCT;
         private System.Windows.Forms.ComboBox CmbPermisoSCT;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtNumeroPolizaSeguro;
+        private System.Windows.Forms.TextBox TxtNombreAseguradora;
     }
 }

@@ -40,22 +40,19 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.PnInformacion = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.contenedorFerroviarioControl1 = new WindowsFormsApp1.ControlesFerroviario.ContenedorFerroviarioControl();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.PnCarro = new System.Windows.Forms.Panel();
+            this.carroControlControl1 = new WindowsFormsApp1.ControlesFerroviario.CarroControlControl();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.PnDerechosPaso = new System.Windows.Forms.Panel();
+            this.derechosPasoControl1 = new WindowsFormsApp1.ControlesFerroviario.DerechosPasoControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.contenedorFerroviarioControl1 = new WindowsFormsApp1.ControlesFerroviario.ContenedorFerroviarioControl();
-            this.carroControlControl1 = new WindowsFormsApp1.ControlesFerroviario.CarroControlControl();
-            this.derechosPasoControl1 = new WindowsFormsApp1.ControlesFerroviario.DerechosPasoControl();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.BtnTransportista = new System.Windows.Forms.Button();
-            this.BtnEmbarcador = new System.Windows.Forms.Button();
-            this.BtnArrendatario = new System.Windows.Forms.Button();
-            this.BtnPropietario = new System.Windows.Forms.Button();
+            this.botonesPersonasControl1 = new WindowsFormsApp1.ControlesGenerales.BotonesPersonasControl();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.GBTransporteFerroviario.SuspendLayout();
             this.PnInformacion.SuspendLayout();
@@ -169,6 +166,13 @@ namespace WindowsFormsApp1
             this.panel2.Size = new System.Drawing.Size(603, 138);
             this.panel2.TabIndex = 2;
             // 
+            // contenedorFerroviarioControl1
+            // 
+            this.contenedorFerroviarioControl1.Location = new System.Drawing.Point(3, 44);
+            this.contenedorFerroviarioControl1.Name = "contenedorFerroviarioControl1";
+            this.contenedorFerroviarioControl1.Size = new System.Drawing.Size(499, 83);
+            this.contenedorFerroviarioControl1.TabIndex = 3;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -198,6 +202,13 @@ namespace WindowsFormsApp1
             this.PnCarro.Name = "PnCarro";
             this.PnCarro.Size = new System.Drawing.Size(603, 120);
             this.PnCarro.TabIndex = 1;
+            // 
+            // carroControlControl1
+            // 
+            this.carroControlControl1.Location = new System.Drawing.Point(3, 44);
+            this.carroControlControl1.Name = "carroControlControl1";
+            this.carroControlControl1.Size = new System.Drawing.Size(592, 68);
+            this.carroControlControl1.TabIndex = 2;
             // 
             // panel3
             // 
@@ -230,6 +241,13 @@ namespace WindowsFormsApp1
             this.PnDerechosPaso.Size = new System.Drawing.Size(603, 134);
             this.PnDerechosPaso.TabIndex = 0;
             // 
+            // derechosPasoControl1
+            // 
+            this.derechosPasoControl1.Location = new System.Drawing.Point(0, 44);
+            this.derechosPasoControl1.Name = "derechosPasoControl1";
+            this.derechosPasoControl1.Size = new System.Drawing.Size(364, 87);
+            this.derechosPasoControl1.TabIndex = 1;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -251,83 +269,24 @@ namespace WindowsFormsApp1
             this.label5.Text = "Derecho de paso";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // contenedorFerroviarioControl1
-            // 
-            this.contenedorFerroviarioControl1.Location = new System.Drawing.Point(3, 44);
-            this.contenedorFerroviarioControl1.Name = "contenedorFerroviarioControl1";
-            this.contenedorFerroviarioControl1.Size = new System.Drawing.Size(499, 83);
-            this.contenedorFerroviarioControl1.TabIndex = 3;
-            // 
-            // carroControlControl1
-            // 
-            this.carroControlControl1.Location = new System.Drawing.Point(3, 44);
-            this.carroControlControl1.Name = "carroControlControl1";
-            this.carroControlControl1.Size = new System.Drawing.Size(592, 68);
-            this.carroControlControl1.TabIndex = 2;
-            // 
-            // derechosPasoControl1
-            // 
-            this.derechosPasoControl1.Location = new System.Drawing.Point(0, 44);
-            this.derechosPasoControl1.Name = "derechosPasoControl1";
-            this.derechosPasoControl1.Size = new System.Drawing.Size(364, 87);
-            this.derechosPasoControl1.TabIndex = 1;
-            // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.botonesPersonasControl1);
             this.panel5.Controls.Add(this.BtnGuardar);
-            this.panel5.Controls.Add(this.BtnPropietario);
-            this.panel5.Controls.Add(this.BtnArrendatario);
-            this.panel5.Controls.Add(this.BtnEmbarcador);
-            this.panel5.Controls.Add(this.BtnTransportista);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(677, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(94, 574);
             this.panel5.TabIndex = 2;
             // 
-            // BtnTransportista
+            // botonesPersonasControl1
             // 
-            this.BtnTransportista.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnTransportista.Location = new System.Drawing.Point(0, 0);
-            this.BtnTransportista.Name = "BtnTransportista";
-            this.BtnTransportista.Size = new System.Drawing.Size(94, 50);
-            this.BtnTransportista.TabIndex = 0;
-            this.BtnTransportista.Text = "Añadir transportista";
-            this.BtnTransportista.UseVisualStyleBackColor = true;
-            this.BtnTransportista.Click += new System.EventHandler(this.BtnTransportista_Click);
-            // 
-            // BtnEmbarcador
-            // 
-            this.BtnEmbarcador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnEmbarcador.Location = new System.Drawing.Point(0, 50);
-            this.BtnEmbarcador.Name = "BtnEmbarcador";
-            this.BtnEmbarcador.Size = new System.Drawing.Size(94, 50);
-            this.BtnEmbarcador.TabIndex = 1;
-            this.BtnEmbarcador.Text = "Añadir embarcador";
-            this.BtnEmbarcador.UseVisualStyleBackColor = true;
-            this.BtnEmbarcador.Click += new System.EventHandler(this.BtnEmbarcador_Click);
-            // 
-            // BtnArrendatario
-            // 
-            this.BtnArrendatario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnArrendatario.Location = new System.Drawing.Point(0, 100);
-            this.BtnArrendatario.Name = "BtnArrendatario";
-            this.BtnArrendatario.Size = new System.Drawing.Size(94, 50);
-            this.BtnArrendatario.TabIndex = 2;
-            this.BtnArrendatario.Text = "Añadir embarcador";
-            this.BtnArrendatario.UseVisualStyleBackColor = true;
-            this.BtnArrendatario.Click += new System.EventHandler(this.BtnArrendatario_Click);
-            // 
-            // BtnPropietario
-            // 
-            this.BtnPropietario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnPropietario.Location = new System.Drawing.Point(0, 150);
-            this.BtnPropietario.Name = "BtnPropietario";
-            this.BtnPropietario.Size = new System.Drawing.Size(94, 50);
-            this.BtnPropietario.TabIndex = 3;
-            this.BtnPropietario.Text = "Añadir propietario";
-            this.BtnPropietario.UseVisualStyleBackColor = true;
-            this.BtnPropietario.Click += new System.EventHandler(this.BtnPropietario_Click);
+            this.botonesPersonasControl1.AutoSize = true;
+            this.botonesPersonasControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.botonesPersonasControl1.Location = new System.Drawing.Point(0, 0);
+            this.botonesPersonasControl1.Name = "botonesPersonasControl1";
+            this.botonesPersonasControl1.Size = new System.Drawing.Size(94, 244);
+            this.botonesPersonasControl1.TabIndex = 5;
             // 
             // BtnGuardar
             // 
@@ -338,6 +297,7 @@ namespace WindowsFormsApp1
             this.BtnGuardar.TabIndex = 4;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // FrmTransporteFerroviario
             // 
@@ -362,6 +322,7 @@ namespace WindowsFormsApp1
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -391,10 +352,7 @@ namespace WindowsFormsApp1
         private ControlesFerroviario.CarroControlControl carroControlControl1;
         private ControlesFerroviario.ContenedorFerroviarioControl contenedorFerroviarioControl1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button BtnTransportista;
-        private System.Windows.Forms.Button BtnEmbarcador;
-        private System.Windows.Forms.Button BtnPropietario;
-        private System.Windows.Forms.Button BtnArrendatario;
         private System.Windows.Forms.Button BtnGuardar;
+        private ControlesGenerales.BotonesPersonasControl botonesPersonasControl1;
     }
 }

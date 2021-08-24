@@ -19,6 +19,7 @@ C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ControlesFerroviario.CarroControlControl.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ControlesFerroviario.ContenedorFerroviarioControl.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ControlesFerroviario.DerechosPasoControl.resources
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ControlesGenerales.BotonesPersonasControl.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.DomicilioControl.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ControlesTerrestre.AutotransporteFederalControl.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ControlesTerrestre.IdentificacionVehicularControl.resources

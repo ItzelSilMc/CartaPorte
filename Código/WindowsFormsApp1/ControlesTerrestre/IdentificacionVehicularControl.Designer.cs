@@ -30,8 +30,8 @@ namespace WindowsFormsApp1.ControlesTerrestre
         private void InitializeComponent()
         {
             this.GBIdentificacion = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtAñoModelo = new System.Windows.Forms.TextBox();
+            this.TxtPlacaVehicular = new System.Windows.Forms.TextBox();
             this.CmbConfigVehicular = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,8 +41,8 @@ namespace WindowsFormsApp1.ControlesTerrestre
             // 
             // GBIdentificacion
             // 
-            this.GBIdentificacion.Controls.Add(this.textBox2);
-            this.GBIdentificacion.Controls.Add(this.textBox1);
+            this.GBIdentificacion.Controls.Add(this.TxtAñoModelo);
+            this.GBIdentificacion.Controls.Add(this.TxtPlacaVehicular);
             this.GBIdentificacion.Controls.Add(this.CmbConfigVehicular);
             this.GBIdentificacion.Controls.Add(this.label3);
             this.GBIdentificacion.Controls.Add(this.label2);
@@ -53,19 +53,19 @@ namespace WindowsFormsApp1.ControlesTerrestre
             this.GBIdentificacion.TabIndex = 0;
             this.GBIdentificacion.TabStop = false;
             // 
-            // textBox2
+            // TxtAñoModelo
             // 
-            this.textBox2.Location = new System.Drawing.Point(337, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.TxtAñoModelo.Location = new System.Drawing.Point(337, 45);
+            this.TxtAñoModelo.Name = "TxtAñoModelo";
+            this.TxtAñoModelo.Size = new System.Drawing.Size(100, 20);
+            this.TxtAñoModelo.TabIndex = 5;
             // 
-            // textBox1
+            // TxtPlacaVehicular
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.TxtPlacaVehicular.Location = new System.Drawing.Point(188, 45);
+            this.TxtPlacaVehicular.Name = "TxtPlacaVehicular";
+            this.TxtPlacaVehicular.Size = new System.Drawing.Size(100, 20);
+            this.TxtPlacaVehicular.TabIndex = 4;
             // 
             // CmbConfigVehicular
             // 
@@ -118,8 +118,8 @@ namespace WindowsFormsApp1.ControlesTerrestre
         #endregion
 
         private System.Windows.Forms.GroupBox GBIdentificacion;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtAñoModelo;
+        private System.Windows.Forms.TextBox TxtPlacaVehicular;
         private System.Windows.Forms.ComboBox CmbConfigVehicular;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

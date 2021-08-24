@@ -72,10 +72,7 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.PnBotones = new System.Windows.Forms.Panel();
             this.BtnGuardar = new System.Windows.Forms.Button();
-            this.BtnPropietario = new System.Windows.Forms.Button();
-            this.BtnArrendatario = new System.Windows.Forms.Button();
-            this.BtnEmbarcador = new System.Windows.Forms.Button();
-            this.BtnTransportista = new System.Windows.Forms.Button();
+            this.botonesPersonasControl1 = new WindowsFormsApp1.ControlesGenerales.BotonesPersonasControl();
             this.GbTransporteMaritimo.SuspendLayout();
             this.PnBotones.SuspendLayout();
             this.SuspendLayout();
@@ -456,11 +453,8 @@ namespace WindowsFormsApp1
             // 
             // PnBotones
             // 
+            this.PnBotones.Controls.Add(this.botonesPersonasControl1);
             this.PnBotones.Controls.Add(this.BtnGuardar);
-            this.PnBotones.Controls.Add(this.BtnPropietario);
-            this.PnBotones.Controls.Add(this.BtnArrendatario);
-            this.PnBotones.Controls.Add(this.BtnEmbarcador);
-            this.PnBotones.Controls.Add(this.BtnTransportista);
             this.PnBotones.Dock = System.Windows.Forms.DockStyle.Right;
             this.PnBotones.Location = new System.Drawing.Point(732, 0);
             this.PnBotones.Name = "PnBotones";
@@ -477,49 +471,14 @@ namespace WindowsFormsApp1
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
             // 
-            // BtnPropietario
+            // botonesPersonasControl1
             // 
-            this.BtnPropietario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnPropietario.Location = new System.Drawing.Point(0, 150);
-            this.BtnPropietario.Name = "BtnPropietario";
-            this.BtnPropietario.Size = new System.Drawing.Size(89, 50);
-            this.BtnPropietario.TabIndex = 3;
-            this.BtnPropietario.Text = "Añadir propietario";
-            this.BtnPropietario.UseVisualStyleBackColor = true;
-            this.BtnPropietario.Click += new System.EventHandler(this.BtnPropietario_Click);
-            // 
-            // BtnArrendatario
-            // 
-            this.BtnArrendatario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnArrendatario.Location = new System.Drawing.Point(0, 100);
-            this.BtnArrendatario.Name = "BtnArrendatario";
-            this.BtnArrendatario.Size = new System.Drawing.Size(89, 50);
-            this.BtnArrendatario.TabIndex = 2;
-            this.BtnArrendatario.Text = "Añadir arrendatario";
-            this.BtnArrendatario.UseVisualStyleBackColor = true;
-            this.BtnArrendatario.Click += new System.EventHandler(this.BtnArrendatario_Click);
-            // 
-            // BtnEmbarcador
-            // 
-            this.BtnEmbarcador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnEmbarcador.Location = new System.Drawing.Point(0, 50);
-            this.BtnEmbarcador.Name = "BtnEmbarcador";
-            this.BtnEmbarcador.Size = new System.Drawing.Size(89, 50);
-            this.BtnEmbarcador.TabIndex = 1;
-            this.BtnEmbarcador.Text = "Añadir embarcador";
-            this.BtnEmbarcador.UseVisualStyleBackColor = true;
-            this.BtnEmbarcador.Click += new System.EventHandler(this.BtnEmbarcador_Click);
-            // 
-            // BtnTransportista
-            // 
-            this.BtnTransportista.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnTransportista.Location = new System.Drawing.Point(0, 0);
-            this.BtnTransportista.Name = "BtnTransportista";
-            this.BtnTransportista.Size = new System.Drawing.Size(89, 50);
-            this.BtnTransportista.TabIndex = 0;
-            this.BtnTransportista.Text = "Añadir transportista";
-            this.BtnTransportista.UseVisualStyleBackColor = true;
-            this.BtnTransportista.Click += new System.EventHandler(this.BtnTransportista_Click);
+            this.botonesPersonasControl1.AutoSize = true;
+            this.botonesPersonasControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.botonesPersonasControl1.Location = new System.Drawing.Point(0, 0);
+            this.botonesPersonasControl1.Name = "botonesPersonasControl1";
+            this.botonesPersonasControl1.Size = new System.Drawing.Size(89, 244);
+            this.botonesPersonasControl1.TabIndex = 5;
             // 
             // FrmTransporteMaritimo
             // 
@@ -533,6 +492,7 @@ namespace WindowsFormsApp1
             this.GbTransporteMaritimo.ResumeLayout(false);
             this.GbTransporteMaritimo.PerformLayout();
             this.PnBotones.ResumeLayout(false);
+            this.PnBotones.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -582,9 +542,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel PnBotones;
         private System.Windows.Forms.Button BtnGuardar;
-        private System.Windows.Forms.Button BtnPropietario;
-        private System.Windows.Forms.Button BtnArrendatario;
-        private System.Windows.Forms.Button BtnEmbarcador;
-        private System.Windows.Forms.Button BtnTransportista;
+        private ControlesGenerales.BotonesPersonasControl botonesPersonasControl1;
     }
 }

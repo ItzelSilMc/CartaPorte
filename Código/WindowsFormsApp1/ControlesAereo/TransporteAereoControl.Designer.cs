@@ -37,12 +37,12 @@ namespace WindowsFormsApp1.ControlesAereo
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.CmbPermisoSCT = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TxtNumerpPermosoSCT = new System.Windows.Forms.TextBox();
+            this.TxtMatricula = new System.Windows.Forms.TextBox();
+            this.TxtNombreAseguradora = new System.Windows.Forms.TextBox();
+            this.TxtNumeroPolizaSeguro = new System.Windows.Forms.TextBox();
+            this.TxtNumeroGuia = new System.Windows.Forms.TextBox();
+            this.TxtLugarContrato = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -116,58 +116,58 @@ namespace WindowsFormsApp1.ControlesAereo
             this.CmbPermisoSCT.Size = new System.Drawing.Size(121, 21);
             this.CmbPermisoSCT.TabIndex = 7;
             // 
-            // textBox1
+            // TxtNumerpPermosoSCT
             // 
-            this.textBox1.Location = new System.Drawing.Point(187, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
+            this.TxtNumerpPermosoSCT.Location = new System.Drawing.Point(187, 35);
+            this.TxtNumerpPermosoSCT.Name = "TxtNumerpPermosoSCT";
+            this.TxtNumerpPermosoSCT.Size = new System.Drawing.Size(100, 20);
+            this.TxtNumerpPermosoSCT.TabIndex = 8;
             // 
-            // textBox2
+            // TxtMatricula
             // 
-            this.textBox2.Location = new System.Drawing.Point(352, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 9;
+            this.TxtMatricula.Location = new System.Drawing.Point(352, 36);
+            this.TxtMatricula.Name = "TxtMatricula";
+            this.TxtMatricula.Size = new System.Drawing.Size(100, 20);
+            this.TxtMatricula.TabIndex = 9;
             // 
-            // textBox3
+            // TxtNombreAseguradora
             // 
-            this.textBox3.Location = new System.Drawing.Point(18, 98);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 10;
+            this.TxtNombreAseguradora.Location = new System.Drawing.Point(18, 98);
+            this.TxtNombreAseguradora.Name = "TxtNombreAseguradora";
+            this.TxtNombreAseguradora.Size = new System.Drawing.Size(100, 20);
+            this.TxtNombreAseguradora.TabIndex = 10;
             // 
-            // textBox4
+            // TxtNumeroPolizaSeguro
             // 
-            this.textBox4.Location = new System.Drawing.Point(182, 98);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 11;
+            this.TxtNumeroPolizaSeguro.Location = new System.Drawing.Point(182, 98);
+            this.TxtNumeroPolizaSeguro.Name = "TxtNumeroPolizaSeguro";
+            this.TxtNumeroPolizaSeguro.Size = new System.Drawing.Size(100, 20);
+            this.TxtNumeroPolizaSeguro.TabIndex = 11;
             // 
-            // textBox5
+            // TxtNumeroGuia
             // 
-            this.textBox5.Location = new System.Drawing.Point(352, 98);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 12;
+            this.TxtNumeroGuia.Location = new System.Drawing.Point(352, 98);
+            this.TxtNumeroGuia.Name = "TxtNumeroGuia";
+            this.TxtNumeroGuia.Size = new System.Drawing.Size(100, 20);
+            this.TxtNumeroGuia.TabIndex = 12;
             // 
-            // textBox6
+            // TxtLugarContrato
             // 
-            this.textBox6.Location = new System.Drawing.Point(18, 164);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 13;
+            this.TxtLugarContrato.Location = new System.Drawing.Point(18, 164);
+            this.TxtLugarContrato.Name = "TxtLugarContrato";
+            this.TxtLugarContrato.Size = new System.Drawing.Size(100, 20);
+            this.TxtLugarContrato.TabIndex = 13;
             // 
             // TransporteAereoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtLugarContrato);
+            this.Controls.Add(this.TxtNumeroGuia);
+            this.Controls.Add(this.TxtNumeroPolizaSeguro);
+            this.Controls.Add(this.TxtNombreAseguradora);
+            this.Controls.Add(this.TxtMatricula);
+            this.Controls.Add(this.TxtNumerpPermosoSCT);
             this.Controls.Add(this.CmbPermisoSCT);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -193,11 +193,11 @@ namespace WindowsFormsApp1.ControlesAereo
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox CmbPermisoSCT;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TxtNumerpPermosoSCT;
+        private System.Windows.Forms.TextBox TxtMatricula;
+        private System.Windows.Forms.TextBox TxtNombreAseguradora;
+        private System.Windows.Forms.TextBox TxtNumeroPolizaSeguro;
+        private System.Windows.Forms.TextBox TxtNumeroGuia;
+        private System.Windows.Forms.TextBox TxtLugarContrato;
     }
 }

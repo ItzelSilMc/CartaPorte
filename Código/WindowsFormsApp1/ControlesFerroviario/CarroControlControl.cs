@@ -38,7 +38,33 @@ namespace WindowsFormsApp1.ControlesFerroviario
         {
            
         }
-    }
 
-    
+        public void CargarDatosPrevios(ObjetoCarro carro)
+        {
+            CmbTipoCarro.SelectedValue = string.IsNullOrEmpty(carro.TipoCarro) ? "" : carro.TipoCarro;
+
+            TxtMatriculaCarro.Text = carro.Matricula;
+            TxtGuiaCarro.Text = carro.GuiaCarro;
+            if (carro.ToneladasNetoCarro != 0m)
+            {
+                TxtToneladasNetoCarro.Text = carro.ToneladasNetoCarro.ToString();
+            }
+
+        }
+
+        public ObjetoCarro ObtenerCarro()
+        {
+            ObjetoCarro carro = new ObjetoCarro();
+
+            carro.TipoCarro = CmbTipoCarro.SelectedValue == null ? "" : CmbTipoCarro.SelectedValue.ToString();
+            carro.Matricula = TxtMatriculaCarro.Text;
+            carro.GuiaCarro = TxtGuiaCarro.Text;
+
+            carro.ToneladasNetoCarro = decimal.TryParse(TxtToneladasNetoCarro.Text, out decimal result) ? 0m : result;
+
+            return carro;
+
+        }
+
+    }
 }

@@ -30,7 +30,7 @@ namespace WindowsFormsApp1.ControlesFerroviario
         private void InitializeComponent()
         {
             this.GBDerechoPaso = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtKilometrajePagado = new System.Windows.Forms.TextBox();
             this.CmbDerechosPaso = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@ namespace WindowsFormsApp1.ControlesFerroviario
             // 
             // GBDerechoPaso
             // 
-            this.GBDerechoPaso.Controls.Add(this.textBox1);
+            this.GBDerechoPaso.Controls.Add(this.TxtKilometrajePagado);
             this.GBDerechoPaso.Controls.Add(this.CmbDerechosPaso);
             this.GBDerechoPaso.Controls.Add(this.label2);
             this.GBDerechoPaso.Controls.Add(this.label1);
@@ -49,12 +49,12 @@ namespace WindowsFormsApp1.ControlesFerroviario
             this.GBDerechoPaso.TabIndex = 0;
             this.GBDerechoPaso.TabStop = false;
             // 
-            // textBox1
+            // TxtKilometrajePagado
             // 
-            this.textBox1.Location = new System.Drawing.Point(194, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.TxtKilometrajePagado.Location = new System.Drawing.Point(194, 37);
+            this.TxtKilometrajePagado.Name = "TxtKilometrajePagado";
+            this.TxtKilometrajePagado.Size = new System.Drawing.Size(100, 20);
+            this.TxtKilometrajePagado.TabIndex = 3;
             // 
             // CmbDerechosPaso
             // 
@@ -98,7 +98,7 @@ namespace WindowsFormsApp1.ControlesFerroviario
         #endregion
 
         private System.Windows.Forms.GroupBox GBDerechoPaso;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtKilometrajePagado;
         private System.Windows.Forms.ComboBox CmbDerechosPaso;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

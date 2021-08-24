@@ -30,8 +30,8 @@ namespace WindowsFormsApp1.ControlesFerroviario
         private void InitializeComponent()
         {
             this.GBContenedor = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtPesoNetoMercancia = new System.Windows.Forms.TextBox();
+            this.TxtPesoContenedorVacio = new System.Windows.Forms.TextBox();
             this.CmbTipoContenedor = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,8 +41,8 @@ namespace WindowsFormsApp1.ControlesFerroviario
             // 
             // GBContenedor
             // 
-            this.GBContenedor.Controls.Add(this.textBox2);
-            this.GBContenedor.Controls.Add(this.textBox1);
+            this.GBContenedor.Controls.Add(this.TxtPesoNetoMercancia);
+            this.GBContenedor.Controls.Add(this.TxtPesoContenedorVacio);
             this.GBContenedor.Controls.Add(this.CmbTipoContenedor);
             this.GBContenedor.Controls.Add(this.label3);
             this.GBContenedor.Controls.Add(this.label2);
@@ -53,19 +53,19 @@ namespace WindowsFormsApp1.ControlesFerroviario
             this.GBContenedor.TabIndex = 0;
             this.GBContenedor.TabStop = false;
             // 
-            // textBox2
+            // TxtPesoNetoMercancia
             // 
-            this.textBox2.Location = new System.Drawing.Point(363, 49);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.TxtPesoNetoMercancia.Location = new System.Drawing.Point(363, 49);
+            this.TxtPesoNetoMercancia.Name = "TxtPesoNetoMercancia";
+            this.TxtPesoNetoMercancia.Size = new System.Drawing.Size(100, 20);
+            this.TxtPesoNetoMercancia.TabIndex = 5;
             // 
-            // textBox1
+            // TxtPesoContenedorVacio
             // 
-            this.textBox1.Location = new System.Drawing.Point(200, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.TxtPesoContenedorVacio.Location = new System.Drawing.Point(200, 49);
+            this.TxtPesoContenedorVacio.Name = "TxtPesoContenedorVacio";
+            this.TxtPesoContenedorVacio.Size = new System.Drawing.Size(100, 20);
+            this.TxtPesoContenedorVacio.TabIndex = 4;
             // 
             // CmbTipoContenedor
             // 
@@ -118,8 +118,8 @@ namespace WindowsFormsApp1.ControlesFerroviario
         #endregion
 
         private System.Windows.Forms.GroupBox GBContenedor;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtPesoNetoMercancia;
+        private System.Windows.Forms.TextBox TxtPesoContenedorVacio;
         private System.Windows.Forms.ComboBox CmbTipoContenedor;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

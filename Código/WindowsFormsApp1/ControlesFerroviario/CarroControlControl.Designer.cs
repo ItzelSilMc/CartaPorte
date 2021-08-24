@@ -30,9 +30,9 @@ namespace WindowsFormsApp1.ControlesFerroviario
         private void InitializeComponent()
         {
             this.GBCarro = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtToneladasNetoCarro = new System.Windows.Forms.TextBox();
+            this.TxtGuiaCarro = new System.Windows.Forms.TextBox();
+            this.TxtMatriculaCarro = new System.Windows.Forms.TextBox();
             this.CmbTipoCarro = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,9 +44,9 @@ namespace WindowsFormsApp1.ControlesFerroviario
             // 
             // GBCarro
             // 
-            this.GBCarro.Controls.Add(this.textBox3);
-            this.GBCarro.Controls.Add(this.textBox2);
-            this.GBCarro.Controls.Add(this.textBox1);
+            this.GBCarro.Controls.Add(this.TxtToneladasNetoCarro);
+            this.GBCarro.Controls.Add(this.TxtGuiaCarro);
+            this.GBCarro.Controls.Add(this.TxtMatriculaCarro);
             this.GBCarro.Controls.Add(this.CmbTipoCarro);
             this.GBCarro.Controls.Add(this.label4);
             this.GBCarro.Controls.Add(this.label3);
@@ -58,26 +58,26 @@ namespace WindowsFormsApp1.ControlesFerroviario
             this.GBCarro.TabIndex = 0;
             this.GBCarro.TabStop = false;
             // 
-            // textBox3
+            // TxtToneladasNetoCarro
             // 
-            this.textBox3.Location = new System.Drawing.Point(439, 32);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.TxtToneladasNetoCarro.Location = new System.Drawing.Point(439, 32);
+            this.TxtToneladasNetoCarro.Name = "TxtToneladasNetoCarro";
+            this.TxtToneladasNetoCarro.Size = new System.Drawing.Size(100, 20);
+            this.TxtToneladasNetoCarro.TabIndex = 7;
             // 
-            // textBox2
+            // TxtGuiaCarro
             // 
-            this.textBox2.Location = new System.Drawing.Point(313, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.TxtGuiaCarro.Location = new System.Drawing.Point(313, 32);
+            this.TxtGuiaCarro.Name = "TxtGuiaCarro";
+            this.TxtGuiaCarro.Size = new System.Drawing.Size(100, 20);
+            this.TxtGuiaCarro.TabIndex = 6;
             // 
-            // textBox1
+            // TxtMatriculaCarro
             // 
-            this.textBox1.Location = new System.Drawing.Point(194, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.TxtMatriculaCarro.Location = new System.Drawing.Point(194, 31);
+            this.TxtMatriculaCarro.Name = "TxtMatriculaCarro";
+            this.TxtMatriculaCarro.Size = new System.Drawing.Size(100, 20);
+            this.TxtMatriculaCarro.TabIndex = 5;
             // 
             // CmbTipoCarro
             // 
@@ -110,9 +110,9 @@ namespace WindowsFormsApp1.ControlesFerroviario
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(191, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Tipo carro:";
+            this.label2.Text = "Matricula carro:";
             // 
             // label1
             // 
@@ -149,14 +149,14 @@ namespace WindowsFormsApp1.ControlesFerroviario
         #endregion
 
         private System.Windows.Forms.GroupBox GBCarro;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtMatriculaCarro;
         private System.Windows.Forms.ComboBox CmbTipoCarro;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtToneladasNetoCarro;
+        private System.Windows.Forms.TextBox TxtGuiaCarro;
         private System.Windows.Forms.Label label5;
     }
 }

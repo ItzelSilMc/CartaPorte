@@ -21,5 +21,29 @@ namespace WindowsFormsApp1.ControlesTerrestre
         {
             EstructurasFunciones.CargarComboValores(CmbConfigVehicular, ConfiguracionesVehiculares);
         }
+
+        public ObjetoIdentificacionVehicular ObtenerIdentificacionVehicular()
+        {
+            ObjetoIdentificacionVehicular objetoIdentificacion = new ObjetoIdentificacionVehicular
+            {
+                ConfiguracionVehicular = string.IsNullOrEmpty(CmbConfigVehicular.Text) ? "" : CmbConfigVehicular.SelectedValue.ToString(),
+                PlacaVehiculo = TxtPlacaVehicular.Text,
+                AñoModelo = TxtAñoModelo.Text
+            };
+
+            return objetoIdentificacion;
+        }
+
+
+        public void CargarDatosPrevios(ObjetoIdentificacionVehicular identificacion)
+        {
+            if (!string.IsNullOrEmpty(identificacion.ConfiguracionVehicular))
+            {
+                CmbConfigVehicular.SelectedValue = identificacion.ConfiguracionVehicular;
+            }
+            TxtAñoModelo.Text = identificacion.AñoModelo;
+            TxtPlacaVehicular.Text = identificacion.PlacaVehiculo;
+            
+        }
     }
 }

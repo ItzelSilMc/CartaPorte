@@ -22,5 +22,28 @@ namespace WindowsFormsApp1.ControlesTerrestre
         {
             EstructurasFunciones.CargarComboValores(CmbTipoRemolque, Remolques);
         }
+
+        public ObjetoRemolque ObtenerRemolque()
+        {
+            ObjetoRemolque objRemolque = new ObjetoRemolque
+            {
+                SubtipoRemolque = string.IsNullOrEmpty(CmbTipoRemolque.Text) ? "" : CmbTipoRemolque.SelectedValue.ToString(),
+                PlacaRemolque = TxtPlacaRemolque.Text
+            };
+
+            return objRemolque;
+        }
+
+        public void CargarDatosPrevios(ObjetoRemolque remolque)
+        {
+            if (!string.IsNullOrEmpty(remolque.SubtipoRemolque))
+            {
+                CmbTipoRemolque.SelectedValue = remolque.SubtipoRemolque;
+                TxtPlacaRemolque.Text = remolque.PlacaRemolque;
+
+            }
+
+
+        }
     }
 }
