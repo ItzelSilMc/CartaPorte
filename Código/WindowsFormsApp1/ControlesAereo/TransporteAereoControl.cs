@@ -20,7 +20,7 @@ namespace WindowsFormsApp1.ControlesAereo
 
         public void CargarComboPermisos(Dictionary<string, string> Permisos)
         {
-            EstructurasFunciones.CargarComboValores(CmbPermisoSCT, Permisos);
+            Metodos.CargarComboValores(CmbPermisoSCT, Permisos);
 
         }
 

@@ -8,6 +8,14 @@ namespace WindowsFormsApp1.Modelos
 {
     public class ObjetoIdentificacionVehicular
     {
-        public string ConfiguracionVehicular, PlacaVehiculo, AñoModelo;
+        public string ConfiguracionVehicular, PlacaVehiculo;
+        public int AñoModelo;
+
+        public override string ToString()
+        {
+            return "'" + ConfiguracionVehicular + "','" + PlacaVehiculo + "'," + AñoModelo;
+        }
+
+
     }
 }

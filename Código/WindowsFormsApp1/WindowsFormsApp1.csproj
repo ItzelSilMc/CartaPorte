@@ -159,16 +159,21 @@
     </Compile>
     <Compile Include="Metodos.cs" />
     <Compile Include="Modelos\Catalogos.cs" />
+    <Compile Include="Modelos\ObjetoAereo.cs" />
     <Compile Include="Modelos\ObjetoAutotransporte.cs" />
     <Compile Include="Modelos\ObjetoAutoTransporteFederal.cs" />
     <Compile Include="Modelos\ObjetoCarro.cs" />
+    <Compile Include="Modelos\ObjetoCartePorte.cs" />
     <Compile Include="Modelos\ObjetoContenedorFerroviario.cs" />
+    <Compile Include="Modelos\ObjetoContenedorMaritimo.cs" />
     <Compile Include="Modelos\ObjetoDerechosPaso.cs" />
     <Compile Include="Modelos\ObjetoDireccion.cs" />
-    <Compile Include="Modelos\EstructurasFunciones.cs" />
+    <Compile Include="Modelos\EstructurasEnums.cs" />
     <Compile Include="Modelos\ObjetoIdentificacionVehicular.cs" />
+    <Compile Include="Modelos\ObjetoMaritimo.cs" />
     <Compile Include="Modelos\ObjetoPersona.cs" />
     <Compile Include="Modelos\ObjetoRemolque.cs" />
+    <Compile Include="Modelos\ObjetoTransporteFerroviario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelos\Ubicaciones.cs" />

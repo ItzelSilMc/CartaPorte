@@ -19,7 +19,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
         }
         public void CargarComboPermisoSCT(Dictionary<string, string> Permisos)
         {
-            EstructurasFunciones.CargarComboValores(CmbPermisoSCT, Permisos);
+            Metodos.CargarComboValores(CmbPermisoSCT, Permisos);
         }
 
         public ObjetoAutotransporte ObtenerAutotransporte()

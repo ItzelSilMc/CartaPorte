@@ -19,7 +19,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
         }
         public void CargarComboConfigVehicular(Dictionary<string, string> ConfiguracionesVehiculares)
         {
-            EstructurasFunciones.CargarComboValores(CmbConfigVehicular, ConfiguracionesVehiculares);
+            Metodos.CargarComboValores(CmbConfigVehicular, ConfiguracionesVehiculares);
         }
 
         public ObjetoIdentificacionVehicular ObtenerIdentificacionVehicular()
@@ -28,7 +28,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
             {
                 ConfiguracionVehicular = string.IsNullOrEmpty(CmbConfigVehicular.Text) ? "" : CmbConfigVehicular.SelectedValue.ToString(),
                 PlacaVehiculo = TxtPlacaVehicular.Text,
-                AñoModelo = TxtAñoModelo.Text
+                AñoModelo = int.Parse(TxtAñoModelo.Text)
             };
 
             return objetoIdentificacion;
@@ -41,7 +41,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
             {
                 CmbConfigVehicular.SelectedValue = identificacion.ConfiguracionVehicular;
             }
-            TxtAñoModelo.Text = identificacion.AñoModelo;
+            TxtAñoModelo.Text = identificacion.AñoModelo.ToString();
             TxtPlacaVehicular.Text = identificacion.PlacaVehiculo;
             
         }

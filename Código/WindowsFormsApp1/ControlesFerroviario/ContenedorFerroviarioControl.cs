@@ -20,7 +20,7 @@ namespace WindowsFormsApp1.ControlesFerroviario
 
         public void CargarComboTipoContenedor(Dictionary<string, string> TipoContenedores)
         {
-            EstructurasFunciones.CargarComboValores(CmbTipoContenedor, TipoContenedores);
+            Metodos.CargarComboValores(CmbTipoContenedor, TipoContenedores);
         }
 
 

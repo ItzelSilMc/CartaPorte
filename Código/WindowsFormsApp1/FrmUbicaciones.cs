@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Modelos;
-using static WindowsFormsApp1.Modelos.EstructurasFunciones;
+using static WindowsFormsApp1.Modelos.EstructurasEnums;
 
 namespace WindowsFormsApp1
 {
@@ -129,12 +129,12 @@ namespace WindowsFormsApp1
             Dictionary<string, string> TipoEstaciones = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.TipoEstacion);
 
             
-            EstructurasFunciones.CargarComboValores(CmbTipoEstaciones, TipoEstaciones);
+            Metodos.CargarComboValores(CmbTipoEstaciones, TipoEstaciones);
 
             Dictionary<string, string> Estaciones = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.Estaciones, "", ClaveTransporte);
 
            
-            EstructurasFunciones.CargarComboValores(CmbNumeroEstacion, Estaciones);
+            Metodos.CargarComboValores(CmbNumeroEstacion, Estaciones);
 
 
             ElegirComboTipoEstacion();

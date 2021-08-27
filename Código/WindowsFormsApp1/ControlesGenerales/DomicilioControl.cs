@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Modelos;
-using static WindowsFormsApp1.Modelos.EstructurasFunciones;
+using static WindowsFormsApp1.Modelos.EstructurasEnums;
 
 namespace WindowsFormsApp1
 {
@@ -84,7 +84,7 @@ namespace WindowsFormsApp1
 
             Dictionary<string, string> Colonias = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.Colonia , TxtCodigoPostal.Text);
 
-            EstructurasFunciones.CargarComboValores(CmbColonia, Colonias);
+            Metodos.CargarComboValores(CmbColonia, Colonias);
 
         }
         public  ObjetoDireccion ObtenerDireccion()

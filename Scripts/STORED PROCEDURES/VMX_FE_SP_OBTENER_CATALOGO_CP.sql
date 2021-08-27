@@ -152,7 +152,7 @@ AS BEGIN
 	IF @Catalogo = 'ClaveProductoSTCC'
 	BEGIN
 
-		SELECT ClaveSTCC + @Divisor + Descripcion AS Descripcion
+		SELECT TOP 100 ClaveSTCC + @Divisor + Descripcion AS Descripcion
 		FROM VMX_FE_PRODUCTOS_SERVICIOS_STCC 
 
 	END

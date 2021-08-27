@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Modelos;
 using WindowsFormsApp1.Properties;
-using static WindowsFormsApp1.Modelos.EstructurasFunciones;
+using static WindowsFormsApp1.Modelos.EstructurasEnums;
 
 namespace WindowsFormsApp1
 {
@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
             EntradaSalida.Add("Entrada", "Entrada");
             EntradaSalida.Add("Salida", "Salida");
 
-            EstructurasFunciones.CargarComboValores(CmbEntradaSalidaMercancia, EntradaSalida);
+            Metodos.CargarComboValores(CmbEntradaSalidaMercancia, EntradaSalida);
 
             Dictionary<string, string> TransporteInternacional = new Dictionary<string, string>();
             TransporteInternacional.Add("NO", "NO");
@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
             
 
 
-            EstructurasFunciones.CargarComboValores(CmbInternacional, TransporteInternacional);
+            Metodos.CargarComboValores(CmbInternacional, TransporteInternacional);
 
 
             Dictionary<string, string> ClavesTransporte = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.ClaveTransporte);
@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
             //    CmbViaEntradaSalida.Items.Add(c.Descripcion);
             //}
 
-            EstructurasFunciones.CargarComboValores(CmbViaEntradaSalida, ClavesTransporte);
+            Metodos.CargarComboValores(CmbViaEntradaSalida, ClavesTransporte);
         }
 
         private void Form1_Load(object sender, EventArgs e)

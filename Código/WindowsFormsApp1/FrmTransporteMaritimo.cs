@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static WindowsFormsApp1.Modelos.EstructurasFunciones;
+using static WindowsFormsApp1.Modelos.EstructurasEnums;
 
 namespace WindowsFormsApp1
 {

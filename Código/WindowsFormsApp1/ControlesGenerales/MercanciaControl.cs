@@ -20,17 +20,13 @@ namespace WindowsFormsApp1
 
         private void MercanciaControl_Load(object sender, EventArgs e)
         {
-            CargarCombos();
+           
         }
 
-        private void CargarCombos()
-        {
-
-        }
-
+       
         private void CargarComboServicioSTCC(Dictionary<string, string> ClaveSTCC)
         {
-            EstructurasFunciones.CargarComboValores(CmbClaveSTCC, ClaveSTCC);
+            Metodos.CargarComboValores(CmbClaveSTCC, ClaveSTCC);
         }
 
         private void CargarComboProdServ(List<string> ClavesProdServ)
@@ -42,12 +38,12 @@ namespace WindowsFormsApp1
         }
         private void CargarCombosMaterialesPeligrosos(Dictionary<string, string> MaterialesPeligrosos)
         { 
-            EstructurasFunciones.CargarComboValores(CmbClaveMaterialPeligroso, MaterialesPeligrosos);  
+            Metodos.CargarComboValores(CmbClaveMaterialPeligroso, MaterialesPeligrosos);  
         }
 
         private void CargarCombosEmbalaje(Dictionary<string, string> Embalajes)
         {
-            EstructurasFunciones.CargarComboValores(CmbEmbalaje, Embalajes);
+            Metodos.CargarComboValores(CmbEmbalaje, Embalajes);
         }
 
         /// <summary>

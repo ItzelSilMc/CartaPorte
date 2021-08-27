@@ -20,7 +20,7 @@ namespace WindowsFormsApp1.ControlesFerroviario
 
         public void CargarComboDerechosPaso(Dictionary<string, string> DerechosPaso)
         {
-            EstructurasFunciones.CargarComboValores(CmbDerechosPaso, DerechosPaso);
+            Metodos.CargarComboValores(CmbDerechosPaso, DerechosPaso);
         }
 
         public ObjetoDerechosPaso ObtenerDerechosPaso()

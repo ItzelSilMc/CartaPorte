@@ -20,7 +20,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
 
         public void CargarComboTipoRemolque(Dictionary<string, string> Remolques)
         {
-            EstructurasFunciones.CargarComboValores(CmbTipoRemolque, Remolques);
+            Metodos.CargarComboValores(CmbTipoRemolque, Remolques);
         }
 
         public ObjetoRemolque ObtenerRemolque()

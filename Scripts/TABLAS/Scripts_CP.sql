@@ -196,32 +196,12 @@ CREATE TABLE VMX_FE_CP_NOTIFICADO
 	ID_DOMICILIO INT NULL  --- LIGA VMX_FE_CP_DOMICILIO
 )
 
-
----------------------------
-----  VMX_FE_CP_DOMICILIO
----------------------------
-
---CREATE TABLE VMX_FE_CP_DOMICILIO
---(
-
---	IdDomicilio INT IDENTITY(1,1),
---	Calle VARCHAR(100),
---	NumeroExterior varchar(),
---	NumeroInterior VARCHAR(),
---	Colonia VARCHAR(),
---	Localidad VARCHAR()
---	Referencia VARCHAR(),
---	Municipio VARCHAR(),
---	Estado VARCHAR(),
---	Pais VARCHAR(3),
---	CodigoPostal (12)
---	Tipo
---)
-
-
-------
 -- naye
-------
+
+-------------------------
+--  VMX_FE_CARTAPORTE   
+-------------------------
+
 
 CREATE TABLE VMX_FE_CARTAPORTE (
 	INVOICE_ID VARCHAR(30) PRIMARY KEY NOT NULL,
@@ -231,6 +211,11 @@ CREATE TABLE VMX_FE_CARTAPORTE (
 	TotalDisRec DECIMAL(5,2)  NULL
 );
 
+-------------------------
+--  VMX_FE_CP_UBICACIONES   
+-------------------------
+
+
 CREATE TABLE VMX_FE_CP_UBICACIONES (	
 	[ID_UBICACIONES] [int] IDENTITY(1,1) NOT NULL,
 	INVOICE_ID VARCHAR(30) NOT NULL,
@@ -238,6 +223,10 @@ CREATE TABLE VMX_FE_CP_UBICACIONES (
 	TipoEstacion VARCHAR(2) NOT NULL,
 	ID_UBICACION INT
 );
+
+-------------------------
+--  VMX_FE_CP_UBICACION  
+-------------------------
 
 CREATE TABLE VMX_FE_CP_UBICACION (
 	ID_UBICACION [int] IDENTITY(1,1) NOT NULL,
@@ -254,6 +243,11 @@ CREATE TABLE VMX_FE_CP_UBICACION (
 
 );
 
+
+-------------------------
+--  VMX_FE_CP_MERCANCIAS  
+-------------------------
+
 CREATE TABLE VMX_FE_CP_MERCANCIAS (
 	ID_MERCANCIAS [int] IDENTITY(1,1) NOT NULL,
 	INVOICE_ID VARCHAR(30) NOT NULL,
@@ -264,16 +258,10 @@ CREATE TABLE VMX_FE_CP_MERCANCIAS (
 	PesoNetoTotal DECIMAL(18,3)  NULL
 );
 
-CREATE TABLE VMX_FE_CP_CONCEPTOS_MERCANCIA (
-	ID_CMERCANCIA [int] IDENTITY(1,1) NOT NULL,
-	ID_MERCANCIAS [int] NOT NULL,
-	ID_PRODUCTO [int] NOT NULL, --
-	ID_DETALLE_MERCANCIA [int] NOT NULL,
-	Cantidad DECIMAL(18,6)  NULL,
-	Dimensiones VARCHAR(30) NULL,
-	PesoEnKg DECIMAL(18,3) NOT NULL,
-	ValorMercancia VARCHAR(30) NULL,--t_Importe
-);
+
+-------------------------
+--  VMX_FE_CP_PRODUCTO  
+-------------------------
 
 CREATE TABLE VMX_FE_CP_PRODUCTO (
 	ID_PRODUCTO [int] IDENTITY(1,1) NOT NULL,
@@ -291,8 +279,18 @@ CREATE TABLE VMX_FE_CP_PRODUCTO (
 	UUIDComercioExt VARCHAR(120) NULL,
 );
 
+-------------------------
+--  VMX_FE_CP_DETALLE_MERCANCIA  
+-------------------------
+
 CREATE TABLE VMX_FE_CP_DETALLE_MERCANCIA (
 	ID_DETALLE_MERCANCIA [int] IDENTITY(1,1) NOT NULL,
+	ID_PRODUCTO INT NULL,   -- Campo que hace referencia a la tabla de producto
+	Cantidad DECIMAL(18,6)  NULL,
+	Dimensiones VARCHAR(30) NULL,
+	PesoEnKg DECIMAL(18,3) NOT NULL,
+	ValorMercancia VARCHAR(30) NULL,--t_Importe
+
 	UnidadPeso VARCHAR(5) NOT NULL,
 	PesoBruto DECIMAL(18,3) NOT NULL,
 	PesoNeto DECIMAL(18,3) NOT NULL,
@@ -300,30 +298,11 @@ CREATE TABLE VMX_FE_CP_DETALLE_MERCANCIA (
 	NumPiezas INT NULL
 );
 
---CREATE TABLE VMX_FE_CP_FERROVIARIO(
---	ID_FERROVIARIO [int] IDENTITY(1,1) NOT NULL,
---	TipoDeServicio VARCHAR(6) NOT NULL,
---	NombreAseg VARCHAR(30) NULL,
---	NumPolizaSeguro VARCHAR(30) NULL,
---	Concesionario VARCHAR(16) NOT NULL,
 
---);
 
---CREATE TABLE VMX_FE_CP_CARRO(
---	ID_CARRO [int] IDENTITY(1,1) NOT NULL,
---	TipoCarro VARCHAR(6) NOT NULL,
---	MatriculaCarro VARCHAR(15) NOT NULL,
---	GuiaCarro VARCHAR(15) NOT NULL,
---	ToneladasNetasCarro DECIMAL(18,3) NOT NULL,
---	ID_FERROVIARIO [int] NOT NULL,
---);
-
---CREATE TABLE VMX_FE_CP_DERECHOS_PASO(
---	ID_DERECHOSPASO [int] IDENTITY(1,1) NOT NULL, 
---	TipoDerechoDePaso VARCHAR(6) NOT NULL,
---	KilometrajePagado DECIMAL(18,2) NOT NULL,
---	ID_FERROVIARIO INT
---);
+---------------------------
+----  VMX_FE_CP_CONTENEDOR_FERROVIARIO
+---------------------------
 
 CREATE TABLE VMX_FE_CP_CONTENEDOR_FERROVIARIO(
 	ID_CONTENEDOR_FERROVIARIO [int] IDENTITY(1,1) NOT NULL, 
@@ -333,6 +312,10 @@ CREATE TABLE VMX_FE_CP_CONTENEDOR_FERROVIARIO(
 	ID_CARRO [int] 
 );
 
+
+---------------------------
+----  VMX_FE_CP_DOMICILIO
+---------------------------
 
 CREATE TABLE VMX_FE_CP_DOMICILIO (
 ID_DOMICILIO [int] IDENTITY(1,1) NOT NULL, 
@@ -347,4 +330,43 @@ Estado VARCHAR(30) NOT NULL,
 Pais VARCHAR(12) NOT NULL,
 CodigoPostal VARCHAR(12) NOT NULL,
 Tipo VARCHAR(6) NOT NULL,
+);
+
+---------------------------
+----  VMX_FE_CP_AUTOTRANSPORTE_FEDERAL
+---------------------------
+CREATE TABLE VMX_FE_CP_AUTOTRANSPORTE_FEDERAL (
+	ID_FEDERAL [int] IDENTITY(1,1) NOT NULL,
+	PermSCT VARCHAR (200) NOT NULL,
+	NumPermisoSCT VARCHAR (50) NOT NULL,
+	NombreAseg VARCHAR (50) NOT NULL,
+	NumPolizaSeguro VARCHAR (30) NOT NULL,
+	ID_VEHICULAR INT NOT NULL
+);
+
+
+---------------------------
+----  VMX_FE_CP_IDENTIFICACION_VEHICULAR
+---------------------------
+
+CREATE TABLE VMX_FE_CP_IDENTIFICACION_VEHICULAR (
+	ID_VEHICULAR [int] IDENTITY(1,1) NOT NULL,
+	ConfigVehicular VARCHAR (20) NOT NULL,
+	PlacaVM  VARCHAR (20) NOT NULL,
+	AnioModeloVM [int] NOT NULL,
+	
+);
+
+
+
+---------------------------
+----  VMX_FE_CP_REMOLQUES
+---------------------------
+
+CREATE TABLE VMX_FE_CP_REMOLQUES (
+	ID_REMOLQUE [int] IDENTITY(1,1) NOT NULL,
+	ID_FEDERAL [int] NOT NULL,
+	SubTipoRem VARCHAR (20) NOT NULL,
+	Placa  VARCHAR (20) NOT NULL,
+	
 );

@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static WindowsFormsApp1.Modelos.EstructurasFunciones;
+using WindowsFormsApp1.Modelos;
+using static WindowsFormsApp1.Modelos.EstructurasEnums;
 
 namespace WindowsFormsApp1
 {
@@ -48,7 +49,9 @@ namespace WindowsFormsApp1
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            ObjetoTransporteFerroviario objFerroviario = new ObjetoTransporteFerroviario();
 
+            
         }
     }
 }

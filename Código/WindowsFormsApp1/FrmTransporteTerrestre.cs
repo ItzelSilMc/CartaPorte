@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using WindowsFormsApp1.Modelos;
-using static WindowsFormsApp1.Modelos.EstructurasFunciones;
+using static WindowsFormsApp1.Modelos.EstructurasEnums;
 
 namespace WindowsFormsApp1
 {
@@ -56,18 +56,24 @@ namespace WindowsFormsApp1
             frmOperador.SetTipo(TipoPersona.Operador);
             frmOperador.ShowDialog();
         }
-
+        private bool ValidarTransporteTerrestre()
+        {
+            return true;
+        }
       
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            autoTransporteFederal.identidicacion = identificacionVehicularControl1.ObtenerIdentificacionVehicular();
-            autoTransporteFederal.remolque = remolqueControl1.ObtenerRemolque();
-            autoTransporteFederal.transporte = autotransporteFederalControl1.ObtenerAutotransporte();
-            autoTransporteFederal.listaPersonas = botonesPersonasControl1.ObtenerPersonas();
-            GuardadoCorrectamente = true;
+            if (ValidarTransporteTerrestre())
+            {
+                autoTransporteFederal.identidicacion = identificacionVehicularControl1.ObtenerIdentificacionVehicular();
+                autoTransporteFederal.remolque = remolqueControl1.ObtenerRemolque();
+                autoTransporteFederal.transporte = autotransporteFederalControl1.ObtenerAutotransporte();
+                autoTransporteFederal.listaPersonas = botonesPersonasControl1.ObtenerPersonas();
+                GuardadoCorrectamente = true;
 
-            this.Close();
+                this.Close();
+            }
         }
 
         public ObjetoAutoTransporteFederal ObtenerInfoTransporteTerreste()
