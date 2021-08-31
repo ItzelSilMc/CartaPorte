@@ -30,6 +30,8 @@ namespace WindowsFormsApp1.ControlesTerrestre
         private void InitializeComponent()
         {
             this.GBIdentificacion = new System.Windows.Forms.GroupBox();
+            this.TxtNumPoliza = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.TxtAñoModelo = new System.Windows.Forms.TextBox();
             this.TxtPlacaVehicular = new System.Windows.Forms.TextBox();
             this.CmbConfigVehicular = new System.Windows.Forms.ComboBox();
@@ -41,6 +43,8 @@ namespace WindowsFormsApp1.ControlesTerrestre
             // 
             // GBIdentificacion
             // 
+            this.GBIdentificacion.Controls.Add(this.TxtNumPoliza);
+            this.GBIdentificacion.Controls.Add(this.label4);
             this.GBIdentificacion.Controls.Add(this.TxtAñoModelo);
             this.GBIdentificacion.Controls.Add(this.TxtPlacaVehicular);
             this.GBIdentificacion.Controls.Add(this.CmbConfigVehicular);
@@ -49,13 +53,31 @@ namespace WindowsFormsApp1.ControlesTerrestre
             this.GBIdentificacion.Controls.Add(this.label1);
             this.GBIdentificacion.Location = new System.Drawing.Point(4, -2);
             this.GBIdentificacion.Name = "GBIdentificacion";
-            this.GBIdentificacion.Size = new System.Drawing.Size(452, 77);
+            this.GBIdentificacion.Size = new System.Drawing.Size(573, 77);
             this.GBIdentificacion.TabIndex = 0;
             this.GBIdentificacion.TabStop = false;
+            // 
+            // TxtNumPoliza
+            // 
+            this.TxtNumPoliza.Location = new System.Drawing.Point(457, 45);
+            this.TxtNumPoliza.MaxLength = 30;
+            this.TxtNumPoliza.Name = "TxtNumPoliza";
+            this.TxtNumPoliza.Size = new System.Drawing.Size(100, 20);
+            this.TxtNumPoliza.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(454, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Numero poliza seguro";
             // 
             // TxtAñoModelo
             // 
             this.TxtAñoModelo.Location = new System.Drawing.Point(337, 45);
+            this.TxtAñoModelo.MaxLength = 4;
             this.TxtAñoModelo.Name = "TxtAñoModelo";
             this.TxtAñoModelo.Size = new System.Drawing.Size(100, 20);
             this.TxtAñoModelo.TabIndex = 5;
@@ -63,6 +85,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
             // TxtPlacaVehicular
             // 
             this.TxtPlacaVehicular.Location = new System.Drawing.Point(188, 45);
+            this.TxtPlacaVehicular.MaxLength = 10;
             this.TxtPlacaVehicular.Name = "TxtPlacaVehicular";
             this.TxtPlacaVehicular.Size = new System.Drawing.Size(100, 20);
             this.TxtPlacaVehicular.TabIndex = 4;
@@ -108,7 +131,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.GBIdentificacion);
             this.Name = "IdentificacionVehicularControl";
-            this.Size = new System.Drawing.Size(463, 81);
+            this.Size = new System.Drawing.Size(584, 81);
             this.GBIdentificacion.ResumeLayout(false);
             this.GBIdentificacion.PerformLayout();
             this.ResumeLayout(false);
@@ -124,5 +147,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TxtNumPoliza;
+        private System.Windows.Forms.Label label4;
     }
 }

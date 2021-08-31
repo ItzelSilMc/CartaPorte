@@ -52,6 +52,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
             // TxtPlacaRemolque
             // 
             this.TxtPlacaRemolque.Location = new System.Drawing.Point(160, 28);
+            this.TxtPlacaRemolque.MaxLength = 10;
             this.TxtPlacaRemolque.Name = "TxtPlacaRemolque";
             this.TxtPlacaRemolque.Size = new System.Drawing.Size(100, 20);
             this.TxtPlacaRemolque.TabIndex = 3;

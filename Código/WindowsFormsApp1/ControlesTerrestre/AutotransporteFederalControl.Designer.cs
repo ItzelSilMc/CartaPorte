@@ -60,13 +60,16 @@ namespace WindowsFormsApp1.ControlesTerrestre
             // TxtNumeroPolizaSeguro
             // 
             this.TxtNumeroPolizaSeguro.Location = new System.Drawing.Point(487, 47);
+            this.TxtNumeroPolizaSeguro.MaxLength = 30;
             this.TxtNumeroPolizaSeguro.Name = "TxtNumeroPolizaSeguro";
             this.TxtNumeroPolizaSeguro.Size = new System.Drawing.Size(100, 20);
             this.TxtNumeroPolizaSeguro.TabIndex = 7;
+            this.TxtNumeroPolizaSeguro.Visible = false;
             // 
             // TxtNombreAseguradora
             // 
             this.TxtNombreAseguradora.Location = new System.Drawing.Point(326, 46);
+            this.TxtNombreAseguradora.MaxLength = 50;
             this.TxtNombreAseguradora.Name = "TxtNombreAseguradora";
             this.TxtNombreAseguradora.Size = new System.Drawing.Size(116, 20);
             this.TxtNombreAseguradora.TabIndex = 6;
@@ -74,6 +77,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
             // TxtNumeroPermisoSCT
             // 
             this.TxtNumeroPermisoSCT.Location = new System.Drawing.Point(174, 46);
+            this.TxtNumeroPermisoSCT.MaxLength = 50;
             this.TxtNumeroPermisoSCT.Name = "TxtNumeroPermisoSCT";
             this.TxtNumeroPermisoSCT.Size = new System.Drawing.Size(100, 20);
             this.TxtNumeroPermisoSCT.TabIndex = 5;
@@ -94,6 +98,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
             this.label4.Size = new System.Drawing.Size(89, 26);
             this.label4.TabIndex = 3;
             this.label4.Text = "Número de póliza\r\nde seguro*:";
+            this.label4.Visible = false;
             // 
             // label3
             // 

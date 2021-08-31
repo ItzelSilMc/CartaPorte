@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
         /// Este metodo retorna el nombre de la tabla a la cual se va a insertar
         /// </summary>
         /// <returns></returns>
-        public static string ObtenerCadenaTabla(TablasCartaPorte tabla)
+        public static string ObtenerNombreTabla(TablasCartaPorte tabla)
         {
             return tabla.ToString();
         }
@@ -70,15 +70,15 @@ namespace WindowsFormsApp1
 
                     //Autotransporte Federal
                 case TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL:
-                    resultado = "PermSCT, NumPermisoSCT, NombreAseg, NumPolizaSeguro, ID_VEHICULAR";
+                    resultado = "PermSCT, NumPermisoSCT, NombreAseg";
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR:
-                    resultado = "ConfigVehicular, PlacaVM, AnioModeloVM";
+                    resultado = "ConfigVehicular, PlacaVM, AnioModeloVM, NumPolizaSeguro";
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_REMOLQUES:
-                    resultado = "ID_FEDERAL, SubTipoRem, Placa";
+                    resultado = "SubTipoRem, Placa";
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_MARITIMO:
@@ -138,7 +138,7 @@ namespace WindowsFormsApp1
         /// </summary>
         /// <param name="catalogo">Enum mandado para retornar una cadena</param>
         /// <returns></returns>
-        public static string ObtenerCadenaCartaPorte(CatalogoCartaPorte catalogo)
+        public static string ObtenerNombreCatalogoCartaPorte(CatalogoCartaPorte catalogo)
         {
             string Cadena;
             switch (catalogo)
@@ -245,7 +245,7 @@ namespace WindowsFormsApp1
             {
                 
 
-                string Catalogo = ObtenerCadenaCartaPorte(catalog);
+                string Catalogo = ObtenerNombreCatalogoCartaPorte(catalog);
 
                 SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
 
@@ -365,7 +365,7 @@ namespace WindowsFormsApp1
         /// <returns></returns>
         public static  int  InsertarRegistroTabla(TablasCartaPorte tabla, Object objetoInsertar)
         {
-            string NombreTabla = ObtenerCadenaTabla(tabla);
+            string NombreTabla = ObtenerNombreTabla(tabla);
             string CamposTabla = ObtenerCamposTabla(tabla);
 
             string valores = "";
@@ -489,6 +489,43 @@ namespace WindowsFormsApp1
 
             
         }
+
+
+        public static DataTable ObtenerValoresConsulta(TablasCartaPorte tabla, int id = 0)
+        {
+            string CamposTabla = ObtenerCamposTabla(tabla);
+            string NombreTabla = ObtenerNombreTabla(tabla);
+
+            string Consulta = "SELECT " + CamposTabla + " FROM " + NombreTabla;
+
+            if (id != 0)
+            {
+                switch (tabla)
+                {
+                    case TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL:
+                        Consulta += " WHERE ID_FEDERAL = " + id;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR:
+                        Consulta += " WHERE ID_VEHICULAR = " + id;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_REMOLQUES:
+                        Consulta += " WHERE ID_REMOLQUE = " + id;
+                        break;
+
+
+                }
+            }
+            SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+            c.Open();
+            SqlDataAdapter adaptador = new SqlDataAdapter(Consulta, c);
+            DataTable dtValores = new DataTable();
+            adaptador.Fill(dtValores);
+
+            return dtValores ;
+        }
+
 
     }
 }

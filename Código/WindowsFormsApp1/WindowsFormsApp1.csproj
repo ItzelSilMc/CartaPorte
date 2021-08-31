@@ -49,6 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuraciones\FrmConfIdentificacionVehicular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\FrmConfIdentificacionVehicular.Designer.cs">
+      <DependentUpon>FrmConfIdentificacionVehicular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\FrmConfRemolque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\FrmConfRemolque.Designer.cs">
+      <DependentUpon>FrmConfRemolque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\FrmMenuPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\FrmMenuPersonas.Designer.cs">
+      <DependentUpon>FrmMenuPersonas.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlesAereo\TransporteAereoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +120,24 @@
     </Compile>
     <Compile Include="ControlesTerrestre\RemolqueControl.Designer.cs">
       <DependentUpon>RemolqueControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\FrmConfAutotransporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\FrmConfAutotransporte.Designer.cs">
+      <DependentUpon>FrmConfAutotransporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\FrmConfiguraciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\FrmConfiguraciones.Designer.cs">
+      <DependentUpon>FrmConfiguraciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\FrmMenuAutotransportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\FrmMenuAutotransportes.Designer.cs">
+      <DependentUpon>FrmMenuAutotransportes.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -177,6 +213,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelos\Ubicaciones.cs" />
+    <EmbeddedResource Include="Configuraciones\FrmConfIdentificacionVehicular.resx">
+      <DependentUpon>FrmConfIdentificacionVehicular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\FrmConfRemolque.resx">
+      <DependentUpon>FrmConfRemolque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\FrmMenuPersonas.resx">
+      <DependentUpon>FrmMenuPersonas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlesAereo\TransporteAereoControl.resx">
       <DependentUpon>TransporteAereoControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +248,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlesTerrestre\RemolqueControl.resx">
       <DependentUpon>RemolqueControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\FrmConfAutotransporte.resx">
+      <DependentUpon>FrmConfAutotransporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\FrmConfiguraciones.resx">
+      <DependentUpon>FrmConfiguraciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\FrmMenuAutotransportes.resx">
+      <DependentUpon>FrmMenuAutotransportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

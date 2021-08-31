@@ -1,3 +1,20 @@
+
+
+
+---------------------------------
+-- VMX_FE_CP_CONFIGURACION_FEDERAL
+---------------------------------
+CREATE TABLE VMX_FE_CP_CONFIGURACION_FEDERAL (
+	ID_CONFIGURACION [int] IDENTITY(1,1) NOT NULL,
+	INVOICE_ID  VARCHAR (20) NOT NULL,
+	ID_FEDERAL INT NOT NULL,
+	ID_VEHICULAR INT NOT NULL,
+	ID_REMOLQUE INT NOT NULL
+);
+
+
+
+
 -------------------------
 --  VMX_FE_CP_CONTENEDOR   (Para contenedores maritimos)
 -------------------------
@@ -335,15 +352,13 @@ Tipo VARCHAR(6) NOT NULL,
 ---------------------------
 ----  VMX_FE_CP_AUTOTRANSPORTE_FEDERAL
 ---------------------------
+
 CREATE TABLE VMX_FE_CP_AUTOTRANSPORTE_FEDERAL (
 	ID_FEDERAL [int] IDENTITY(1,1) NOT NULL,
 	PermSCT VARCHAR (200) NOT NULL,
 	NumPermisoSCT VARCHAR (50) NOT NULL,
-	NombreAseg VARCHAR (50) NOT NULL,
-	NumPolizaSeguro VARCHAR (30) NOT NULL,
-	ID_VEHICULAR INT NOT NULL
+	NombreAseg VARCHAR (50) NOT NULL
 );
-
 
 ---------------------------
 ----  VMX_FE_CP_IDENTIFICACION_VEHICULAR
@@ -354,9 +369,9 @@ CREATE TABLE VMX_FE_CP_IDENTIFICACION_VEHICULAR (
 	ConfigVehicular VARCHAR (20) NOT NULL,
 	PlacaVM  VARCHAR (20) NOT NULL,
 	AnioModeloVM [int] NOT NULL,
+	NumPolizaSeguro VARCHAR (30) NOT NULL
 	
 );
-
 
 
 ---------------------------
@@ -365,8 +380,6 @@ CREATE TABLE VMX_FE_CP_IDENTIFICACION_VEHICULAR (
 
 CREATE TABLE VMX_FE_CP_REMOLQUES (
 	ID_REMOLQUE [int] IDENTITY(1,1) NOT NULL,
-	ID_FEDERAL [int] NOT NULL,
 	SubTipoRem VARCHAR (20) NOT NULL,
 	Placa  VARCHAR (20) NOT NULL,
-	
 );

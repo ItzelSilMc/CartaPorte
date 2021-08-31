@@ -19,7 +19,7 @@ namespace WindowsFormsApp1.Modelos
 
         public override string ToString()
         {
-            return "" + IdAutotransporte + ",'" + SubtipoRemolque + "','" + PlacaRemolque + "'";
+            return  "'" + SubtipoRemolque + "','" + PlacaRemolque + "'";
         }
     }
 }

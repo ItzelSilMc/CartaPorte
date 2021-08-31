@@ -15,6 +15,9 @@ C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\bin\Debug\Conexion.dll
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Configuraciones.FrmConfIdentificacionVehicular.resources
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Configuraciones.FrmConfRemolque.resources
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Configuraciones.FrmMenuPersonas.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ControlesAereo.TransporteAereoControl.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ControlesFerroviario.CarroControlControl.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ControlesFerroviario.ContenedorFerroviarioControl.resources
@@ -24,6 +27,9 @@ C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ControlesTerrestre.AutotransporteFederalControl.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ControlesTerrestre.IdentificacionVehicularControl.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ControlesTerrestre.RemolqueControl.resources
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmConfAutotransporte.resources
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmConfiguraciones.resources
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmMenuAutotransportes.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmPrincipal.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmMercancias.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmPersona.resources

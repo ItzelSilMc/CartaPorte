@@ -17,9 +17,10 @@ namespace WindowsFormsApp1.Modelos
             this.IdVehicular = IdVehicular;
         }
 
+
         public override string ToString()
         {
-            return "'" + PermisoSCT + "','" + NumPermisoSCT + "','" + NombreAseguradora + "','" + NumPolizaSeguro + "'," + IdVehicular; 
+            return "'" + PermisoSCT + "','" + NumPermisoSCT + "','" + NombreAseguradora + "'"; 
         }
     }
 }

@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
         /// Punto de entrada principal para la aplicación.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string [] args)
         {
 
             #region Pruebas
@@ -106,7 +106,7 @@ namespace WindowsFormsApp1
             //int IdContenedorMaritimo = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_CONTENEDOR, conteMari);
 
 
-            
+
 
 
 
@@ -117,13 +117,26 @@ namespace WindowsFormsApp1
 
 
             //int IdAereo = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_AEREO, ae);
+            Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, 3);
+            Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR, 1);
+            Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_REMOLQUES, 3);
+            Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL);
+            
             #endregion
 
             try
-            { 
+            {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new FrmPrincipal());
+                if (args.Count() == 0)
+                {
+                    
+                    Application.Run(new FrmPrincipal());
+                }
+                else
+                {
+                    Application.Run(new FrmConfiguraciones());
+                }
             }
             catch(Exception ex)
             {

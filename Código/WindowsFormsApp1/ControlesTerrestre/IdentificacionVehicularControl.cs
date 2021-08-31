@@ -28,7 +28,9 @@ namespace WindowsFormsApp1.ControlesTerrestre
             {
                 ConfiguracionVehicular = string.IsNullOrEmpty(CmbConfigVehicular.Text) ? "" : CmbConfigVehicular.SelectedValue.ToString(),
                 PlacaVehiculo = TxtPlacaVehicular.Text,
-                AñoModelo = int.Parse(TxtAñoModelo.Text)
+                AñoModelo = int.Parse(TxtAñoModelo.Text),
+                NumPolizaSeguro = TxtNumPoliza.Text
+                
             };
 
             return objetoIdentificacion;
