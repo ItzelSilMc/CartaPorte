@@ -21,5 +21,15 @@ namespace WindowsFormsApp1.Configuraciones
         {
             Close();
         }
+
+        private void BtnTransportista_Click(object sender, EventArgs e)
+        {
+            Hide();
+            FrmPersona per = new FrmPersona();
+            per.AbiertoDesdeConfiguracion = true;
+            per.ShowDialog();
+            Show();
+
+        }
     }
 }

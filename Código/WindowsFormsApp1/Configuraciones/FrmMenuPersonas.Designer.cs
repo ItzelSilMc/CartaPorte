@@ -30,13 +30,13 @@ namespace WindowsFormsApp1.Configuraciones
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtnTransportista = new System.Windows.Forms.Button();
-            this.BtnEmbarcador = new System.Windows.Forms.Button();
-            this.BtnOperador = new System.Windows.Forms.Button();
-            this.BtnPropietario = new System.Windows.Forms.Button();
-            this.BtnArrendatario = new System.Windows.Forms.Button();
-            this.BtnNotificado = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
+            this.BtnNotificado = new System.Windows.Forms.Button();
+            this.BtnArrendatario = new System.Windows.Forms.Button();
+            this.BtnPropietario = new System.Windows.Forms.Button();
+            this.BtnOperador = new System.Windows.Forms.Button();
+            this.BtnEmbarcador = new System.Windows.Forms.Button();
+            this.BtnTransportista = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,66 +54,6 @@ namespace WindowsFormsApp1.Configuraciones
             this.panel1.Size = new System.Drawing.Size(169, 519);
             this.panel1.TabIndex = 0;
             // 
-            // BtnTransportista
-            // 
-            this.BtnTransportista.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnTransportista.Location = new System.Drawing.Point(0, 0);
-            this.BtnTransportista.Name = "BtnTransportista";
-            this.BtnTransportista.Size = new System.Drawing.Size(169, 74);
-            this.BtnTransportista.TabIndex = 0;
-            this.BtnTransportista.Text = "Transportista";
-            this.BtnTransportista.UseVisualStyleBackColor = true;
-            // 
-            // BtnEmbarcador
-            // 
-            this.BtnEmbarcador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnEmbarcador.Location = new System.Drawing.Point(0, 74);
-            this.BtnEmbarcador.Name = "BtnEmbarcador";
-            this.BtnEmbarcador.Size = new System.Drawing.Size(169, 74);
-            this.BtnEmbarcador.TabIndex = 1;
-            this.BtnEmbarcador.Text = "Embarcador";
-            this.BtnEmbarcador.UseVisualStyleBackColor = true;
-            // 
-            // BtnOperador
-            // 
-            this.BtnOperador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnOperador.Location = new System.Drawing.Point(0, 148);
-            this.BtnOperador.Name = "BtnOperador";
-            this.BtnOperador.Size = new System.Drawing.Size(169, 74);
-            this.BtnOperador.TabIndex = 2;
-            this.BtnOperador.Text = "Operador";
-            this.BtnOperador.UseVisualStyleBackColor = true;
-            // 
-            // BtnPropietario
-            // 
-            this.BtnPropietario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnPropietario.Location = new System.Drawing.Point(0, 222);
-            this.BtnPropietario.Name = "BtnPropietario";
-            this.BtnPropietario.Size = new System.Drawing.Size(169, 74);
-            this.BtnPropietario.TabIndex = 3;
-            this.BtnPropietario.Text = "Propietario";
-            this.BtnPropietario.UseVisualStyleBackColor = true;
-            // 
-            // BtnArrendatario
-            // 
-            this.BtnArrendatario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnArrendatario.Location = new System.Drawing.Point(0, 296);
-            this.BtnArrendatario.Name = "BtnArrendatario";
-            this.BtnArrendatario.Size = new System.Drawing.Size(169, 74);
-            this.BtnArrendatario.TabIndex = 4;
-            this.BtnArrendatario.Text = "Arrendatario";
-            this.BtnArrendatario.UseVisualStyleBackColor = true;
-            // 
-            // BtnNotificado
-            // 
-            this.BtnNotificado.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnNotificado.Location = new System.Drawing.Point(0, 370);
-            this.BtnNotificado.Name = "BtnNotificado";
-            this.BtnNotificado.Size = new System.Drawing.Size(169, 74);
-            this.BtnNotificado.TabIndex = 5;
-            this.BtnNotificado.Text = "Notificado";
-            this.BtnNotificado.UseVisualStyleBackColor = true;
-            // 
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.Color.Red;
@@ -126,6 +66,67 @@ namespace WindowsFormsApp1.Configuraciones
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = false;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // BtnNotificado
+            // 
+            this.BtnNotificado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnNotificado.Location = new System.Drawing.Point(0, 370);
+            this.BtnNotificado.Name = "BtnNotificado";
+            this.BtnNotificado.Size = new System.Drawing.Size(169, 74);
+            this.BtnNotificado.TabIndex = 5;
+            this.BtnNotificado.Text = "Notificado";
+            this.BtnNotificado.UseVisualStyleBackColor = true;
+            // 
+            // BtnArrendatario
+            // 
+            this.BtnArrendatario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnArrendatario.Location = new System.Drawing.Point(0, 296);
+            this.BtnArrendatario.Name = "BtnArrendatario";
+            this.BtnArrendatario.Size = new System.Drawing.Size(169, 74);
+            this.BtnArrendatario.TabIndex = 4;
+            this.BtnArrendatario.Text = "Arrendatario";
+            this.BtnArrendatario.UseVisualStyleBackColor = true;
+            // 
+            // BtnPropietario
+            // 
+            this.BtnPropietario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnPropietario.Location = new System.Drawing.Point(0, 222);
+            this.BtnPropietario.Name = "BtnPropietario";
+            this.BtnPropietario.Size = new System.Drawing.Size(169, 74);
+            this.BtnPropietario.TabIndex = 3;
+            this.BtnPropietario.Text = "Propietario";
+            this.BtnPropietario.UseVisualStyleBackColor = true;
+            // 
+            // BtnOperador
+            // 
+            this.BtnOperador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnOperador.Location = new System.Drawing.Point(0, 148);
+            this.BtnOperador.Name = "BtnOperador";
+            this.BtnOperador.Size = new System.Drawing.Size(169, 74);
+            this.BtnOperador.TabIndex = 2;
+            this.BtnOperador.Text = "Operador";
+            this.BtnOperador.UseVisualStyleBackColor = true;
+            // 
+            // BtnEmbarcador
+            // 
+            this.BtnEmbarcador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnEmbarcador.Location = new System.Drawing.Point(0, 74);
+            this.BtnEmbarcador.Name = "BtnEmbarcador";
+            this.BtnEmbarcador.Size = new System.Drawing.Size(169, 74);
+            this.BtnEmbarcador.TabIndex = 1;
+            this.BtnEmbarcador.Text = "Embarcador";
+            this.BtnEmbarcador.UseVisualStyleBackColor = true;
+            // 
+            // BtnTransportista
+            // 
+            this.BtnTransportista.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnTransportista.Location = new System.Drawing.Point(0, 0);
+            this.BtnTransportista.Name = "BtnTransportista";
+            this.BtnTransportista.Size = new System.Drawing.Size(169, 74);
+            this.BtnTransportista.TabIndex = 0;
+            this.BtnTransportista.Text = "Transportista";
+            this.BtnTransportista.UseVisualStyleBackColor = true;
+            this.BtnTransportista.Click += new System.EventHandler(this.BtnTransportista_Click);
             // 
             // FrmMenuPersonas
             // 

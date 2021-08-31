@@ -40,13 +40,13 @@ namespace WindowsFormsApp1
         /// </summary>
         /// <param name="tabla"></param>
         /// <returns></returns>
-        public static string ObtenerCamposTabla(TablasCartaPorte tabla)
+        public static string ObtenerCamposTabla(TablasCartaPorte tabla, bool traerIDTabla = false)
         {
             string resultado = "";
             switch(tabla)
             {
                 case TablasCartaPorte.VMX_FE_CARTAPORTE:
-                    resultado = "";
+                    resultado = "INVOICE_ID,TransInternal, EntradaSalidaMerc, ViaEntradaSalida, TotalDisRec";
                     break;
 
                 //Ferroviario
@@ -109,6 +109,10 @@ namespace WindowsFormsApp1
                     resultado = "ID_PRODUCTO, Cantidad, Dimensiones, PesoEnKg, ValorMercancia, UnidadPeso, PesoBruto, PesoTara, NumPiezas";
                     break;
 
+                case TablasCartaPorte.VMX_FE_CP_FIGURA_TRANSPORTE:
+                    resultado = "INVOICE_ID, CveTransporte";
+                    break;
+
                 case TablasCartaPorte.VMX_FE_CP_EMBARCADOR:
                     resultado = "NombreEmbarcador, ResidenciaFiscalEmbar, NumRegIdTribEmbarc";  /// CAMBIAR DE NOMBRE EL CAMPO DE RESIDENCIA FISCAL.
                     break;
@@ -131,6 +135,92 @@ namespace WindowsFormsApp1
 
 
             }
+            if(traerIDTabla)
+            {
+                switch(tabla)
+                {
+                    case TablasCartaPorte.VMX_FE_CARTAPORTE:
+                        break;
+
+                    //Ferroviario
+
+                    case TablasCartaPorte.VMX_FE_CP_FERROVIARIO:
+                        resultado = "ID_FERROVIARIO, " + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_CARRO:
+                        resultado = "ID_CARRO, " + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_CONTENEDOR_FERROVIARIO:
+                        resultado = "ID_CONTENEDOR_FERROVIARIO," + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_DERECHOS_PASO:
+                        resultado = "ID_DERECHOS_DE_PASO, " + resultado; 
+                        break;
+
+
+                    //Autotransporte Federal
+                    case TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL:
+                        resultado = "ID_FEDERAL," + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR:
+                        resultado = "ID_VEHICULAR, " + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_REMOLQUES:
+                        resultado = "ID_REMOLQUE, " + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_MARITIMO:
+                        resultado = "ID_MARITIMO," + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_CONTENEDOR: //Este hace referencia al contenedor maritimo
+                        resultado = "ID_CONTENEDOR, " + resultado;
+                        break;
+
+
+                    case TablasCartaPorte.VMX_FE_CP_AEREO:
+                        resultado = "ID_AEREO, " + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_MERCANCIAS:
+                        resultado = "ID_MERCANCIAS, " + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_PRODUCTO:
+                        resultado = "ID_PRODUCTO, " + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_DETALLE_MERCANCIA:
+                        resultado = "ID_DETALLE_MERCANCIA, " + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_EMBARCADOR:
+                        resultado = "" + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_TRANSPORTISTA:
+                        resultado = "" + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_NOTIFICADO:
+                        resultado = "" + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_ARRENDATARIO:
+                        resultado = "" + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_OPERADOR:
+                        resultado = "" + resultado;
+                        break;
+                }
+            }
+
             return resultado;
         }
         /// <summary>

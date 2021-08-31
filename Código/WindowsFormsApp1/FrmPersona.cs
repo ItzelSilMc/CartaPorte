@@ -17,6 +17,8 @@ namespace WindowsFormsApp1
         public bool GuardadoExitoso = false;
         public string Tipo = "";
 
+        public bool AbiertoDesdeConfiguracion = false;
+
         public FrmPersona()
         {
             InitializeComponent();
