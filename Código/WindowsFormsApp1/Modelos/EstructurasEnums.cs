@@ -50,6 +50,7 @@ namespace WindowsFormsApp1.Modelos
             //Ubicaciones
             VMX_FE_CP_UBICACIONES,
             VMX_FE_CP_UBICACION,
+            VMX_FE_CP_DOMICILIO,
 
             //Mercancias
             VMX_FE_CP_MERCANCIAS,

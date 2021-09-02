@@ -63,6 +63,8 @@ namespace WindowsFormsApp1
 
                 case TipoPersona.Transportista:
                     cadenaTipo = "Transportista";
+                    LblCodigo.Visible = true;
+                    TxtCodigoTransportista.Visible = true;
                     break;
 
                 case TipoPersona.Propietario:
@@ -90,9 +92,20 @@ namespace WindowsFormsApp1
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            
             if(ValidacionCorrectaPersona())
             {
                 GuardadoExitoso = true;
+            }
+            if(AbiertoDesdeConfiguracion)
+            {
+                ObjetoPersona persNueva = ObtenerInformacionPersona();
+
+                int idDomicilio = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_DOMICILIO, persNueva.objDireccion);
+
+              
+                Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_TRANSPORTISTA, persNueva);
+                
             }
             this.Close();
         }

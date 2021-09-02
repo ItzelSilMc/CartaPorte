@@ -117,13 +117,40 @@ namespace WindowsFormsApp1
 
 
             //int IdAereo = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_AEREO, ae);
-            Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, 3);
-            Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR, 1);
-            Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_REMOLQUES, 3);
-            Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL);
-            
-            #endregion
+            //Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, 3);
+            //Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR, 1);
+            //Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_REMOLQUES, 3);
+            //Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL);
+            ObjetoProducto prod = new ObjetoProducto()
+            {
+             BienesTransp= "8373", ClaveSTCC = "131", ClaveUnidad = "u1", CveMaterialPeligroso ="", Descripcion = "NA"
+             , DescripcionEmbalaje = "", Embalaje = "BALA", FraccioArancelaria = "131", MaterialPeligroso = "NO", Moneda ="MXN",
+              Unidad = "u1", UUIDComercioExterior = "24242422324214412424214"
+            };
 
+            int idProducto = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_PRODUCTO, prod);
+
+
+
+            ObjetoMercancias cabezaMerca = new ObjetoMercancias()
+            {
+              INVOICE_ID = "1131313", CargoPorTasacion = "313", NumTotalMercancia = 1, PesoBrutoTotal = 10010, PesoNetoTotal = 12121, UnidadPeso = "U1"
+            };
+
+            int IdCabecera = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_MERCANCIAS, cabezaMerca);
+
+
+            ObjetoDetalleMercancia detMerca = new ObjetoDetalleMercancia()
+            {
+             UnidadPeso = "", Cantidad = 1, Dimensiones = "10x10", ID_MERCANCIAS = IdCabecera , ID_PRODUCTO = idProducto,
+              NumPiezas = 1, PesoBruto = 10.5m, PesoEnKg = 10.8m, PesoNeto = 10.1m, PesoTara = 10, ValorMercancia = "n/a"
+            };
+
+
+            int IDMerca = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_DETALLE_MERCANCIA, detMerca);
+
+            #endregion
+           
             try
             {
                 Application.EnableVisualStyles();
@@ -138,7 +165,7 @@ namespace WindowsFormsApp1
                     Application.Run(new FrmConfiguraciones());
                 }
             }
-            catch(Exception ex)
+                catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

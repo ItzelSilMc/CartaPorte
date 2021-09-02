@@ -32,8 +32,8 @@ namespace WindowsFormsApp1
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnPersonas = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BtnFerroviario = new System.Windows.Forms.Button();
+            this.BtnAereo = new System.Windows.Forms.Button();
             this.BtnTransporteMaritimo = new System.Windows.Forms.Button();
             this.BtnAutotransporte = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -44,8 +44,8 @@ namespace WindowsFormsApp1
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.BtnSalir);
             this.panel1.Controls.Add(this.BtnPersonas);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.BtnFerroviario);
+            this.panel1.Controls.Add(this.BtnAereo);
             this.panel1.Controls.Add(this.BtnTransporteMaritimo);
             this.panel1.Controls.Add(this.BtnAutotransporte);
             this.panel1.Location = new System.Drawing.Point(6, 4);
@@ -77,25 +77,25 @@ namespace WindowsFormsApp1
             this.BtnPersonas.UseVisualStyleBackColor = true;
             this.BtnPersonas.Click += new System.EventHandler(this.BtnPersonas_Click);
             // 
-            // button4
+            // BtnFerroviario
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Location = new System.Drawing.Point(0, 177);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(163, 59);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Transporte ferroviario";
-            this.button4.UseVisualStyleBackColor = true;
+            this.BtnFerroviario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnFerroviario.Location = new System.Drawing.Point(0, 177);
+            this.BtnFerroviario.Name = "BtnFerroviario";
+            this.BtnFerroviario.Size = new System.Drawing.Size(163, 59);
+            this.BtnFerroviario.TabIndex = 3;
+            this.BtnFerroviario.Text = "Transporte ferroviario";
+            this.BtnFerroviario.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BtnAereo
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Location = new System.Drawing.Point(0, 118);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(163, 59);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Transporte aereo";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BtnAereo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnAereo.Location = new System.Drawing.Point(0, 118);
+            this.BtnAereo.Name = "BtnAereo";
+            this.BtnAereo.Size = new System.Drawing.Size(163, 59);
+            this.BtnAereo.TabIndex = 2;
+            this.BtnAereo.Text = "Transporte aereo";
+            this.BtnAereo.UseVisualStyleBackColor = true;
             // 
             // BtnTransporteMaritimo
             // 
@@ -137,8 +137,8 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtnFerroviario;
+        private System.Windows.Forms.Button BtnAereo;
         private System.Windows.Forms.Button BtnTransporteMaritimo;
         private System.Windows.Forms.Button BtnAutotransporte;
         private System.Windows.Forms.Button BtnSalir;

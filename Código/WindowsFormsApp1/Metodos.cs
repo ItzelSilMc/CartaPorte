@@ -102,11 +102,11 @@ namespace WindowsFormsApp1
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_PRODUCTO:
-                    resultado = "BienesTransp, ClaveSTCC, Descripcion, ClaveUnidad, Unidad, MaterialPeligroso,CveMaterialPeligro, Embalaje, DescripEmbalaje, Moneda, FraccionArancelaria, UUIDComercioExt ";
+                    resultado = "BienesTransp, ClaveSTCC, Descripcion, ClaveUnidad, Unidad, MaterialPeligroso,CveMaterialPeligroso, Embalaje, DescripEmbalaje, Moneda, FraccionArancelaria, UUIDComercioExt ";
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_DETALLE_MERCANCIA:
-                    resultado = "ID_PRODUCTO, Cantidad, Dimensiones, PesoEnKg, ValorMercancia, UnidadPeso, PesoBruto, PesoTara, NumPiezas";
+                    resultado = "ID_MERCANCIAS, ID_PRODUCTO, Cantidad, Dimensiones, PesoEnKg, ValorMercancia, UnidadPeso, PesoBruto, PesoNeto, PesoTara, NumPiezas";
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_FIGURA_TRANSPORTE:
@@ -115,6 +115,10 @@ namespace WindowsFormsApp1
 
                 case TablasCartaPorte.VMX_FE_CP_EMBARCADOR:
                     resultado = "NombreEmbarcador, ResidenciaFiscalEmbar, NumRegIdTribEmbarc";  /// CAMBIAR DE NOMBRE EL CAMPO DE RESIDENCIA FISCAL.
+                    break;
+
+                case TablasCartaPorte.VMX_FE_CP_DOMICILIO:
+                    resultado = "Calle, NumeroExterior, NumeroInterior, Colonia, Localidad, Referencia, Municipio, Estado, Pais, CodigoPostal, Tipo";
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_TRANSPORTISTA:
@@ -130,7 +134,7 @@ namespace WindowsFormsApp1
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_OPERADOR:
-                    resultado = "RFC";
+                    resultado = "RFCOperador, NumLicencia, NombreOperador, NumRegIdTribOperador, ResidencialFiscalOperador, ID_DOMICILIO";
                     break;
 
 
@@ -510,16 +514,16 @@ namespace WindowsFormsApp1
                     //pendientes
 
                 case TablasCartaPorte.VMX_FE_CP_MERCANCIAS:
-                    valores = "SIN DEFINIR AUN";
+                    valores = ((ObjetoMercancias)objetoInsertar).ToString();
                     break;
 
 
                 case TablasCartaPorte.VMX_FE_CP_DETALLE_MERCANCIA:
-                    valores = "sin definir aun";
+                    valores = ((ObjetoDetalleMercancia)objetoInsertar).ToString();
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_PRODUCTO:
-                    valores = "sin definir aun";
+                    valores = ((ObjetoProducto)objetoInsertar).ToString();
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_UBICACIONES:
@@ -530,30 +534,24 @@ namespace WindowsFormsApp1
                     valores = "sin definir aun";
                     break;
 
+                case TablasCartaPorte.VMX_FE_CP_DOMICILIO:
+                    valores = ((ObjetoDireccion)objetoInsertar).ToString();
+                    break;
+
 
                 case TablasCartaPorte.VMX_FE_CP_FIGURA_TRANSPORTE:
                     valores = "sin definir aun";
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_EMBARCADOR:
-                    valores = "";
-                    break;
-
-                case TablasCartaPorte.VMX_FE_CP_TRANSPORTISTA:
-                    valores = "sin definir aun";
-                    break;
-
+                case TablasCartaPorte.VMX_FE_CP_TRANSPORTISTA:    
                 case TablasCartaPorte.VMX_FE_CP_PROPIETARIO:
-                    valores = "sin definir aun";
-                    break;
-
                 case TablasCartaPorte.VMX_FE_CP_OPERADOR:
-                    valores = "sin definir aun";
-                    break;
 
                 case TablasCartaPorte.VMX_FE_CP_NOTIFICADO:
-                    valores = "sin definir aun";
+                    valores = ((ObjetoPersona)objetoInsertar).ToString();
                     break;
+                    
 
 
             }
@@ -583,7 +581,7 @@ namespace WindowsFormsApp1
 
         public static DataTable ObtenerValoresConsulta(TablasCartaPorte tabla, int id = 0)
         {
-            string CamposTabla = ObtenerCamposTabla(tabla);
+            string CamposTabla = ObtenerCamposTabla(tabla, true);
             string NombreTabla = ObtenerNombreTabla(tabla);
 
             string Consulta = "SELECT " + CamposTabla + " FROM " + NombreTabla;

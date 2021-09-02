@@ -18,5 +18,14 @@ namespace WindowsFormsApp1.Modelos
         public string CodigoPostal;
         public string Colonia;
         public string Localidad;
+        public string Referencia;
+        public string Tipo;
+
+
+        public override string ToString()
+        {
+            return "'" + calle + "','" + NumeroExterior + "','" + NumeroInterior + "','"+ Colonia + "','" + Localidad +"','" +
+                Referencia + "','" + Municipio + "','" + Estado + "','"+ Pais + "','"+ CodigoPostal + "','" + Tipo + "'" ;
+        }
     }
 }

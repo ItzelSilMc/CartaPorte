@@ -106,6 +106,7 @@ namespace WindowsFormsApp1.Configuraciones
             this.BtnOperador.TabIndex = 2;
             this.BtnOperador.Text = "Operador";
             this.BtnOperador.UseVisualStyleBackColor = true;
+            this.BtnOperador.Click += new System.EventHandler(this.BtnOperador_Click);
             // 
             // BtnEmbarcador
             // 
@@ -116,6 +117,7 @@ namespace WindowsFormsApp1.Configuraciones
             this.BtnEmbarcador.TabIndex = 1;
             this.BtnEmbarcador.Text = "Embarcador";
             this.BtnEmbarcador.UseVisualStyleBackColor = true;
+            this.BtnEmbarcador.Click += new System.EventHandler(this.BtnEmbarcador_Click);
             // 
             // BtnTransportista
             // 

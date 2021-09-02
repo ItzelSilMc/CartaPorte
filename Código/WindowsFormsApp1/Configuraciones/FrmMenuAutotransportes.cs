@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Configuraciones;
+using static WindowsFormsApp1.Modelos.EstructurasEnums;
 
 namespace WindowsFormsApp1
 {
@@ -20,10 +21,7 @@ namespace WindowsFormsApp1
 
         private void BtnTransporte_Click(object sender, EventArgs e)
         {
-            FrmConfAutotransporte auto = new FrmConfAutotransporte();
-            Hide();
-            auto.ShowDialog();
-            Show();
+            AbrirFormaAdministracion(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL);    
         }
 
         private void BtnIdentificacionVehicular_Click(object sender, EventArgs e)
@@ -37,15 +35,20 @@ namespace WindowsFormsApp1
 
         private void BtnRemolque_Click(object sender, EventArgs e)
         {
-            Hide();
-            FrmConfRemolque frmRemolque = new FrmConfRemolque();
-            frmRemolque.ShowDialog();
-            Show();
+            AbrirFormaAdministracion(TablasCartaPorte.VMX_FE_CP_REMOLQUES);
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void AbrirFormaAdministracion(TablasCartaPorte tabla)
+        {
+            Hide();
+            FrmAdministracion admin = new FrmAdministracion();
+            admin.SetTipoGrid(tabla);
+            admin.ShowDialog();
+            Show();
         }
     }
 }

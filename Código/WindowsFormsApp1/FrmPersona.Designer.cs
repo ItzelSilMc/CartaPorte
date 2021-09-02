@@ -43,6 +43,8 @@ namespace WindowsFormsApp1
             this.LblNombre = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
+            this.TxtCodigoTransportista = new System.Windows.Forms.TextBox();
+            this.LblCodigo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +67,8 @@ namespace WindowsFormsApp1
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.LblCodigo);
+            this.groupBox1.Controls.Add(this.TxtCodigoTransportista);
             this.groupBox1.Controls.Add(this.TxtResidenciaFiscal);
             this.groupBox1.Controls.Add(this.TxtNumeroIdentificacion);
             this.groupBox1.Controls.Add(this.TxtLicencia);
@@ -171,6 +175,24 @@ namespace WindowsFormsApp1
             this.BtnGuardar.UseVisualStyleBackColor = true;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
+            // TxtCodigoTransportista
+            // 
+            this.TxtCodigoTransportista.Location = new System.Drawing.Point(416, 105);
+            this.TxtCodigoTransportista.Name = "TxtCodigoTransportista";
+            this.TxtCodigoTransportista.Size = new System.Drawing.Size(167, 20);
+            this.TxtCodigoTransportista.TabIndex = 11;
+            this.TxtCodigoTransportista.Visible = false;
+            // 
+            // LblCodigo
+            // 
+            this.LblCodigo.AutoSize = true;
+            this.LblCodigo.Location = new System.Drawing.Point(423, 80);
+            this.LblCodigo.Name = "LblCodigo";
+            this.LblCodigo.Size = new System.Drawing.Size(103, 13);
+            this.LblCodigo.TabIndex = 12;
+            this.LblCodigo.Text = "Codigo transportista:";
+            this.LblCodigo.Visible = false;
+            // 
             // FrmPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,5 +225,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label LblNombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnGuardar;
+        private System.Windows.Forms.Label LblCodigo;
+        private System.Windows.Forms.TextBox TxtCodigoTransportista;
     }
 }

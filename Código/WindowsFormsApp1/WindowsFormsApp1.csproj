@@ -103,6 +103,12 @@
     <Compile Include="ControlesGenerales\DomicilioControl.Designer.cs">
       <DependentUpon>DomicilioControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlesGrid\GridAutotransporte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesGrid\GridAutotransporte.Designer.cs">
+      <DependentUpon>GridAutotransporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlesTerrestre\AutotransporteFederalControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,6 +163,12 @@
     <Compile Include="FrmPersona.Designer.cs">
       <DependentUpon>FrmPersona.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdministracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdministracion.Designer.cs">
+      <DependentUpon>FrmAdministracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTransporteAereo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,7 +219,10 @@
     <Compile Include="Modelos\EstructurasEnums.cs" />
     <Compile Include="Modelos\ObjetoIdentificacionVehicular.cs" />
     <Compile Include="Modelos\ObjetoMaritimo.cs" />
+    <Compile Include="Modelos\ObjetoDetalleMercancia.cs" />
+    <Compile Include="Modelos\ObjetoMercancias.cs" />
     <Compile Include="Modelos\ObjetoPersona.cs" />
+    <Compile Include="Modelos\ObjetoProducto.cs" />
     <Compile Include="Modelos\ObjetoRemolque.cs" />
     <Compile Include="Modelos\ObjetoTransporteFerroviario.cs" />
     <Compile Include="Program.cs" />
@@ -240,6 +255,9 @@
     <EmbeddedResource Include="ControlesGenerales\DomicilioControl.resx">
       <DependentUpon>DomicilioControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControlesGrid\GridAutotransporte.resx">
+      <DependentUpon>GridAutotransporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlesTerrestre\AutotransporteFederalControl.resx">
       <DependentUpon>AutotransporteFederalControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPersona.resx">
       <DependentUpon>FrmPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdministracion.resx">
+      <DependentUpon>FrmAdministracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTransporteAereo.resx">
       <DependentUpon>FrmTransporteAereo.cs</DependentUpon>
@@ -295,6 +316,25 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.Catalogos.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.EstructurasEnums+CatalogoCartaPorte.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.EstructurasEnums+TablasCartaPorte.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.EstructurasEnums+TipoPersona.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.EstructurasEnums.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoAereo.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoAutotransporte.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoAutoTransporteFederal.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoCarro.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoCartePorte.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoContenedorFerroviario.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoContenedorMaritimo.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoDerechosPaso.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoDireccion.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoIdentificacionVehicular.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoMaritimo.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoPersona.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoRemolque.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Modelos.ObjetoTransporteFerroviario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

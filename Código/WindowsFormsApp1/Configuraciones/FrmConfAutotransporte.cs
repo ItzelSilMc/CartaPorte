@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
             
             Metodos.InsertarRegistroTabla(EstructurasEnums.TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, transporte);
 
-            int IdTransporte = Metodos.InsertarRegistroTabla(EstructurasEnums.TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, transporte);
+            //int IdTransporte = Metodos.InsertarRegistroTabla(EstructurasEnums.TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, transporte);
 
 
             MessageBox.Show("Se han guardado correctamente el transporte", "Carta porte", MessageBoxButtons.OK, MessageBoxIcon.Information);

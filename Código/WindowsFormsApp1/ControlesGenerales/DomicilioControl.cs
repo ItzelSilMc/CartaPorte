@@ -67,8 +67,17 @@ namespace WindowsFormsApp1
         private void CargarComboPaises()
         {
             List<string> Paises = Metodos.ObtenerCatalogosCFDI("Paises");
+            Dictionary<string, string> PaisesD = new Dictionary<string, string>();
 
-            CmbPais.Items.AddRange(Paises.ToArray());
+            foreach (string pais in Paises)
+            {
+                string[] PaisSplit = pais.Split('-');
+                PaisesD.Add(PaisSplit[0].Trim(), PaisSplit[1].Trim());
+            }
+
+            Metodos.CargarComboValores(CmbPais, PaisesD);
+
+            //CmbPais.Items.AddRange(Paises.ToArray());
 
         }
 
@@ -91,19 +100,20 @@ namespace WindowsFormsApp1
         {
 
 
-            ObjetoDireccion dire = new ObjetoDireccion
-            {
-                calle = TxtCalle.Text,
-                NumeroExterior = TxtNumeroExt.Text,
-                NumeroInterior = TxtNumeroInt.Text,
-                Estado = CmbEstado.SelectedValue == null ? "": CmbEstado.SelectedValue.ToString(),
-                CodigoPostal = TxtCodigoPostal.Text,
-                Localidad =  CmbLocalidad.SelectedValue == null ? "" : CmbLocalidad.SelectedValue.ToString(),
-                Pais = CmbPais.SelectedValue == null ? "" : CmbPais.SelectedValue.ToString(),
-                Colonia =  CmbColonia.SelectedValue == null ? "" : CmbColonia.SelectedValue.ToString(),
+            ObjetoDireccion dire = new ObjetoDireccion();
+
+            dire.calle = TxtCalle.Text;
+            dire.NumeroExterior = TxtNumeroExt.Text;
+            dire.NumeroInterior = TxtNumeroInt.Text;
+            dire.Estado = CmbEstado.SelectedValue == null ? "" : CmbEstado.SelectedValue.ToString();
+            dire.CodigoPostal = TxtCodigoPostal.Text;
+            dire.Localidad = CmbLocalidad.SelectedValue == null ? "" : CmbLocalidad.SelectedValue.ToString();
+            dire.Pais = CmbPais.SelectedValue == null ? "" : CmbPais.SelectedValue.ToString();
+            dire.Colonia = CmbColonia.SelectedValue == null ? "" : CmbColonia.SelectedValue.ToString();
+            
 
 
-            };
+            
             
 
             return dire;
