@@ -102,7 +102,7 @@ namespace WindowsFormsApp1
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_PRODUCTO:
-                    resultado = "BienesTransp, ClaveSTCC, Descripcion, ClaveUnidad, Unidad, MaterialPeligroso,CveMaterialPeligroso, Embalaje, DescripEmbalaje, Moneda, FraccionArancelaria, UUIDComercioExt ";
+                    resultado = "BienesTransp, ClaveSTCC, Descripcion, ClaveUnidad, Unidad, MaterialPeligroso,CveMaterialPeligroso, Embalaje, DescripEmbalaje, Moneda, FraccionArancelaria, UUIDComercioExt, PART_ID ";
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_DETALLE_MERCANCIA:
@@ -612,6 +612,34 @@ namespace WindowsFormsApp1
             adaptador.Fill(dtValores);
 
             return dtValores ;
+        }
+
+
+        public static bool EliminarRegistro(TablasCartaPorte tabla, int IdEliminar)
+        {
+            string NombreId = "";
+            switch(tabla)
+            {
+                case TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL:
+                    NombreId = "ID_FEDERAL";
+                    break;
+                case TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR:
+                    NombreId = "ID_VEHICULAR";
+                    break;
+                case TablasCartaPorte.VMX_FE_CP_REMOLQUES:
+                    NombreId = "ID_REMOLQUE";
+                    break;
+            }
+
+            string sentenciaDelete = "DELETE FROM  " + ObtenerNombreTabla(tabla) + " WHERE "+ NombreId + " = " + IdEliminar ;
+            SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+            c.Open();
+            SqlCommand comando = new SqlCommand(sentenciaDelete, c);
+
+            int registrosAfectados = comando.ExecuteNonQuery();
+
+
+            return registrosAfectados > 0 ;
         }
 
 

@@ -8,6 +8,8 @@ namespace WindowsFormsApp1.Modelos
 {
     public class ObjetoDireccion
     {
+        public int ID;
+
         public string calle;
         public string NumeroExterior;
         public string NumeroInterior;

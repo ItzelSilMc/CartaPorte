@@ -8,6 +8,8 @@ namespace WindowsFormsApp1.Modelos
 {
     public class ObjetoIdentificacionVehicular
     {
+        public int ID;
+
         public string ConfiguracionVehicular, PlacaVehiculo, NumPolizaSeguro;
         public int AñoModelo;
 

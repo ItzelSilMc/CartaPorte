@@ -8,6 +8,8 @@ namespace WindowsFormsApp1.Modelos
 {
     public class ObjetoAereo
     {
+
+        public int ID;
         public string PermSCT, NumPermisoSCT, MatriculaAeronave, NombreAseg, NumPolizaSeguro, NumGuia, LugarContrato;
 
         private int IdTransportista, IdEmbarcador;

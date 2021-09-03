@@ -31,6 +31,8 @@ namespace WindowsFormsApp1
         {
             this.PnlGrid = new System.Windows.Forms.Panel();
             this.BtnAñadir = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlGrid
@@ -38,18 +40,26 @@ namespace WindowsFormsApp1
             this.PnlGrid.AutoSize = true;
             this.PnlGrid.Location = new System.Drawing.Point(40, 27);
             this.PnlGrid.Name = "PnlGrid";
-            this.PnlGrid.Size = new System.Drawing.Size(609, 235);
+            this.PnlGrid.Size = new System.Drawing.Size(609, 226);
             this.PnlGrid.TabIndex = 0;
             // 
             // BtnAñadir
             // 
-            this.BtnAñadir.Location = new System.Drawing.Point(574, 285);
+            this.BtnAñadir.Location = new System.Drawing.Point(17, 20);
             this.BtnAñadir.Name = "BtnAñadir";
             this.BtnAñadir.Size = new System.Drawing.Size(75, 23);
             this.BtnAñadir.TabIndex = 1;
             this.BtnAñadir.Text = "Añadir";
             this.BtnAñadir.UseVisualStyleBackColor = true;
             this.BtnAñadir.Click += new System.EventHandler(this.BtnAñadir_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.BtnAñadir);
+            this.panel1.Location = new System.Drawing.Point(40, 259);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(128, 55);
+            this.panel1.TabIndex = 2;
             // 
             // FrmAdministracion
             // 
@@ -58,10 +68,11 @@ namespace WindowsFormsApp1
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(733, 348);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.PnlGrid);
-            this.Controls.Add(this.BtnAñadir);
             this.Name = "FrmAdministracion";
-            this.Text = "FrmPruebaGrid";
+            this.Text = "Administración -";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -71,5 +82,6 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.Panel PnlGrid;
         private System.Windows.Forms.Button BtnAñadir;
+        private System.Windows.Forms.Panel panel1;
     }
 }

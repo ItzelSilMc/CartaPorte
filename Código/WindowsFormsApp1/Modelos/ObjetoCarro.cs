@@ -8,6 +8,7 @@ namespace WindowsFormsApp1.Modelos
 {
     public class ObjetoCarro
     {
+        public int ID;
         public string TipoCarro, GuiaCarro, Matricula;
         public decimal ToneladasNetoCarro;
 

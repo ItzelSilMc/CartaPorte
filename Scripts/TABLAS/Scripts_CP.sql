@@ -295,6 +295,7 @@ CREATE TABLE VMX_FE_CP_PRODUCTO (
 	Moneda VARCHAR(10) NULL,
 	FraccionArancelaria VARCHAR(16) NULL,
 	UUIDComercioExt VARCHAR(120) NULL,
+	PART_ID NVARCHAR(60) null
 );
 
 -------------------------
@@ -386,3 +387,4 @@ CREATE TABLE VMX_FE_CP_REMOLQUES (
 	SubTipoRem VARCHAR (20) NOT NULL,
 	Placa  VARCHAR (20) NOT NULL,
 );
+

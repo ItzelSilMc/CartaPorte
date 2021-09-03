@@ -26,10 +26,7 @@ namespace WindowsFormsApp1
 
         private void BtnIdentificacionVehicular_Click(object sender, EventArgs e)
         {
-            Hide();
-            FrmConfIdentificacionVehicular identi = new FrmConfIdentificacionVehicular();
-            identi.ShowDialog();
-            Show();
+            AbrirFormaAdministracion(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR);
 
         }
 

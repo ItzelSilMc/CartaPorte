@@ -15,15 +15,33 @@ namespace WindowsFormsApp1
     public partial class FrmConfAutotransporte : Form
     {
         Dictionary<string, string> Permisos ;
+
+        ObjetoAutotransporte objetoTerrestre;
         
         public FrmConfAutotransporte()
         {
-            InitializeComponent();
-
-             Permisos = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.TipoPermiso);
-           
-            CargarCombos();
+            Inicializar();
             
+        }
+
+        private void Inicializar()
+        {
+            InitializeComponent();
+            Permisos = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.TipoPermiso);
+            CargarCombos();
+        }
+        public FrmConfAutotransporte(ObjetoAutotransporte objetoTerrestre)
+        {
+
+            Inicializar();
+            this.objetoTerrestre = objetoTerrestre;
+
+            CargarDatosPrevios();
+        }
+
+        private void CargarDatosPrevios()
+        {
+            autotransporteFederalControl1.CargarDatosPrevios(objetoTerrestre);
         }
 
         private void CargarCombos()

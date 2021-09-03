@@ -8,6 +8,8 @@ namespace WindowsFormsApp1.Modelos
 {
     public class ObjetoRemolque
     {
+        public int ID;
+
         public string SubtipoRemolque, PlacaRemolque;
 
         private int IdAutotransporte;

@@ -80,6 +80,7 @@ namespace WindowsFormsApp1
             // BtnFerroviario
             // 
             this.BtnFerroviario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnFerroviario.Enabled = false;
             this.BtnFerroviario.Location = new System.Drawing.Point(0, 177);
             this.BtnFerroviario.Name = "BtnFerroviario";
             this.BtnFerroviario.Size = new System.Drawing.Size(163, 59);
@@ -90,6 +91,7 @@ namespace WindowsFormsApp1
             // BtnAereo
             // 
             this.BtnAereo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnAereo.Enabled = false;
             this.BtnAereo.Location = new System.Drawing.Point(0, 118);
             this.BtnAereo.Name = "BtnAereo";
             this.BtnAereo.Size = new System.Drawing.Size(163, 59);
@@ -100,6 +102,7 @@ namespace WindowsFormsApp1
             // BtnTransporteMaritimo
             // 
             this.BtnTransporteMaritimo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnTransporteMaritimo.Enabled = false;
             this.BtnTransporteMaritimo.Location = new System.Drawing.Point(0, 59);
             this.BtnTransporteMaritimo.Name = "BtnTransporteMaritimo";
             this.BtnTransporteMaritimo.Size = new System.Drawing.Size(163, 59);

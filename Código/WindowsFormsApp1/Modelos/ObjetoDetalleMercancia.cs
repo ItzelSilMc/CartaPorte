@@ -8,6 +8,8 @@ namespace WindowsFormsApp1.Modelos
 {
     class ObjetoDetalleMercancia
     {
+        public int ID;
+
         public int ID_MERCANCIAS;
         public int ID_PRODUCTO;
         public decimal Cantidad;

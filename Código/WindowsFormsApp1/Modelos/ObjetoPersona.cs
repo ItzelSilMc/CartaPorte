@@ -9,6 +9,8 @@ namespace WindowsFormsApp1.Modelos
 {
     public class ObjetoPersona
     {
+        public int ID;
+
         public TipoPersona tipoPersona;
         public string  RFC,CodigoTransportista,  Nombre, NumRegistro, ResidenciaFiscal, calle, NumExterior, NumInterior, NumLicencia;
         public ObjetoDireccion objDireccion;

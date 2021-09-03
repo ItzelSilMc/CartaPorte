@@ -109,6 +109,18 @@
     <Compile Include="ControlesGrid\GridAutotransporte.Designer.cs">
       <DependentUpon>GridAutotransporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlesGrid\GridIdentificacionVehicular.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesGrid\GridIdentificacionVehicular.Designer.cs">
+      <DependentUpon>GridIdentificacionVehicular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesGrid\GridRemolque.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesGrid\GridRemolque.Designer.cs">
+      <DependentUpon>GridRemolque.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlesTerrestre\AutotransporteFederalControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -258,6 +270,12 @@
     <EmbeddedResource Include="ControlesGrid\GridAutotransporte.resx">
       <DependentUpon>GridAutotransporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControlesGrid\GridIdentificacionVehicular.resx">
+      <DependentUpon>GridIdentificacionVehicular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesGrid\GridRemolque.resx">
+      <DependentUpon>GridRemolque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlesTerrestre\AutotransporteFederalControl.resx">
       <DependentUpon>AutotransporteFederalControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -356,6 +374,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\editar24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -53,9 +53,10 @@ namespace WindowsFormsApp1.ControlesGrid
             this.DgvInformacion.Location = new System.Drawing.Point(4, 3);
             this.DgvInformacion.Name = "DgvInformacion";
             this.DgvInformacion.RowHeadersVisible = false;
-            this.DgvInformacion.Size = new System.Drawing.Size(490, 150);
+            this.DgvInformacion.Size = new System.Drawing.Size(527, 224);
             this.DgvInformacion.TabIndex = 0;
             this.DgvInformacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvInformacion_CellContentClick);
+            this.DgvInformacion.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DgvInformacion_CellPainting);
             // 
             // Id
             // 
@@ -107,7 +108,7 @@ namespace WindowsFormsApp1.ControlesGrid
             this.AutoSize = true;
             this.Controls.Add(this.DgvInformacion);
             this.Name = "GridAutotransporte";
-            this.Size = new System.Drawing.Size(497, 157);
+            this.Size = new System.Drawing.Size(534, 230);
             ((System.ComponentModel.ISupportInitialize)(this.DgvInformacion)).EndInit();
             this.ResumeLayout(false);
 

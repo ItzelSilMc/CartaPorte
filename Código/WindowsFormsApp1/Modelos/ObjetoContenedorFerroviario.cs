@@ -4,6 +4,7 @@ namespace WindowsFormsApp1.Modelos
 {
     public class ObjetoContenedorFerroviario
     {
+        public int ID;
         public string TipoContenedor;
         public decimal PesoContenedorVacio, PesoNetoMercancia;
 

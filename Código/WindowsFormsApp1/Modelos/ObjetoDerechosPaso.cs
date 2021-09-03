@@ -8,6 +8,7 @@ namespace WindowsFormsApp1.Modelos
 {
     public class ObjetoDerechosPaso
     {
+        public int ID;
         public string DerechosPaso;
         public decimal KilometrajePagado;
 

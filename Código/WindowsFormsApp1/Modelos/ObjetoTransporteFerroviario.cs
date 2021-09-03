@@ -8,6 +8,8 @@ namespace WindowsFormsApp1.Modelos
 {
     public class ObjetoTransporteFerroviario
     {
+        public int ID;
+
         public string TipoServicio, NombreAseguradora, NumPolizaSeguro, Concesionario;
 
 

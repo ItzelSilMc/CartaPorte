@@ -8,6 +8,8 @@ namespace WindowsFormsApp1.Modelos
 {
     public class ObjetoMercancias
     {
+        public int ID;
+
         public string INVOICE_ID;
         public int NumTotalMercancia;
         public string CargoPorTasacion;

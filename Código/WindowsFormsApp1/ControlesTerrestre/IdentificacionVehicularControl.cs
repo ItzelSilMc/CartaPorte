@@ -45,7 +45,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
             }
             TxtAñoModelo.Text = identificacion.AñoModelo.ToString();
             TxtPlacaVehicular.Text = identificacion.PlacaVehiculo;
-            
+            TxtNumPoliza.Text = identificacion.NumPolizaSeguro;
         }
     }
 }

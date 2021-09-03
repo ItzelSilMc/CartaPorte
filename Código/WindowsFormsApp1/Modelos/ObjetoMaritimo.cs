@@ -8,6 +8,9 @@ namespace WindowsFormsApp1.Modelos
 {
     public class ObjetoMaritimo
     {
+
+        public int ID;
+
         public string PermSCT, NumPermisoSCT, NombreAseg, NumPolizaSeguro, TipoEmbarcacion, Matricula, NumeroOMI,
             NombreEmbar, NacionalidadEmbarc, TipoCarga, NumCertITC, LineaNaviera, NombreAgenteNaviero, NumAutorizacionNaviero, NumViaje, NumConocEmbarc;
 

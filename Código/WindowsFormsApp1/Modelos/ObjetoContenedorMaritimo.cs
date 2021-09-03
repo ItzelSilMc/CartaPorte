@@ -8,6 +8,7 @@ namespace WindowsFormsApp1.Modelos
 {
     public class ObjetoContenedorMaritimo
     {
+        public int ID;
         public string MatriculaContenedor, NumPrecinto, TipoContenedor;
 
         private int IdMaritimo;

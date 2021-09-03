@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
             this.BtnTransporte.Name = "BtnTransporte";
             this.BtnTransporte.Size = new System.Drawing.Size(174, 74);
             this.BtnTransporte.TabIndex = 0;
-            this.BtnTransporte.Text = "Añadir autotransporte";
+            this.BtnTransporte.Text = "Autotransporte federal";
             this.BtnTransporte.UseVisualStyleBackColor = true;
             this.BtnTransporte.Click += new System.EventHandler(this.BtnTransporte_Click);
             // 
@@ -53,7 +53,7 @@ namespace WindowsFormsApp1
             this.BtnIdentificacionVehicular.Name = "BtnIdentificacionVehicular";
             this.BtnIdentificacionVehicular.Size = new System.Drawing.Size(174, 74);
             this.BtnIdentificacionVehicular.TabIndex = 1;
-            this.BtnIdentificacionVehicular.Text = "Añadir identificacion Vehicular";
+            this.BtnIdentificacionVehicular.Text = " Identificación Vehicular";
             this.BtnIdentificacionVehicular.UseVisualStyleBackColor = true;
             this.BtnIdentificacionVehicular.Click += new System.EventHandler(this.BtnIdentificacionVehicular_Click);
             // 
@@ -77,7 +77,7 @@ namespace WindowsFormsApp1
             this.BtnRemolque.Name = "BtnRemolque";
             this.BtnRemolque.Size = new System.Drawing.Size(174, 74);
             this.BtnRemolque.TabIndex = 3;
-            this.BtnRemolque.Text = "Añadir remolque";
+            this.BtnRemolque.Text = "Remolques";
             this.BtnRemolque.UseVisualStyleBackColor = true;
             this.BtnRemolque.Click += new System.EventHandler(this.BtnRemolque_Click);
             // 
