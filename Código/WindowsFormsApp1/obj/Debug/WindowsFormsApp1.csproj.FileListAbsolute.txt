@@ -48,3 +48,4 @@ C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache

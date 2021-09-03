@@ -121,25 +121,25 @@ namespace WindowsFormsApp1
             //Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR, 1);
             //Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_REMOLQUES, 3);
             //Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL);
-            ObjetoProducto prod = new ObjetoProducto()
-            {
-                BienesTransp = "8373",
-                ClaveSTCC = "131",
-                ClaveUnidad = "u1",
-                CveMaterialPeligroso = "",
-                Descripcion = "NA"
-             ,
-                DescripcionEmbalaje = "",
-                Embalaje = "BALA",
-                FraccioArancelaria = "131",
-                MaterialPeligroso = "NO",
-                Moneda = "MXN",
-                Unidad = "u1",
-                UUIDComercioExterior = "24242422324214412424214",
-                PART_ID = "232323232323"
-            };
+            //ObjetoProducto prod = new ObjetoProducto()
+            //{
+            //    BienesTransp = "8373",
+            //    ClaveSTCC = "131",
+            //    ClaveUnidad = "u1",
+            //    CveMaterialPeligroso = "",
+            //    Descripcion = "NA"
+            // ,
+            //    DescripcionEmbalaje = "",
+            //    Embalaje = "BALA",
+            //    FraccioArancelaria = "131",
+            //    MaterialPeligroso = "NO",
+            //    Moneda = "MXN",
+            //    Unidad = "u1",
+            //    UUIDComercioExterior = "24242422324214412424214",
+            //    PART_ID = "232323232323"
+            //};
 
-            int idProducto = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_PRODUCTO, prod);
+            //int idProducto = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_PRODUCTO, prod);
 
 
 

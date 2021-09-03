@@ -19,6 +19,12 @@ namespace WindowsFormsApp1.ControlesGrid
         public GridRemolque()
         {
             InitializeComponent();
+            RefrescarGrid();
+        }
+
+        private void RefrescarGrid()
+        {
+            DgvRemolque.Rows.Clear();
             tablaInfo = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_REMOLQUES);
             CargarGrid();
         }
@@ -80,6 +86,13 @@ namespace WindowsFormsApp1.ControlesGrid
                     {
                         if (MessageBox.Show("¿Esta seguro que desea eliminar este registro?", "Carta porte", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
+                            int IdEliminar = int.Parse(DgvRemolque.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                            if(Metodos.EliminarRegistro(TablasCartaPorte.VMX_FE_CP_REMOLQUES, IdEliminar))
+                            {
+                                MessageBox.Show("Se ha eliminado el registro correctamente.", "Carta Porte", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                RefrescarGrid();
+                            }
 
                         }
                     }
