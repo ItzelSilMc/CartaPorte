@@ -146,19 +146,36 @@ namespace WindowsFormsApp1
                 switch (CmbViaEntradaSalida.Text.Split('-')[0].Trim())
                 {
                     case "01":
-                        FrmTransporteTerrestre tt = new FrmTransporteTerrestre();
-                        if(ExisteTransporteConfigurado)
+                        if (textBox3.Text=="")
                         {
-                            tt.CargarDatosPrevios(transporteTerrestre);
+                            MessageBox.Show("Añade una factura para continuar");
                         }
-                        tt.ShowDialog();
+                        else
+                        {
 
-                        if (tt.GuardadoCorrectamente)
-                        {
-                            guardadoCorrectamente = true;
-                            transporteTerrestre = tt.ObtenerInfoTransporteTerreste();
-                            ExisteTransporteConfigurado = true;
+                            FrmTransporteTerrestre tt = new FrmTransporteTerrestre(textBox3.Text);
+                            if (ExisteTransporteConfigurado)
+                            {
+                                tt.CargarDatosPrevios(transporteTerrestre);
+                            }
+                            tt.ShowDialog();
+
+                            
+                            //FrmTransporteTerrestre tt = new FrmTransporteTerrestre();
+                            //if (ExisteTransporteConfigurado)
+                            //{
+                            //    tt.CargarDatosPrevios(transporteTerrestre);
+                            //}
+                            //tt.ShowDialog();
+
+                            //if (tt.GuardadoCorrectamente)
+                            //{
+                            //    guardadoCorrectamente = true;
+                            //    transporteTerrestre = tt.ObtenerInfoTransporteTerreste();
+                            //    ExisteTransporteConfigurado = true;
+                            //}
                         }
+                        
                         break;
 
                     case "02":

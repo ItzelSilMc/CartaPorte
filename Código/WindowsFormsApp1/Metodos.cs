@@ -16,6 +16,19 @@ namespace WindowsFormsApp1
         /// </summary>
         /// <param name="combo">Combobox al cual se le asignaran sus valores</param>
         /// <param name="Valores">Valores a insertar en el combo</param>
+        /// 
+        public static void CargarComboValores(ComboBox combo, DataTable Valores)
+        {
+            DataSet myDataSet = new DataSet();
+            myDataSet.Tables.Add(Valores);
+            if (Valores.Rows.Count > 0)
+            {
+                //combo.DataSource = new BindingSource(Valores, null);
+                combo.DataSource = myDataSet.Tables[0].DefaultView;
+                combo.DisplayMember = "Value";
+                //combo.ValueMember = "Key";
+            }
+        }
         public static void CargarComboValores(ComboBox combo, Dictionary<string, string> Valores)
         {
             if (Valores.Count > 0)
@@ -79,6 +92,9 @@ namespace WindowsFormsApp1
 
                 case TablasCartaPorte.VMX_FE_CP_REMOLQUES:
                     resultado = "SubTipoRem, Placa";
+                    break;
+                case TablasCartaPorte.VMX_FE_CP_CONFIGURACION_FEDERAL:
+                    resultado = "INVOICE_ID,ID_FEDERAL,ID_VEHICULAR,ID_REMOLQUE";
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_MARITIMO:
@@ -176,6 +192,9 @@ namespace WindowsFormsApp1
 
                     case TablasCartaPorte.VMX_FE_CP_REMOLQUES:
                         resultado = "ID_REMOLQUE, " + resultado;
+                        break;
+                    case TablasCartaPorte.VMX_FE_CP_CONFIGURACION_FEDERAL:
+                        resultado = "ID_CONFIGURACION";
                         break;
 
                     case TablasCartaPorte.VMX_FE_CP_MARITIMO:
@@ -498,6 +517,10 @@ namespace WindowsFormsApp1
                     valores = ((ObjetoRemolque)objetoInsertar).ToString();
                     break;
 
+                case TablasCartaPorte.VMX_FE_CP_CONFIGURACION_FEDERAL:
+                    valores = ((ObjetoConFederal)objetoInsertar).ToString();
+                    break;
+
 
                 case TablasCartaPorte.VMX_FE_CP_MARITIMO:
                     valores = ((ObjetoMaritimo)objetoInsertar).ToString();
@@ -579,7 +602,7 @@ namespace WindowsFormsApp1
         }
 
 
-        public static DataTable ObtenerValoresConsulta(TablasCartaPorte tabla, int id = 0)
+        public static DataTable ObtenerValoresConsulta(TablasCartaPorte tabla, int id = 0, string invoice = "")
         {
             string CamposTabla = ObtenerCamposTabla(tabla, true);
             string NombreTabla = ObtenerNombreTabla(tabla);
@@ -600,6 +623,10 @@ namespace WindowsFormsApp1
 
                     case TablasCartaPorte.VMX_FE_CP_REMOLQUES:
                         Consulta += " WHERE ID_REMOLQUE = " + id;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_CONFIGURACION_FEDERAL:
+                        Consulta += " WHERE INVOICE_ID = '" + invoice+"'";
                         break;
 
 
@@ -641,6 +668,8 @@ namespace WindowsFormsApp1
 
             return registrosAfectados > 0 ;
         }
+
+
 
 
     }

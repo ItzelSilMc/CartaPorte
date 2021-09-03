@@ -71,6 +71,7 @@ namespace WindowsFormsApp1.Modelos
             VMX_FE_CP_AUTOTRANSPORTE_FEDERAL,
             VMX_FE_CP_IDENTIFICACION_VEHICULAR,
             VMX_FE_CP_REMOLQUES,
+            VMX_FE_CP_CONFIGURACION_FEDERAL,
 
 
             //Aereo

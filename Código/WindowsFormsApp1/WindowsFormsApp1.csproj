@@ -224,6 +224,7 @@
     <Compile Include="Modelos\ObjetoAutoTransporteFederal.cs" />
     <Compile Include="Modelos\ObjetoCarro.cs" />
     <Compile Include="Modelos\ObjetoCartePorte.cs" />
+    <Compile Include="Modelos\ObjetoConFederal.cs" />
     <Compile Include="Modelos\ObjetoContenedorFerroviario.cs" />
     <Compile Include="Modelos\ObjetoContenedorMaritimo.cs" />
     <Compile Include="Modelos\ObjetoDerechosPaso.cs" />

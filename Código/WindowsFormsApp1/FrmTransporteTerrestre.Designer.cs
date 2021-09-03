@@ -63,23 +63,23 @@ namespace WindowsFormsApp1
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(609, 404);
+            this.panel1.Size = new System.Drawing.Size(609, 525);
             this.panel1.TabIndex = 0;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.remolqueControl1);
             this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(5, 290);
+            this.panel6.Location = new System.Drawing.Point(0, 370);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(604, 108);
+            this.panel6.Size = new System.Drawing.Size(604, 152);
             this.panel6.TabIndex = 2;
             // 
             // remolqueControl1
             // 
-            this.remolqueControl1.Location = new System.Drawing.Point(143, 45);
+            this.remolqueControl1.Location = new System.Drawing.Point(5, 44);
             this.remolqueControl1.Name = "remolqueControl1";
-            this.remolqueControl1.Size = new System.Drawing.Size(275, 62);
+            this.remolqueControl1.Size = new System.Drawing.Size(585, 105);
             this.remolqueControl1.TabIndex = 4;
             // 
             // panel7
@@ -104,16 +104,16 @@ namespace WindowsFormsApp1
             // 
             this.panel4.Controls.Add(this.identificacionVehicularControl1);
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(5, 152);
+            this.panel4.Location = new System.Drawing.Point(2, 188);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(604, 131);
+            this.panel4.Size = new System.Drawing.Size(604, 176);
             this.panel4.TabIndex = 1;
             // 
             // identificacionVehicularControl1
             // 
-            this.identificacionVehicularControl1.Location = new System.Drawing.Point(76, 44);
+            this.identificacionVehicularControl1.Location = new System.Drawing.Point(3, 44);
             this.identificacionVehicularControl1.Name = "identificacionVehicularControl1";
-            this.identificacionVehicularControl1.Size = new System.Drawing.Size(463, 81);
+            this.identificacionVehicularControl1.Size = new System.Drawing.Size(596, 115);
             this.identificacionVehicularControl1.TabIndex = 3;
             // 
             // panel5
@@ -140,14 +140,14 @@ namespace WindowsFormsApp1
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(4, 13);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(605, 132);
+            this.panel2.Size = new System.Drawing.Size(605, 169);
             this.panel2.TabIndex = 0;
             // 
             // autotransporteFederalControl1
             // 
             this.autotransporteFederalControl1.Location = new System.Drawing.Point(-1, 44);
             this.autotransporteFederalControl1.Name = "autotransporteFederalControl1";
-            this.autotransporteFederalControl1.Size = new System.Drawing.Size(605, 86);
+            this.autotransporteFederalControl1.Size = new System.Drawing.Size(605, 122);
             this.autotransporteFederalControl1.TabIndex = 2;
             // 
             // panel3
@@ -187,7 +187,7 @@ namespace WindowsFormsApp1
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel8.Location = new System.Drawing.Point(634, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(89, 450);
+            this.panel8.Size = new System.Drawing.Size(89, 550);
             this.panel8.TabIndex = 2;
             // 
             // botonesPersonasControl1
@@ -203,7 +203,7 @@ namespace WindowsFormsApp1
             // BtnGuardar
             // 
             this.BtnGuardar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BtnGuardar.Location = new System.Drawing.Point(0, 400);
+            this.BtnGuardar.Location = new System.Drawing.Point(0, 500);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(89, 50);
             this.BtnGuardar.TabIndex = 4;
@@ -215,7 +215,7 @@ namespace WindowsFormsApp1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 450);
+            this.ClientSize = new System.Drawing.Size(723, 550);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
             this.Name = "FrmTransporteTerrestre";
@@ -250,10 +250,10 @@ namespace WindowsFormsApp1
         private ControlesTerrestre.IdentificacionVehicularControl identificacionVehicularControl1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
-        private ControlesTerrestre.AutotransporteFederalControl autotransporteFederalControl1;
         private System.Windows.Forms.Button BtnOperador;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button BtnGuardar;
         private ControlesGenerales.BotonesPersonasControl botonesPersonasControl1;
+        private ControlesTerrestre.AutotransporteFederalControl autotransporteFederalControl1;
     }
 }
