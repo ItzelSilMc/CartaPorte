@@ -11,13 +11,20 @@ namespace WindowsFormsApp1
         Dictionary<string, string> Permisos ;
 
         ObjetoAutotransporte objetoTerrestre;
-        
+        ObjetoAutotransporte objetoPrevio;
+
+        public bool CargadoParaActualizar = false;
+
         public FrmConfAutotransporte()
         {
             Inicializar();
             
         }
-
+        public void PrepararParaActualizar()
+        {
+            CargadoParaActualizar = true;
+            objetoPrevio = autotransporteFederalControl1.ObtenerAutotransporte();
+        }
         private void Inicializar()
         {
             InitializeComponent();
@@ -51,18 +58,49 @@ namespace WindowsFormsApp1
 
         private void GuardarDatos()
         {
-           
             ObjetoAutotransporte transporte = autotransporteFederalControl1.ObtenerAutotransporte();
 
-            
-            Metodos.InsertarRegistroTabla(EstructurasEnums.TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, transporte);
+            if (!CargadoParaActualizar)
+            {
+                Metodos.InsertarRegistroTabla(EstructurasEnums.TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, transporte);
+                MessageBox.Show("Se han guardado correctamente el transporte", "Carta porte", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //int IdTransporte = Metodos.InsertarRegistroTabla(EstructurasEnums.TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, transporte);
+            }
+            else
+            {
+                List<string> CamposActualizar = new List<string>();
+                if(objetoPrevio.NombreAseguradora != transporte.NombreAseguradora )
+                {
+                    CamposActualizar.Add("NombreAseg = '" + transporte.NombreAseguradora + "'");
+                }
 
+                if(objetoPrevio.PermisoSCT != transporte.PermisoSCT)
+                {
+                    CamposActualizar.Add("PermisoSCT = '" + transporte.PermisoSCT + "'");
 
-            MessageBox.Show("Se han guardado correctamente el transporte", "Carta porte", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
+                if(objetoPrevio.NumPermisoSCT != transporte.NumPermisoSCT)
+                {
+                    CamposActualizar.Add("NumPermisoSTC = "+ transporte.NumPermisoSCT + "'");
+
+                }
+                string cadenaSet  = "SET ";
+                string CadenaWhere = " WHERE ID_FEDERAL = " + objetoTerrestre.ID;
+                foreach(string Campo in CamposActualizar)
+                {
+                    cadenaSet += Campo + ",";
+                }
+                if(CamposActualizar.Count > 0)
+                {
+                    cadenaSet = cadenaSet.Substring(0, cadenaSet.Length - 1);
+                    
+                }
+
+                Metodos.ActualizarRegistro(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, cadenaSet + CadenaWhere);
+            }
             Close();
         }
     }
 }
+ 

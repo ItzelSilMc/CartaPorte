@@ -76,10 +76,12 @@ namespace WindowsFormsApp1.Configuraciones
             this.BtnNotificado.TabIndex = 5;
             this.BtnNotificado.Text = "Notificado";
             this.BtnNotificado.UseVisualStyleBackColor = true;
+            this.BtnNotificado.Click += new System.EventHandler(this.BtnNotificado_Click);
             // 
             // BtnArrendatario
             // 
             this.BtnArrendatario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnArrendatario.Enabled = false;
             this.BtnArrendatario.Location = new System.Drawing.Point(0, 296);
             this.BtnArrendatario.Name = "BtnArrendatario";
             this.BtnArrendatario.Size = new System.Drawing.Size(169, 74);
@@ -90,6 +92,7 @@ namespace WindowsFormsApp1.Configuraciones
             // BtnPropietario
             // 
             this.BtnPropietario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnPropietario.Enabled = false;
             this.BtnPropietario.Location = new System.Drawing.Point(0, 222);
             this.BtnPropietario.Name = "BtnPropietario";
             this.BtnPropietario.Size = new System.Drawing.Size(169, 74);
@@ -111,6 +114,7 @@ namespace WindowsFormsApp1.Configuraciones
             // BtnEmbarcador
             // 
             this.BtnEmbarcador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnEmbarcador.Enabled = false;
             this.BtnEmbarcador.Location = new System.Drawing.Point(0, 74);
             this.BtnEmbarcador.Name = "BtnEmbarcador";
             this.BtnEmbarcador.Size = new System.Drawing.Size(169, 74);
@@ -122,6 +126,7 @@ namespace WindowsFormsApp1.Configuraciones
             // BtnTransportista
             // 
             this.BtnTransportista.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnTransportista.Enabled = false;
             this.BtnTransportista.Location = new System.Drawing.Point(0, 0);
             this.BtnTransportista.Name = "BtnTransportista";
             this.BtnTransportista.Size = new System.Drawing.Size(169, 74);

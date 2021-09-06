@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Configuraciones;
+using WindowsFormsApp1.Modelos;
 using WindowsFormsApp1.Properties;
 using static WindowsFormsApp1.Modelos.EstructurasEnums;
 
@@ -22,7 +24,7 @@ namespace WindowsFormsApp1.ControlesGrid
             RefrescarGrid();
         }
 
-        private void RefrescarGrid()
+        public  void RefrescarGrid()
         {
             DgvRemolque.Rows.Clear();
             tablaInfo = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_REMOLQUES);
@@ -77,7 +79,18 @@ namespace WindowsFormsApp1.ControlesGrid
             {
                 if (e.ColumnIndex == 3)   //Columna editar
                 {
-                    int IdModificar = int.Parse(DgvRemolque.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    
+                    ObjetoRemolque remolque = new ObjetoRemolque();
+                    remolque.ID = int.Parse( DgvRemolque.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    remolque.SubtipoRemolque = DgvRemolque.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    remolque.PlacaRemolque = DgvRemolque.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    
+                    FrmConfRemolque frmRemolque = new FrmConfRemolque(remolque);
+                    frmRemolque.PrepararParaActualizar();
+                    frmRemolque.ShowDialog();
+
+                    RefrescarGrid();
+
 
                 }
                 else

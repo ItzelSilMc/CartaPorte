@@ -126,15 +126,15 @@ namespace WindowsFormsApp1
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_NOTIFICADO:
-                    resultado = "ID_FIGURA_TRANSPORTE, RFCArrendatario, NombreArrendatario, NumRegIdTribArrendatario, ResidenciaFiscalArrendatario, ID_DOMICILIO";
+                    resultado = "RFCNotificado, NombreNotificado, NumRegIdTribNotificado, ResidenciaFiscalNotificado, ID_DOMICILIO";
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_ARRENDATARIO:
-                    resultado = "ID_FIGURA_TRANSPORTE, ";
+                    resultado = "RFCArrendatario, NombreArrendatario, NumRegIdTribArrendatario, ResidenciaFiscalArrendatario, ID_DOMICILIO ";
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_OPERADOR:
-                    resultado = "RFCOperador, NumLicencia, NombreOperador, NumRegIdTribOperador, ResidencialFiscalOperador, ID_DOMICILIO";
+                    resultado = "RFCOperador, NumLicencia, NombreOperador, NumRegIdTribOperador, ResidenciaFiscalOperador, ID_DOMICILIO";
                     break;
 
 
@@ -204,23 +204,23 @@ namespace WindowsFormsApp1
                         break;
 
                     case TablasCartaPorte.VMX_FE_CP_EMBARCADOR:
-                        resultado = "" + resultado;
+                        resultado = "ID_EMBARCADOR, " + resultado;
                         break;
 
                     case TablasCartaPorte.VMX_FE_CP_TRANSPORTISTA:
-                        resultado = "" + resultado;
+                        resultado = "ID_TRANSPORTISTA, " + resultado;
                         break;
 
                     case TablasCartaPorte.VMX_FE_CP_NOTIFICADO:
-                        resultado = "" + resultado;
+                        resultado = "ID_NOTIFICADO, " + resultado;
                         break;
 
                     case TablasCartaPorte.VMX_FE_CP_ARRENDATARIO:
-                        resultado = "" + resultado;
+                        resultado = "ID_ARRENDATARIO, " + resultado;
                         break;
 
                     case TablasCartaPorte.VMX_FE_CP_OPERADOR:
-                        resultado = "" + resultado;
+                        resultado = "ID_OPERADOR, " + resultado;
                         break;
                 }
             }
@@ -629,9 +629,18 @@ namespace WindowsFormsApp1
                 case TablasCartaPorte.VMX_FE_CP_REMOLQUES:
                     NombreId = "ID_REMOLQUE";
                     break;
+
+                case TablasCartaPorte.VMX_FE_CP_NOTIFICADO:
+                    NombreId = "ID_NOTIFICADO";
+                    break;
+
+                case TablasCartaPorte.VMX_FE_CP_OPERADOR:
+                    NombreId = "ID_OPERADOR";
+                    break;
             }
 
-            string sentenciaDelete = "DELETE FROM  " + ObtenerNombreTabla(tabla) + " WHERE "+ NombreId + " = " + IdEliminar ;
+            string sentenciaDelete = "SET NOCOUNT OFF;" +
+                "DELETE FROM  " + ObtenerNombreTabla(tabla) + " WHERE "+ NombreId + " = " + IdEliminar ;
             SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
             c.Open();
             SqlCommand comando = new SqlCommand(sentenciaDelete, c);
@@ -640,6 +649,22 @@ namespace WindowsFormsApp1
 
 
             return registrosAfectados > 0 ;
+        }
+
+        public static bool ActualizarRegistro(TablasCartaPorte tabla, string CamposYWhere  )
+        {
+            string SentenciaUdate = "";
+            string TablaActualizar  = ObtenerNombreTabla(tabla);
+
+            SentenciaUdate = "SET NOCOUNT OFF;" +
+                " UPDATE " + TablaActualizar + " " + CamposYWhere;
+            SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+            c.Open();
+            SqlCommand comando = new SqlCommand(SentenciaUdate, c);
+            int RegistrosActualizados = comando.ExecuteNonQuery();
+
+
+            return RegistrosActualizados > 0;
         }
 
 

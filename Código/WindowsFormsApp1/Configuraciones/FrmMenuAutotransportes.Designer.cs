@@ -29,42 +29,20 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.BtnTransporte = new System.Windows.Forms.Button();
-            this.BtnIdentificacionVehicular = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnRemolque = new System.Windows.Forms.Button();
+            this.BtnIdentificacionVehicular = new System.Windows.Forms.Button();
+            this.BtnTransporte = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // BtnTransporte
-            // 
-            this.BtnTransporte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnTransporte.Location = new System.Drawing.Point(0, 0);
-            this.BtnTransporte.Name = "BtnTransporte";
-            this.BtnTransporte.Size = new System.Drawing.Size(174, 74);
-            this.BtnTransporte.TabIndex = 0;
-            this.BtnTransporte.Text = "Autotransporte federal";
-            this.BtnTransporte.UseVisualStyleBackColor = true;
-            this.BtnTransporte.Click += new System.EventHandler(this.BtnTransporte_Click);
-            // 
-            // BtnIdentificacionVehicular
-            // 
-            this.BtnIdentificacionVehicular.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnIdentificacionVehicular.Location = new System.Drawing.Point(0, 74);
-            this.BtnIdentificacionVehicular.Name = "BtnIdentificacionVehicular";
-            this.BtnIdentificacionVehicular.Size = new System.Drawing.Size(174, 74);
-            this.BtnIdentificacionVehicular.TabIndex = 1;
-            this.BtnIdentificacionVehicular.Text = " Identificación Vehicular";
-            this.BtnIdentificacionVehicular.UseVisualStyleBackColor = true;
-            this.BtnIdentificacionVehicular.Click += new System.EventHandler(this.BtnIdentificacionVehicular_Click);
             // 
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.Color.Red;
-            this.BtnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnSalir.Dock = System.Windows.Forms.DockStyle.Right;
             this.BtnSalir.ForeColor = System.Drawing.Color.White;
-            this.BtnSalir.Location = new System.Drawing.Point(0, 224);
+            this.BtnSalir.Location = new System.Drawing.Point(525, 0);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(174, 74);
+            this.BtnSalir.Size = new System.Drawing.Size(140, 85);
             this.BtnSalir.TabIndex = 2;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = false;
@@ -72,20 +50,51 @@ namespace WindowsFormsApp1
             // 
             // BtnRemolque
             // 
-            this.BtnRemolque.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnRemolque.Location = new System.Drawing.Point(0, 148);
+            this.BtnRemolque.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnRemolque.Image = global::WindowsFormsApp1.Properties.Resources.Container64;
+            this.BtnRemolque.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnRemolque.Location = new System.Drawing.Point(348, 0);
             this.BtnRemolque.Name = "BtnRemolque";
-            this.BtnRemolque.Size = new System.Drawing.Size(174, 74);
+            this.BtnRemolque.Size = new System.Drawing.Size(174, 85);
             this.BtnRemolque.TabIndex = 3;
             this.BtnRemolque.Text = "Remolques";
+            this.BtnRemolque.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnRemolque.UseVisualStyleBackColor = true;
             this.BtnRemolque.Click += new System.EventHandler(this.BtnRemolque_Click);
+            // 
+            // BtnIdentificacionVehicular
+            // 
+            this.BtnIdentificacionVehicular.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnIdentificacionVehicular.Image = global::WindowsFormsApp1.Properties.Resources.licenseBlack64;
+            this.BtnIdentificacionVehicular.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnIdentificacionVehicular.Location = new System.Drawing.Point(174, 0);
+            this.BtnIdentificacionVehicular.Name = "BtnIdentificacionVehicular";
+            this.BtnIdentificacionVehicular.Size = new System.Drawing.Size(174, 85);
+            this.BtnIdentificacionVehicular.TabIndex = 1;
+            this.BtnIdentificacionVehicular.Text = " Identificación Vehicular";
+            this.BtnIdentificacionVehicular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnIdentificacionVehicular.UseVisualStyleBackColor = true;
+            this.BtnIdentificacionVehicular.Click += new System.EventHandler(this.BtnIdentificacionVehicular_Click);
+            // 
+            // BtnTransporte
+            // 
+            this.BtnTransporte.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnTransporte.Image = global::WindowsFormsApp1.Properties.Resources.truck64;
+            this.BtnTransporte.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnTransporte.Location = new System.Drawing.Point(0, 0);
+            this.BtnTransporte.Name = "BtnTransporte";
+            this.BtnTransporte.Size = new System.Drawing.Size(174, 85);
+            this.BtnTransporte.TabIndex = 0;
+            this.BtnTransporte.Text = "Autotransporte federal";
+            this.BtnTransporte.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnTransporte.UseVisualStyleBackColor = true;
+            this.BtnTransporte.Click += new System.EventHandler(this.BtnTransporte_Click);
             // 
             // FrmMenuAutotransportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(174, 298);
+            this.ClientSize = new System.Drawing.Size(665, 85);
             this.Controls.Add(this.BtnRemolque);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnIdentificacionVehicular);

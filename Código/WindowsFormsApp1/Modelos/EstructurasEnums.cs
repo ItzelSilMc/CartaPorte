@@ -39,7 +39,8 @@ namespace WindowsFormsApp1.Modelos
             Embarcador,
             Arrendatario,
             Operador,
-            Propietario
+            Propietario,
+            Notificado
         }
 
 

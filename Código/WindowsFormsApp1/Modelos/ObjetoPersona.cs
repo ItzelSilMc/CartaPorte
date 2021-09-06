@@ -12,10 +12,18 @@ namespace WindowsFormsApp1.Modelos
         public int ID;
 
         public TipoPersona tipoPersona;
-        public string  RFC,CodigoTransportista,  Nombre, NumRegistro, ResidenciaFiscal, calle, NumExterior, NumInterior, NumLicencia;
+        public string  RFC,CodigoTransportista, Numlicencia,  Nombre, NumRegistro, ResidenciaFiscal, calle, NumExterior, NumInterior, NumLicencia;
+        int IdDomicilio;
         public ObjetoDireccion objDireccion;
 
-
+        public void ActualizarDomicilio(int IdDomicilio)
+        {
+            this.IdDomicilio = IdDomicilio;
+        }
+        public void SetTipoPersona(TipoPersona tipoPersona)
+        {
+            this.tipoPersona = tipoPersona;
+        }
 
         public override string ToString()
         {
@@ -33,7 +41,13 @@ namespace WindowsFormsApp1.Modelos
                     break;
 
                 case TipoPersona.Operador:
-                    Cadena = "";
+                    Cadena = "'" + RFC + "','" + CodigoTransportista + "','" + Nombre + "','" + ResidenciaFiscal + "','" +
+                     NumRegistro + "'";
+                    break;
+
+                case TipoPersona.Notificado:
+                    Cadena = "'" + RFC + "','" + Nombre + "','" + NumRegistro +"','"+ ResidenciaFiscal + "'," +
+                     IdDomicilio ;
                     break;
             }
 
