@@ -160,6 +160,8 @@ namespace WindowsFormsApp1
 
             //int IDMerca = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_DETALLE_MERCANCIA, detMerca);
 
+           // bool yesOnO = Metodos.ActualizarRegistro(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, "SET NombreAseg = 'SEGUROS BANQUEOS' WHERE ID_FEDERAL = 10");
+
             #endregion
            
             try

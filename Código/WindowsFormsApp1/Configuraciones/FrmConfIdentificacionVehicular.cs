@@ -15,7 +15,10 @@ namespace WindowsFormsApp1.Configuraciones
     public partial class FrmConfIdentificacionVehicular : Form
     {
         Dictionary<string, string> ConfiguracionesVehiculares ;
+
+        ObjetoIdentificacionVehicular objetoPrevio;
         ObjetoIdentificacionVehicular identificacion;
+
         public bool CargadoParaActualizar = false;
 
         public FrmConfIdentificacionVehicular()
@@ -28,6 +31,11 @@ namespace WindowsFormsApp1.Configuraciones
             this.identificacion = identificacion;
 
             identificacionVehicularControl1.CargarDatosPrevios(identificacion);
+        }
+        public void PrepararParaActualizar()
+        {
+            CargadoParaActualizar = true;
+            objetoPrevio = identificacion;
         }
 
         private void Inicializar()
@@ -46,7 +54,7 @@ namespace WindowsFormsApp1.Configuraciones
         {
             try 
             {
-                ObjetoIdentificacionVehicular identificacion = identificacionVehicularControl1.ObtenerIdentificacionVehicular();
+                identificacion = identificacionVehicularControl1.ObtenerIdentificacionVehicular();
                 if (!CargadoParaActualizar)
                 {
                     Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR, identificacion);
@@ -54,7 +62,10 @@ namespace WindowsFormsApp1.Configuraciones
                 }
                 else
                 {
+                    string CadenaWhere = " WHERE ID_VEHICULAR = " +  objetoPrevio.ID ;
+                    string CadenaUpdate = ObtenerCadenaSet();
 
+                    Metodos.ActualizarRegistro(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR, CadenaUpdate + CadenaWhere);
                 }
 
                 Close();
@@ -65,6 +76,41 @@ namespace WindowsFormsApp1.Configuraciones
                 MessageBox.Show(exc.Message);
             }
 
+        }
+
+        private string ObtenerCadenaSet()
+        {
+            List<string> CamposModificados = new List<string>();
+
+            if(objetoPrevio.ConfiguracionVehicular != identificacion.ConfiguracionVehicular)
+            {
+                CamposModificados.Add("ConfigVehicular = '" + identificacion.ConfiguracionVehicular + "',");
+            }
+            if(objetoPrevio.PlacaVehiculo != identificacion.PlacaVehiculo)
+            {
+                CamposModificados.Add("PlacaVM = '" + identificacion.PlacaVehiculo + "',");
+
+            }
+            if(objetoPrevio.AñoModelo != identificacion.AñoModelo)
+            {
+                CamposModificados.Add("AnioModeloVM =" + identificacion.AñoModelo+ ",");
+            }
+            if(objetoPrevio.NumPolizaSeguro != identificacion.NumPolizaSeguro)
+            {
+                CamposModificados.Add("NumPolizaSeguro = '" + identificacion.NumPolizaSeguro + "',");
+
+            }
+            string CadenaSet = "SET ";
+
+            foreach(string campos in CamposModificados)
+            {
+                CadenaSet += campos;
+            }
+            if(CamposModificados.Count > 0)
+            {
+                CadenaSet = CadenaSet.Substring(0, CadenaSet.Length - 1);
+            }
+            return CadenaSet;
         }
     }
 }

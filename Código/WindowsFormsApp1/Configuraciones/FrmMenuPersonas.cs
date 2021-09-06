@@ -36,7 +36,14 @@ namespace WindowsFormsApp1.Configuraciones
 
         private void BtnOperador_Click(object sender, EventArgs e)
         {
-            AbrirFormaPersona(TipoPersona.Operador);
+            //AbrirFormaPersona(TipoPersona.Operador);
+
+            Hide();
+            FrmAdministracion admin = new FrmAdministracion();
+            admin.SetTipoGrid(TablasCartaPorte.VMX_FE_CP_OPERADOR);
+            admin.ShowDialog();
+            Show();
+            
 
         }
 
@@ -47,6 +54,17 @@ namespace WindowsFormsApp1.Configuraciones
             frmPer.SetTipo(tipoPersona);
             frmPer.AbiertoDesdeConfiguracion = true;
             frmPer.ShowDialog();
+            Show();
+        }
+
+        private void BtnNotificado_Click(object sender, EventArgs e)
+        {
+            //AbrirFormaPersona(TipoPersona.Operador);
+
+            Hide();
+            FrmAdministracion admin = new FrmAdministracion();
+            admin.SetTipoGrid(TablasCartaPorte.VMX_FE_CP_NOTIFICADO);
+            admin.ShowDialog();
             Show();
         }
     }

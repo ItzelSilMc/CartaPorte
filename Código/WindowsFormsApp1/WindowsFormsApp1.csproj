@@ -115,6 +115,12 @@
     <Compile Include="ControlesGrid\GridIdentificacionVehicular.Designer.cs">
       <DependentUpon>GridIdentificacionVehicular.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlesGrid\GridPersona.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesGrid\GridPersona.Designer.cs">
+      <DependentUpon>GridPersona.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlesGrid\GridRemolque.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -234,6 +240,8 @@
     <Compile Include="Modelos\ObjetoMaritimo.cs" />
     <Compile Include="Modelos\ObjetoDetalleMercancia.cs" />
     <Compile Include="Modelos\ObjetoMercancias.cs" />
+    <Compile Include="Modelos\ObjetoNotificado.cs" />
+    <Compile Include="Modelos\ObjetoOperador.cs" />
     <Compile Include="Modelos\ObjetoPersona.cs" />
     <Compile Include="Modelos\ObjetoProducto.cs" />
     <Compile Include="Modelos\ObjetoRemolque.cs" />
@@ -273,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlesGrid\GridIdentificacionVehicular.resx">
       <DependentUpon>GridIdentificacionVehicular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesGrid\GridPersona.resx">
+      <DependentUpon>GridPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlesGrid\GridRemolque.resx">
       <DependentUpon>GridRemolque.cs</DependentUpon>
@@ -378,6 +389,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\license64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Container64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\licenseBlack64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barco64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\airplane64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\train64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

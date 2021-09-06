@@ -35,6 +35,17 @@ namespace WindowsFormsApp1
                     gridAUsar = new  GridRemolque();
                     Text = Text.Replace("-", "Remolques");
                     break;
+
+                case TablasCartaPorte.VMX_FE_CP_OPERADOR:
+                    gridAUsar = new GridPersona(TipoPersona.Operador);
+                    Text = Text.Replace("-", "Operadores");
+                    break;
+
+                case TablasCartaPorte.VMX_FE_CP_NOTIFICADO:
+                    gridAUsar = new GridPersona(TipoPersona.Notificado);
+                    Text = Text.Replace("-"," Notificados");
+                    break;
+
             }
 
             PnlGrid.Controls.Add(gridAUsar);
@@ -66,8 +77,48 @@ namespace WindowsFormsApp1
                     Show();
                     break;
 
+                case TablasCartaPorte.VMX_FE_CP_NOTIFICADO:
+                    FrmPersona frmPersona = new FrmPersona();
+                    frmPersona.SetTipo(TipoPersona.Notificado);
+                    Hide();
+                    frmPersona.ShowDialog();
+                    Show();
+                    
+                    break;
+
+                case TablasCartaPorte.VMX_FE_CP_OPERADOR:
+                    FrmPersona frmpersona = new FrmPersona();
+                    frmpersona.SetTipo(TipoPersona.Operador);
+                    Hide();
+                    frmpersona.ShowDialog();
+                    Show();
+                    break;
+
 
             }
+
+            //Para refrescar el grid respectivo en casa de ser agrado un nuevo registro.
+
+            foreach (Control control in PnlGrid.Controls)
+            {
+                if (control is GridAutotransporte autotransporte)
+                {
+                    autotransporte.RefrescarGrid();
+                }
+                if(control is GridIdentificacionVehicular identificacion)
+                {
+                    identificacion.RefrescarGrid();
+                }
+                if(control is GridRemolque remolque)
+                {
+                    remolque.RefrescarGrid();
+                }
+                if(control is GridPersona persona)
+                {
+                    persona.RefrescarGrid();
+                }
+            }
+
 
         }
     }

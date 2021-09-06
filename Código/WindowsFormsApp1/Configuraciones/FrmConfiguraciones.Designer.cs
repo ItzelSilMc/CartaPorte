@@ -50,17 +50,17 @@ namespace WindowsFormsApp1
             this.panel1.Controls.Add(this.BtnAutotransporte);
             this.panel1.Location = new System.Drawing.Point(6, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(163, 362);
+            this.panel1.Size = new System.Drawing.Size(823, 99);
             this.panel1.TabIndex = 0;
             // 
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.Color.Red;
-            this.BtnSalir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnSalir.Dock = System.Windows.Forms.DockStyle.Right;
             this.BtnSalir.ForeColor = System.Drawing.Color.White;
-            this.BtnSalir.Location = new System.Drawing.Point(0, 295);
+            this.BtnSalir.Location = new System.Drawing.Point(702, 0);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(163, 59);
+            this.BtnSalir.Size = new System.Drawing.Size(121, 99);
             this.BtnSalir.TabIndex = 11;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = false;
@@ -68,56 +68,72 @@ namespace WindowsFormsApp1
             // 
             // BtnPersonas
             // 
-            this.BtnPersonas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnPersonas.Location = new System.Drawing.Point(0, 236);
+            this.BtnPersonas.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnPersonas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPersonas.Image = global::WindowsFormsApp1.Properties.Resources.people64;
+            this.BtnPersonas.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnPersonas.Location = new System.Drawing.Point(540, 0);
             this.BtnPersonas.Name = "BtnPersonas";
-            this.BtnPersonas.Size = new System.Drawing.Size(163, 59);
+            this.BtnPersonas.Size = new System.Drawing.Size(155, 99);
             this.BtnPersonas.TabIndex = 10;
-            this.BtnPersonas.Text = "Personas\r\n(Notificado, transporstista, etc.)\r\n\r\n";
+            this.BtnPersonas.Text = "Notificado, transporstista, etc.)\r\n\r\n";
+            this.BtnPersonas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPersonas.UseVisualStyleBackColor = true;
             this.BtnPersonas.Click += new System.EventHandler(this.BtnPersonas_Click);
             // 
             // BtnFerroviario
             // 
-            this.BtnFerroviario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnFerroviario.Dock = System.Windows.Forms.DockStyle.Left;
             this.BtnFerroviario.Enabled = false;
-            this.BtnFerroviario.Location = new System.Drawing.Point(0, 177);
+            this.BtnFerroviario.Image = global::WindowsFormsApp1.Properties.Resources.train64;
+            this.BtnFerroviario.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnFerroviario.Location = new System.Drawing.Point(405, 0);
             this.BtnFerroviario.Name = "BtnFerroviario";
-            this.BtnFerroviario.Size = new System.Drawing.Size(163, 59);
+            this.BtnFerroviario.Size = new System.Drawing.Size(135, 99);
             this.BtnFerroviario.TabIndex = 3;
             this.BtnFerroviario.Text = "Transporte ferroviario";
+            this.BtnFerroviario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnFerroviario.UseVisualStyleBackColor = true;
             // 
             // BtnAereo
             // 
-            this.BtnAereo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnAereo.Dock = System.Windows.Forms.DockStyle.Left;
             this.BtnAereo.Enabled = false;
-            this.BtnAereo.Location = new System.Drawing.Point(0, 118);
+            this.BtnAereo.Image = global::WindowsFormsApp1.Properties.Resources.airplane64;
+            this.BtnAereo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnAereo.Location = new System.Drawing.Point(270, 0);
             this.BtnAereo.Name = "BtnAereo";
-            this.BtnAereo.Size = new System.Drawing.Size(163, 59);
+            this.BtnAereo.Size = new System.Drawing.Size(135, 99);
             this.BtnAereo.TabIndex = 2;
             this.BtnAereo.Text = "Transporte aereo";
+            this.BtnAereo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnAereo.UseVisualStyleBackColor = true;
             // 
             // BtnTransporteMaritimo
             // 
-            this.BtnTransporteMaritimo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnTransporteMaritimo.Dock = System.Windows.Forms.DockStyle.Left;
             this.BtnTransporteMaritimo.Enabled = false;
-            this.BtnTransporteMaritimo.Location = new System.Drawing.Point(0, 59);
+            this.BtnTransporteMaritimo.Image = global::WindowsFormsApp1.Properties.Resources.barco64;
+            this.BtnTransporteMaritimo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnTransporteMaritimo.Location = new System.Drawing.Point(135, 0);
             this.BtnTransporteMaritimo.Name = "BtnTransporteMaritimo";
-            this.BtnTransporteMaritimo.Size = new System.Drawing.Size(163, 59);
+            this.BtnTransporteMaritimo.Size = new System.Drawing.Size(135, 99);
             this.BtnTransporteMaritimo.TabIndex = 1;
             this.BtnTransporteMaritimo.Text = "Transporte Maritimo";
+            this.BtnTransporteMaritimo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnTransporteMaritimo.UseVisualStyleBackColor = true;
             // 
             // BtnAutotransporte
             // 
-            this.BtnAutotransporte.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnAutotransporte.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnAutotransporte.Image = global::WindowsFormsApp1.Properties.Resources.truck64;
+            this.BtnAutotransporte.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnAutotransporte.Location = new System.Drawing.Point(0, 0);
             this.BtnAutotransporte.Name = "BtnAutotransporte";
-            this.BtnAutotransporte.Size = new System.Drawing.Size(163, 59);
+            this.BtnAutotransporte.Size = new System.Drawing.Size(135, 99);
             this.BtnAutotransporte.TabIndex = 0;
             this.BtnAutotransporte.Text = "Autotransporte federal";
+            this.BtnAutotransporte.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnAutotransporte.UseVisualStyleBackColor = true;
             this.BtnAutotransporte.Click += new System.EventHandler(this.BtnAutotransporte_Click);
             // 
@@ -125,7 +141,7 @@ namespace WindowsFormsApp1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(174, 369);
+            this.ClientSize = new System.Drawing.Size(832, 106);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

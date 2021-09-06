@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
     {
         public bool GuardadoExitoso = false;
         public string Tipo = "";
+        TipoPersona tipo;
 
         public bool AbiertoDesdeConfiguracion = false;
 
@@ -46,6 +47,8 @@ namespace WindowsFormsApp1
 
         public  void SetTipo(TipoPersona tipo)
         {
+            this.tipo = tipo;
+
             string cadenaTipo =  "";
             switch(tipo)
             {
@@ -69,6 +72,10 @@ namespace WindowsFormsApp1
 
                 case TipoPersona.Propietario:
                     cadenaTipo = "Propietario";
+                    break;
+
+                case TipoPersona.Notificado:
+                    cadenaTipo = "Notificado";
                     break;
 
 
@@ -97,14 +104,33 @@ namespace WindowsFormsApp1
             {
                 GuardadoExitoso = true;
             }
-            if(AbiertoDesdeConfiguracion)
+            if(!AbiertoDesdeConfiguracion)
             {
                 ObjetoPersona persNueva = ObtenerInformacionPersona();
+                persNueva.SetTipoPersona(tipo);
 
                 int idDomicilio = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_DOMICILIO, persNueva.objDireccion);
 
-              
-                Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_TRANSPORTISTA, persNueva);
+                persNueva.ActualizarDomicilio(idDomicilio);
+              TablasCartaPorte tablaInsertar = TablasCartaPorte.VMX_FE_CP_TRANSPORTISTA;
+
+
+
+              switch(tipo)
+                {
+                    case TipoPersona.Transportista:
+                        tablaInsertar = TablasCartaPorte.VMX_FE_CP_TRANSPORTISTA;
+                        break;
+
+                    case TipoPersona.Notificado:
+                        tablaInsertar = TablasCartaPorte.VMX_FE_CP_NOTIFICADO;
+                        break;
+
+                    case TipoPersona.Operador:
+                        tablaInsertar = TablasCartaPorte.VMX_FE_CP_OPERADOR;
+                        break;
+                }
+                Metodos.InsertarRegistroTabla(tablaInsertar, persNueva);
                 
             }
             this.Close();

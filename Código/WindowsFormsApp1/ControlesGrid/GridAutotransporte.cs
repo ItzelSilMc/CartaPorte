@@ -24,7 +24,7 @@ namespace WindowsFormsApp1.ControlesGrid
             
         }
 
-        private void RefrescarGrid()
+        public  void RefrescarGrid()
         {
             DgvInformacion.Rows.Clear();
             tablaInfo = Metodos.ObtenerValoresConsulta(Modelos.EstructurasEnums.TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL);
@@ -63,9 +63,12 @@ namespace WindowsFormsApp1.ControlesGrid
                         objTerrestre.NombreAseguradora = row["NombreAseg"].ToString();
                         objTerrestre.PermisoSCT = row["PermSCT"].ToString();
                         objTerrestre.NumPermisoSCT = row["NumPermisoSCT"].ToString();
+                        objTerrestre.ID = int.Parse(row["ID_FEDERAL"].ToString());
                     }
 
                     FrmConfAutotransporte frmTerrestre = new FrmConfAutotransporte(objTerrestre);
+                   
+                    frmTerrestre.PrepararParaActualizar();
                     
                     frmTerrestre.ShowDialog();
 

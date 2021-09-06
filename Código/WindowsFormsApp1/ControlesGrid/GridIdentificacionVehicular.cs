@@ -23,7 +23,7 @@ namespace WindowsFormsApp1.ControlesGrid
             RefrescarGrid();
         }
 
-        private void RefrescarGrid()
+        public void RefrescarGrid()
         {
             DgvIdentificacion.Rows.Clear();
             tablaInfo = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR);
@@ -88,6 +88,7 @@ namespace WindowsFormsApp1.ControlesGrid
                     ObjetoIdentificacionVehicular identificacion = new ObjetoIdentificacionVehicular();
                     foreach (DataRow row in tabla.Rows)
                     {
+                        
                         identificacion.ConfiguracionVehicular = row["ConfigVehicular"].ToString();
                         identificacion.PlacaVehiculo = row["PlacaVM"].ToString();
                         identificacion.AñoModelo = int.Parse(row["AnioModeloVM"].ToString());
@@ -96,7 +97,7 @@ namespace WindowsFormsApp1.ControlesGrid
                     }
 
                     FrmConfIdentificacionVehicular FrmIdentificacion = new FrmConfIdentificacionVehicular(identificacion);
-                    FrmIdentificacion.CargadoParaActualizar = true;
+                    FrmIdentificacion.PrepararParaActualizar();
                     FrmIdentificacion.ShowDialog();
 
                 }
