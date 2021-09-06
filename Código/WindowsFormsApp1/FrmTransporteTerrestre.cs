@@ -6,12 +6,13 @@ using System.Windows.Forms;
 using WindowsFormsApp1.Modelos;
 using static WindowsFormsApp1.Modelos.EstructurasEnums;
 
+
 namespace WindowsFormsApp1
 {
     public partial class FrmTransporteTerrestre : Form
     {
 
-
+        DataTable dtC = new DataTable();
         public  bool GuardadoCorrectamente = false;
 
         ObjetoAutoTransporteFederal autoTransporteFederal = new ObjetoAutoTransporteFederal();
@@ -61,24 +62,12 @@ namespace WindowsFormsApp1
             DataTable ConfigFederal = new DataTable();
             DataTable ConfigVehicular = new DataTable();
             DataTable ConfigRemolque = new DataTable();
-            DataTable dtC = new DataTable();
-            dtC = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_CONFIGURACION_FEDERAL, 1, INVOICE_ID);
+            
+            
+            ConfigFederal = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL);
+            ConfigVehicular = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR);
+            ConfigRemolque = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_REMOLQUES);
 
-            if (dtC.Rows.Count > 0)
-            {
-                MessageBox.Show("Ya existen registros");
-                //ConfigFederal = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL,Int32.Parse(dtC.Rows[0]["ID_FEDERAL"].ToString()));
-                //ConfigVehicular = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR, Int32.Parse(dtC.Rows[0]["ID_VEHICULAR"].ToString()));
-                //ConfigRemolque = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_REMOLQUES, Int32.Parse(dtC.Rows[0]["ID_REMOLQUE"].ToString()));
-
-            }
-            else
-            {
-                ConfigFederal = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL);
-                ConfigVehicular = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR);
-                ConfigRemolque = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_REMOLQUES);
-
-            }
 
             Dictionary<string, string> dictFederal = new Dictionary<string, string>();
             foreach (DataRow dr in ConfigFederal.Rows)
@@ -105,9 +94,32 @@ namespace WindowsFormsApp1
 
         private void FrmTransporteTerrestre_Load(object sender, EventArgs e)
         {
+            dtC = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_CONFIGURACION_FEDERAL, 1, INVOICE_ID);
+            string IdFerderal = "";
+            string IdVehicular = "";
+            string IdRemolque = "";
             
+            DataTable ConfigFederal = new DataTable();
+            DataTable ConfigVehicular = new DataTable();
+            DataTable ConfigRemolque = new DataTable();
+            if (dtC.Rows.Count > 0)
+            {
+                IdFerderal = dtC.Rows[0]["ID_FEDERAL"].ToString();
+                IdVehicular = dtC.Rows[0]["ID_VEHICULAR"].ToString();
+                IdRemolque = dtC.Rows[0]["ID_REMOLQUE"].ToString();
 
-            
+                ConfigFederal = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL,Int32.Parse(IdFerderal));
+                autotransporteFederalControl1.cargarDatos(IdFerderal,ConfigFederal.Rows[0]["PermSCT"].ToString(), ConfigFederal.Rows[0]["NumPermisoSCT"].ToString(), ConfigFederal.Rows[0]["NombreAseg"].ToString());
+               
+                ConfigVehicular = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR, Int32.Parse(IdVehicular));
+                identificacionVehicularControl1.cargarDatos(IdVehicular,ConfigVehicular.Rows[0]["ConfigVehicular"].ToString(), ConfigVehicular.Rows[0]["PlacaVM"].ToString(), ConfigVehicular.Rows[0]["AnioModeloVM"].ToString(), ConfigVehicular.Rows[0]["NumPolizaSeguro"].ToString()) ;
+
+                ConfigRemolque = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_REMOLQUES, Int32.Parse(IdRemolque));
+                remolqueControl1.cargarDatos(IdRemolque,ConfigRemolque.Rows[0]["SubTipoRem"].ToString(), ConfigRemolque.Rows[0]["Placa"].ToString());
+
+            }
+
+
         }
         private void CargarCombosConfig(Dictionary<string, string> configFederal, Dictionary<string, string> configVehicular, Dictionary<string, string> ConfigRemolques)
         {
@@ -151,24 +163,31 @@ namespace WindowsFormsApp1
             {
                 DataTable dtC = new DataTable();
                 dtC = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_CONFIGURACION_FEDERAL, 1,INVOICE_ID);
+                Modelos.ObjetoConFederal Ob = new ObjetoConFederal();
+                Ob.INVOICE_ID = INVOICE_ID;
+                Ob.ID_FEDERAL = autotransporteFederalControl1.IdFederal;
+                Ob.ID_VEHICULAR = identificacionVehicularControl1.IdVehicular;
+                Ob.ID_REMOLQUE = remolqueControl1.IdRemolque;
+
+                int i = 0;
 
                 if (dtC.Rows.Count >0)
                 {
-                    MessageBox.Show("Ya existen registros");
+                   
+                    string consulta = string.Format("UPDATE  CFDI2..VMX_FE_CP_CONFIGURACION_FEDERAL SET ID_FEDERAL='{0}', ID_VEHICULAR ='{1}', ID_REMOLQUE='{2}' WHERE INVOICE_ID='{3}'",
+                        Ob.ID_FEDERAL, Ob.ID_VEHICULAR, Ob.ID_REMOLQUE, Ob.INVOICE_ID)+ " SELECT Id = SCOPE_IDENTITY()";
+
+                    i = Metodos.EjecutarConsulta(consulta);
+                    if (i > 0)
+                        MessageBox.Show("Registros actualizados con éxito");
                 }
                 else
                 {
-                    Modelos.ObjetoConFederal Ob = new ObjetoConFederal();
-                    Ob.INVOICE_ID = INVOICE_ID;
-                    Ob.ID_FEDERAL = autotransporteFederalControl1.IdFederal;
-                    Ob.ID_VEHICULAR = identificacionVehicularControl1.IdVehicular;
-                    Ob.ID_REMOLQUE = remolqueControl1.IdRemolque;
-                    int i = 0;
+                    
                     i = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_CONFIGURACION_FEDERAL, Ob);
                     if (i>0)
-                    {
                         MessageBox.Show("Registros guardados con éxito");
-                    }
+                    
                 }
                 
             }

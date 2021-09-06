@@ -55,21 +55,30 @@ namespace WindowsFormsApp1.ControlesTerrestre
         {
 
         }
-
+        public void cargarDatos(string id,string SubTipoRem, string Placa)
+        {
+            IdRemolque = id;
+            textTipoRemolque.Text = SubTipoRem;
+            CmbTipoRemolque.SelectedItem = null;
+            TxtPlacaRemolque.Text = Placa;
+        }
         private void comboRemolque_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string rp = ((System.Collections.Generic.KeyValuePair<string, string>)comboRemolque.SelectedItem).Key;
-            //MessageBox.Show("select item" + rp);
-            DataTable dt = new DataTable();
-            if (!string.IsNullOrEmpty(rp) || rp != "")
-                dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_REMOLQUES, Int32.Parse(rp));
-
-            if (dt.Rows.Count > 0)
+            if (comboRemolque.SelectedItem != null)
             {
-                IdRemolque = rp;
-                textTipoRemolque.Text= dt.Rows[0]["SubTipoRem"].ToString();
-                CmbTipoRemolque.SelectedValue = dt.Rows[0]["SubTipoRem"].ToString();
-                TxtPlacaRemolque.Text = dt.Rows[0]["Placa"].ToString();
+                string rp = ((System.Collections.Generic.KeyValuePair<string, string>)comboRemolque.SelectedItem).Key;
+                //MessageBox.Show("select item" + rp);
+                DataTable dt = new DataTable();
+                if (!string.IsNullOrEmpty(rp) || rp != "")
+                    dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_REMOLQUES, Int32.Parse(rp));
+
+                if (dt.Rows.Count > 0)
+                {
+                    IdRemolque = rp;
+                    textTipoRemolque.Text = dt.Rows[0]["SubTipoRem"].ToString();
+                    CmbTipoRemolque.SelectedValue = dt.Rows[0]["SubTipoRem"].ToString();
+                    TxtPlacaRemolque.Text = dt.Rows[0]["Placa"].ToString();
+                }
             }
         }
     }

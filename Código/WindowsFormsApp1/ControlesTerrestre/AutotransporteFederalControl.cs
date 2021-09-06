@@ -53,23 +53,35 @@ namespace WindowsFormsApp1.ControlesTerrestre
            
         }
 
+        public void cargarDatos(string id,string PermSCT, string NumPermisoSCT, string NombreAseg)
+        {
+            IdFederal = id;
+            CmbPermisoSCT.SelectedItem = null;
+            textConfig.Text = PermSCT;
+            TxtNumeroPermisoSCT.Text = NumPermisoSCT;
+            TxtNombreAseguradora.Text = NombreAseg;
+        }
         private void configFederal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string rp = ((System.Collections.Generic.KeyValuePair<string, string>)configFederal.SelectedItem).Key;
-            
-            DataTable dt = new DataTable();
-            if (!string.IsNullOrEmpty(rp) || rp != "")
-                dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, Int32.Parse(rp));
-
-            if (dt.Rows.Count > 0)
+            if (configFederal.SelectedItem != null)
             {
-                IdFederal = rp;
-                textConfig.Text = dt.Rows[0]["PermSCT"].ToString();
-                CmbPermisoSCT.SelectedValue = dt.Rows[0]["PermSCT"].ToString();
-                TxtNumeroPermisoSCT.Text = dt.Rows[0]["NumPermisoSCT"].ToString();
-                TxtNombreAseguradora.Text = dt.Rows[0]["NombreAseg"].ToString();
-                TxtNumeroPolizaSeguro.Text = dt.Rows[0]["NombreAseg"].ToString();
+                string rp = ((System.Collections.Generic.KeyValuePair<string, string>)configFederal.SelectedItem).Key;
+
+                DataTable dt = new DataTable();
+                if (!string.IsNullOrEmpty(rp) || rp != "")
+                    dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, Int32.Parse(rp));
+
+                if (dt.Rows.Count > 0)
+                {
+                    IdFederal = rp;
+                    textConfig.Text = dt.Rows[0]["PermSCT"].ToString();
+                    CmbPermisoSCT.SelectedValue = dt.Rows[0]["PermSCT"].ToString();
+                    TxtNumeroPermisoSCT.Text = dt.Rows[0]["NumPermisoSCT"].ToString();
+                    TxtNombreAseguradora.Text = dt.Rows[0]["NombreAseg"].ToString();
+                    TxtNumeroPolizaSeguro.Text = dt.Rows[0]["NombreAseg"].ToString();
+                }
             }
+            
         }
     }
 }

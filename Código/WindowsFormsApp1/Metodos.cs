@@ -36,6 +36,7 @@ namespace WindowsFormsApp1
                 combo.DataSource = new BindingSource(Valores, null);
                 combo.DisplayMember = "Value";
                 combo.ValueMember = "Key";
+                combo.SelectedItem = null;
             }
         }
 
@@ -194,7 +195,7 @@ namespace WindowsFormsApp1
                         resultado = "ID_REMOLQUE, " + resultado;
                         break;
                     case TablasCartaPorte.VMX_FE_CP_CONFIGURACION_FEDERAL:
-                        resultado = "ID_CONFIGURACION";
+                        resultado = "ID_CONFIGURACION, " + resultado;
                         break;
 
                     case TablasCartaPorte.VMX_FE_CP_MARITIMO:
@@ -667,6 +668,35 @@ namespace WindowsFormsApp1
 
 
             return registrosAfectados > 0 ;
+        }
+
+        public static int EjecutarConsulta(string consulta)
+        {
+            try
+            {
+                int IdTabla = 0;
+                SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+                c.Open();
+                string sql = consulta;
+
+                SqlCommand comando = new SqlCommand(sql, c)
+                {
+                    CommandType = CommandType.Text
+                };
+
+                
+                SqlDataReader reader = comando.ExecuteReader();
+                reader.Read();
+                //IdTabla = int.Parse(reader[0].ToString());
+                return 1;
+            }
+            catch (Exception r)
+            {
+
+                MessageBox.Show("A ocurrido un error. "+r.Message);
+                return 0;
+            }
+            
         }
 
 

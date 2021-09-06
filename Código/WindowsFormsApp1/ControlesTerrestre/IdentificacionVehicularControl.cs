@@ -53,24 +53,35 @@ namespace WindowsFormsApp1.ControlesTerrestre
             TxtPlacaVehicular.Text = identificacion.PlacaVehiculo;
             TxtNumPoliza.Text = identificacion.NumPolizaSeguro;
         }
+        public void cargarDatos(string id,string ConfigVehicular, string PlacaVM, string AnioModeloVM,string NumPolizaSeguro)
+        {
+            IdVehicular = id;
+            textconfVehiculo.Text = ConfigVehicular;
+            CmbConfigVehicular.SelectedItem = null;
+            TxtPlacaVehicular.Text = PlacaVM;
+            TxtAñoModelo.Text = AnioModeloVM;
+            TxtNumPoliza.Text = NumPolizaSeguro;
+        }
 
         private void comboVehiculo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            string rp = ((System.Collections.Generic.KeyValuePair<string, string>)comboVehiculo.SelectedItem).Key;
-            
-            DataTable dt = new DataTable();
-            if (!string.IsNullOrEmpty(rp) || rp != "")
-                dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR, Int32.Parse(rp));
-
-            if (dt.Rows.Count > 0)
+            if (comboVehiculo.SelectedItem != null)
             {
-                IdVehicular = rp;
-                textconfVehiculo.Text = dt.Rows[0]["ConfigVehicular"].ToString();
-                CmbConfigVehicular.SelectedValue = dt.Rows[0]["ConfigVehicular"].ToString();
-                TxtPlacaVehicular.Text = dt.Rows[0]["PlacaVM"].ToString();
-                TxtAñoModelo.Text = dt.Rows[0]["AnioModeloVM"].ToString();
-                TxtNumPoliza.Text = dt.Rows[0]["NumPolizaSeguro"].ToString();
+                string rp = ((System.Collections.Generic.KeyValuePair<string, string>)comboVehiculo.SelectedItem).Key;
+
+                DataTable dt = new DataTable();
+                if (!string.IsNullOrEmpty(rp) || rp != "")
+                    dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR, Int32.Parse(rp));
+
+                if (dt.Rows.Count > 0)
+                {
+                    IdVehicular = rp;
+                    textconfVehiculo.Text = dt.Rows[0]["ConfigVehicular"].ToString();
+                    CmbConfigVehicular.SelectedValue = dt.Rows[0]["ConfigVehicular"].ToString();
+                    TxtPlacaVehicular.Text = dt.Rows[0]["PlacaVM"].ToString();
+                    TxtAñoModelo.Text = dt.Rows[0]["AnioModeloVM"].ToString();
+                    TxtNumPoliza.Text = dt.Rows[0]["NumPolizaSeguro"].ToString();
+                }
             }
         }
     }
