@@ -12,13 +12,18 @@ using WindowsFormsApp1.Modelos;
 using WindowsFormsApp1.Properties;
 using static WindowsFormsApp1.Modelos.EstructurasEnums;
 
+
 namespace WindowsFormsApp1
 {
     public partial class FrmPrincipal : Form
     {
+        bool tInterno = false;
+        string customerID = "";
+        string INVOICE_ID="";
         public FrmPrincipal()
         {
             InitializeComponent();
+            INVOICE_ID = textBox3.Text;
         }
         bool ExisteTransporteConfigurado = false;
 
@@ -134,6 +139,7 @@ namespace WindowsFormsApp1
             //FrmTransporteFerroviario tf = new FrmTransporteFerroviario();
             //tf.ShowDialog();
 
+            INVOICE_ID = textBox3.Text;
             if (CmbViaEntradaSalida.Text.Length > 0)
             {
 
@@ -146,14 +152,14 @@ namespace WindowsFormsApp1
                 switch (CmbViaEntradaSalida.Text.Split('-')[0].Trim())
                 {
                     case "01":
-                        if (textBox3.Text=="")
+                        if (INVOICE_ID == "")
                         {
                             MessageBox.Show("Añade una factura para continuar");
                         }
                         else
                         {
 
-                            FrmTransporteTerrestre tt = new FrmTransporteTerrestre(textBox3.Text);
+                            FrmTransporteTerrestre tt = new FrmTransporteTerrestre(INVOICE_ID);
                             if (ExisteTransporteConfigurado)
                             {
                                 tt.CargarDatosPrevios(transporteTerrestre);
@@ -257,15 +263,166 @@ namespace WindowsFormsApp1
 
         private void BtnMercancia_Click(object sender, EventArgs e)
         {
-            FrmMercancias frmMerca = new FrmMercancias();
+            // funcional
+            //FrmMercancias frmMerca = new FrmMercancias();
+            //frmMerca.ShowDialog();
 
+            INVOICE_ID = textBox3.Text;
+            if (INVOICE_ID != "")
+            {
+                //DataTable dtMercancias = new DataTable();
+                DataTable dtMercancias = ObtenerMercancias(INVOICE_ID, out string Error);
+                if (dtMercancias.Rows.Count>0)
+                {
+                    
+                    string Cantidad = dtMercancias.Rows[0][""].ToString();
+                    string Dimensiones = dtMercancias.Rows[0][""].ToString();
+                    string PesoEnKG = dtMercancias.Rows[0][""].ToString();
+                    string ValorMercancia = dtMercancias.Rows[0]["ValorMercancia"].ToString();
+                    string IDMercancia = dtMercancias.Rows[0][""].ToString();
+                    string UnidadPeso = dtMercancias.Rows[0][""].ToString();
+                    string PesoBruto = dtMercancias.Rows[0][""].ToString();
+                    string PesoNeto = dtMercancias.Rows[0][""].ToString();
+                    string PesoTara = dtMercancias.Rows[0][""].ToString();
+                    string NoPiezas = dtMercancias.Rows[0][""].ToString();
+                    string IDDetalleMercancia = dtMercancias.Rows[0][""].ToString();
+                    dataGridView1.Rows.Add();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Añade una factura para continuar");
+            }
+
+           
             
-            frmMerca.ShowDialog();
+
 
             //if(frmMerca.)
 
-            
+
             //dataGridView1.Rows.Add("", "", "", "", "", "", "", "");
         }
+
+        public void CargarDatos(out string Error)
+        {
+            DataTable dt = new DataTable();
+            Error = "";
+            string sql = @"SELECT I.SHIPPER_ID AS INVOICE_ID, NULL AS CUSTOMER_ID 
+                FROM IBT_SHIPPER I INNER JOIN
+                dbo.IBT ON I.IBT_ID = dbo.IBT.ID LEFT OUTER JOIN CFDI2..VMX_FE_TRASLADOS V ON I.SHIPPER_ID = V.IBT_ID
+                where I.SHIPPER_ID = '" + INVOICE_ID + "'";
+            dt = Metodos.EjecutarConsultaDT(sql);
+            tInterno = true;
+            //customerID = dt.Rows[0][""].ToString();
+            if (dt.Rows.Count <= 0)
+            {
+                sql = @"SELECT  * FROM SHIPPER S INNER JOIN CUSTOMER_ORDER CO ON S.CUST_ORDER_ID = CO.ID 
+                    LEFT OUTER JOIN CFDI2..VMX_FE_TRASLADOS V ON S.PACKLIST_ID = V.IBT_ID AND CO.CUSTOMER_ID = V.CUSTOMER_ID 
+                    INNER JOIN CUSTOMER C ON C.ID = CO.CUSTOMER_ID where S.PACKLIST_ID ='" + INVOICE_ID + "'";
+                dt = Metodos.EjecutarConsultaDT(sql);
+                tInterno = false;
+                customerID = dt.Rows[0]["CUSTOMER_ID"].ToString();
+                if (dt.Rows.Count <= 0)
+                {
+                    Error = "No existe el traslado";
+
+                }
+            }
+            
+        }
+        public DataTable ObtenerMercancias(string invoice, out string Error)
+        {
+            try
+            {
+                Error = "";
+                
+
+                DataTable dt = new DataTable();
+                string BD = "CFDI2";
+                CargarDatos(out Error);
+                if (Error != "")
+                    return null;
+                string sql = "";
+
+                sql = "SELECT * FROM " + BD + "..VMX_FE_CE_PARAMETROS";
+                dt = Metodos.EjecutarConsultaDT(sql);
+                string FRACCION = "";
+                if (dt.Rows.Count > 0)
+                    FRACCION = dt.Rows[0]["FRACCION"].ToString();
+                sql = "SELECT CLAVPRODSERV FROM " + BD + "..VMX_FE_PARAMETROS";
+                dt = Metodos.EjecutarConsultaDT(sql);
+                string CLAVE = "";
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        if (dt.Rows[i]["CLAVPRODSERV"].ToString() != "" || !string.IsNullOrEmpty(dt.Rows[i]["CLAVPRODSERV"].ToString()))
+                            CLAVE = dt.Rows[0]["CLAVPRODSERV"].ToString();
+                    }
+                }
+
+                //FRACCION = ObtenerUnidadMedidaSATVisual(row["IBT_UM"].ToString(), out Error);
+                if (tInterno) // TRASLADO INTERNO
+                {
+                    sql = string.Format(@"SELECT   '0' as ValorMercancia, ISL.SHIPPER_ID,ISL.SHIPPED_QTY as Cantidad,IL.PART_ID as ID , P.DESCRIPTION, 
+				     IL.IBT_UM as claveUnidad, IL.IBT_UM as UNIDAD
+                    , ISL.SHIP_DIMENSIONS, (CASE WHEN ISL.SHIPPING_WEIGHT IS NULL THEN 0 ELSE ISL.SHIPPING_WEIGHT END  * ISL.SHIPPED_QTY) AS PESO, 
+                     CASE WHEN (SELECT STRING_VAL AS TARIFF_CODE FROM USER_DEF_FIELDS WHERE PROGRAM_ID = 'VMPRTMNT' 
+	                    AND ID = '{0}' AND DOCUMENT_ID = P.ID) = ''  
+                    THEN 
+	                    (SELECT STRING_VAL AS TARIFF_CODE FROM USER_DEF_FIELDS WHERE PROGRAM_ID = 'VMPRTMNT' 
+	                    AND ID = '{0}' AND DOCUMENT_ID = P.ID)
+                    ELSE
+	                    ( SELECT USER_2 FROM PART  WHERE ID =  P.ID)
+                    END AS FRACCION_ARANCELARIA,
+                    (SELECT STRING_VAL AS TARIFF_CODE FROM USER_DEF_FIELDS WHERE PROGRAM_ID = 'VMPRTMNT' 
+	                 AND ID = '{1}' AND DOCUMENT_ID = P.ID )as CLAVE  ,'' as IDDetalle, 
+                       '' as piezas,'' as pesoTara,'' as pesoNeto,'' as pesoBruto,'' as UnidadPeso 
+                    FROM dbo.IBT_SHIPPER_LINE AS ISL INNER JOIN
+                    dbo.IBT_LINE AS IL ON IL.IBT_ID = ISL.IBT_ID AND IL.LINE_NO = ISL.IBT_LINE_NO INNER JOIN
+                    dbo.PART AS P ON P.ID = IL.PART_ID
+                    WHERE ISL.SHIPPER_ID = '" + INVOICE_ID + "'", FRACCION, CLAVE);
+                    dt = Metodos.EjecutarConsultaDT(sql);
+                }
+                else
+                {
+                    sql = string.Format(@"SELECT (S.SHIPPED_QTY * S.UNIT_PRICE) as ValorMercancia, S.SHIPPED_QTY as Cantidad,P.ID, SC.DESCRIPTION as 'Descripcion',
+                        (CASE WHEN S.SHIPPING_WEIGHT IS NULL THEN 0 ELSE S.SHIPPING_WEIGHT END  * S.SHIPPED_QTY) AS PESO,  P.Description,
+                        CASE WHEN P.ID = '' OR P.ID IS NULL 
+                        THEN VFS.UNIDAD_MEDIDA
+                        ELSE 
+                        P.STOCK_UM
+                        END AS claveUnidad
+                         , P.STOCK_UM AS UNIDAD, 
+                         CASE WHEN (SELECT STRING_VAL AS TARIFF_CODE FROM USER_DEF_FIELDS WHERE PROGRAM_ID = 'VMPRTMNT' 
+	                        AND ID = '{0}' AND DOCUMENT_ID = P.ID) = ''  
+                        THEN 
+	                        (SELECT STRING_VAL AS TARIFF_CODE FROM USER_DEF_FIELDS WHERE PROGRAM_ID = 'VMPRTMNT' 
+	                        AND ID = '{0}' AND DOCUMENT_ID = P.ID)
+                        ELSE
+	                        ( SELECT USER_2 FROM PART  WHERE ID =  P.ID)
+                        END AS FRACCION_ARANCELARIA ,
+                    ( SELECT STRING_VAL AS TARIFF_CODE FROM USER_DEF_FIELDS WHERE PROGRAM_ID = 'VMPRTMNT' 
+	                    AND ID = '{1}' AND DOCUMENT_ID = P.ID) as CLAVE ,'' as IDDetalle  ,
+                    '' as piezas,'' as pesoTara,'' as pesoNeto,'' as pesoBruto,'' as UnidadPeso 
+                    FROM SHIPPER_LINE S INNER JOIN CUST_ORDER_LINE CO ON S.CUST_ORDER_LINE_NO = CO.LINE_NO 
+                    AND S.CUST_ORDER_ID = CO.CUST_ORDER_ID LEFT JOIN PART P ON P.ID = CO.PART_ID 
+                    LEFT JOIN SERVICE_CHARGE SC ON S.SERVICE_CHARGE_ID = SC.ID LEFT JOIN CFDI2..VMX_FE_SERVICIOS VFS 
+                    ON SC.ID = VFS.SERVICE_CHARGE_ID WHERE PACKLIST_ID = '" + INVOICE_ID + "' and SHIPPED_QTY > 0", FRACCION, CLAVE);
+                    dt = Metodos.EjecutarConsultaDT(sql);
+                }
+                Error = "";
+                return dt;
+            }
+            catch (Exception e)
+            {
+
+                Error = e.Message;
+                return null;
+            }
+        
+        }
+
     }
 }

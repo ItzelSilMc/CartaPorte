@@ -699,6 +699,27 @@ namespace WindowsFormsApp1
             
         }
 
+        public static DataTable EjecutarConsultaDT(string consulta)
+        {
+            try
+            {
+                SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+                c.Open();
+                SqlDataAdapter adaptador = new SqlDataAdapter(consulta, c);
+                DataTable dtValores = new DataTable();
+                adaptador.Fill(dtValores);
+
+                return dtValores;
+            }
+            catch (Exception r)
+            {
+
+                MessageBox.Show("A ocurrido un error. " + r.Message);
+                return null;
+            }
+
+        }
+
 
 
 

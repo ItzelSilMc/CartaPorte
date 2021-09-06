@@ -17,6 +17,8 @@ namespace WindowsFormsApp1
 
         ObjetoAutoTransporteFederal autoTransporteFederal = new ObjetoAutoTransporteFederal();
         public string INVOICE_ID="";
+        
+
         public FrmTransporteTerrestre()
         {
             InitializeComponent();
@@ -155,7 +157,15 @@ namespace WindowsFormsApp1
         {
             return true;
         }
-      
+        public ObjetoAutoTransporteFederal ObtenerInfoTransporteTerreste()
+        {
+            return autoTransporteFederal;
+        }
+
+        private void botonesPersonasControl1_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
@@ -203,18 +213,6 @@ namespace WindowsFormsApp1
             //    this.Close();
             //}
         }
-
-        public ObjetoAutoTransporteFederal ObtenerInfoTransporteTerreste()
-        {
-            return autoTransporteFederal;
-        }
-
-        private void botonesPersonasControl1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
 
     }
 }

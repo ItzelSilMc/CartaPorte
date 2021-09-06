@@ -47,14 +47,6 @@
             this.BtnMercancia = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NumTotalMercancias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idMercancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CargoPorTasacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dimensiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PesoEnKg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorMercancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdDetalleMercancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -68,6 +60,18 @@
             this.CmbInternacional = new System.Windows.Forms.ComboBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.BtnGuardar = new System.Windows.Forms.Button();
+            this.NumTotalMercancias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dimensiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PesoEnKg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorMercancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idMercancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesoBruto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesoNeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesoTara = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numPiezas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdDetalleMercancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUbicaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.GBTransporte.SuspendLayout();
@@ -219,64 +223,27 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumTotalMercancias,
-            this.idMercancia,
-            this.CargoPorTasacion,
             this.Cantidad,
             this.Dimensiones,
             this.PesoEnKg,
             this.ValorMercancia,
+            this.idMercancia,
+            this.unidadPeso,
+            this.pesoBruto,
+            this.pesoNeto,
+            this.pesoTara,
+            this.numPiezas,
             this.IdDetalleMercancia});
             this.dataGridView1.Location = new System.Drawing.Point(15, 400);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(776, 150);
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // NumTotalMercancias
-            // 
-            this.NumTotalMercancias.HeaderText = "NumTotalMercancias";
-            this.NumTotalMercancias.Name = "NumTotalMercancias";
-            // 
-            // idMercancia
-            // 
-            this.idMercancia.HeaderText = "idMercancia";
-            this.idMercancia.Name = "idMercancia";
-            // 
-            // CargoPorTasacion
-            // 
-            this.CargoPorTasacion.HeaderText = "CargoPorTasacion";
-            this.CargoPorTasacion.Name = "CargoPorTasacion";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 70;
-            // 
-            // Dimensiones
-            // 
-            this.Dimensiones.HeaderText = "Dimensiones";
-            this.Dimensiones.Name = "Dimensiones";
-            // 
-            // PesoEnKg
-            // 
-            this.PesoEnKg.HeaderText = "PesoEnKg";
-            this.PesoEnKg.Name = "PesoEnKg";
-            this.PesoEnKg.Width = 70;
-            // 
-            // ValorMercancia
-            // 
-            this.ValorMercancia.HeaderText = "ValorMercancia";
-            this.ValorMercancia.Name = "ValorMercancia";
-            this.ValorMercancia.Width = 70;
-            // 
-            // IdDetalleMercancia
-            // 
-            this.IdDetalleMercancia.HeaderText = "IdDetalleMercancia";
-            this.IdDetalleMercancia.Name = "IdDetalleMercancia";
             // 
             // textBox6
             // 
@@ -398,6 +365,69 @@
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
             // 
+            // NumTotalMercancias
+            // 
+            this.NumTotalMercancias.HeaderText = "NumTotalMercancias";
+            this.NumTotalMercancias.Name = "NumTotalMercancias";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 70;
+            // 
+            // Dimensiones
+            // 
+            this.Dimensiones.HeaderText = "Dimensiones";
+            this.Dimensiones.Name = "Dimensiones";
+            // 
+            // PesoEnKg
+            // 
+            this.PesoEnKg.HeaderText = "PesoEnKg";
+            this.PesoEnKg.Name = "PesoEnKg";
+            this.PesoEnKg.Width = 70;
+            // 
+            // ValorMercancia
+            // 
+            this.ValorMercancia.HeaderText = "ValorMercancia";
+            this.ValorMercancia.Name = "ValorMercancia";
+            this.ValorMercancia.Width = 70;
+            // 
+            // idMercancia
+            // 
+            this.idMercancia.HeaderText = "idMercancia";
+            this.idMercancia.Name = "idMercancia";
+            // 
+            // unidadPeso
+            // 
+            this.unidadPeso.HeaderText = "Unidad de Peso";
+            this.unidadPeso.Name = "unidadPeso";
+            // 
+            // pesoBruto
+            // 
+            this.pesoBruto.HeaderText = "Peso Bruto";
+            this.pesoBruto.Name = "pesoBruto";
+            // 
+            // pesoNeto
+            // 
+            this.pesoNeto.HeaderText = "Peso Neto";
+            this.pesoNeto.Name = "pesoNeto";
+            // 
+            // pesoTara
+            // 
+            this.pesoTara.HeaderText = "Peso Tara";
+            this.pesoTara.Name = "pesoTara";
+            // 
+            // numPiezas
+            // 
+            this.numPiezas.HeaderText = "No. Piezas";
+            this.numPiezas.Name = "numPiezas";
+            // 
+            // IdDetalleMercancia
+            // 
+            this.IdDetalleMercancia.HeaderText = "IdDetalleMercancia";
+            this.IdDetalleMercancia.Name = "IdDetalleMercancia";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,14 +476,6 @@
         private System.Windows.Forms.Button BtnMercancia;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumTotalMercancias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idMercancia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CargoPorTasacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dimensiones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PesoEnKg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ValorMercancia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdDetalleMercancia;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label8;
@@ -472,6 +494,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoEstacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUbicacion;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumTotalMercancias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dimensiones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PesoEnKg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorMercancia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idMercancia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unidadPeso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pesoBruto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pesoNeto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pesoTara;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numPiezas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdDetalleMercancia;
     }
 }
 
