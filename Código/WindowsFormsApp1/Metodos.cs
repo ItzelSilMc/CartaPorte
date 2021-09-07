@@ -712,7 +712,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+                SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =PYROTEKA; User id=SYSADM; Password =SYSADM;");
                 c.Open();
                 SqlDataAdapter adaptador = new SqlDataAdapter(consulta, c);
                 DataTable dtValores = new DataTable();

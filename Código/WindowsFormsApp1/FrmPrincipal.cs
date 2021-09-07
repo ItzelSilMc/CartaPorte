@@ -272,22 +272,23 @@ namespace WindowsFormsApp1
             {
                 //DataTable dtMercancias = new DataTable();
                 DataTable dtMercancias = ObtenerMercancias(INVOICE_ID, out string Error);
-                if (dtMercancias.Rows.Count>0)
+                for (int i = 0; i < dtMercancias.Rows.Count; i++)
                 {
-                    
-                    string Cantidad = dtMercancias.Rows[0][""].ToString();
-                    string Dimensiones = dtMercancias.Rows[0][""].ToString();
-                    string PesoEnKG = dtMercancias.Rows[0][""].ToString();
-                    string ValorMercancia = dtMercancias.Rows[0]["ValorMercancia"].ToString();
-                    string IDMercancia = dtMercancias.Rows[0][""].ToString();
-                    string UnidadPeso = dtMercancias.Rows[0][""].ToString();
-                    string PesoBruto = dtMercancias.Rows[0][""].ToString();
-                    string PesoNeto = dtMercancias.Rows[0][""].ToString();
-                    string PesoTara = dtMercancias.Rows[0][""].ToString();
-                    string NoPiezas = dtMercancias.Rows[0][""].ToString();
-                    string IDDetalleMercancia = dtMercancias.Rows[0][""].ToString();
-                    dataGridView1.Rows.Add();
+                    string Cantidad = dtMercancias.Rows[i]["Cantidad"].ToString();
+                    string Dimensiones = dtMercancias.Rows[i]["SHIP_DIMENSIONS"].ToString();
+                    string PesoEnKG = dtMercancias.Rows[i]["PESO"].ToString();
+                    string ValorMercancia = dtMercancias.Rows[i]["ValorMercancia"].ToString();
+                    string IDMercancia = dtMercancias.Rows[i]["ID"].ToString();
+                    string UnidadPeso = dtMercancias.Rows[i]["claveUnidad"].ToString();
+                    string PesoBruto = dtMercancias.Rows[i]["pesoBruto"].ToString();
+                    string PesoNeto = dtMercancias.Rows[i]["pesoNeto"].ToString();
+                    string PesoTara = dtMercancias.Rows[i]["pesoTara"].ToString();
+                    string NoPiezas = dtMercancias.Rows[i]["piezas"].ToString();
+                    string IDDetalleMercancia = "";
+                    dataGridView1.Rows.Add(Cantidad,Dimensiones, PesoEnKG, ValorMercancia,IDMercancia,UnidadPeso,PesoBruto,PesoNeto, PesoTara, NoPiezas, IDDetalleMercancia);
+
                 }
+               
             }
             else
             {
@@ -424,5 +425,10 @@ namespace WindowsFormsApp1
         
         }
 
+        private void btnCarga_Click(object sender, EventArgs e)
+        {
+            FrmConfiguraciones frm = new FrmConfiguraciones();
+            frm.ShowDialog();
+        }
     }
 }
