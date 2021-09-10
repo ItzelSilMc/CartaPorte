@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -20,10 +21,15 @@ namespace WindowsFormsApp1
         bool tInterno = false;
         string customerID = "";
         string INVOICE_ID="";
+        string conn ="";
+        string BD = "";
+        DataTable dtMercancias = new DataTable();
         public FrmPrincipal()
         {
             InitializeComponent();
             INVOICE_ID = textBox3.Text;
+            conn = ConfigurationManager.ConnectionStrings["Sistema"].ConnectionString;
+            BD = ConfigurationManager.AppSettings.Get("BD");
         }
         bool ExisteTransporteConfigurado = false;
 
@@ -31,19 +37,61 @@ namespace WindowsFormsApp1
 
         List<Ubicaciones> ListaUbicaciones = new List<Ubicaciones>();
 
-
+        public FrmPrincipal(string INVOICE)
+        {
+            InitializeComponent();
+            textBox3.Text = INVOICE;
+            INVOICE_ID = textBox3.Text;
+            conn = ConfigurationManager.ConnectionStrings["Sistema"].ConnectionString;
+            BD = ConfigurationManager.AppSettings.Get("BD");
+            cargarMercancias();
+            BtnMercancia.Enabled = false;
+        }
 
         private void dataGUbicaciones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //Formularios fr = new Formularios();
             //fr.ShowDialog();
+            frmCatalagoUbicaciones frmUbi = new frmCatalagoUbicaciones(INVOICE_ID, customerID);
+            frmUbi.ShowDialog();
+            //DgvUbicaciones.Rows.Add("", "", "", frmUbi.ID, frmUbi.Direccion, "", "", "");
+            DgvUbicaciones.Rows[e.RowIndex].Cells["idUbicacion"].Value = frmUbi.ID;
+            DgvUbicaciones.Rows[e.RowIndex].Cells["Nombre"].Value = frmUbi.Direccion;
+
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            //FrmMercancias frM = new FrmMercancias(dataGridView1.CurrentRow.Cells["idMercancia"].Value.ToString(),
+            //    dataGridView1.CurrentRow.Cells["unidadPeso"].Value.ToString(),
+            //    dataGridView1.CurrentRow.Cells["unidadPeso"].Value.ToString());
 
-           
             
+            string part_id = dataGridView1.CurrentRow.Cells["idMercancia"].Value.ToString();
+            FrmMercancias frM = new FrmMercancias();
+
+            
+            DataTable dt = new DataTable();
+            dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_PRODUCTO, 1, part_id);
+            if (dt.Rows.Count > 0)
+            {
+                frM = new FrmMercancias(dt, part_id);
+
+            }
+            else
+            {
+                IEnumerable<DataRow> ieRegistro = from fila in dtMercancias.AsEnumerable()
+                                                  where fila.Field<string>("ID") == part_id
+                                                  select fila;
+                DataTable boundTable = ieRegistro.CopyToDataTable<DataRow>();
+                frM = new FrmMercancias(boundTable);
+            }
+
+
+            frM.ShowDialog();
+            dataGridView1.Rows[e.RowIndex].Cells["IdDetalleMercancia"].Value = frM.ID;
+
+
         }
 
         private void CargarCombos()
@@ -90,14 +138,14 @@ namespace WindowsFormsApp1
                 idUbicacion = id,
                 NombreEstacion = "",
                 NumeroEstacion ="",
-                TipoEstacion = "03",
+                TipoEstacion = "03-Destino Final",
                 dir = dirDestino
             });
 
 
             if(!string.IsNullOrEmpty( dirDestino.calle))
             {
-               DgvUbicaciones.Rows.Add("03", "", "", id);
+               DgvUbicaciones.Rows.Add("03-Destino Final", "", "","","","","", "");
 
             }
 
@@ -111,24 +159,36 @@ namespace WindowsFormsApp1
 
         private void BtnUbicacionNueva_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(CmbViaEntradaSalida.Text))
+            if (!string.IsNullOrEmpty(CmbViaEntradaSalida.Text)&& !string.IsNullOrEmpty(INVOICE_ID))
             {
-                //FrmUbicaciones ubi = new FrmUbicaciones();
-                FrmUbicaciones ubi = new FrmUbicaciones(CmbViaEntradaSalida.Text.Split('-')[0].Trim());
-                ubi.ShowDialog();
-               
-                if (ubi.GuardadoCorrectamente)
+                ////FrmUbicaciones ubi = new FrmUbicaciones();
+                //// -- Funcional
+                //FrmUbicaciones ubi = new FrmUbicaciones(CmbViaEntradaSalida.Text.Split('-')[0].Trim());
+                //ubi.ShowDialog();
+
+                //if (ubi.GuardadoCorrectamente)
+                //{
+                //    Ubicaciones ubicacionNueva = ubi.ObtenerUbicacion();
+                //    //añadir al grid.
+                //   // DgvUbicaciones.Rows.Add("", "", "", "");
+                //}
+                
+
+                CargarDatos(out string MsgError);
+                if (MsgError != "")
+                    MessageBox.Show("Problemas al cargar los datos: " + MsgError);
+                else
                 {
-                    Ubicaciones ubicacionNueva = ubi.ObtenerUbicacion();
+                   DgvUbicaciones.Rows.Add("", "", "", "", "", "", "", "");
 
-
-                    //añadir al grid.
-                   // DgvUbicaciones.Rows.Add("", "", "", "");
                 }
+
+
+
             }
             else
             {
-                MessageBox.Show("Selecciona una vía de entrada salida primero", "Carta Porte", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Selecciona una vía de entrada salida primero y agrega una Factura", "Carta Porte", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -248,7 +308,7 @@ namespace WindowsFormsApp1
 
         private void DgvUbicaciones_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if(e.ColumnIndex == 4 && e.RowIndex>=0)
+            if(e.ColumnIndex == 7 && e.RowIndex>=0)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 var w = Properties.Resources.editar16.Width;
@@ -261,48 +321,52 @@ namespace WindowsFormsApp1
             }
         }
 
+        public void cargarMercancias()
+        {
+            try
+            {
+                INVOICE_ID = textBox3.Text;
+                if (INVOICE_ID != "")
+                {
+                    //DataTable dtMercancias = new DataTable();
+                    dtMercancias = ObtenerMercancias(INVOICE_ID, out string Error);
+                    for (int i = 0; i < dtMercancias.Rows.Count; i++)
+                    {
+                        string Cantidad = dtMercancias.Rows[i]["Cantidad"].ToString();
+                        string Dimensiones = dtMercancias.Rows[i]["SHIP_DIMENSIONS"].ToString();
+                        string PesoEnKG = dtMercancias.Rows[i]["PESO"].ToString();
+                        string ValorMercancia = dtMercancias.Rows[i]["ValorMercancia"].ToString();
+                        string IDMercancia = dtMercancias.Rows[i]["ID"].ToString();
+                        string UnidadPeso = dtMercancias.Rows[i]["claveUnidad"].ToString();
+                        string PesoBruto = dtMercancias.Rows[i]["pesoBruto"].ToString();
+                        string PesoNeto = dtMercancias.Rows[i]["pesoNeto"].ToString();
+                        string PesoTara = dtMercancias.Rows[i]["pesoTara"].ToString();
+                        string NoPiezas = dtMercancias.Rows[i]["piezas"].ToString();
+                        string IDDetalleMercancia = "";
+                        dataGridView1.Rows.Add(Cantidad, Dimensiones, PesoEnKG, ValorMercancia, IDMercancia, UnidadPeso, PesoBruto, PesoNeto, PesoTara, NoPiezas, IDDetalleMercancia);
+
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Añade una factura para continuar");
+                }
+            }
+            catch (Exception r)
+            {
+
+                MessageBox.Show("Error al cargar mercancias: "+r.Message);
+            }
+        }
         private void BtnMercancia_Click(object sender, EventArgs e)
         {
             // funcional
             //FrmMercancias frmMerca = new FrmMercancias();
             //frmMerca.ShowDialog();
 
-            INVOICE_ID = textBox3.Text;
-            if (INVOICE_ID != "")
-            {
-                //DataTable dtMercancias = new DataTable();
-                DataTable dtMercancias = ObtenerMercancias(INVOICE_ID, out string Error);
-                for (int i = 0; i < dtMercancias.Rows.Count; i++)
-                {
-                    string Cantidad = dtMercancias.Rows[i]["Cantidad"].ToString();
-                    string Dimensiones = dtMercancias.Rows[i]["SHIP_DIMENSIONS"].ToString();
-                    string PesoEnKG = dtMercancias.Rows[i]["PESO"].ToString();
-                    string ValorMercancia = dtMercancias.Rows[i]["ValorMercancia"].ToString();
-                    string IDMercancia = dtMercancias.Rows[i]["ID"].ToString();
-                    string UnidadPeso = dtMercancias.Rows[i]["claveUnidad"].ToString();
-                    string PesoBruto = dtMercancias.Rows[i]["pesoBruto"].ToString();
-                    string PesoNeto = dtMercancias.Rows[i]["pesoNeto"].ToString();
-                    string PesoTara = dtMercancias.Rows[i]["pesoTara"].ToString();
-                    string NoPiezas = dtMercancias.Rows[i]["piezas"].ToString();
-                    string IDDetalleMercancia = "";
-                    dataGridView1.Rows.Add(Cantidad,Dimensiones, PesoEnKG, ValorMercancia,IDMercancia,UnidadPeso,PesoBruto,PesoNeto, PesoTara, NoPiezas, IDDetalleMercancia);
+            cargarMercancias();
 
-                }
-               
-            }
-            else
-            {
-                MessageBox.Show("Añade una factura para continuar");
-            }
-
-           
-            
-
-
-            //if(frmMerca.)
-
-
-            //dataGridView1.Rows.Add("", "", "", "", "", "", "", "");
         }
 
         public void CargarDatos(out string Error)
@@ -311,16 +375,16 @@ namespace WindowsFormsApp1
             Error = "";
             string sql = @"SELECT I.SHIPPER_ID AS INVOICE_ID, NULL AS CUSTOMER_ID 
                 FROM IBT_SHIPPER I INNER JOIN
-                dbo.IBT ON I.IBT_ID = dbo.IBT.ID LEFT OUTER JOIN CFDI2..VMX_FE_TRASLADOS V ON I.SHIPPER_ID = V.IBT_ID
-                where I.SHIPPER_ID = '" + INVOICE_ID + "'";
+                dbo.IBT ON I.IBT_ID = dbo.IBT.ID LEFT OUTER JOIN "+BD+"..VMX_FE_TRASLADOS V ON I.SHIPPER_ID = V.IBT_ID " +
+                "where I.SHIPPER_ID = '" + INVOICE_ID + "'";
             dt = Metodos.EjecutarConsultaDT(sql);
             tInterno = true;
             //customerID = dt.Rows[0][""].ToString();
             if (dt.Rows.Count <= 0)
             {
                 sql = @"SELECT  * FROM SHIPPER S INNER JOIN CUSTOMER_ORDER CO ON S.CUST_ORDER_ID = CO.ID 
-                    LEFT OUTER JOIN CFDI2..VMX_FE_TRASLADOS V ON S.PACKLIST_ID = V.IBT_ID AND CO.CUSTOMER_ID = V.CUSTOMER_ID 
-                    INNER JOIN CUSTOMER C ON C.ID = CO.CUSTOMER_ID where S.PACKLIST_ID ='" + INVOICE_ID + "'";
+                    LEFT OUTER JOIN "+BD+"..VMX_FE_TRASLADOS V ON S.PACKLIST_ID = V.IBT_ID AND CO.CUSTOMER_ID = V.CUSTOMER_ID " +
+                    "INNER JOIN CUSTOMER C ON C.ID = CO.CUSTOMER_ID where S.PACKLIST_ID ='" + INVOICE_ID + "'";
                 dt = Metodos.EjecutarConsultaDT(sql);
                 tInterno = false;
                 customerID = dt.Rows[0]["CUSTOMER_ID"].ToString();
@@ -340,7 +404,7 @@ namespace WindowsFormsApp1
                 
 
                 DataTable dt = new DataTable();
-                string BD = "CFDI2";
+                //string BD = "CFDI2";
                 CargarDatos(out Error);
                 if (Error != "")
                     return null;
@@ -409,8 +473,8 @@ namespace WindowsFormsApp1
                     '' as piezas,'' as pesoTara,'' as pesoNeto,'' as pesoBruto,'' as UnidadPeso 
                     FROM SHIPPER_LINE S INNER JOIN CUST_ORDER_LINE CO ON S.CUST_ORDER_LINE_NO = CO.LINE_NO 
                     AND S.CUST_ORDER_ID = CO.CUST_ORDER_ID LEFT JOIN PART P ON P.ID = CO.PART_ID 
-                    LEFT JOIN SERVICE_CHARGE SC ON S.SERVICE_CHARGE_ID = SC.ID LEFT JOIN CFDI2..VMX_FE_SERVICIOS VFS 
-                    ON SC.ID = VFS.SERVICE_CHARGE_ID WHERE PACKLIST_ID = '" + INVOICE_ID + "' and SHIPPED_QTY > 0", FRACCION, CLAVE);
+                    LEFT JOIN SERVICE_CHARGE SC ON S.SERVICE_CHARGE_ID = SC.ID LEFT JOIN "+BD+"..VMX_FE_SERVICIOS VFS " +
+                    "ON SC.ID = VFS.SERVICE_CHARGE_ID WHERE PACKLIST_ID = '" + INVOICE_ID + "' and SHIPPED_QTY > 0", FRACCION, CLAVE);
                     dt = Metodos.EjecutarConsultaDT(sql);
                 }
                 Error = "";
@@ -429,6 +493,12 @@ namespace WindowsFormsApp1
         {
             FrmConfiguraciones frm = new FrmConfiguraciones();
             frm.ShowDialog();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            INVOICE_ID = textBox3.Text;
+
         }
     }
 }

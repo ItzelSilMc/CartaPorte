@@ -59,6 +59,11 @@ namespace WindowsFormsApp1
             this.TxtDescripcionEmbalaje = new System.Windows.Forms.TextBox();
             this.TxtPesoEnKG = new System.Windows.Forms.TextBox();
             this.TxtValorMercancia = new System.Windows.Forms.TextBox();
+            this.textBienes = new System.Windows.Forms.TextBox();
+            this.textClaveUnidad = new System.Windows.Forms.TextBox();
+            this.textFraccion = new System.Windows.Forms.TextBox();
+            this.textUnidad = new System.Windows.Forms.TextBox();
+            this.textMoneda = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +137,7 @@ namespace WindowsFormsApp1
             this.CmbBienes.Name = "CmbBienes";
             this.CmbBienes.Size = new System.Drawing.Size(163, 21);
             this.CmbBienes.TabIndex = 6;
+            this.CmbBienes.Visible = false;
             // 
             // CmbClaveSTCC
             // 
@@ -143,6 +149,7 @@ namespace WindowsFormsApp1
             // 
             // TxtDescripcion
             // 
+            this.TxtDescripcion.Enabled = false;
             this.TxtDescripcion.Location = new System.Drawing.Point(319, 76);
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(215, 20);
@@ -150,6 +157,7 @@ namespace WindowsFormsApp1
             // 
             // TxtCantidad
             // 
+            this.TxtCantidad.Enabled = false;
             this.TxtCantidad.Location = new System.Drawing.Point(552, 77);
             this.TxtCantidad.Name = "TxtCantidad";
             this.TxtCantidad.Size = new System.Drawing.Size(46, 20);
@@ -160,8 +168,9 @@ namespace WindowsFormsApp1
             this.CmbClaveUnidad.FormattingEnabled = true;
             this.CmbClaveUnidad.Location = new System.Drawing.Point(624, 77);
             this.CmbClaveUnidad.Name = "CmbClaveUnidad";
-            this.CmbClaveUnidad.Size = new System.Drawing.Size(88, 21);
+            this.CmbClaveUnidad.Size = new System.Drawing.Size(105, 21);
             this.CmbClaveUnidad.TabIndex = 10;
+            this.CmbClaveUnidad.Visible = false;
             // 
             // label7
             // 
@@ -249,8 +258,9 @@ namespace WindowsFormsApp1
             this.CmbUnidad.FormattingEnabled = true;
             this.CmbUnidad.Location = new System.Drawing.Point(16, 147);
             this.CmbUnidad.Name = "CmbUnidad";
-            this.CmbUnidad.Size = new System.Drawing.Size(118, 21);
+            this.CmbUnidad.Size = new System.Drawing.Size(138, 21);
             this.CmbUnidad.TabIndex = 20;
+            this.CmbUnidad.Visible = false;
             // 
             // CmbMaterialPeligroso
             // 
@@ -262,6 +272,7 @@ namespace WindowsFormsApp1
             this.CmbMaterialPeligroso.Name = "CmbMaterialPeligroso";
             this.CmbMaterialPeligroso.Size = new System.Drawing.Size(100, 21);
             this.CmbMaterialPeligroso.TabIndex = 21;
+            this.CmbMaterialPeligroso.SelectedIndexChanged += new System.EventHandler(this.CmbMaterialPeligroso_SelectedIndexChanged);
             // 
             // CmbClaveMaterialPeligroso
             // 
@@ -284,16 +295,18 @@ namespace WindowsFormsApp1
             this.CmbFraccionArancelaria.FormattingEnabled = true;
             this.CmbFraccionArancelaria.Location = new System.Drawing.Point(390, 201);
             this.CmbFraccionArancelaria.Name = "CmbFraccionArancelaria";
-            this.CmbFraccionArancelaria.Size = new System.Drawing.Size(96, 21);
+            this.CmbFraccionArancelaria.Size = new System.Drawing.Size(144, 21);
             this.CmbFraccionArancelaria.TabIndex = 24;
+            this.CmbFraccionArancelaria.Visible = false;
             // 
             // CmbMoneda
             // 
             this.CmbMoneda.FormattingEnabled = true;
             this.CmbMoneda.Location = new System.Drawing.Point(193, 254);
             this.CmbMoneda.Name = "CmbMoneda";
-            this.CmbMoneda.Size = new System.Drawing.Size(119, 21);
+            this.CmbMoneda.Size = new System.Drawing.Size(163, 21);
             this.CmbMoneda.TabIndex = 25;
+            this.CmbMoneda.Visible = false;
             // 
             // TxtDescripcionEmbalaje
             // 
@@ -304,6 +317,7 @@ namespace WindowsFormsApp1
             // 
             // TxtPesoEnKG
             // 
+            this.TxtPesoEnKG.Enabled = false;
             this.TxtPesoEnKG.Location = new System.Drawing.Point(284, 201);
             this.TxtPesoEnKG.Name = "TxtPesoEnKG";
             this.TxtPesoEnKG.Size = new System.Drawing.Size(78, 20);
@@ -311,15 +325,60 @@ namespace WindowsFormsApp1
             // 
             // TxtValorMercancia
             // 
+            this.TxtValorMercancia.Enabled = false;
             this.TxtValorMercancia.Location = new System.Drawing.Point(16, 254);
             this.TxtValorMercancia.Name = "TxtValorMercancia";
             this.TxtValorMercancia.Size = new System.Drawing.Size(153, 20);
             this.TxtValorMercancia.TabIndex = 28;
             // 
+            // textBienes
+            // 
+            this.textBienes.Enabled = false;
+            this.textBienes.Location = new System.Drawing.Point(6, 76);
+            this.textBienes.Name = "textBienes";
+            this.textBienes.Size = new System.Drawing.Size(148, 20);
+            this.textBienes.TabIndex = 29;
+            // 
+            // textClaveUnidad
+            // 
+            this.textClaveUnidad.Enabled = false;
+            this.textClaveUnidad.Location = new System.Drawing.Point(624, 77);
+            this.textClaveUnidad.Name = "textClaveUnidad";
+            this.textClaveUnidad.Size = new System.Drawing.Size(89, 20);
+            this.textClaveUnidad.TabIndex = 30;
+            // 
+            // textFraccion
+            // 
+            this.textFraccion.Enabled = false;
+            this.textFraccion.Location = new System.Drawing.Point(390, 202);
+            this.textFraccion.Name = "textFraccion";
+            this.textFraccion.Size = new System.Drawing.Size(117, 20);
+            this.textFraccion.TabIndex = 31;
+            // 
+            // textUnidad
+            // 
+            this.textUnidad.Enabled = false;
+            this.textUnidad.Location = new System.Drawing.Point(16, 148);
+            this.textUnidad.Name = "textUnidad";
+            this.textUnidad.Size = new System.Drawing.Size(100, 20);
+            this.textUnidad.TabIndex = 32;
+            // 
+            // textMoneda
+            // 
+            this.textMoneda.Location = new System.Drawing.Point(193, 254);
+            this.textMoneda.Name = "textMoneda";
+            this.textMoneda.Size = new System.Drawing.Size(105, 20);
+            this.textMoneda.TabIndex = 33;
+            // 
             // MercanciaControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textMoneda);
+            this.Controls.Add(this.textUnidad);
+            this.Controls.Add(this.textFraccion);
+            this.Controls.Add(this.textClaveUnidad);
+            this.Controls.Add(this.textBienes);
             this.Controls.Add(this.TxtValorMercancia);
             this.Controls.Add(this.TxtPesoEnKG);
             this.Controls.Add(this.TxtDescripcionEmbalaje);
@@ -391,5 +450,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox TxtDescripcionEmbalaje;
         private System.Windows.Forms.TextBox TxtPesoEnKG;
         private System.Windows.Forms.TextBox TxtValorMercancia;
+        private System.Windows.Forms.TextBox textBienes;
+        private System.Windows.Forms.TextBox textClaveUnidad;
+        private System.Windows.Forms.TextBox textFraccion;
+        private System.Windows.Forms.TextBox textUnidad;
+        private System.Windows.Forms.TextBox textMoneda;
     }
 }

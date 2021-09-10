@@ -39,8 +39,12 @@ namespace WindowsFormsApp1
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.PNMercancias = new System.Windows.Forms.Panel();
+            this.mercanciaControl1 = new WindowsFormsApp1.MercanciaControl();
             this.BtnGuardar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textPartID = new System.Windows.Forms.TextBox();
             this.GBMercancias.SuspendLayout();
+            this.PNMercancias.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -89,12 +93,13 @@ namespace WindowsFormsApp1
             this.GBMercancias.Controls.Add(this.label4);
             this.GBMercancias.Controls.Add(this.label2);
             this.GBMercancias.Controls.Add(this.label3);
-            this.GBMercancias.Location = new System.Drawing.Point(12, 24);
+            this.GBMercancias.Location = new System.Drawing.Point(636, 12);
             this.GBMercancias.Name = "GBMercancias";
-            this.GBMercancias.Size = new System.Drawing.Size(561, 100);
+            this.GBMercancias.Size = new System.Drawing.Size(155, 25);
             this.GBMercancias.TabIndex = 4;
             this.GBMercancias.TabStop = false;
             this.GBMercancias.Text = "Mercancías";
+            this.GBMercancias.Visible = false;
             // 
             // comboBox1
             // 
@@ -129,14 +134,22 @@ namespace WindowsFormsApp1
             // PNMercancias
             // 
             this.PNMercancias.AutoScroll = true;
-            this.PNMercancias.Location = new System.Drawing.Point(13, 146);
+            this.PNMercancias.Controls.Add(this.mercanciaControl1);
+            this.PNMercancias.Location = new System.Drawing.Point(13, 43);
             this.PNMercancias.Name = "PNMercancias";
-            this.PNMercancias.Size = new System.Drawing.Size(778, 241);
+            this.PNMercancias.Size = new System.Drawing.Size(778, 302);
             this.PNMercancias.TabIndex = 5;
+            // 
+            // mercanciaControl1
+            // 
+            this.mercanciaControl1.Location = new System.Drawing.Point(3, 3);
+            this.mercanciaControl1.Name = "mercanciaControl1";
+            this.mercanciaControl1.Size = new System.Drawing.Size(772, 289);
+            this.mercanciaControl1.TabIndex = 0;
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(700, 406);
+            this.BtnGuardar.Location = new System.Drawing.Point(704, 351);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(75, 23);
             this.BtnGuardar.TabIndex = 6;
@@ -144,18 +157,40 @@ namespace WindowsFormsApp1
             this.BtnGuardar.UseVisualStyleBackColor = true;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "PART_ID:";
+            // 
+            // textPartID
+            // 
+            this.textPartID.Enabled = false;
+            this.textPartID.Location = new System.Drawing.Point(78, 21);
+            this.textPartID.Name = "textPartID";
+            this.textPartID.Size = new System.Drawing.Size(100, 20);
+            this.textPartID.TabIndex = 8;
+            // 
             // FrmMercancias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 450);
+            this.ClientSize = new System.Drawing.Size(803, 380);
+            this.Controls.Add(this.textPartID);
             this.Controls.Add(this.BtnGuardar);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.PNMercancias);
             this.Controls.Add(this.GBMercancias);
             this.Name = "FrmMercancias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.GBMercancias.ResumeLayout(false);
             this.GBMercancias.PerformLayout();
+            this.PNMercancias.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -172,5 +207,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel PNMercancias;
         private System.Windows.Forms.Button BtnGuardar;
+        private MercanciaControl mercanciaControl1;
+        private System.Windows.Forms.TextBox textPartID;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -171,7 +171,9 @@ namespace WindowsFormsApp1
                 if (args.Count() == 0)
                 {
                     
-                    Application.Run(new FrmPrincipal());
+                    //Application.Run(new FrmPrincipal());
+                    Application.Run(new FrmPrincipal("12563"));
+
                 }
                 else
                 {

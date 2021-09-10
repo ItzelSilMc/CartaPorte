@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -17,6 +18,10 @@ namespace WindowsFormsApp1
         /// <param name="combo">Combobox al cual se le asignaran sus valores</param>
         /// <param name="Valores">Valores a insertar en el combo</param>
         /// 
+        static string CadenaConexion =  "";
+
+        
+
         public static void CargarComboValores(ComboBox combo, DataTable Valores)
         {
             DataSet myDataSet = new DataSet();
@@ -479,6 +484,7 @@ namespace WindowsFormsApp1
         /// <returns></returns>
         public static  int  InsertarRegistroTabla(TablasCartaPorte tabla, Object objetoInsertar)
         {
+            string BD = ConfigurationManager.AppSettings.Get("BD");
             string NombreTabla = ObtenerNombreTabla(tabla);
             string CamposTabla = ObtenerCamposTabla(tabla);
 
@@ -630,6 +636,9 @@ namespace WindowsFormsApp1
                         Consulta += " WHERE INVOICE_ID = '" + invoice+"'";
                         break;
 
+                    case TablasCartaPorte.VMX_FE_CP_PRODUCTO:
+                        Consulta += " WHERE PART_ID = '"+invoice+"'";
+                        break;
 
                 }
             }
@@ -684,7 +693,8 @@ namespace WindowsFormsApp1
             try
             {
                 int IdTabla = 0;
-                SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+                string CadenaConexion = ConfigurationManager.ConnectionStrings["Sistema"].ConnectionString;
+                SqlConnection c = new SqlConnection(CadenaConexion);
                 c.Open();
                 string sql = consulta;
 
@@ -712,7 +722,8 @@ namespace WindowsFormsApp1
         {
             try
             {
-                SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =PYROTEKA; User id=SYSADM; Password =SYSADM;");
+                CadenaConexion = ConfigurationManager.ConnectionStrings["Sistema"].ConnectionString;
+                SqlConnection c = new SqlConnection(CadenaConexion);
                 c.Open();
                 SqlDataAdapter adaptador = new SqlDataAdapter(consulta, c);
                 DataTable dtValores = new DataTable();
