@@ -30,6 +30,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
         private void InitializeComponent()
         {
             this.GBIdentificacion = new System.Windows.Forms.GroupBox();
+            this.textconfVehiculo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboVehiculo = new System.Windows.Forms.ComboBox();
             this.TxtNumPoliza = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@ namespace WindowsFormsApp1.ControlesTerrestre
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textconfVehiculo = new System.Windows.Forms.TextBox();
             this.GBIdentificacion.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,13 @@ namespace WindowsFormsApp1.ControlesTerrestre
             this.GBIdentificacion.TabIndex = 0;
             this.GBIdentificacion.TabStop = false;
             // 
+            // textconfVehiculo
+            // 
+            this.textconfVehiculo.Location = new System.Drawing.Point(14, 77);
+            this.textconfVehiculo.Name = "textconfVehiculo";
+            this.textconfVehiculo.Size = new System.Drawing.Size(151, 20);
+            this.textconfVehiculo.TabIndex = 10;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -70,7 +77,7 @@ namespace WindowsFormsApp1.ControlesTerrestre
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Selecciona configracion vehicular:";
+            this.label5.Text = "Selecciona configración vehicular:";
             // 
             // comboVehiculo
             // 
@@ -149,13 +156,6 @@ namespace WindowsFormsApp1.ControlesTerrestre
             this.label1.Size = new System.Drawing.Size(125, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Configuración vehicular*:";
-            // 
-            // textconfVehiculo
-            // 
-            this.textconfVehiculo.Location = new System.Drawing.Point(14, 77);
-            this.textconfVehiculo.Name = "textconfVehiculo";
-            this.textconfVehiculo.Size = new System.Drawing.Size(151, 20);
-            this.textconfVehiculo.TabIndex = 10;
             // 
             // IdentificacionVehicularControl
             // 

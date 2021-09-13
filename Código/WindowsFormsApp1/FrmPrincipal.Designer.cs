@@ -38,10 +38,29 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.DgvUbicaciones = new System.Windows.Forms.DataGridView();
+            this.TipoUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DistanciaRecorrida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumExterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumInterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remove = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnUbicacionNueva = new System.Windows.Forms.Button();
             this.BtnMercancia = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dimensiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PesoEnKg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorMercancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idMercancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesoBruto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesoNeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesoTara = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numPiezas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdDetalleMercancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,25 +76,6 @@
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnCarga = new System.Windows.Forms.Button();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dimensiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PesoEnKg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorMercancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idMercancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pesoBruto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pesoNeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pesoTara = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numPiezas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdDetalleMercancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DistanciaRecorrida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumExterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumInterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remove = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUbicaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.GBTransporte.SuspendLayout();
@@ -174,6 +174,46 @@
             this.DgvUbicaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGUbicaciones_CellDoubleClick);
             this.DgvUbicaciones.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DgvUbicaciones_CellPainting);
             // 
+            // TipoUbicacion
+            // 
+            this.TipoUbicacion.HeaderText = "TipoUbicacion";
+            this.TipoUbicacion.Name = "TipoUbicacion";
+            // 
+            // DistanciaRecorrida
+            // 
+            this.DistanciaRecorrida.HeaderText = "DistanciaRecorrida";
+            this.DistanciaRecorrida.Name = "DistanciaRecorrida";
+            // 
+            // TipoEstacion
+            // 
+            this.TipoEstacion.HeaderText = "TipoEstacion";
+            this.TipoEstacion.Name = "TipoEstacion";
+            // 
+            // idUbicacion
+            // 
+            this.idUbicacion.HeaderText = "idUbicacion";
+            this.idUbicacion.Name = "idUbicacion";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // NumExterior
+            // 
+            this.NumExterior.HeaderText = "Num. Exterior";
+            this.NumExterior.Name = "NumExterior";
+            // 
+            // NumInterior
+            // 
+            this.NumInterior.HeaderText = "Num. Interior";
+            this.NumInterior.Name = "NumInterior";
+            // 
+            // remove
+            // 
+            this.remove.HeaderText = "*";
+            this.remove.Name = "remove";
+            // 
             // BtnUbicacionNueva
             // 
             this.BtnUbicacionNueva.Location = new System.Drawing.Point(110, 153);
@@ -225,6 +265,64 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 150);
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 70;
+            // 
+            // Dimensiones
+            // 
+            this.Dimensiones.HeaderText = "Dimensiones";
+            this.Dimensiones.Name = "Dimensiones";
+            // 
+            // PesoEnKg
+            // 
+            this.PesoEnKg.HeaderText = "PesoEnKg";
+            this.PesoEnKg.Name = "PesoEnKg";
+            this.PesoEnKg.Width = 70;
+            // 
+            // ValorMercancia
+            // 
+            this.ValorMercancia.HeaderText = "ValorMercancia";
+            this.ValorMercancia.Name = "ValorMercancia";
+            this.ValorMercancia.Width = 70;
+            // 
+            // idMercancia
+            // 
+            this.idMercancia.HeaderText = "idMercancia";
+            this.idMercancia.Name = "idMercancia";
+            // 
+            // unidadPeso
+            // 
+            this.unidadPeso.HeaderText = "Unidad de Peso";
+            this.unidadPeso.Name = "unidadPeso";
+            // 
+            // pesoBruto
+            // 
+            this.pesoBruto.HeaderText = "Peso Bruto";
+            this.pesoBruto.Name = "pesoBruto";
+            // 
+            // pesoNeto
+            // 
+            this.pesoNeto.HeaderText = "Peso Neto";
+            this.pesoNeto.Name = "pesoNeto";
+            // 
+            // pesoTara
+            // 
+            this.pesoTara.HeaderText = "Peso Tara";
+            this.pesoTara.Name = "pesoTara";
+            // 
+            // numPiezas
+            // 
+            this.numPiezas.HeaderText = "No. Piezas";
+            this.numPiezas.Name = "numPiezas";
+            // 
+            // IdDetalleMercancia
+            // 
+            this.IdDetalleMercancia.HeaderText = "IdDetalleMercancia";
+            this.IdDetalleMercancia.Name = "IdDetalleMercancia";
             // 
             // textBox6
             // 
@@ -345,6 +443,7 @@
             this.BtnGuardar.TabIndex = 33;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // contextMenuStrip1
             // 
@@ -353,111 +452,16 @@
             // 
             // btnCarga
             // 
-            this.btnCarga.Location = new System.Drawing.Point(625, 153);
+            this.btnCarga.Image = global::WindowsFormsApp1.Properties.Resources.configuraciones32;
+            this.btnCarga.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCarga.Location = new System.Drawing.Point(702, 56);
             this.btnCarga.Name = "btnCarga";
-            this.btnCarga.Size = new System.Drawing.Size(153, 23);
+            this.btnCarga.Size = new System.Drawing.Size(86, 90);
             this.btnCarga.TabIndex = 35;
             this.btnCarga.Text = "Configuración catalagos";
+            this.btnCarga.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCarga.UseVisualStyleBackColor = true;
             this.btnCarga.Click += new System.EventHandler(this.btnCarga_Click);
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 70;
-            // 
-            // Dimensiones
-            // 
-            this.Dimensiones.HeaderText = "Dimensiones";
-            this.Dimensiones.Name = "Dimensiones";
-            // 
-            // PesoEnKg
-            // 
-            this.PesoEnKg.HeaderText = "PesoEnKg";
-            this.PesoEnKg.Name = "PesoEnKg";
-            this.PesoEnKg.Width = 70;
-            // 
-            // ValorMercancia
-            // 
-            this.ValorMercancia.HeaderText = "ValorMercancia";
-            this.ValorMercancia.Name = "ValorMercancia";
-            this.ValorMercancia.Width = 70;
-            // 
-            // idMercancia
-            // 
-            this.idMercancia.HeaderText = "idMercancia";
-            this.idMercancia.Name = "idMercancia";
-            // 
-            // unidadPeso
-            // 
-            this.unidadPeso.HeaderText = "Unidad de Peso";
-            this.unidadPeso.Name = "unidadPeso";
-            // 
-            // pesoBruto
-            // 
-            this.pesoBruto.HeaderText = "Peso Bruto";
-            this.pesoBruto.Name = "pesoBruto";
-            // 
-            // pesoNeto
-            // 
-            this.pesoNeto.HeaderText = "Peso Neto";
-            this.pesoNeto.Name = "pesoNeto";
-            // 
-            // pesoTara
-            // 
-            this.pesoTara.HeaderText = "Peso Tara";
-            this.pesoTara.Name = "pesoTara";
-            // 
-            // numPiezas
-            // 
-            this.numPiezas.HeaderText = "No. Piezas";
-            this.numPiezas.Name = "numPiezas";
-            // 
-            // IdDetalleMercancia
-            // 
-            this.IdDetalleMercancia.HeaderText = "IdDetalleMercancia";
-            this.IdDetalleMercancia.Name = "IdDetalleMercancia";
-            // 
-            // TipoUbicacion
-            // 
-            this.TipoUbicacion.HeaderText = "TipoUbicacion";
-            this.TipoUbicacion.Name = "TipoUbicacion";
-            // 
-            // DistanciaRecorrida
-            // 
-            this.DistanciaRecorrida.HeaderText = "DistanciaRecorrida";
-            this.DistanciaRecorrida.Name = "DistanciaRecorrida";
-            // 
-            // TipoEstacion
-            // 
-            this.TipoEstacion.HeaderText = "TipoEstacion";
-            this.TipoEstacion.Name = "TipoEstacion";
-            // 
-            // idUbicacion
-            // 
-            this.idUbicacion.HeaderText = "idUbicacion";
-            this.idUbicacion.Name = "idUbicacion";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // NumExterior
-            // 
-            this.NumExterior.HeaderText = "Num. Exterior";
-            this.NumExterior.Name = "NumExterior";
-            // 
-            // NumInterior
-            // 
-            this.NumInterior.HeaderText = "Num. Interior";
-            this.NumInterior.Name = "NumInterior";
-            // 
-            // remove
-            // 
-            this.remove.HeaderText = "*";
-            this.remove.Name = "remove";
             // 
             // FrmPrincipal
             // 
@@ -481,6 +485,8 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmPrincipal";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvUbicaciones)).EndInit();

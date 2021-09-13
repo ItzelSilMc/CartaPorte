@@ -20,16 +20,19 @@ namespace WindowsFormsApp1
         bool tInterno = false;
         string customerID = "";
         string INVOICE_ID="";
-        public FrmPrincipal()
-        {
-            InitializeComponent();
-            INVOICE_ID = textBox3.Text;
-        }
+
+
         bool ExisteTransporteConfigurado = false;
 
         ObjetoAutoTransporteFederal transporteTerrestre;
 
         List<Ubicaciones> ListaUbicaciones = new List<Ubicaciones>();
+
+        public FrmPrincipal()
+        {
+            InitializeComponent();
+            INVOICE_ID = textBox3.Text;
+        }
 
 
 
@@ -71,6 +74,7 @@ namespace WindowsFormsApp1
             //}
 
             Metodos.CargarComboValores(CmbViaEntradaSalida, ClavesTransporte);
+            CmbViaEntradaSalida.SelectedIndex = 0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -154,7 +158,7 @@ namespace WindowsFormsApp1
                     case "01":
                         if (INVOICE_ID == "")
                         {
-                            MessageBox.Show("Añade una factura para continuar");
+                            MessageBox.Show("Añade una factura para continuar", "Carta porte", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         else
                         {
@@ -429,6 +433,11 @@ namespace WindowsFormsApp1
         {
             FrmConfiguraciones frm = new FrmConfiguraciones();
             frm.ShowDialog();
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

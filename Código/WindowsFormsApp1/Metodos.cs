@@ -151,7 +151,7 @@ namespace WindowsFormsApp1
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_OPERADOR:
-                    resultado = "RFCOperador, NumLicencia, NombreOperador, NumRegIdTribOperador, ResidenciaFiscalOperador, ID_DOMICILIO";
+                    resultado = "RFCOperador , NombreOperador, NumLicencia, NumRegIdTribOperador, ResidenciaFiscalOperador, ID_DOMICILIO";
                     break;
 
 
@@ -241,6 +241,10 @@ namespace WindowsFormsApp1
 
                     case TablasCartaPorte.VMX_FE_CP_OPERADOR:
                         resultado = "ID_OPERADOR, " + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_DOMICILIO:
+                        resultado = "ID_DOMICILIO, " + resultado;
                         break;
                 }
             }
@@ -627,7 +631,23 @@ namespace WindowsFormsApp1
                         break;
 
                     case TablasCartaPorte.VMX_FE_CP_CONFIGURACION_FEDERAL:
-                        Consulta += " WHERE INVOICE_ID = '" + invoice+"'";
+                        Consulta += " WHERE INVOICE_ID = '" + invoice + "'";
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_FIGURA_TRANSPORTE:
+                        Consulta += " WHERE INVOICE_ID = '" + invoice + "'";
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_OPERADOR:
+                        Consulta += " WHERE ID_OPERADOR = " + id;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_NOTIFICADO:
+                        Consulta += " WHERE ID_NOTIFICADO = " + id;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_DOMICILIO:
+                        Consulta += " WHERE ID_DOMICILIO = " + id;
                         break;
 
 
@@ -746,6 +766,57 @@ namespace WindowsFormsApp1
 
             return RegistrosActualizados > 0;
         }
+        public static  ObjetoPersona obtenerOperadorDesdeTabla(DataTable tablaInfo)
+        {
+            ObjetoPersona operador = new ObjetoPersona()
+            {
+                RFC = tablaInfo.Rows[0]["RFCOperador"].ToString(),
+                Nombre = tablaInfo.Rows[0]["NombreOperador"].ToString(),
+                Numlicencia = tablaInfo.Rows[0]["NumLicencia"].ToString(),
+                NumRegistro = tablaInfo.Rows[0]["NumRegIdTribOperador"].ToString(),
+                ResidenciaFiscal = tablaInfo.Rows[0]["ResidenciaFiscalOperador"].ToString(),
+                ID = int.Parse(tablaInfo.Rows[0]["ID_OPERADOR"].ToString()),
+
+
+            };
+            return operador;
+        }
+
+        public static  ObjetoPersona ObtenerNotificadoDesdeTabla(DataTable tablaInfo)
+        {
+            ObjetoPersona notificado = new ObjetoPersona()
+            {
+                RFC = tablaInfo.Rows[0]["RFCNotificado"].ToString(),
+                Nombre = tablaInfo.Rows[0]["NombreNotificado"].ToString(),
+                NumRegistro = tablaInfo.Rows[0]["NumRegIdTribNotificado"].ToString(),
+                ResidenciaFiscal = tablaInfo.Rows[0]["ResidenciaFiscalNotificado"].ToString(),
+                ID = int.Parse(tablaInfo.Rows[0]["ID_NOTIFICADO"].ToString())
+            };
+
+            return notificado;
+        }
+        public static ObjetoDireccion ObtenerDireccionDesdeTabla(DataTable tablaDomicilio)
+        {
+            ObjetoDireccion domicilio = new ObjetoDireccion()
+            {
+                calle = tablaDomicilio.Rows[0]["Calle"].ToString(),
+                NumeroExterior = tablaDomicilio.Rows[0]["NumeroExterior"].ToString(),
+                NumeroInterior = tablaDomicilio.Rows[0]["NumeroInterior"].ToString(),
+                Colonia = tablaDomicilio.Rows[0]["Colonia"].ToString(),
+                Localidad = tablaDomicilio.Rows[0]["Localidad"].ToString(),
+                Referencia = tablaDomicilio.Rows[0]["Referencia"].ToString(),
+                Municipio = tablaDomicilio.Rows[0]["Municipio"].ToString(),
+                Estado = tablaDomicilio.Rows[0]["Estado"].ToString(),
+                Pais = tablaDomicilio.Rows[0]["Pais"].ToString(),
+                CodigoPostal = tablaDomicilio.Rows[0]["CodigoPostal"].ToString(),
+                Tipo = "Operador",
+                ID = int.Parse(tablaDomicilio.Rows[0]["ID_DOMICILIO"].ToString())
+
+            };
+            return domicilio;
+        }
+
+
 
 
     }

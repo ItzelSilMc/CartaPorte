@@ -70,6 +70,9 @@ namespace WindowsFormsApp1
             this.ClientSize = new System.Drawing.Size(733, 348);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PnlGrid);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmAdministracion";
             this.Text = "Administración -";
             this.panel1.ResumeLayout(false);

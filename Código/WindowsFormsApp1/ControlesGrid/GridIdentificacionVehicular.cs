@@ -99,6 +99,7 @@ namespace WindowsFormsApp1.ControlesGrid
                     FrmConfIdentificacionVehicular FrmIdentificacion = new FrmConfIdentificacionVehicular(identificacion);
                     FrmIdentificacion.PrepararParaActualizar();
                     FrmIdentificacion.ShowDialog();
+                    RefrescarGrid();
 
                 }
                 else
@@ -110,7 +111,11 @@ namespace WindowsFormsApp1.ControlesGrid
                             int IdEliminar = int.Parse(DgvIdentificacion.Rows[e.RowIndex].Cells[0].Value.ToString());
 
                             if (Metodos.EliminarRegistro(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR, IdEliminar))
+                            {
                                 MessageBox.Show("Se ha eliminado el registro correctamente.", "Carta porte", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                RefrescarGrid();
+                            }
+
 
                         }
                     }

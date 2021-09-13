@@ -41,8 +41,8 @@ namespace WindowsFormsApp1.Modelos
                     break;
 
                 case TipoPersona.Operador:
-                    Cadena = "'" + RFC + "','" + CodigoTransportista + "','" + Nombre + "','" + ResidenciaFiscal + "','" +
-                     NumRegistro + "'";
+                    Cadena = "'" + RFC + "','" + Nombre + "','" + CodigoTransportista + "','" + NumRegistro + "','" +
+                      ResidenciaFiscal+ "'," + IdDomicilio;
                     break;
 
                 case TipoPersona.Notificado:

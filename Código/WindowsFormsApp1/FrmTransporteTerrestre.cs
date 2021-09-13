@@ -61,9 +61,9 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             INVOICE_ID = Invoice;
-            DataTable ConfigFederal = new DataTable();
-            DataTable ConfigVehicular = new DataTable();
-            DataTable ConfigRemolque = new DataTable();
+            DataTable ConfigFederal;
+            DataTable ConfigVehicular;
+            DataTable ConfigRemolque;
             
             
             ConfigFederal = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL);
@@ -151,7 +151,14 @@ namespace WindowsFormsApp1
         {
             FrmPersona frmOperador = new FrmPersona();
             frmOperador.SetTipo(TipoPersona.Operador);
+            frmOperador.AbrirParaSeleccionar();
             frmOperador.ShowDialog();
+            
+            if(frmOperador.RetornarIdSeleccionado()>0)
+            {
+                BtnOperador.BackColor = Color.Cyan;
+            }
+            
         }
         private bool ValidarTransporteTerrestre()
         {
@@ -165,6 +172,12 @@ namespace WindowsFormsApp1
         private void botonesPersonasControl1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private bool ExistenteRegistroFigura(string INVOICE)
+        {
+            DataTable tabla = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_FIGURA_TRANSPORTE, 1, INVOICE_ID);
+            return tabla.Rows.Count > 0;
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -181,7 +194,7 @@ namespace WindowsFormsApp1
 
                 int i = 0;
 
-                if (dtC.Rows.Count >0)
+                if (dtC.Rows.Count > 0)
                 {
                    
                     string consulta = string.Format("UPDATE  CFDI2..VMX_FE_CP_CONFIGURACION_FEDERAL SET ID_FEDERAL='{0}', ID_VEHICULAR ='{1}', ID_REMOLQUE='{2}' WHERE INVOICE_ID='{3}'",
@@ -195,10 +208,25 @@ namespace WindowsFormsApp1
                 {
                     
                     i = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_CONFIGURACION_FEDERAL, Ob);
-                    if (i>0)
+                    if (i > 0)
                         MessageBox.Show("Registros guardados con éxito");
                     
                 }
+
+
+                ///FIGURA DE TRANSPORTE.
+                if (ExistenteRegistroFigura(INVOICE_ID))  
+                {
+
+                }
+                else
+                {
+                    // aun no hay cambios aqui, debeo ver como llenarlo de diferente manera
+                    ObjetoFiguraTransporte figura = new ObjetoFiguraTransporte();
+
+                    Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_FIGURA_TRANSPORTE,  figura  );
+                }
+                   
                 
             }
 

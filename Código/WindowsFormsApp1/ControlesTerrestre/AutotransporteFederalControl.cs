@@ -31,6 +31,23 @@ namespace WindowsFormsApp1.ControlesTerrestre
             Metodos.CargarComboValores(CmbPermisoSCT, Permisos);
         }
 
+        public void AcomodarEnNuevoModificacion()
+        {
+            label5.Visible = false;
+            configFederal.Visible = false;
+            textConfig.Visible = false;
+
+            CmbPermisoSCT.Visible = true;
+
+            foreach(Control control in  groupBox1.Controls)
+            {
+                control.Location =  new Point( control.Location.X, control.Location.Y - 30);
+            }
+            groupBox1.Size = new Size(597, 85);
+
+
+        }
+
 
         public ObjetoAutotransporte ObtenerAutotransporte()
         {

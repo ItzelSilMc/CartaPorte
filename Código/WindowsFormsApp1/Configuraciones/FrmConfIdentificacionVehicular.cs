@@ -24,6 +24,7 @@ namespace WindowsFormsApp1.Configuraciones
         public FrmConfIdentificacionVehicular()
         {
             Inicializar();
+            identificacionVehicularControl1.AcomodarEnNuevoModificacion();
         }
         public FrmConfIdentificacionVehicular(ObjetoIdentificacionVehicular identificacion)
         {
@@ -31,6 +32,8 @@ namespace WindowsFormsApp1.Configuraciones
             this.identificacion = identificacion;
 
             identificacionVehicularControl1.CargarDatosPrevios(identificacion);
+            identificacionVehicularControl1.AcomodarEnNuevoModificacion();
+
         }
         public void PrepararParaActualizar()
         {

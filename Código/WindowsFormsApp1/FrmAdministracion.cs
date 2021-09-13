@@ -64,9 +64,9 @@ namespace WindowsFormsApp1
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR:
-                    FrmConfIdentificacionVehicular identi = new FrmConfIdentificacionVehicular();
+                    FrmConfIdentificacionVehicular identificacion = new FrmConfIdentificacionVehicular();
                     Hide();
-                    identi.ShowDialog();
+                    identificacion.ShowDialog();
                     Show();
                     break;
 

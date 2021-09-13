@@ -30,8 +30,9 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.domicilioControl1 = new WindowsFormsApp1.DomicilioControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.LblCodigo = new System.Windows.Forms.Label();
+            this.TxtCodigoTransportista = new System.Windows.Forms.TextBox();
             this.TxtResidenciaFiscal = new System.Windows.Forms.TextBox();
             this.TxtNumeroIdentificacion = new System.Windows.Forms.TextBox();
             this.TxtLicencia = new System.Windows.Forms.TextBox();
@@ -43,8 +44,9 @@ namespace WindowsFormsApp1
             this.LblNombre = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
-            this.TxtCodigoTransportista = new System.Windows.Forms.TextBox();
-            this.LblCodigo = new System.Windows.Forms.Label();
+            this.CmbSeleccionar = new System.Windows.Forms.ComboBox();
+            this.LblTitulo = new System.Windows.Forms.Label();
+            this.domicilioControl1 = new WindowsFormsApp1.DomicilioControl();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,17 +55,10 @@ namespace WindowsFormsApp1
             // 
             this.panel1.Controls.Add(this.domicilioControl1);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(13, 13);
+            this.panel1.Location = new System.Drawing.Point(13, 69);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(626, 345);
             this.panel1.TabIndex = 0;
-            // 
-            // domicilioControl1
-            // 
-            this.domicilioControl1.Location = new System.Drawing.Point(3, 142);
-            this.domicilioControl1.Name = "domicilioControl1";
-            this.domicilioControl1.Size = new System.Drawing.Size(513, 186);
-            this.domicilioControl1.TabIndex = 5;
             // 
             // groupBox1
             // 
@@ -84,6 +79,24 @@ namespace WindowsFormsApp1
             this.groupBox1.Size = new System.Drawing.Size(601, 131);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // LblCodigo
+            // 
+            this.LblCodigo.AutoSize = true;
+            this.LblCodigo.Location = new System.Drawing.Point(423, 80);
+            this.LblCodigo.Name = "LblCodigo";
+            this.LblCodigo.Size = new System.Drawing.Size(103, 13);
+            this.LblCodigo.TabIndex = 12;
+            this.LblCodigo.Text = "Codigo transportista:";
+            this.LblCodigo.Visible = false;
+            // 
+            // TxtCodigoTransportista
+            // 
+            this.TxtCodigoTransportista.Location = new System.Drawing.Point(416, 105);
+            this.TxtCodigoTransportista.Name = "TxtCodigoTransportista";
+            this.TxtCodigoTransportista.Size = new System.Drawing.Size(167, 20);
+            this.TxtCodigoTransportista.TabIndex = 11;
+            this.TxtCodigoTransportista.Visible = false;
             // 
             // TxtResidenciaFiscal
             // 
@@ -167,7 +180,7 @@ namespace WindowsFormsApp1
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(564, 364);
+            this.BtnGuardar.Location = new System.Drawing.Point(564, 420);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(75, 23);
             this.BtnGuardar.TabIndex = 1;
@@ -175,36 +188,49 @@ namespace WindowsFormsApp1
             this.BtnGuardar.UseVisualStyleBackColor = true;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // TxtCodigoTransportista
+            // CmbSeleccionar
             // 
-            this.TxtCodigoTransportista.Location = new System.Drawing.Point(416, 105);
-            this.TxtCodigoTransportista.Name = "TxtCodigoTransportista";
-            this.TxtCodigoTransportista.Size = new System.Drawing.Size(167, 20);
-            this.TxtCodigoTransportista.TabIndex = 11;
-            this.TxtCodigoTransportista.Visible = false;
+            this.CmbSeleccionar.FormattingEnabled = true;
+            this.CmbSeleccionar.Location = new System.Drawing.Point(12, 29);
+            this.CmbSeleccionar.Name = "CmbSeleccionar";
+            this.CmbSeleccionar.Size = new System.Drawing.Size(288, 21);
+            this.CmbSeleccionar.TabIndex = 2;
+            this.CmbSeleccionar.Visible = false;
+            this.CmbSeleccionar.SelectedIndexChanged += new System.EventHandler(this.CmbSeleccionar_SelectedIndexChanged);
             // 
-            // LblCodigo
+            // LblTitulo
             // 
-            this.LblCodigo.AutoSize = true;
-            this.LblCodigo.Location = new System.Drawing.Point(423, 80);
-            this.LblCodigo.Name = "LblCodigo";
-            this.LblCodigo.Size = new System.Drawing.Size(103, 13);
-            this.LblCodigo.TabIndex = 12;
-            this.LblCodigo.Text = "Codigo transportista:";
-            this.LblCodigo.Visible = false;
+            this.LblTitulo.AutoSize = true;
+            this.LblTitulo.Location = new System.Drawing.Point(12, 10);
+            this.LblTitulo.Name = "LblTitulo";
+            this.LblTitulo.Size = new System.Drawing.Size(119, 13);
+            this.LblTitulo.TabIndex = 3;
+            this.LblTitulo.Text = "Seleccione una opcion:";
+            this.LblTitulo.Visible = false;
+            // 
+            // domicilioControl1
+            // 
+            this.domicilioControl1.Location = new System.Drawing.Point(3, 142);
+            this.domicilioControl1.Name = "domicilioControl1";
+            this.domicilioControl1.Size = new System.Drawing.Size(513, 186);
+            this.domicilioControl1.TabIndex = 5;
             // 
             // FrmPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 398);
+            this.ClientSize = new System.Drawing.Size(655, 455);
+            this.Controls.Add(this.LblTitulo);
+            this.Controls.Add(this.CmbSeleccionar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.panel1);
             this.Name = "FrmPersona";
+            this.Load += new System.EventHandler(this.FrmPersona_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -227,5 +253,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Label LblCodigo;
         private System.Windows.Forms.TextBox TxtCodigoTransportista;
+        private System.Windows.Forms.ComboBox CmbSeleccionar;
+        private System.Windows.Forms.Label LblTitulo;
     }
 }

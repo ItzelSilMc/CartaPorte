@@ -50,12 +50,13 @@ namespace WindowsFormsApp1.ControlesGrid
             this.Tipo,
             this.Editar,
             this.Eliminar});
-            this.DgvPersona.Location = new System.Drawing.Point(4, 4);
+            this.DgvPersona.Location = new System.Drawing.Point(0, 8);
             this.DgvPersona.Name = "DgvPersona";
             this.DgvPersona.RowHeadersVisible = false;
-            this.DgvPersona.Size = new System.Drawing.Size(402, 150);
+            this.DgvPersona.Size = new System.Drawing.Size(424, 150);
             this.DgvPersona.TabIndex = 0;
             this.DgvPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPersona_CellContentClick);
+            this.DgvPersona.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DgvPersona_CellPainting);
             // 
             // ID
             // 
@@ -98,7 +99,7 @@ namespace WindowsFormsApp1.ControlesGrid
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.DgvPersona);
             this.Name = "GridPersona";
-            this.Size = new System.Drawing.Size(412, 158);
+            this.Size = new System.Drawing.Size(428, 166);
             ((System.ComponentModel.ISupportInitialize)(this.DgvPersona)).EndInit();
             this.ResumeLayout(false);
 

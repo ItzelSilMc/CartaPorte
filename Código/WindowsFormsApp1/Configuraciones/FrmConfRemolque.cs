@@ -24,12 +24,14 @@ namespace WindowsFormsApp1.Configuraciones
         public FrmConfRemolque()
         {
             Inicializar();
+            remolqueControl1.AcomodarEnNuevoModificacion();
         }
         public FrmConfRemolque(ObjetoRemolque remolque)
         {
             Inicializar();
             this.remolque = remolque;
             CargarDatosPrevios();
+            remolqueControl1.AcomodarEnNuevoModificacion();
         }
 
 
@@ -59,7 +61,7 @@ namespace WindowsFormsApp1.Configuraciones
         }
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            string CadenaWhere = " WHERE ID_REMOLQUE = " + remolque.ID;
+            
             remolque = remolqueControl1.ObtenerRemolque();
             if (!CargadoParaActualizar)
             {
@@ -72,7 +74,8 @@ namespace WindowsFormsApp1.Configuraciones
             }
             else  //es porque es para actualizar
             {
-                
+                string CadenaWhere = " WHERE ID_REMOLQUE = " + remolque.ID;
+
                 string CadenaUpdate = ObtenercadenaUpdate();
 
                 if(Metodos.ActualizarRegistro(TablasCartaPorte.VMX_FE_CP_REMOLQUES, CadenaUpdate + CadenaWhere))

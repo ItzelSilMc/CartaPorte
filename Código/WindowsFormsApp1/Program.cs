@@ -157,7 +157,6 @@ namespace WindowsFormsApp1
             //  NumPiezas = 1, PesoBruto = 10.5m, PesoEnKg = 10.8m, PesoNeto = 10.1m, PesoTara = 10, ValorMercancia = "n/a"
             //};
 
-
             //int IDMerca = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_DETALLE_MERCANCIA, detMerca);
 
            // bool yesOnO = Metodos.ActualizarRegistro(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, "SET NombreAseg = 'SEGUROS BANQUEOS' WHERE ID_FEDERAL = 10");
