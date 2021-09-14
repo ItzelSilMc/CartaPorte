@@ -127,7 +127,7 @@ namespace WindowsFormsApp1
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_FIGURA_TRANSPORTE:
-                    resultado = "INVOICE_ID, CveTransporte";
+                    resultado = "INVOICE_ID, CveTransporte, ID_OPERADOR, ID_PROPIETARIO, ID_ARRENDATARIO, ID_NOTIFICADO";
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_EMBARCADOR:
@@ -245,6 +245,10 @@ namespace WindowsFormsApp1
 
                     case TablasCartaPorte.VMX_FE_CP_DOMICILIO:
                         resultado = "ID_DOMICILIO, " + resultado;
+                        break;
+
+                    case TablasCartaPorte.VMX_FE_CP_FIGURA_TRANSPORTE:
+                        resultado = " ID_FIGURA_TRANSPORTE, " + resultado;
                         break;
                 }
             }
@@ -568,7 +572,7 @@ namespace WindowsFormsApp1
 
 
                 case TablasCartaPorte.VMX_FE_CP_FIGURA_TRANSPORTE:
-                    valores = "sin definir aun";
+                    valores = ((ObjetoFiguraTransporte)objetoInsertar).ToString();
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_EMBARCADOR:

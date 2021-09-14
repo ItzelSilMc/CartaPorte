@@ -16,7 +16,9 @@ namespace WindowsFormsApp1
         public  bool GuardadoCorrectamente = false;
 
         ObjetoAutoTransporteFederal autoTransporteFederal = new ObjetoAutoTransporteFederal();
-        public string INVOICE_ID="";
+        public string INVOICE_ID = "";
+
+        public int IdOperador = 0, IdNotificado = 0;
         
 
         public FrmTransporteTerrestre()
@@ -153,10 +155,12 @@ namespace WindowsFormsApp1
             frmOperador.SetTipo(TipoPersona.Operador);
             frmOperador.AbrirParaSeleccionar();
             frmOperador.ShowDialog();
-            
-            if(frmOperador.RetornarIdSeleccionado()>0)
+
+            IdOperador = frmOperador.RetornarIdSeleccionado();
+            if(IdOperador > 0)
             {
                 BtnOperador.BackColor = Color.Cyan;
+               
             }
             
         }
@@ -217,13 +221,20 @@ namespace WindowsFormsApp1
                 ///FIGURA DE TRANSPORTE.
                 if (ExistenteRegistroFigura(INVOICE_ID))  
                 {
-
+                    ObjetoFiguraTransporte figura = new ObjetoFiguraTransporte();
+                    figura.ID_OPERADOR = IdOperador;
+                    figura.ID_NOTIFICADO = botonesPersonasControl1.IDSeleccionadoNotificado;
+                    figura.INVOICE_ID = this.INVOICE_ID;
+                    Metodos.ActualizarRegistro(TablasCartaPorte.VMX_FE_CP_FIGURA_TRANSPORTE, "SET ID_OPERADOR = " + figura.ID_OPERADOR + ", ID_NOTIFICADO = " + figura.ID_NOTIFICADO + " WHERE INVOICE_ID ='" + figura.INVOICE_ID + "'");
                 }
                 else
                 {
                     // aun no hay cambios aqui, debeo ver como llenarlo de diferente manera
                     ObjetoFiguraTransporte figura = new ObjetoFiguraTransporte();
 
+                    figura.ID_OPERADOR = IdOperador;
+                    figura.ID_NOTIFICADO = botonesPersonasControl1.IDSeleccionadoNotificado;
+                    figura.INVOICE_ID = this.INVOICE_ID;
                     Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_FIGURA_TRANSPORTE,  figura  );
                 }
                    

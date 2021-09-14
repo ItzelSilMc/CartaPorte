@@ -164,23 +164,26 @@ namespace WindowsFormsApp1.ControlesGenerales
             {
                 case TipoPersona.Transportista:
                     IDSeleccionadoTransportista = IdPersonaSeleccionada;
+                    BtnTransportista.BackColor = Color.Cyan;
                     break;
                 case TipoPersona.Propietario:
                     IDSeleccionadoPropietario = IdPersonaSeleccionada;
+                    BtnPropietario.BackColor = Color.Cyan;
                     break;
                 case TipoPersona.Operador:
-                    
+                    // este boton ta juera :o
                     break;
                 case TipoPersona.Notificado:
                     IDSeleccionadoNotificado = IdPersonaSeleccionada;
+                    BtnNotificado.BackColor = Color.Cyan;
                     break;
                 case TipoPersona.Embarcador:
                     IDSeleccionadoEmbarcador = IdPersonaSeleccionada;
-                    
+                    BtnEmbarcador.BackColor = Color.Cyan;
                     break;
                 case TipoPersona.Arrendatario:
                     IDSeleccionadoArrendatario = IdPersonaSeleccionada;
-
+                    BtnArrendatario.BackColor = Color.Cyan;
                     break;
             }
 
