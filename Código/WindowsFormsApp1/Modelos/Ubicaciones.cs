@@ -7,5 +7,10 @@ namespace WindowsFormsApp1
         public int idUbicacion;
         public string TipoEstacion, NumeroEstacion, NombreEstacion;
         public ObjetoDireccion dir;
+
+        public override string ToString()
+        {
+            return "'"+TipoEstacion + "','" + NumeroEstacion + "', '" + NombreEstacion + "'" ;
+        }
     }
 }

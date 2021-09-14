@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -166,19 +167,30 @@ namespace WindowsFormsApp1
            
             try
             {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                if (args.Count() == 0)
+                string folio = ConfigurationManager.AppSettings.Get("folio");
+                if (folio=="")
                 {
-                    
-                    //Application.Run(new FrmPrincipal());
-                    Application.Run(new FrmPrincipal("12563"));
+                    MessageBox.Show("Debe agregar una factura en el config.");
 
                 }
                 else
                 {
-                    Application.Run(new FrmConfiguraciones());
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    if (args.Count() == 0)
+                    {
+
+                        //Application.Run(new FrmPrincipal());
+                        Application.Run(new FrmPrincipal(folio));
+
+                    }
+                    else
+                    {
+                        Application.Run(new FrmConfiguraciones());
+                    }
                 }
+                Application.Exit();
+                
             }
                 catch(Exception ex)
             {

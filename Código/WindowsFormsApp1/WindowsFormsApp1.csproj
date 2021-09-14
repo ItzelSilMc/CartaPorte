@@ -253,6 +253,7 @@
     <Compile Include="Modelos\ObjetoProducto.cs" />
     <Compile Include="Modelos\ObjetoRemolque.cs" />
     <Compile Include="Modelos\ObjetoTransporteFerroviario.cs" />
+    <Compile Include="Modelos\ObjetoUbicacion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelos\Ubicaciones.cs" />

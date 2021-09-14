@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,19 +45,30 @@ namespace WindowsFormsApp1
             INVOICE_ID = textBox3.Text;
             conn = ConfigurationManager.ConnectionStrings["Sistema"].ConnectionString;
             BD = ConfigurationManager.AppSettings.Get("BD");
-            cargarMercancias();
+
+            DataTable dt = new DataTable();
+            dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_MERCANCIAS, 1, INVOICE_ID);
+            if (dt.Rows.Count > 0)
+                CargarMercanciasConfiguradas(dt);
+            else
+                cargarMercancias();
+            //cargarMercancias();
+            CargarUbicaciones();
+            cargarCP();
             BtnMercancia.Enabled = false;
+            textPesoTotal.Text = "0";
+            textPesoBruto.Text = "0";
         }
 
         private void dataGUbicaciones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Formularios fr = new Formularios();
-            //fr.ShowDialog();
-            frmCatalagoUbicaciones frmUbi = new frmCatalagoUbicaciones(INVOICE_ID, customerID);
+           
+            frmCatalagoUbicaciones frmUbi = new frmCatalagoUbicaciones(INVOICE_ID, customerID,
+                DgvUbicaciones.CurrentRow.Cells["ComboTipo"].Value.ToString().Split('-')[0].Trim(),
+                DgvUbicaciones.CurrentRow.Cells["IdDomicilio"].Value.ToString());
             frmUbi.ShowDialog();
-            //DgvUbicaciones.Rows.Add("", "", "", frmUbi.ID, frmUbi.Direccion, "", "", "");
-            DgvUbicaciones.Rows[e.RowIndex].Cells["idUbicacion"].Value = frmUbi.ID;
-            DgvUbicaciones.Rows[e.RowIndex].Cells["Nombre"].Value = frmUbi.Direccion;
+            DgvUbicaciones.Rows[e.RowIndex].Cells["IdDomicilio"].Value = frmUbi.ID;
+           
 
         }
 
@@ -124,7 +136,7 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             CargarCombos();
-            BuscarUbicaciones();
+            //BuscarUbicaciones();
         }
 
         private void BuscarUbicaciones()
@@ -145,7 +157,7 @@ namespace WindowsFormsApp1
 
             if(!string.IsNullOrEmpty( dirDestino.calle))
             {
-               DgvUbicaciones.Rows.Add("03-Destino Final", "", "","","","","", "");
+               DgvUbicaciones.Rows.Add("03-Destino Final", "","","","","", "","","yyyy-MM-dd","");
 
             }
 
@@ -179,7 +191,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Problemas al cargar los datos: " + MsgError);
                 else
                 {
-                   DgvUbicaciones.Rows.Add("", "", "", "", "", "", "", "");
+                   DgvUbicaciones.Rows.Add("", "", "", "", "", "", "","","","");
 
                 }
 
@@ -226,20 +238,6 @@ namespace WindowsFormsApp1
                             }
                             tt.ShowDialog();
 
-                            
-                            //FrmTransporteTerrestre tt = new FrmTransporteTerrestre();
-                            //if (ExisteTransporteConfigurado)
-                            //{
-                            //    tt.CargarDatosPrevios(transporteTerrestre);
-                            //}
-                            //tt.ShowDialog();
-
-                            //if (tt.GuardadoCorrectamente)
-                            //{
-                            //    guardadoCorrectamente = true;
-                            //    transporteTerrestre = tt.ObtenerInfoTransporteTerreste();
-                            //    ExisteTransporteConfigurado = true;
-                            //}
                         }
                         
                         break;
@@ -293,31 +291,28 @@ namespace WindowsFormsApp1
 
         private void DgvUbicaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == 4)
-            {
-                int id = (int)DgvUbicaciones[3, e.RowIndex].Value;
-                Ubicaciones ubicacionSeleccionada = ListaUbicaciones.Where(ubicacion => ubicacion.idUbicacion == id).FirstOrDefault();
+            //if (e.RowIndex >= 0 && e.ColumnIndex == 4)
+            //{
+            //    int id = (int)DgvUbicaciones[3, e.RowIndex].Value;
+            //    Ubicaciones ubicacionSeleccionada = ListaUbicaciones.Where(ubicacion => ubicacion.idUbicacion == id).FirstOrDefault();
 
-                FrmUbicaciones frm = new FrmUbicaciones(CmbViaEntradaSalida.Text.Split('-')[0].Trim(), ubicacionSeleccionada, "Modificar");
-                frm.ShowDialog();
-
-
-
-           }
+            //    FrmUbicaciones frm = new FrmUbicaciones(CmbViaEntradaSalida.Text.Split('-')[0].Trim(), ubicacionSeleccionada, "Modificar");
+            //    frm.ShowDialog();
+            //}
         }
 
         private void DgvUbicaciones_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if(e.ColumnIndex == 7 && e.RowIndex>=0)
+            if(e.ColumnIndex == 12 && e.RowIndex>=0)
             {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var w = Properties.Resources.editar16.Width;
-                var h = Properties.Resources.editar16.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                //e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                //var w = Properties.Resources.editar16.Width;
+                //var h = Properties.Resources.editar16.Height;
+                //var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                //var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-                e.Graphics.DrawImage(Resources.editar16,new Rectangle(x,y,w,h));
-                e.Handled = true;
+                //e.Graphics.DrawImage(Resources.editar16,new Rectangle(x,y,w,h));
+                //e.Handled = true;
             }
         }
 
@@ -328,6 +323,7 @@ namespace WindowsFormsApp1
                 INVOICE_ID = textBox3.Text;
                 if (INVOICE_ID != "")
                 {
+                    double total = 0;
                     //DataTable dtMercancias = new DataTable();
                     dtMercancias = ObtenerMercancias(INVOICE_ID, out string Error);
                     for (int i = 0; i < dtMercancias.Rows.Count; i++)
@@ -343,9 +339,11 @@ namespace WindowsFormsApp1
                         string PesoTara = dtMercancias.Rows[i]["pesoTara"].ToString();
                         string NoPiezas = dtMercancias.Rows[i]["piezas"].ToString();
                         string IDDetalleMercancia = "";
+                        total += Double.Parse(Cantidad);
                         dataGridView1.Rows.Add(Cantidad, Dimensiones, PesoEnKG, ValorMercancia, IDMercancia, UnidadPeso, PesoBruto, PesoNeto, PesoTara, NoPiezas, IDDetalleMercancia);
 
                     }
+                    textTotalMercancias.Text = total.ToString();
 
                 }
                 else
@@ -443,7 +441,7 @@ namespace WindowsFormsApp1
                     END AS FRACCION_ARANCELARIA,
                     (SELECT STRING_VAL AS TARIFF_CODE FROM USER_DEF_FIELDS WHERE PROGRAM_ID = 'VMPRTMNT' 
 	                 AND ID = '{1}' AND DOCUMENT_ID = P.ID )as CLAVE  ,'' as IDDetalle, 
-                       '' as piezas,'' as pesoTara,'' as pesoNeto,'' as pesoBruto,'' as UnidadPeso 
+                       '0' as piezas,'0' as pesoTara,'0' as pesoNeto,'0' as pesoBruto,'' as UnidadPeso 
                     FROM dbo.IBT_SHIPPER_LINE AS ISL INNER JOIN
                     dbo.IBT_LINE AS IL ON IL.IBT_ID = ISL.IBT_ID AND IL.LINE_NO = ISL.IBT_LINE_NO INNER JOIN
                     dbo.PART AS P ON P.ID = IL.PART_ID
@@ -470,10 +468,10 @@ namespace WindowsFormsApp1
                         END AS FRACCION_ARANCELARIA ,
                     ( SELECT STRING_VAL AS TARIFF_CODE FROM USER_DEF_FIELDS WHERE PROGRAM_ID = 'VMPRTMNT' 
 	                    AND ID = '{1}' AND DOCUMENT_ID = P.ID) as CLAVE ,'' as IDDetalle  ,
-                    '' as piezas,'' as pesoTara,'' as pesoNeto,'' as pesoBruto,'' as UnidadPeso 
+                     '0' as piezas,'0' as pesoTara,'0' as pesoNeto,'0' as pesoBruto,'' as UnidadPeso 
                     FROM SHIPPER_LINE S INNER JOIN CUST_ORDER_LINE CO ON S.CUST_ORDER_LINE_NO = CO.LINE_NO 
                     AND S.CUST_ORDER_ID = CO.CUST_ORDER_ID LEFT JOIN PART P ON P.ID = CO.PART_ID 
-                    LEFT JOIN SERVICE_CHARGE SC ON S.SERVICE_CHARGE_ID = SC.ID LEFT JOIN "+BD+"..VMX_FE_SERVICIOS VFS " +
+                    LEFT JOIN SERVICE_CHARGE SC ON S.SERVICE_CHARGE_ID = SC.ID LEFT JOIN " + BD+"..VMX_FE_SERVICIOS VFS " +
                     "ON SC.ID = VFS.SERVICE_CHARGE_ID WHERE PACKLIST_ID = '" + INVOICE_ID + "' and SHIPPED_QTY > 0", FRACCION, CLAVE);
                     dt = Metodos.EjecutarConsultaDT(sql);
                 }
@@ -499,6 +497,246 @@ namespace WindowsFormsApp1
         {
             INVOICE_ID = textBox3.Text;
 
+        }
+        public void GuardarMercancias()
+        {
+            try
+            {
+                ObjetoMercancias obM = new ObjetoMercancias();
+                obM.INVOICE_ID = INVOICE_ID;
+                obM.NumTotalMercancia = Int32.Parse(textTotalMercancias.Text);
+                obM.CargoPorTasacion = textTasacion.Text;
+                obM.PesoBrutoTotal = decimal.Parse(textPesoBruto.Text);
+                obM.UnidadPeso = textUnidadPeso.Text;
+                obM.PesoNetoTotal = decimal.Parse(textPesoTotal.Text);
+
+
+
+                DataTable dt = new DataTable();
+                dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_MERCANCIAS, 1, INVOICE_ID);
+                int i = 0;
+                string IDMERCANCIA = "";
+                if (dt.Rows.Count > 0)
+                {
+                    IDMERCANCIA = dt.Rows[0]["ID_MERCANCIAS"].ToString();
+                    string sql = "DELETE FROM cfdi2..VMX_FE_CP_MERCANCIAS WHERE INVOICE_ID ='" + INVOICE_ID + "'";
+                    int res = Metodos.EjecutarConsulta(sql);
+                    sql = "DELETE FROM cfdi2..VMX_FE_CP_DETALLE_MERCANCIA WHERE ID_MERCANCIAS ='" + IDMERCANCIA + "'";
+                    res = Metodos.EjecutarConsulta(sql);
+
+                }
+                i = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_MERCANCIAS, obM);
+
+
+                if (i > 0)
+                {
+                    int o = 0;
+                    foreach (DataGridViewRow item in dataGridView1.Rows)
+                    {
+                        ObjetoDetalleMercancia obD = new ObjetoDetalleMercancia();
+                        obD.ID_MERCANCIAS = i;
+                        obD.ID_PRODUCTO = item.Cells["IdDetalleMercancia"].Value.ToString()=="" ? 0 : Int32.Parse(item.Cells["IdDetalleMercancia"].Value.ToString());
+                        obD.Cantidad = decimal.Parse(item.Cells["Cantidad"].Value.ToString());
+                        obD.Dimensiones = item.Cells["Dimensiones"].Value.ToString();
+                        obD.PesoEnKg = decimal.Parse(item.Cells["PesoEnKg"].Value.ToString());
+                        obD.ValorMercancia = item.Cells["ValorMercancia"].Value.ToString();
+                        obD.UnidadPeso = item.Cells["unidadPeso"].Value.ToString();
+                        obD.PesoBruto = decimal.Parse(item.Cells["pesoBruto"].Value.ToString());
+                        obD.PesoNeto = decimal.Parse(item.Cells["pesoNeto"].Value.ToString());
+                        obD.PesoTara = decimal.Parse(item.Cells["pesoTara"].Value.ToString());
+                        decimal de = decimal.Parse(item.Cells["numPiezas"].Value.ToString());
+                        obD.NumPiezas = Decimal.ToInt32(de);
+                        obD.PART_ID = item.Cells["idMercancia"].Value.ToString(); 
+                        o = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_DETALLE_MERCANCIA, obD);
+                    }
+                    if (o > 0)
+                        MessageBox.Show("Registros guardados exitosamente. Mercancias");
+                }
+                else
+                {
+                    MessageBox.Show("Problemas al registrar las mercancías");
+                }
+            }
+            catch (Exception r)
+            {
+
+                MessageBox.Show("Problemas al guardar las mercancías. "+r.Message);
+            }
+           
+        }
+        public void CargarMercanciasConfiguradas(DataTable dt)
+        {
+            try
+            {
+                string ID_Mercancia = "";
+                foreach (DataRow item in dt.Rows)
+                {
+                    ID_Mercancia = item["ID_MERCANCIAS"].ToString();
+                    textTotalMercancias.Text = item["NumTotalMercancias"].ToString();
+                    textPesoBruto.Text= item["PesoBrutoTotal"].ToString();
+                    textPesoTotal.Text = item["PesoNetoTotal"].ToString();
+                    textTasacion.Text = item["CargoPorTasacion"].ToString();
+                    textUnidadPeso.Text = item["UnidadPeso"].ToString();
+                }
+                DataTable dt2 = new DataTable();
+                dt2 = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_DETALLE_MERCANCIA, 1, ID_Mercancia);
+                foreach (DataRow item in dt2.Rows)
+                {
+                    //ID_DETALLE_MERCANCIA	ID_MERCANCIAS	ID_PRODUCTO	Cantidad	Dimensiones	
+                    // PesoEnKg	ValorMercancia	UnidadPeso	PesoBruto	PesoNeto	PesoTara	NumPiezas
+                    string cantidad = item["Cantidad"].ToString();
+                    string dimensiones = item["Dimensiones"].ToString();
+                    string peso = item["PesoEnKg"].ToString();
+                    string valorMercancia = item["ValorMercancia"].ToString();
+                    string idMercancia = item["PART_ID"].ToString();
+                    string unidadPeso = item["UnidadPeso"].ToString();
+                    string pesoBruto = item["PesoBruto"].ToString();
+                    string pesoNeto = item["PesoNeto"].ToString();
+                    string pesoTara = item["PesoTara"].ToString();
+                    string noPiezas = item["NumPiezas"].ToString();
+                    string idDetalleM = item["ID_PRODUCTO"].ToString();
+                    dataGridView1.Rows.Add(cantidad,dimensiones,peso,valorMercancia,idMercancia,unidadPeso,pesoBruto,pesoNeto,pesoTara,noPiezas,idDetalleM);
+                    
+                }
+            }
+            catch (Exception r)
+            {
+
+                MessageBox.Show("Problemas al cargar las mercancías. "+ r.Message);
+            }
+        }
+
+        public void cargarCP()
+        {
+            DataTable dt = new DataTable();
+            dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CARTAPORTE, 1, INVOICE_ID);
+            foreach (DataRow r in dt.Rows)
+            {
+               
+                CmbInternacional.Text = r["TransInternal"].ToString();
+                CmbEntradaSalidaMercancia.Text = r["EntradaSalidaMerc"].ToString();
+                CmbViaEntradaSalida.Text = r["ViaEntradaSalida"].ToString();
+                TxtTotalDistRecorrida.Text = r["TotalDisRec"].ToString();
+            }
+
+
+        }
+        public void GuardarCP()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CARTAPORTE, 1, INVOICE_ID);
+                if (dt.Rows.Count > 0)
+                {
+                    string sql = "DELETE FROM CFDI2..VMX_FE_CARTAPORTE WHERE INVOICE_ID ='" + INVOICE_ID + "'";
+                    int res = Metodos.EjecutarConsulta(sql);
+
+                }
+                ObjetoCartePorte obc = new ObjetoCartePorte();
+                obc.INVOICE_ID = INVOICE_ID;
+                obc.EntradaSalidaMerc = CmbEntradaSalidaMercancia.Text;
+                obc.TotalDistRec = TxtTotalDistRecorrida.Text;
+                obc.TransInternal = CmbInternacional.Text;
+                obc.ViaEntradaSalida = CmbViaEntradaSalida.Text.Split('-')[0].Trim();
+                int i = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CARTAPORTE, obc);
+
+            }
+            catch (Exception o)
+            {
+                if (!o.Message.Contains("formato correcto"))
+                    MessageBox.Show("Problemas al guardar datos Carta Porte. " + o.Message);
+                
+            }
+           
+
+
+        }
+        public void CargarUbicaciones()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_UBICACION, 1, INVOICE_ID);
+                if (dt.Rows.Count <= 0)
+                    DgvUbicaciones.Rows.Add("03-Destino Final", "", "", "", "", "", "", "", "yyyy-MM-dd", "");
+
+                
+                int i = 0;
+                foreach (DataRow item in dt.Rows)
+                {
+                    DgvUbicaciones.Rows.Add(""
+                     ,
+                        //item["TipoEstacion"].ToString(),
+                     item["RFC"].ToString(),
+                     item["Nombre"].ToString(),
+                     item["NumRegIdTrib"].ToString(),
+                     item["ResidenciaFiscal"].ToString(),
+                     item["NumEstacion"].ToString(),
+                     item["NombreEstacion"].ToString(),
+                     item["NavegacionTrafico"].ToString(),
+                     item["FechaHora"].ToString(),
+                     item["ID_DOMICILIO"].ToString()
+                     );
+                    
+                    DgvUbicaciones.Rows[i].Cells["ComboTipo"].Value = item["TipoEstacion"].ToString().Contains("03") ? "03-Destino Final" : "02-Intermedia";
+                    i++;
+                }
+            }
+            catch (Exception r)
+            {
+
+                MessageBox.Show("Problemas al cargar las ubicaciones. "+ r.Message);
+            }
+            
+        }
+        
+        public void GuardarUbicaciones()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_UBICACION, 1, INVOICE_ID);
+                            
+                if (dt.Rows.Count > 0)
+                {
+                    string sql = "DELETE FROM CFDI2..VMX_FE_CP_UBICACION WHERE INVOICE_ID ='" + INVOICE_ID + "'";
+                    int res = Metodos.EjecutarConsulta(sql);
+                    
+                }
+                foreach (DataGridViewRow item in DgvUbicaciones.Rows)
+                {
+                    ObjetoUbicacion Ou = new ObjetoUbicacion();
+                    //item.Cells["pesoBruto"].Value.ToString()
+
+                    Ou.TipoEstacion = item.Cells["ComboTipo"].Value.ToString().Split('-')[0].Trim();
+                    Ou.RFC = item.Cells["rfc"].Value.ToString();
+                    Ou.Nombre = item.Cells["nombre"].Value.ToString();
+                    Ou.NumRegIdTrib = item.Cells["numRegIDTrib"].Value.ToString();
+                    Ou.ResidenciaFiscal = item.Cells["residenciaFiscal"].Value.ToString();
+                    Ou.NumEstacion = item.Cells["NumEstacion"].Value.ToString();
+                    Ou.NombreEstacion = item.Cells["NombreEstacion"].Value.ToString();
+                    Ou.NavegacionTrafico = item.Cells["NavegacionTrafico"].Value.ToString();
+                    DateTime dtT = new DateTime();
+                    dtT = Convert.ToDateTime(item.Cells["FechaHora"].Value.ToString());
+                    Ou.FechaHora = dtT.ToString("yyyy-MM-dd");
+                    Ou.ID_DOMICILIO = item.Cells["IdDomicilio"].Value.ToString();
+                    Ou.INVOICE_ID = INVOICE_ID;
+                    int i = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_UBICACION, Ou);
+
+                }
+               // MessageBox.Show("Ubicaciones guardadas.");
+            }
+            catch (Exception r)
+            {
+                MessageBox.Show("Problemas al guardar las ubicaciones. "+r.Message);
+            }
+        }
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            GuardarCP();
+            GuardarUbicaciones();
+            GuardarMercancias();
         }
     }
 }

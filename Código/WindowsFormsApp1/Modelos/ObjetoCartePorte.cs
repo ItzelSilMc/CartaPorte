@@ -10,7 +10,7 @@ namespace WindowsFormsApp1.Modelos
     {
         public string INVOICE_ID, TransInternal, EntradaSalidaMerc, ViaEntradaSalida;
 
-        public decimal TotalDistRec;
+        public string TotalDistRec;
 
         public override string ToString()
         {

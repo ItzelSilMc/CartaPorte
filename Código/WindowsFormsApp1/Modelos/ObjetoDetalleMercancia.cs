@@ -18,7 +18,7 @@ namespace WindowsFormsApp1.Modelos
         public string ValorMercancia, UnidadPeso;
         public decimal PesoBruto, PesoNeto, PesoTara;
         public int NumPiezas;
-
+        public string PART_ID;
         public void ActualizarIdProducto (int ID_PRODUCTO)
         {
             this.ID_PRODUCTO = ID_PRODUCTO;
@@ -32,7 +32,7 @@ namespace WindowsFormsApp1.Modelos
         public override string ToString()
         {
             return  ID_MERCANCIAS+ "," + ID_PRODUCTO + "," + Cantidad + ",'" + Dimensiones + "'," + PesoEnKg + ",'" + ValorMercancia + "','" +
-                UnidadPeso + "'," + PesoBruto + "," + PesoNeto + "," + PesoTara + "," + NumPiezas;
+                UnidadPeso + "'," + PesoBruto + "," + PesoNeto + "," + PesoTara + "," + NumPiezas + ",'"+PART_ID+"'";
         }
 
     }

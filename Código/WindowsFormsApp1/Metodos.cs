@@ -128,7 +128,7 @@ namespace WindowsFormsApp1
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_DETALLE_MERCANCIA:
-                    resultado = "ID_MERCANCIAS, ID_PRODUCTO, Cantidad, Dimensiones, PesoEnKg, ValorMercancia, UnidadPeso, PesoBruto, PesoNeto, PesoTara, NumPiezas";
+                    resultado = "ID_MERCANCIAS, ID_PRODUCTO, Cantidad, Dimensiones, PesoEnKg, ValorMercancia, UnidadPeso, PesoBruto, PesoNeto, PesoTara, NumPiezas,PART_ID";
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_FIGURA_TRANSPORTE:
@@ -157,6 +157,10 @@ namespace WindowsFormsApp1
 
                 case TablasCartaPorte.VMX_FE_CP_OPERADOR:
                     resultado = "RFCOperador, NumLicencia, NombreOperador, NumRegIdTribOperador, ResidenciaFiscalOperador, ID_DOMICILIO";
+                    break;
+
+                case TablasCartaPorte.VMX_FE_CP_UBICACION:
+                    resultado = "TipoEstacion,RFC, Nombre, NumRegIdTrib, ResidenciaFiscal, NumEstacion, NombreEstacion, NavegacionTrafico, FechaHora, ID_DOMICILIO, INVOICE_ID";
                     break;
 
 
@@ -246,6 +250,9 @@ namespace WindowsFormsApp1
 
                     case TablasCartaPorte.VMX_FE_CP_OPERADOR:
                         resultado = "ID_OPERADOR, " + resultado;
+                        break;
+                    case TablasCartaPorte.VMX_FE_CP_DOMICILIO:
+                        resultado = "ID_DOMICILIO, "+ resultado;
                         break;
                 }
             }
@@ -561,7 +568,7 @@ namespace WindowsFormsApp1
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_UBICACION:
-                    valores = "sin definir aun";
+                    valores = ((ObjetoUbicacion)objetoInsertar).ToString();
                     break;
 
                 case TablasCartaPorte.VMX_FE_CP_DOMICILIO:
@@ -638,6 +645,21 @@ namespace WindowsFormsApp1
 
                     case TablasCartaPorte.VMX_FE_CP_PRODUCTO:
                         Consulta += " WHERE PART_ID = '"+invoice+"'";
+                        break;
+                    case TablasCartaPorte.VMX_FE_CP_MERCANCIAS:
+                        Consulta += " WHERE INVOICE_ID = '" + invoice + "'";
+                        break;
+                    case TablasCartaPorte.VMX_FE_CP_DETALLE_MERCANCIA:
+                        Consulta += " WHERE ID_MERCANCIAS = '" + invoice + "'";
+                        break;
+                    case TablasCartaPorte.VMX_FE_CP_DOMICILIO:
+                        Consulta += " WHERE ID_DOMICILIO = '" + invoice + "'";
+                        break;
+                    case TablasCartaPorte.VMX_FE_CP_UBICACION:
+                        Consulta += " WHERE INVOICE_ID = '" + invoice + "'";
+                        break;
+                    case TablasCartaPorte.VMX_FE_CARTAPORTE:
+                        Consulta += " WHERE INVOICE_ID = '" + invoice + "'";
                         break;
 
                 }

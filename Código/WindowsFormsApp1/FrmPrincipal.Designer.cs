@@ -38,14 +38,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.DgvUbicaciones = new System.Windows.Forms.DataGridView();
-            this.ComboTipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.DistanciaRecorrida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumExterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumInterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remove = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnUbicacionNueva = new System.Windows.Forms.Button();
             this.BtnMercancia = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,8 +53,8 @@
             this.pesoTara = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numPiezas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdDetalleMercancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textTotalMercancias = new System.Windows.Forms.TextBox();
+            this.textTasacion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -76,6 +68,22 @@
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnCarga = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textPesoBruto = new System.Windows.Forms.TextBox();
+            this.textUnidadPeso = new System.Windows.Forms.TextBox();
+            this.textPesoTotal = new System.Windows.Forms.TextBox();
+            this.ComboTipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.rfc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumRegIDTrib = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResidenciaFiscal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NavegacionTrafico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUbicaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.GBTransporte.SuspendLayout();
@@ -159,64 +167,23 @@
             this.DgvUbicaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvUbicaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ComboTipo,
-            this.DistanciaRecorrida,
-            this.TipoEstacion,
-            this.idUbicacion,
+            this.rfc,
             this.Nombre,
-            this.NumExterior,
-            this.NumInterior,
-            this.remove});
+            this.NumRegIDTrib,
+            this.ResidenciaFiscal,
+            this.NumEstacion,
+            this.NombreEstacion,
+            this.NavegacionTrafico,
+            this.FechaHora,
+            this.IdDomicilio});
             this.DgvUbicaciones.Location = new System.Drawing.Point(12, 190);
             this.DgvUbicaciones.Name = "DgvUbicaciones";
             this.DgvUbicaciones.RowHeadersVisible = false;
-            this.DgvUbicaciones.Size = new System.Drawing.Size(776, 120);
+            this.DgvUbicaciones.Size = new System.Drawing.Size(929, 120);
             this.DgvUbicaciones.TabIndex = 13;
             this.DgvUbicaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUbicaciones_CellContentClick);
             this.DgvUbicaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGUbicaciones_CellDoubleClick);
             this.DgvUbicaciones.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DgvUbicaciones_CellPainting);
-            // 
-            // ComboTipo
-            // 
-            this.ComboTipo.HeaderText = "Tipo de Ubicación";
-            this.ComboTipo.Items.AddRange(new object[] {
-            "02-Intermedia",
-            "03-Destino Final"});
-            this.ComboTipo.Name = "ComboTipo";
-            // 
-            // DistanciaRecorrida
-            // 
-            this.DistanciaRecorrida.HeaderText = "DistanciaRecorrida";
-            this.DistanciaRecorrida.Name = "DistanciaRecorrida";
-            // 
-            // TipoEstacion
-            // 
-            this.TipoEstacion.HeaderText = "TipoEstacion";
-            this.TipoEstacion.Name = "TipoEstacion";
-            // 
-            // idUbicacion
-            // 
-            this.idUbicacion.HeaderText = "idUbicacion";
-            this.idUbicacion.Name = "idUbicacion";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // NumExterior
-            // 
-            this.NumExterior.HeaderText = "Num. Exterior";
-            this.NumExterior.Name = "NumExterior";
-            // 
-            // NumInterior
-            // 
-            this.NumInterior.HeaderText = "Num. Interior";
-            this.NumInterior.Name = "NumInterior";
-            // 
-            // remove
-            // 
-            this.remove.HeaderText = "*";
-            this.remove.Name = "remove";
             // 
             // BtnUbicacionNueva
             // 
@@ -266,7 +233,7 @@
             this.IdDetalleMercancia});
             this.dataGridView1.Location = new System.Drawing.Point(12, 374);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(929, 150);
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -328,24 +295,25 @@
             this.IdDetalleMercancia.HeaderText = "IdDetalleMercancia";
             this.IdDetalleMercancia.Name = "IdDetalleMercancia";
             // 
-            // textBox6
+            // textTotalMercancias
             // 
-            this.textBox6.Location = new System.Drawing.Point(448, 349);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(108, 20);
-            this.textBox6.TabIndex = 18;
+            this.textTotalMercancias.Enabled = false;
+            this.textTotalMercancias.Location = new System.Drawing.Point(344, 348);
+            this.textTotalMercancias.Name = "textTotalMercancias";
+            this.textTotalMercancias.Size = new System.Drawing.Size(108, 20);
+            this.textTotalMercancias.TabIndex = 18;
             // 
-            // textBox7
+            // textTasacion
             // 
-            this.textBox7.Location = new System.Drawing.Point(672, 348);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(106, 20);
-            this.textBox7.TabIndex = 19;
+            this.textTasacion.Location = new System.Drawing.Point(470, 348);
+            this.textTasacion.Name = "textTasacion";
+            this.textTasacion.Size = new System.Drawing.Size(106, 20);
+            this.textTasacion.TabIndex = 19;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(331, 356);
+            this.label8.Location = new System.Drawing.Point(341, 332);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(111, 13);
             this.label8.TabIndex = 20;
@@ -354,7 +322,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(568, 355);
+            this.label9.Location = new System.Drawing.Point(467, 332);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(98, 13);
             this.label9.TabIndex = 21;
@@ -421,7 +389,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(12, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(663, 96);
+            this.groupBox1.Size = new System.Drawing.Size(643, 96);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Carta Porte";
@@ -441,12 +409,13 @@
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(692, 556);
+            this.BtnGuardar.Location = new System.Drawing.Point(864, 556);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(75, 23);
             this.BtnGuardar.TabIndex = 33;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // contextMenuStrip1
             // 
@@ -455,7 +424,7 @@
             // 
             // btnCarga
             // 
-            this.btnCarga.Location = new System.Drawing.Point(625, 153);
+            this.btnCarga.Location = new System.Drawing.Point(788, 153);
             this.btnCarga.Name = "btnCarga";
             this.btnCarga.Size = new System.Drawing.Size(153, 23);
             this.btnCarga.TabIndex = 35;
@@ -463,11 +432,118 @@
             this.btnCarga.UseVisualStyleBackColor = true;
             this.btnCarga.Click += new System.EventHandler(this.btnCarga_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(599, 332);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(89, 13);
+            this.label11.TabIndex = 36;
+            this.label11.Text = "Peso Bruto Total:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(725, 332);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 13);
+            this.label12.TabIndex = 37;
+            this.label12.Text = "Unidad de Peso:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(830, 332);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(61, 13);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "Peso Total:";
+            // 
+            // textPesoBruto
+            // 
+            this.textPesoBruto.Location = new System.Drawing.Point(595, 348);
+            this.textPesoBruto.Name = "textPesoBruto";
+            this.textPesoBruto.Size = new System.Drawing.Size(106, 20);
+            this.textPesoBruto.TabIndex = 39;
+            // 
+            // textUnidadPeso
+            // 
+            this.textUnidadPeso.Location = new System.Drawing.Point(718, 348);
+            this.textUnidadPeso.Name = "textUnidadPeso";
+            this.textUnidadPeso.Size = new System.Drawing.Size(106, 20);
+            this.textUnidadPeso.TabIndex = 40;
+            // 
+            // textPesoTotal
+            // 
+            this.textPesoTotal.Location = new System.Drawing.Point(833, 348);
+            this.textPesoTotal.Name = "textPesoTotal";
+            this.textPesoTotal.Size = new System.Drawing.Size(106, 20);
+            this.textPesoTotal.TabIndex = 41;
+            // 
+            // ComboTipo
+            // 
+            this.ComboTipo.HeaderText = "Tipo de Estación";
+            this.ComboTipo.Items.AddRange(new object[] {
+            "02-Intermedia",
+            "03-Destino Final"});
+            this.ComboTipo.Name = "ComboTipo";
+            // 
+            // rfc
+            // 
+            this.rfc.HeaderText = "RFC";
+            this.rfc.Name = "rfc";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // NumRegIDTrib
+            // 
+            this.NumRegIDTrib.HeaderText = "NumRegIDTrib";
+            this.NumRegIDTrib.Name = "NumRegIDTrib";
+            // 
+            // ResidenciaFiscal
+            // 
+            this.ResidenciaFiscal.HeaderText = "ResidenciaFiscal";
+            this.ResidenciaFiscal.Name = "ResidenciaFiscal";
+            // 
+            // NumEstacion
+            // 
+            this.NumEstacion.HeaderText = "NumEstacion";
+            this.NumEstacion.Name = "NumEstacion";
+            // 
+            // NombreEstacion
+            // 
+            this.NombreEstacion.HeaderText = "NombreEstación";
+            this.NombreEstacion.Name = "NombreEstacion";
+            // 
+            // NavegacionTrafico
+            // 
+            this.NavegacionTrafico.HeaderText = "NavegacionTrafico";
+            this.NavegacionTrafico.Name = "NavegacionTrafico";
+            // 
+            // FechaHora
+            // 
+            this.FechaHora.HeaderText = "FechaHora";
+            this.FechaHora.Name = "FechaHora";
+            // 
+            // IdDomicilio
+            // 
+            this.IdDomicilio.HeaderText = "ID_Domicilio";
+            this.IdDomicilio.Name = "IdDomicilio";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 601);
+            this.ClientSize = new System.Drawing.Size(953, 601);
+            this.Controls.Add(this.textPesoTotal);
+            this.Controls.Add(this.textUnidadPeso);
+            this.Controls.Add(this.textPesoBruto);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnCarga);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.groupBox1);
@@ -475,8 +551,8 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textTasacion);
+            this.Controls.Add(this.textTotalMercancias);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnMercancia);
             this.Controls.Add(this.label7);
@@ -513,8 +589,8 @@
         private System.Windows.Forms.Button BtnMercancia;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textTotalMercancias;
+        private System.Windows.Forms.TextBox textTasacion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -539,14 +615,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pesoTara;
         private System.Windows.Forms.DataGridViewTextBoxColumn numPiezas;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdDetalleMercancia;
+        private System.Windows.Forms.TextBox textPesoTotal;
+        private System.Windows.Forms.TextBox textUnidadPeso;
+        private System.Windows.Forms.TextBox textPesoBruto;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridViewComboBoxColumn ComboTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DistanciaRecorrida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoEstacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idUbicacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rfc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumExterior;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumInterior;
-        private System.Windows.Forms.DataGridViewTextBoxColumn remove;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumRegIDTrib;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ResidenciaFiscal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumEstacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreEstacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NavegacionTrafico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaHora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdDomicilio;
     }
 }
 
