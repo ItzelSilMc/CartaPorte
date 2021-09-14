@@ -88,8 +88,6 @@ C:\repos\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.C
 C:\repos\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 C:\repos\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\repos\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
-C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
-C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Configuraciones.FrmConfIdentificacionVehicular.resources
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Configuraciones.FrmConfRemolque.resources
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Configuraciones.FrmMenuPersonas.resources
@@ -123,9 +121,11 @@ C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
-C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
-C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
-C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmCatalagoUbicaciones.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmCatalagoUbicaciones.resources
+C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\bin\Debug\CartaPorte.exe.config
+C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\bin\Debug\CartaPorte.exe
+C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\bin\Debug\CartaPorte.pdb
+C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\CartaPorte.exe
+C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\CartaPorte.pdb
