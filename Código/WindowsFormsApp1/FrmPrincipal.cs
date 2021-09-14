@@ -330,7 +330,9 @@ namespace WindowsFormsApp1
                     for (int i = 0; i < dtMercancias.Rows.Count; i++)
                     {
                         string Cantidad = dtMercancias.Rows[i]["Cantidad"].ToString();
-                        string Dimensiones = dtMercancias.Rows[i]["SHIP_DIMENSIONS"].ToString();
+                        string Dimensiones = "";
+                        if (tInterno)
+                            Dimensiones = dtMercancias.Rows[i]["SHIP_DIMENSIONS"].ToString();
                         string PesoEnKG = dtMercancias.Rows[i]["PESO"].ToString();
                         string ValorMercancia = dtMercancias.Rows[i]["ValorMercancia"].ToString();
                         string IDMercancia = dtMercancias.Rows[i]["ID"].ToString();
