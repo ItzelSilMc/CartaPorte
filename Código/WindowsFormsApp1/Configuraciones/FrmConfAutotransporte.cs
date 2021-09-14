@@ -18,19 +18,10 @@ namespace WindowsFormsApp1
         public FrmConfAutotransporte()
         {
             Inicializar();
+            autotransporteFederalControl1.AcomodarEnNuevoModificacion();
             
         }
-        public void PrepararParaActualizar()
-        {
-            CargadoParaActualizar = true;
-            objetoPrevio = autotransporteFederalControl1.ObtenerAutotransporte();
-        }
-        private void Inicializar()
-        {
-            InitializeComponent();
-            Permisos = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.TipoPermiso);
-            CargarCombos();
-        }
+
         public FrmConfAutotransporte(ObjetoAutotransporte objetoTerrestre)
         {
 
@@ -38,7 +29,22 @@ namespace WindowsFormsApp1
             this.objetoTerrestre = objetoTerrestre;
 
             CargarDatosPrevios();
+            autotransporteFederalControl1.AcomodarEnNuevoModificacion();
         }
+        public void PrepararParaActualizar()
+        {
+            CargadoParaActualizar = true;
+            objetoPrevio = autotransporteFederalControl1.ObtenerAutotransporte();
+            
+            
+        }
+        private void Inicializar()
+        {
+            InitializeComponent();
+            Permisos = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.TipoPermiso);
+            CargarCombos();
+        }
+        
 
         private void CargarDatosPrevios()
         {

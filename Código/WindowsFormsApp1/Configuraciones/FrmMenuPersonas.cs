@@ -25,47 +25,64 @@ namespace WindowsFormsApp1.Configuraciones
 
         private void BtnTransportista_Click(object sender, EventArgs e)
         {
-            AbrirFormaPersona(TipoPersona.Transportista);
+            AbrirFormaAdministracionPersona(TipoPersona.Transportista);
 
         }
 
         private void BtnEmbarcador_Click(object sender, EventArgs e)
         {
-            AbrirFormaPersona(TipoPersona.Embarcador);
+            AbrirFormaAdministracionPersona(TipoPersona.Embarcador);
         }
 
         private void BtnOperador_Click(object sender, EventArgs e)
         {
-            //AbrirFormaPersona(TipoPersona.Operador);
-
-            Hide();
-            FrmAdministracion admin = new FrmAdministracion();
-            admin.SetTipoGrid(TablasCartaPorte.VMX_FE_CP_OPERADOR);
-            admin.ShowDialog();
-            Show();
+            AbrirFormaAdministracionPersona(TipoPersona.Operador);
             
-
-        }
-
-        private void AbrirFormaPersona(TipoPersona tipoPersona)
-        {
-            Hide();
-            FrmPersona frmPer = new FrmPersona();
-            frmPer.SetTipo(tipoPersona);
-            frmPer.AbiertoDesdeConfiguracion = true;
-            frmPer.ShowDialog();
-            Show();
         }
 
         private void BtnNotificado_Click(object sender, EventArgs e)
         {
-            //AbrirFormaPersona(TipoPersona.Operador);
+            AbrirFormaAdministracionPersona(TipoPersona.Notificado);
+        }
 
+        private void AbrirFormaAdministracionPersona(TipoPersona tipoPersona)
+        {
             Hide();
-            FrmAdministracion admin = new FrmAdministracion();
-            admin.SetTipoGrid(TablasCartaPorte.VMX_FE_CP_NOTIFICADO);
-            admin.ShowDialog();
+            FrmAdministracion frmPer = new FrmAdministracion();
+            TablasCartaPorte tabla = TablasCartaPorte.VMX_FE_CP_TRANSPORTISTA;
+
+            switch(tipoPersona)
+            {
+                case TipoPersona.Transportista:
+                    tabla = TablasCartaPorte.VMX_FE_CP_TRANSPORTISTA;
+                    break;
+
+                case TipoPersona.Propietario:
+                    tabla = TablasCartaPorte.VMX_FE_CP_PROPIETARIO;
+                    break;
+
+                case TipoPersona.Operador:
+                    tabla = TablasCartaPorte.VMX_FE_CP_OPERADOR;
+                    break;
+
+                case TipoPersona.Notificado:
+                    tabla = TablasCartaPorte.VMX_FE_CP_NOTIFICADO;
+                    break;
+
+                case TipoPersona.Embarcador:
+                    tabla = TablasCartaPorte.VMX_FE_CP_EMBARCADOR;
+                    break;
+
+                case TipoPersona.Arrendatario:
+                    tabla = TablasCartaPorte.VMX_FE_CP_ARRENDATARIO;
+                    break;
+
+            }
+            frmPer.SetTipoGrid(tabla);
+            frmPer.ShowDialog();
             Show();
         }
+
+        
     }
 }

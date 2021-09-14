@@ -19,6 +19,26 @@ namespace WindowsFormsApp1.ControlesTerrestre
         {
             InitializeComponent();
         }
+
+        public void AcomodarEnNuevoModificacion()
+        {
+            label3.Visible = false;
+            comboRemolque.Visible = false;
+            textTipoRemolque.Visible = false;
+
+            CmbTipoRemolque.Visible = true;
+
+            foreach (Control control in GBRemolque.Controls)
+            {
+                control.Location = new Point(control.Location.X, control.Location.Y - 40);
+            }
+            GBRemolque.Size = new Size(300, 70);
+
+
+        }
+
+
+
         public void CargarConfigRemolque(Dictionary<string, string> ConfigRemolques)
         {
             Metodos.CargarComboValores(comboRemolque, ConfigRemolques);

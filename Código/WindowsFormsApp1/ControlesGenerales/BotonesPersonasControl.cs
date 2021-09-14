@@ -15,9 +15,12 @@ namespace WindowsFormsApp1.ControlesGenerales
     public partial class BotonesPersonasControl : UserControl
     {
 
-        private bool TransportistaCapturado,EmbarcadorCapturado,  ArrendatarioCapturado , PropietarioCapturado = false;
+        private bool TransportistaCapturado, 
+            EmbarcadorCapturado,  ArrendatarioCapturado , PropietarioCapturado = false;
         public List<ObjetoPersona> ListaPersonas = new List<ObjetoPersona>();
-         
+
+        public int IDSeleccionadoTransportista = 0, IDSeleccionadoEmbarcador = 0, IDSeleccionadoArrendatario = 0,
+            IDSeleccionadoPropietario = 0, IDSeleccionadoNotificado = 0;
 
         public BotonesPersonasControl()
         {
@@ -145,6 +148,46 @@ namespace WindowsFormsApp1.ControlesGenerales
           
         }
 
+        private void BtnNotificado_Click(object sender, EventArgs e)
+        {
+            AbrirFormaPersona(TipoPersona.Notificado);
+        }
+
+        private void AbrirFormaPersona(TipoPersona tipoPersona)
+        {
+            FrmPersona frmPersona = new FrmPersona();
+            frmPersona.SetTipo(tipoPersona);
+            frmPersona.AbrirParaSeleccionar();
+            frmPersona.ShowDialog();
+            int IdPersonaSeleccionada = frmPersona.RetornarIdSeleccionado();
+            switch(tipoPersona)
+            {
+                case TipoPersona.Transportista:
+                    IDSeleccionadoTransportista = IdPersonaSeleccionada;
+                    BtnTransportista.BackColor = Color.Cyan;
+                    break;
+                case TipoPersona.Propietario:
+                    IDSeleccionadoPropietario = IdPersonaSeleccionada;
+                    BtnPropietario.BackColor = Color.Cyan;
+                    break;
+                case TipoPersona.Operador:
+                    // este boton ta juera :o
+                    break;
+                case TipoPersona.Notificado:
+                    IDSeleccionadoNotificado = IdPersonaSeleccionada;
+                    BtnNotificado.BackColor = Color.Cyan;
+                    break;
+                case TipoPersona.Embarcador:
+                    IDSeleccionadoEmbarcador = IdPersonaSeleccionada;
+                    BtnEmbarcador.BackColor = Color.Cyan;
+                    break;
+                case TipoPersona.Arrendatario:
+                    IDSeleccionadoArrendatario = IdPersonaSeleccionada;
+                    BtnArrendatario.BackColor = Color.Cyan;
+                    break;
+            }
+
+        }
 
         public List<ObjetoPersona> ObtenerPersonas()
         {

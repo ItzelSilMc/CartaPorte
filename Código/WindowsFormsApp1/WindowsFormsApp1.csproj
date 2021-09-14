@@ -243,6 +243,7 @@
     <Compile Include="Modelos\ObjetoDerechosPaso.cs" />
     <Compile Include="Modelos\ObjetoDireccion.cs" />
     <Compile Include="Modelos\EstructurasEnums.cs" />
+    <Compile Include="Modelos\ObjetoFiguraTransporte.cs" />
     <Compile Include="Modelos\ObjetoIdentificacionVehicular.cs" />
     <Compile Include="Modelos\ObjetoMaritimo.cs" />
     <Compile Include="Modelos\ObjetoDetalleMercancia.cs" />
@@ -427,6 +428,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\people64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuraciones64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuraciones32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

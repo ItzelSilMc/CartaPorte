@@ -19,6 +19,26 @@ namespace WindowsFormsApp1.ControlesTerrestre
         {
             InitializeComponent();
         }
+
+
+
+        public void AcomodarEnNuevoModificacion()
+        {
+            label5.Visible = false;
+            comboVehiculo.Visible = false;
+            textconfVehiculo.Visible = false;
+
+            CmbConfigVehicular.Visible = true;
+            
+
+            foreach (Control control in GBIdentificacion.Controls)
+            {
+                control.Location = new Point(control.Location.X, control.Location.Y - 30);
+            }
+            GBIdentificacion.Size = new Size(573, 85);
+
+
+        }
         public void CargarConfigVehicular(Dictionary<string, string> configVehicular)
         {
             Metodos.CargarComboValores(comboVehiculo, configVehicular);
