@@ -114,13 +114,23 @@ namespace WindowsFormsApp1
                 IdRemolque = dtC.Rows[0]["ID_REMOLQUE"].ToString();
 
                 ConfigFederal = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL,Int32.Parse(IdFerderal));
-                autotransporteFederalControl1.cargarDatos(IdFerderal,ConfigFederal.Rows[0]["PermSCT"].ToString(), ConfigFederal.Rows[0]["NumPermisoSCT"].ToString(), ConfigFederal.Rows[0]["NombreAseg"].ToString());
+                if (ConfigFederal.Rows.Count > 0)
+                {
+                    autotransporteFederalControl1.cargarDatos(IdFerderal, ConfigFederal.Rows[0]["PermSCT"].ToString(), ConfigFederal.Rows[0]["NumPermisoSCT"].ToString(), ConfigFederal.Rows[0]["NombreAseg"].ToString());
+                }
+
                
                 ConfigVehicular = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_IDENTIFICACION_VEHICULAR, Int32.Parse(IdVehicular));
-                identificacionVehicularControl1.cargarDatos(IdVehicular,ConfigVehicular.Rows[0]["ConfigVehicular"].ToString(), ConfigVehicular.Rows[0]["PlacaVM"].ToString(), ConfigVehicular.Rows[0]["AnioModeloVM"].ToString(), ConfigVehicular.Rows[0]["NumPolizaSeguro"].ToString()) ;
+                if (ConfigVehicular.Rows.Count > 0)
+                {
+                    identificacionVehicularControl1.cargarDatos(IdVehicular, ConfigVehicular.Rows[0]["ConfigVehicular"].ToString(), ConfigVehicular.Rows[0]["PlacaVM"].ToString(), ConfigVehicular.Rows[0]["AnioModeloVM"].ToString(), ConfigVehicular.Rows[0]["NumPolizaSeguro"].ToString());
+                }
 
                 ConfigRemolque = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_REMOLQUES, Int32.Parse(IdRemolque));
-                remolqueControl1.cargarDatos(IdRemolque,ConfigRemolque.Rows[0]["SubTipoRem"].ToString(), ConfigRemolque.Rows[0]["Placa"].ToString());
+                if (ConfigRemolque.Rows.Count > 0)
+                {
+                    remolqueControl1.cargarDatos(IdRemolque, ConfigRemolque.Rows[0]["SubTipoRem"].ToString(), ConfigRemolque.Rows[0]["Placa"].ToString());
+                }
 
             }
 
