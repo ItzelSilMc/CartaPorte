@@ -660,9 +660,7 @@ namespace WindowsFormsApp1
                         Consulta += " WHERE ID_NOTIFICADO = " + id;
                         break;
 
-                    case TablasCartaPorte.VMX_FE_CP_DOMICILIO:
-                        Consulta += " WHERE ID_DOMICILIO = " + id;
-                        break;
+                   
 
                     case TablasCartaPorte.VMX_FE_CP_PRODUCTO:
                         Consulta += " WHERE PART_ID = '"+invoice+"'";
@@ -674,7 +672,7 @@ namespace WindowsFormsApp1
                         Consulta += " WHERE ID_MERCANCIAS = '" + invoice + "'";
                         break;
                     case TablasCartaPorte.VMX_FE_CP_DOMICILIO:
-                        Consulta += " WHERE ID_DOMICILIO = '" + invoice + "'";
+                            Consulta += " WHERE ID_DOMICILIO = '" + invoice + "'";
                         break;
                     case TablasCartaPorte.VMX_FE_CP_UBICACION:
                         Consulta += " WHERE INVOICE_ID = '" + invoice + "'";

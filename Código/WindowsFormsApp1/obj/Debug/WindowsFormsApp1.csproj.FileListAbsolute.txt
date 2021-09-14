@@ -128,3 +128,4 @@ C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmCatalagoUbicaciones.resources
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmCatalagoUbicaciones.resources

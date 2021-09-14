@@ -19,6 +19,8 @@ namespace WindowsFormsApp1
         TipoPersona tipo;
         int IdSeleccionado = 0;
 
+        bool SeEstaCargandoCombo = false;
+
         private ObjetoPersona personaPrevia;
         private ObjetoDireccion direccionPrevia;
 
@@ -242,7 +244,7 @@ namespace WindowsFormsApp1
 
         private void FrmPersona_Load(object sender, EventArgs e)
         {
-            TablasCartaPorte TablaElegida;
+           TablasCartaPorte TablaElegida;
            switch(tipo)
             {
                 case TipoPersona.Transportista:
@@ -269,7 +271,10 @@ namespace WindowsFormsApp1
             {
                 Dictionary<string, string> Diccionario = ObtenerDiccionario(TablaInfo);
 
+                SeEstaCargandoCombo = true;
                 Metodos.CargarComboValores(CmbSeleccionar, Diccionario);
+                SeEstaCargandoCombo = false;
+
             }
 
         }
@@ -288,33 +293,36 @@ namespace WindowsFormsApp1
 
         private void CmbSeleccionar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int  IdSeleccionado = 0;
-            if (CmbSeleccionar.SelectedValue != null)
+            if (!SeEstaCargandoCombo)
             {
-                string key = ((KeyValuePair<string, string>)CmbSeleccionar.SelectedItem).Key;
-                IdSeleccionado = int.Parse(key);
-
-                TablasCartaPorte tabla = tipo == TipoPersona.Operador ? TablasCartaPorte.VMX_FE_CP_OPERADOR : TablasCartaPorte.VMX_FE_CP_NOTIFICADO;
-                DataTable informacion = Metodos.ObtenerValoresConsulta(tabla, IdSeleccionado);
-                int IdDomicilio = int.Parse(informacion.Rows[0]["ID_DOMICILIO"].ToString());
-                DataTable infoDomicilio = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_DOMICILIO, IdDomicilio);
-                ObjetoDireccion direccion = Metodos.ObtenerDireccionDesdeTabla(infoDomicilio);
-                
-                ObjetoPersona persona = new ObjetoPersona();
-                switch(tipo)
+                int IdSeleccionado = 0;
+                if (CmbSeleccionar.SelectedValue != null)
                 {
-                    case TipoPersona.Operador:
-                        persona = Metodos.obtenerOperadorDesdeTabla(informacion);
-                        break;
-                    case TipoPersona.Notificado:
-                        persona = Metodos.ObtenerNotificadoDesdeTabla(informacion);
-                        break;
+                    string key = ((KeyValuePair<string, string>)CmbSeleccionar.SelectedItem).Key;
+                    IdSeleccionado = int.Parse(key);
+
+                    TablasCartaPorte tabla = tipo == TipoPersona.Operador ? TablasCartaPorte.VMX_FE_CP_OPERADOR : TablasCartaPorte.VMX_FE_CP_NOTIFICADO;
+                    DataTable informacion = Metodos.ObtenerValoresConsulta(tabla, IdSeleccionado);
+                    int IdDomicilio = int.Parse(informacion.Rows[0]["ID_DOMICILIO"].ToString());
+                    DataTable infoDomicilio = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_DOMICILIO, 1, IdDomicilio.ToString() );
+                    ObjetoDireccion direccion = Metodos.ObtenerDireccionDesdeTabla(infoDomicilio);
+
+                    ObjetoPersona persona = new ObjetoPersona();
+                    switch (tipo)
+                    {
+                        case TipoPersona.Operador:
+                            persona = Metodos.obtenerOperadorDesdeTabla(informacion);
+                            break;
+                        case TipoPersona.Notificado:
+                            persona = Metodos.ObtenerNotificadoDesdeTabla(informacion);
+                            break;
+                    }
+                    persona.objDireccion = direccion;
+                    LlenarInformacion(persona);
+
+
+
                 }
-                persona.objDireccion = direccion;
-                LlenarInformacion(persona);
-                
-
-
             }
         }
     }
