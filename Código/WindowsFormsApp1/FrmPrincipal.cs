@@ -25,6 +25,12 @@ namespace WindowsFormsApp1
         string conn ="";
         string BD = "";
         DataTable dtMercancias = new DataTable();
+        bool ExisteTransporteConfigurado = false;
+
+        ObjetoAutoTransporteFederal transporteTerrestre;
+
+        List<Ubicaciones> ListaUbicaciones = new List<Ubicaciones>();
+
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -32,11 +38,7 @@ namespace WindowsFormsApp1
             conn = ConfigurationManager.ConnectionStrings["Sistema"].ConnectionString;
             BD = ConfigurationManager.AppSettings.Get("BD");
         }
-        bool ExisteTransporteConfigurado = false;
-
-        ObjetoAutoTransporteFederal transporteTerrestre;
-
-        List<Ubicaciones> ListaUbicaciones = new List<Ubicaciones>();
+        
 
         public FrmPrincipal(string INVOICE)
         {
@@ -45,6 +47,8 @@ namespace WindowsFormsApp1
             INVOICE_ID = textBox3.Text;
             conn = ConfigurationManager.ConnectionStrings["Sistema"].ConnectionString;
             BD = ConfigurationManager.AppSettings.Get("BD");
+            //Carga la cadena de conexión para los metodos
+            Metodos.CargarConexion(conn,BD);
 
             DataTable dt = new DataTable();
             dt = Metodos.ObtenerValoresConsulta(TablasCartaPorte.VMX_FE_CP_MERCANCIAS, 1, INVOICE_ID);
