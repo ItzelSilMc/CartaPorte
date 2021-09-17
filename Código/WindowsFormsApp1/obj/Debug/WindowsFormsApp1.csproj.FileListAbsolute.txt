@@ -10,9 +10,6 @@ C:\repos\CartaPoliza\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreComp
 C:\repos\CartaPoliza\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\repos\CartaPoliza\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\repos\CartaPoliza\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.TransporteFederal.resources
-C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
-C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
-C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\bin\Debug\Conexion.dll
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Configuraciones.FrmConfIdentificacionVehicular.resources
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Configuraciones.FrmConfRemolque.resources
@@ -47,8 +44,6 @@ C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
-C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
-C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
 C:\repos\CartaPorte\Código\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
 C:\repos\CartaPorte\Código\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
@@ -129,3 +124,8 @@ C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\bin\Debug\CartaPorte.exe
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\bin\Debug\CartaPorte.pdb
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\CartaPorte.exe
 C:\repos\CartaPorte - copia\Código\WindowsFormsApp1\obj\Debug\CartaPorte.pdb
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\bin\Debug\CartaPorte.exe.config
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\bin\Debug\CartaPorte.exe
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\bin\Debug\CartaPorte.pdb
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\CartaPorte.exe
+C:\Users\VES-LAP35\Desktop\Pruebas desarrollo\CartaPorte\Código\WindowsFormsApp1\obj\Debug\CartaPorte.pdb

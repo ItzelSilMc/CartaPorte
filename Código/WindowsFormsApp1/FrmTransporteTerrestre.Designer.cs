@@ -175,7 +175,7 @@ namespace WindowsFormsApp1
             this.BtnOperador.Name = "BtnOperador";
             this.BtnOperador.Size = new System.Drawing.Size(89, 50);
             this.BtnOperador.TabIndex = 1;
-            this.BtnOperador.Text = "Configurar \r\noperador";
+            this.BtnOperador.Text = "Seleccionar \r\noperador";
             this.BtnOperador.UseVisualStyleBackColor = true;
             this.BtnOperador.Click += new System.EventHandler(this.BtnConfigurarOperador_Click);
             // 
@@ -196,7 +196,7 @@ namespace WindowsFormsApp1
             this.botonesPersonasControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.botonesPersonasControl1.Location = new System.Drawing.Point(0, 50);
             this.botonesPersonasControl1.Name = "botonesPersonasControl1";
-            this.botonesPersonasControl1.Size = new System.Drawing.Size(89, 244);
+            this.botonesPersonasControl1.Size = new System.Drawing.Size(89, 307);
             this.botonesPersonasControl1.TabIndex = 5;
             this.botonesPersonasControl1.Load += new System.EventHandler(this.botonesPersonasControl1_Load);
             // 
