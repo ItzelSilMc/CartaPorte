@@ -196,7 +196,8 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Problemas al cargar los datos: " + MsgError);
                 else
                 {
-                   DgvUbicaciones.Rows.Add("", "", "", "", "", "", "","","","");
+                    //DgvUbicaciones.Rows.Add("", "", "", "", "", "", "","","","");
+                    DgvUbicaciones.Rows.Add("02-Intermedia", "", "", "", "", "", "", "", "yyyy-MM-dd", "");
 
                 }
 

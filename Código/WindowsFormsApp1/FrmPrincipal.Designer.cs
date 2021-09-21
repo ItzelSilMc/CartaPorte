@@ -163,6 +163,7 @@
             // 
             // DgvUbicaciones
             // 
+            this.DgvUbicaciones.AllowDrop = true;
             this.DgvUbicaciones.AllowUserToAddRows = false;
             this.DgvUbicaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvUbicaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -178,7 +179,6 @@
             this.IdDomicilio});
             this.DgvUbicaciones.Location = new System.Drawing.Point(12, 190);
             this.DgvUbicaciones.Name = "DgvUbicaciones";
-            this.DgvUbicaciones.RowHeadersVisible = false;
             this.DgvUbicaciones.Size = new System.Drawing.Size(929, 120);
             this.DgvUbicaciones.TabIndex = 13;
             this.DgvUbicaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUbicaciones_CellContentClick);
