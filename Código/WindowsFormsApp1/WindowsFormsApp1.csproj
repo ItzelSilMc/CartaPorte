@@ -232,6 +232,7 @@
     </Compile>
     <Compile Include="Metodos.cs" />
     <Compile Include="Modelos\Catalogos.cs" />
+    <Compile Include="Modelos\ComplementoCartaPorte.cs" />
     <Compile Include="Modelos\ObjetoAereo.cs" />
     <Compile Include="Modelos\ObjetoAutotransporte.cs" />
     <Compile Include="Modelos\ObjetoAutoTransporteFederal.cs" />

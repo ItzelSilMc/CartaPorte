@@ -11,7 +11,7 @@ namespace WindowsFormsApp1.Modelos
     class ComplementoCartaPorte
     {
         [XmlAnyAttribute()]
-        public string Version = "1.0";
+        public const string Version = "1.0";
 
         [XmlAttribute()]
         public string TranspInternac;
@@ -66,6 +66,9 @@ namespace WindowsFormsApp1.Modelos
 
         [XmlAttribute()]
         public Mercancia[] mercancia;
+
+        [XmlAttribute()]
+        public AutotransporteFederal autotransporteFederal;
     }
     public class Mercancia
     {
@@ -229,7 +232,7 @@ namespace WindowsFormsApp1.Modelos
     public class Ubicaciones
     {
         [XmlAttribute()]
-        Ubicacion[] ubicacion;
+        public Ubicacion[] ubicacion;
 
     }
 
@@ -321,7 +324,7 @@ namespace WindowsFormsApp1.Modelos
     public class Domicilio
     {
         [XmlAttribute]
-        public string Nombre;
+        public string Calle;
 
         [XmlAttribute]
         public string NumeroExterior;
@@ -360,6 +363,7 @@ namespace WindowsFormsApp1.Modelos
 
     public class Notificados
     {
+        [XmlAttribute()]
         public Notificado[] notificado;
     }
 

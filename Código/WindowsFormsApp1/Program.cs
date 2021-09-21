@@ -196,5 +196,96 @@ namespace WindowsFormsApp1
                 MessageBox.Show(ex.Message);
             }
         }
+        public static void Pruebas()
+        {
+            ComplementoCartaPorte cascaron = new ComplementoCartaPorte();
+            cascaron.EntradaSalidaMerc = "Entrada";
+            cascaron.ViaEntradaSalida = "01";
+            cascaron.TranspInternac = "No";
+
+
+            Ubicacion ubicacionOrigen = new Ubicacion();
+
+            Ubicacion ubicacionDestino = new Ubicacion();
+
+
+            cascaron.ubicaciones = new Modelos.Ubicaciones();
+
+
+            Ubicacion Ubic = new Ubicacion()
+            {
+                TipoEstacion = "IDN",
+                DistanciaRecorrida = 0,
+                origen = new Origen()
+                {
+                    FechaHoraSalida = DateTime.Now, IDOrigen = "OR1", NavegacionTrafico = "NO SE", NombreEstacion = "UNI", 
+                    NombreRemitente="EL JIMMY", NumEstacion= "01", NumRegIdTrib= "1331", ResidenciaFiscal= "MEX", RFCRemitente ="RFCGENERICO" 
+                }
+                , destino = null
+            };
+
+            Ubicacion UbicDestino = new Ubicacion()
+            {
+                TipoEstacion = "DES", destino = new Destino()
+                {
+                    FechaHoraProgLlegada = DateTime.Now, IDDestino = "DEST1", NavegacionTrafico = "TODO DERECHO", NombreDestinatario = "PEPE", NombreEstacion = "02", NumEstacion = "8131", NumRegIdTrib = "4321", ResidenciaFiscal = "MEX", RFCDestinatario = "RFC2CHIDO"
+                },
+                DistanciaRecorrida = 20, 
+                origen = null
+            };
+
+
+            //cascaron.ubicaciones
+            
+            Domicilio domicilio1 = new Domicilio()
+            {
+                Calle = "Chamizal", CodigoPostal = "44860", Colonia = "043", Estado = "JAL", Localidad = "GDL", Municipio = "GDL", NumeroExterior = "1004", NumeroInterior = "47", Pais = "MEX", Referencia = "CASA BLANCA"
+            };
+
+
+            Operador operador = new Operador
+            {
+                RFCOperador = "MEES9201306C9",
+                NombreOperador = "Santiago Meza",
+                NumLicencia= "123",
+                NumRegIdTribOperador = "123",
+                ResidenciaFiscalOperador= "MEX",
+                domicilio = domicilio1
+            };
+
+            cascaron.figuraTransporte.CveTransporte = "01";
+            cascaron.figuraTransporte.operadores.operador[0] = operador;
+
+            IdentificacionVehicular identificacion = new IdentificacionVehicular()
+            {
+                 AnioModeloVM= 1992, ConfigVehicular = "CONF1", PlacaVM = "JNF3030"
+            };
+
+            Remolque remolque1 = new Remolque()
+            {
+                 Placa = "PAL233", SubTipoRem = "CTR026"
+            };
+            Remolques remolques = new Remolques();
+
+            remolques.remolque[0] = remolque1;
+            
+            
+
+            AutotransporteFederal auto = new AutotransporteFederal()
+            {
+
+                 NombreAseg = "AXXA SEGUROS", NumPermisoSCT = "PERM13", NumPolizaSeguro = "21212A3QA3AAA", PermSCT = "2332",
+                 identificacionVehicular = identificacion,
+                 
+            };
+
+            Mercancias mercancias = new Mercancias()
+            {
+                 
+            };
+
+            cascaron.mercancias.autotransporteFederal = 
+
+        }
     }
 }
