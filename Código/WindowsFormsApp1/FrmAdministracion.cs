@@ -97,7 +97,7 @@ namespace WindowsFormsApp1
 
             }
 
-            //Para refrescar el grid respectivo en casa de ser agrado un nuevo registro.
+            //Para refrescar el grid respectivo en caso de ser agrado un nuevo registro.
 
             foreach (Control control in PnlGrid.Controls)
             {
