@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cartaporte:CartaPorte Version="1.0" TranspInternac="No" EntradaSalidaMerc="Entrada" ViaEntradaSalida="01" xmlns:cartaporte="http://www.sat.gob.mx/CartaPorte">
+  <cartaporte:Ubicaciones>
+    <cartaporte:Ubicacion TipoEstacion="IDN" DistanciaRecorrida="0">
+      <cartaporte:origen IDOrigen="OR1" RFCRemitente="RFCGENERICO" NombreRemitente="EL JIMMY" NumRegIdTrib="1331" ResidenciaFiscal="MEX" NumEstacion="01" NombreEstacion="UNI" NavegacionTrafico="NO SE" FechaHoraSalida="2021-09-22T17:03:06.0051071-05:00" />
+    </cartaporte:Ubicacion>
+    <cartaporte:Ubicacion TipoEstacion="DES" DistanciaRecorrida="20">
+      <cartaporte:destino IDDestino="DEST1" RFCDestinatario="RFC2CHIDO" NombreDestinatario="PEPE" NumRegIdTrib="4321" ResidenciaFiscal="MEX" NumEstacion="8131" NombreEstacion="02" NavegacionTrafico="TODO DERECHO" FechaHoraProgLlegada="2021-09-22T17:03:06.0130935-05:00" />
+    </cartaporte:Ubicacion>
+  </cartaporte:Ubicaciones>
+  <cartaporte:FiguraTransporte CveTransporte="01">
+    <cartaporte:operadores>
+      <cartaporte:Operador RFCOperador="MEES9201306C9" NumLicencia="123" NombreOperador="Santiago Meza" NumRegIdTribOperador="123" ResidenciaFiscalOperador="MEX">
+        <cartaporte:Domicilio Calle="Chamizal" NumeroExterior="1004" NumeroInterior="47" Colonia="043" Localidad="GDL" Referencia="CASA BLANCA" Municipio="GDL" Estado="JAL" Pais="MEX" CodigoPostal="44860" />
+      </cartaporte:Operador>
+    </cartaporte:operadores>
+  </cartaporte:FiguraTransporte>
+  <cartaporte:Mercancias PesoBrutoTotal="1000" UnidadPeso="PZA" PesoNetoTotal="103" NumTotalMercancias="1" CargoPorTasacion="10">
+    <cartaporte:mercancia>
+      <cartaporte:Mercancia BienesTransportado="" ClaveSTCC="" PesoEnKg="0" ValorMercancia="0">
+        <cartaporte:CantidadTransporta Cantidad="2" IDOrigen="OR01" IDDestino="DEST01" CvesTransporte="01" />
+        <cartaporte:detalleMercancia PesoBruto="1.5" PesoNeto="10.1" PesoTara="10.0" NumPiezas="1" />
+      </cartaporte:Mercancia>
+    </cartaporte:mercancia>
+    <cartaporte:autotransporteFederal PermSCT="2332" NumPermisoSCT="PERM13" NombreAseg="AXXA SEGUROS" NumPolizaSeguro="21212A3QA3AAA">
+      <cartaporte:identificacionVehicular ConfigVehicular="CONF1" PlacaVM="JNF3030" AnioModeloVM="1992" />
+      <cartaporte:remolques>
+        <cartaporte:Remolque SubTipoRem="CTR026" Placa="PAL233" />
+      </cartaporte:remolques>
+    </cartaporte:autotransporteFederal>
+  </cartaporte:Mercancias>
+</cartaporte:CartaPorte>

@@ -8,10 +8,12 @@ using System.Xml.Serialization;
 
 namespace WindowsFormsApp1.Modelos
 {
-    class ComplementoCartaPorte
+    
+    [XmlRoot("CartaPorte", Namespace = "http://www.sat.gob.mx/CartaPorte")]
+    public class ComplementoCartaPorte
     {
-        [XmlAnyAttribute()]
-        public const string Version = "1.0";
+        [XmlAttribute()]
+        public string Version = "1.0";
 
         [XmlAttribute()]
         public string TranspInternac;
@@ -22,13 +24,13 @@ namespace WindowsFormsApp1.Modelos
         [XmlAttribute()]
         public string ViaEntradaSalida;
 
-        [XmlAttribute()]
+        [XmlElement("Ubicaciones" )]
         public Ubicaciones ubicaciones;
 
-        [XmlAttribute()]
+        [XmlElement("FiguraTransporte")]
         public FiguraTransporte figuraTransporte;
 
-        [XmlAttribute()]
+        [XmlElement("Mercancias")]
         public Mercancias mercancias;
 
     }
@@ -44,12 +46,12 @@ namespace WindowsFormsApp1.Modelos
         /// Opcional
         /// </summary>
         [XmlAttribute()]
-        public decimal UnidadPeso;
+        public string UnidadPeso;
 
         /// <summary>
         /// Opcional
         /// </summary>
-        [XmlAttribute()]
+        [XmlAttribute(attributeName:"PesoNetoTotal")]
         public decimal PesoNetoTotal;
 
         /// <summary>
@@ -64,10 +66,10 @@ namespace WindowsFormsApp1.Modelos
         [XmlAttribute()]
         public decimal CargoPorTasacion;
 
-        [XmlAttribute()]
+        [XmlArrayItem("Mercancia", IsNullable = true)]
         public Mercancia[] mercancia;
 
-        [XmlAttribute()]
+        [XmlElement]
         public AutotransporteFederal autotransporteFederal;
     }
     public class Mercancia
@@ -127,10 +129,10 @@ namespace WindowsFormsApp1.Modelos
         [XmlAttribute()]
         public string UUIDComercioExt;
 
-        [XmlAttribute()]
+        [XmlElement("CantidadTransporta", IsNullable = true)]
         public CantidadTransporta[] cantidadTransporta;
 
-        [XmlAttribute()]
+        [XmlElement]
         public DetalleMercancia detalleMercancia;
     }
     public class CantidadTransporta
@@ -145,7 +147,7 @@ namespace WindowsFormsApp1.Modelos
         public string IDDestino;
 
         [XmlAttribute()]
-        public string CvasTransporte;
+        public string CvesTransporte;
     }
     public class DetalleMercancia
     {
@@ -180,9 +182,10 @@ namespace WindowsFormsApp1.Modelos
         [XmlAttribute()]
         public string NumPolizaSeguro;
 
-        [XmlAttribute()]
+        [XmlElement]
         public IdentificacionVehicular identificacionVehicular;
 
+        [XmlElement]
         public Remolques remolques;
 
     }
@@ -200,7 +203,7 @@ namespace WindowsFormsApp1.Modelos
     }
     public class Remolques
     {
-        [XmlAttribute()]
+        [XmlElement("Remolque", IsNullable = false)]
         public Remolque[] remolque;
 
     }
@@ -222,16 +225,16 @@ namespace WindowsFormsApp1.Modelos
         [XmlAttribute()]
         public string CveTransporte;
 
-        [XmlAttribute()]
+        [XmlElement]
         public Operadores operadores;
 
-        [XmlAttribute()]
+        [XmlElement]
         public Notificados notificados;
     }
 
     public class Ubicaciones
     {
-        [XmlAttribute()]
+        [XmlElement("Ubicacion", IsNullable = true)]
         public Ubicacion[] ubicacion;
 
     }
@@ -244,10 +247,10 @@ namespace WindowsFormsApp1.Modelos
         [XmlAttribute()]
         public decimal DistanciaRecorrida;
 
-        [XmlAttribute()]
+        [XmlElement]
         public Origen origen;
 
-        [XmlAttribute()]
+        [XmlElement]
         public Destino destino;
     }
 
@@ -357,13 +360,13 @@ namespace WindowsFormsApp1.Modelos
 
     public class Operadores
     {
-        [XmlAttribute()]
+        [XmlElement("Operador", IsNullable = true)]
         public Operador[] operador;
     }
 
     public class Notificados
     {
-        [XmlAttribute()]
+        [XmlElement("Notificado", IsNullable = true)]
         public Notificado[] notificado;
     }
 
@@ -384,7 +387,7 @@ namespace WindowsFormsApp1.Modelos
         [XmlAttribute()]
         public string ResidenciaFiscalOperador;
 
-        [XmlAttribute()]
+        [XmlElement("Domicilio")]
         public Domicilio domicilio;
     }
 
@@ -402,7 +405,7 @@ namespace WindowsFormsApp1.Modelos
         [XmlAttribute()]
         public string ResidenciaFiscalNotificado;
 
-        [XmlAttribute()]
+        [XmlElement("Domicilio")]
         public Domicilio domicilio;
     }
 }

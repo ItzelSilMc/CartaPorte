@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using WindowsFormsApp1.Modelos;
 using static WindowsFormsApp1.Modelos.EstructurasEnums;
 
@@ -160,12 +162,16 @@ namespace WindowsFormsApp1
 
             //int IDMerca = Metodos.InsertarRegistroTabla(TablasCartaPorte.VMX_FE_CP_DETALLE_MERCANCIA, detMerca);
 
-           // bool yesOnO = Metodos.ActualizarRegistro(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, "SET NombreAseg = 'SEGUROS BANQUEOS' WHERE ID_FEDERAL = 10");
+            // bool yesOnO = Metodos.ActualizarRegistro(TablasCartaPorte.VMX_FE_CP_AUTOTRANSPORTE_FEDERAL, "SET NombreAseg = 'SEGUROS BANQUEOS' WHERE ID_FEDERAL = 10");
+
+            Pruebas();
 
             #endregion
            
             try
             {
+
+
                 string folio = ConfigurationManager.AppSettings.Get("folio");
                 if (folio=="")
                 {
@@ -198,16 +204,14 @@ namespace WindowsFormsApp1
         }
         public static void Pruebas()
         {
+
             ComplementoCartaPorte cascaron = new ComplementoCartaPorte();
             cascaron.EntradaSalidaMerc = "Entrada";
             cascaron.ViaEntradaSalida = "01";
             cascaron.TranspInternac = "No";
 
 
-            Ubicacion ubicacionOrigen = new Ubicacion();
-
-            Ubicacion ubicacionDestino = new Ubicacion();
-
+           
 
             cascaron.ubicaciones = new Modelos.Ubicaciones();
 
@@ -219,7 +223,7 @@ namespace WindowsFormsApp1
                 origen = new Origen()
                 {
                     FechaHoraSalida = DateTime.Now, IDOrigen = "OR1", NavegacionTrafico = "NO SE", NombreEstacion = "UNI", 
-                    NombreRemitente="EL JIMMY", NumEstacion= "01", NumRegIdTrib= "1331", ResidenciaFiscal= "MEX", RFCRemitente ="RFCGENERICO" 
+                    NombreRemitente="EL JIMMY", NumEstacion= "01", NumRegIdTrib= "1331", ResidenciaFiscal = "MEX", RFCRemitente ="RFCGENERICO" 
                 }
                 , destino = null
             };
@@ -235,7 +239,9 @@ namespace WindowsFormsApp1
             };
 
 
-            //cascaron.ubicaciones
+
+
+            cascaron.ubicaciones.ubicacion = new Ubicacion[]{ Ubic, UbicDestino };
             
             Domicilio domicilio1 = new Domicilio()
             {
@@ -253,8 +259,17 @@ namespace WindowsFormsApp1
                 domicilio = domicilio1
             };
 
-            cascaron.figuraTransporte.CveTransporte = "01";
-            cascaron.figuraTransporte.operadores.operador[0] = operador;
+
+            FiguraTransporte figuraTransporte = new FiguraTransporte()
+            {
+                CveTransporte = "01",
+                
+            };
+
+            figuraTransporte.operadores = new Operadores();
+            figuraTransporte.operadores.operador = new Operador[] {operador };
+            
+            
 
             IdentificacionVehicular identificacion = new IdentificacionVehicular()
             {
@@ -267,24 +282,70 @@ namespace WindowsFormsApp1
             };
             Remolques remolques = new Remolques();
 
-            remolques.remolque[0] = remolque1;
-            
-            
+            Remolque[] remolquesTodos = { remolque1 };
+
+            remolques.remolque = remolquesTodos;
 
             AutotransporteFederal auto = new AutotransporteFederal()
             {
 
                  NombreAseg = "AXXA SEGUROS", NumPermisoSCT = "PERM13", NumPolizaSeguro = "21212A3QA3AAA", PermSCT = "2332",
                  identificacionVehicular = identificacion,
+                 remolques = remolques
                  
             };
+
+            DetalleMercancia detalle = new DetalleMercancia()
+            {
+                  NumPiezas= 1, PesoBruto = 1.5m, PesoNeto = 10.1m , PesoTara= 10.0m 
+            };
+
+            CantidadTransporta cantidadTransporta = new CantidadTransporta()
+            {
+                Cantidad =2, CvesTransporte = "01", IDDestino= "DEST01", IDOrigen = "OR01"
+            };
+
+            Mercancia mercancia = new Mercancia()
+            {
+                BienesTransportado = "", ClaveSTCC = "",
+                detalleMercancia = detalle
+               
+            };
+            mercancia.cantidadTransporta =  new CantidadTransporta[]{ cantidadTransporta};
+
 
             Mercancias mercancias = new Mercancias()
             {
-                 
-            };
+                autotransporteFederal = auto,
+                CargoPorTasacion = 10m, NumTotalMercancias = 1, PesoBrutoTotal = 1000, PesoNetoTotal = 103, UnidadPeso = "PZA",
+               
 
-            cascaron.mercancias.autotransporteFederal = 
+            };
+            mercancias.mercancia = new  Mercancia[] { mercancia };
+
+            ///partes del complemento
+            ///
+            cascaron.mercancias = mercancias;
+            cascaron.figuraTransporte = figuraTransporte;
+
+
+            string cadena = AppDomain.CurrentDomain.BaseDirectory + "\\" + "prueba";
+            TextWriter archivo = new StreamWriter(cadena + ".XML");
+            XmlSerializer serializer = null;
+            XmlSerializerNamespaces myNameSpaces = new XmlSerializerNamespaces();
+            myNameSpaces.Add("cartaporte", "http://www.sat.gob.mx/CartaPorte");
+
+
+
+           
+             serializer = new XmlSerializer(typeof(ComplementoCartaPorte));
+            
+            
+            serializer.Serialize(archivo, cascaron, myNameSpaces);
+            archivo.Close();
+
+
+
 
         }
     }
