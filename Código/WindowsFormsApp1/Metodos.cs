@@ -18,10 +18,15 @@ namespace WindowsFormsApp1
         /// <param name="combo">Combobox al cual se le asignaran sus valores</param>
         /// <param name="Valores">Valores a insertar en el combo</param>
         /// 
-        static string CadenaConexion =  "";
-
+        static string CadenaConexion = "";
+        static string BD = "";
         
+        public static void CargarConexion(string cadena, string baseD)
+        {
+            CadenaConexion = cadena;
+            BD = baseD;
 
+        }
         public static void CargarComboValores(ComboBox combo, DataTable Valores)
         {
             DataSet myDataSet = new DataSet();
@@ -378,10 +383,10 @@ namespace WindowsFormsApp1
 
                 string Catalogo = ObtenerNombreCatalogoCartaPorte(catalog);
 
-                SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+                SqlConnection c = new SqlConnection(CadenaConexion);
 
                 c.Open();
-                SqlCommand comando = new SqlCommand("VMX_FE_SP_OBTENER_CATALOGO_CP", c);
+                SqlCommand comando = new SqlCommand(BD+"..VMX_FE_SP_OBTENER_CATALOGO_CP", c);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Catalogo", Catalogo);
                 if (!string.IsNullOrEmpty(CodigoPostal))
@@ -427,10 +432,10 @@ namespace WindowsFormsApp1
             List<string> CatalogoCFDI = new List<string>();
             try
             {
-                SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+                SqlConnection c = new SqlConnection(CadenaConexion);
 
                 c.Open();
-                SqlCommand comando = new SqlCommand("VMX_FE_SP_OBTENER_CATALOGO_CFDI", c);
+                SqlCommand comando = new SqlCommand(BD+"..VMX_FE_SP_OBTENER_CATALOGO_CFDI", c);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Catalogo", Catalogo);
 
@@ -458,10 +463,10 @@ namespace WindowsFormsApp1
             {
 
 
-                SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+                SqlConnection c = new SqlConnection(CadenaConexion);
 
                 c.Open();
-                SqlCommand comando = new SqlCommand("VMX_FE_SP_OBTENER_INFO_CARTAPORTE", c);
+                SqlCommand comando = new SqlCommand(BD+"..VMX_FE_SP_OBTENER_INFO_CARTAPORTE", c);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Opcion", "UbicacionDestino");
 
@@ -599,9 +604,9 @@ namespace WindowsFormsApp1
             }
           
 
-            SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+            SqlConnection c = new SqlConnection(CadenaConexion);
             c.Open();
-            string sql = "INSERT INTO " + NombreTabla + " (" + CamposTabla + ")" + " VALUES("+ valores +") " +
+            string sql = "INSERT INTO " +BD+".."+ NombreTabla + " (" + CamposTabla + ")" + " VALUES("+ valores +") " +
                 "SELECT Id = SCOPE_IDENTITY()";
 
             SqlCommand comando = new SqlCommand(sql, c)
@@ -626,7 +631,7 @@ namespace WindowsFormsApp1
             string CamposTabla = ObtenerCamposTabla(tabla, true);
             string NombreTabla = ObtenerNombreTabla(tabla);
 
-            string Consulta = "SELECT " + CamposTabla + " FROM " + NombreTabla;
+            string Consulta = "SELECT " + CamposTabla + " FROM " +BD+".."+ NombreTabla;
 
             if (id != 0)
             {
@@ -685,7 +690,7 @@ namespace WindowsFormsApp1
 
                 }
             }
-            SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+            SqlConnection c = new SqlConnection(CadenaConexion);
             c.Open();
             SqlDataAdapter adaptador = new SqlDataAdapter(Consulta, c);
             DataTable dtValores = new DataTable();
@@ -720,8 +725,8 @@ namespace WindowsFormsApp1
             }
 
             string sentenciaDelete = "SET NOCOUNT OFF;" +
-                "DELETE FROM  " + ObtenerNombreTabla(tabla) + " WHERE "+ NombreId + " = " + IdEliminar ;
-            SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+                "DELETE FROM  " +BD+".."+ ObtenerNombreTabla(tabla) + " WHERE "+ NombreId + " = " + IdEliminar ;
+            SqlConnection c = new SqlConnection(CadenaConexion);
             c.Open();
             SqlCommand comando = new SqlCommand(sentenciaDelete, c);
 
@@ -736,7 +741,7 @@ namespace WindowsFormsApp1
             try
             {
                 int IdTabla = 0;
-                string CadenaConexion = ConfigurationManager.ConnectionStrings["Sistema"].ConnectionString;
+               // string CadenaConexion = ConfigurationManager.ConnectionStrings["Sistema"].ConnectionString;
                 SqlConnection c = new SqlConnection(CadenaConexion);
                 c.Open();
                 string sql = consulta;
@@ -765,7 +770,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                CadenaConexion = ConfigurationManager.ConnectionStrings["Sistema"].ConnectionString;
+                //CadenaConexion = ConfigurationManager.ConnectionStrings["Sistema"].ConnectionString;
                 SqlConnection c = new SqlConnection(CadenaConexion);
                 c.Open();
                 SqlDataAdapter adaptador = new SqlDataAdapter(consulta, c);
@@ -791,8 +796,8 @@ namespace WindowsFormsApp1
             string TablaActualizar  = ObtenerNombreTabla(tabla);
 
             SentenciaUdate = "SET NOCOUNT OFF;" +
-                " UPDATE " + TablaActualizar + " " + CamposYWhere;
-            SqlConnection c = new SqlConnection(@"Data Source =VESDB\SQL2016; Initial Catalog =CFDI2; User id=SYSADM; Password =SYSADM;");
+                " UPDATE " + BD+".."+TablaActualizar + " " + CamposYWhere;
+            SqlConnection c = new SqlConnection(CadenaConexion);
             c.Open();
             SqlCommand comando = new SqlCommand(SentenciaUdate, c);
             int RegistrosActualizados = comando.ExecuteNonQuery();

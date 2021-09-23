@@ -89,7 +89,8 @@ namespace WindowsFormsApp1
 
         private void LlenarComboColonias()
         {
-            CmbColonia.Items.Clear();
+            
+            //CmbColonia.Items.Clear();
 
             Dictionary<string, string> Colonias = Metodos.ObtenerCatalogoCartaPorte(CatalogoCartaPorte.Colonia , TxtCodigoPostal.Text);
 

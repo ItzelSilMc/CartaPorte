@@ -38,6 +38,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.DgvUbicaciones = new System.Windows.Forms.DataGridView();
+            this.ComboTipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.rfc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumRegIDTrib = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResidenciaFiscal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NavegacionTrafico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnUbicacionNueva = new System.Windows.Forms.Button();
             this.BtnMercancia = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -74,16 +84,6 @@
             this.textPesoBruto = new System.Windows.Forms.TextBox();
             this.textUnidadPeso = new System.Windows.Forms.TextBox();
             this.textPesoTotal = new System.Windows.Forms.TextBox();
-            this.ComboTipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.rfc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumRegIDTrib = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ResidenciaFiscal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NavegacionTrafico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUbicaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.GBTransporte.SuspendLayout();
@@ -163,6 +163,7 @@
             // 
             // DgvUbicaciones
             // 
+            this.DgvUbicaciones.AllowDrop = true;
             this.DgvUbicaciones.AllowUserToAddRows = false;
             this.DgvUbicaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvUbicaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -178,12 +179,64 @@
             this.IdDomicilio});
             this.DgvUbicaciones.Location = new System.Drawing.Point(12, 190);
             this.DgvUbicaciones.Name = "DgvUbicaciones";
-            this.DgvUbicaciones.RowHeadersVisible = false;
             this.DgvUbicaciones.Size = new System.Drawing.Size(929, 120);
             this.DgvUbicaciones.TabIndex = 13;
             this.DgvUbicaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUbicaciones_CellContentClick);
             this.DgvUbicaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGUbicaciones_CellDoubleClick);
             this.DgvUbicaciones.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DgvUbicaciones_CellPainting);
+            // 
+            // ComboTipo
+            // 
+            this.ComboTipo.HeaderText = "Tipo de Estación";
+            this.ComboTipo.Items.AddRange(new object[] {
+            "02-Intermedia",
+            "03-Destino Final"});
+            this.ComboTipo.Name = "ComboTipo";
+            // 
+            // rfc
+            // 
+            this.rfc.HeaderText = "RFC";
+            this.rfc.Name = "rfc";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // NumRegIDTrib
+            // 
+            this.NumRegIDTrib.HeaderText = "NumRegIDTrib";
+            this.NumRegIDTrib.Name = "NumRegIDTrib";
+            // 
+            // ResidenciaFiscal
+            // 
+            this.ResidenciaFiscal.HeaderText = "ResidenciaFiscal";
+            this.ResidenciaFiscal.Name = "ResidenciaFiscal";
+            // 
+            // NumEstacion
+            // 
+            this.NumEstacion.HeaderText = "NumEstacion";
+            this.NumEstacion.Name = "NumEstacion";
+            // 
+            // NombreEstacion
+            // 
+            this.NombreEstacion.HeaderText = "NombreEstación";
+            this.NombreEstacion.Name = "NombreEstacion";
+            // 
+            // NavegacionTrafico
+            // 
+            this.NavegacionTrafico.HeaderText = "NavegacionTrafico";
+            this.NavegacionTrafico.Name = "NavegacionTrafico";
+            // 
+            // FechaHora
+            // 
+            this.FechaHora.HeaderText = "FechaHora";
+            this.FechaHora.Name = "FechaHora";
+            // 
+            // IdDomicilio
+            // 
+            this.IdDomicilio.HeaderText = "ID_Domicilio";
+            this.IdDomicilio.Name = "IdDomicilio";
             // 
             // BtnUbicacionNueva
             // 
@@ -342,7 +395,7 @@
             this.BtnConfigurarTransporte.Name = "BtnConfigurarTransporte";
             this.BtnConfigurarTransporte.Size = new System.Drawing.Size(144, 23);
             this.BtnConfigurarTransporte.TabIndex = 28;
-            this.BtnConfigurarTransporte.Text = "Configurar Transporte";
+            this.BtnConfigurarTransporte.Text = "Configurar transporte";
             this.BtnConfigurarTransporte.UseVisualStyleBackColor = true;
             this.BtnConfigurarTransporte.Click += new System.EventHandler(this.BtnConfigurarTransporte_Click);
             // 
@@ -428,7 +481,7 @@
             this.btnCarga.Name = "btnCarga";
             this.btnCarga.Size = new System.Drawing.Size(153, 23);
             this.btnCarga.TabIndex = 35;
-            this.btnCarga.Text = "Configuración catalagos";
+            this.btnCarga.Text = "Configuración catálogos";
             this.btnCarga.UseVisualStyleBackColor = true;
             this.btnCarga.Click += new System.EventHandler(this.btnCarga_Click);
             // 
@@ -479,59 +532,6 @@
             this.textPesoTotal.Name = "textPesoTotal";
             this.textPesoTotal.Size = new System.Drawing.Size(106, 20);
             this.textPesoTotal.TabIndex = 41;
-            // 
-            // ComboTipo
-            // 
-            this.ComboTipo.HeaderText = "Tipo de Estación";
-            this.ComboTipo.Items.AddRange(new object[] {
-            "02-Intermedia",
-            "03-Destino Final"});
-            this.ComboTipo.Name = "ComboTipo";
-            // 
-            // rfc
-            // 
-            this.rfc.HeaderText = "RFC";
-            this.rfc.Name = "rfc";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // NumRegIDTrib
-            // 
-            this.NumRegIDTrib.HeaderText = "NumRegIDTrib";
-            this.NumRegIDTrib.Name = "NumRegIDTrib";
-            // 
-            // ResidenciaFiscal
-            // 
-            this.ResidenciaFiscal.HeaderText = "ResidenciaFiscal";
-            this.ResidenciaFiscal.Name = "ResidenciaFiscal";
-            // 
-            // NumEstacion
-            // 
-            this.NumEstacion.HeaderText = "NumEstacion";
-            this.NumEstacion.Name = "NumEstacion";
-            // 
-            // NombreEstacion
-            // 
-            this.NombreEstacion.HeaderText = "NombreEstación";
-            this.NombreEstacion.Name = "NombreEstacion";
-            // 
-            // NavegacionTrafico
-            // 
-            this.NavegacionTrafico.HeaderText = "NavegacionTrafico";
-            this.NavegacionTrafico.Name = "NavegacionTrafico";
-            // 
-            // FechaHora
-            // 
-            this.FechaHora.HeaderText = "FechaHora";
-            this.FechaHora.Name = "FechaHora";
-            // 
-            // IdDomicilio
-            // 
-            this.IdDomicilio.HeaderText = "ID_Domicilio";
-            this.IdDomicilio.Name = "IdDomicilio";
             // 
             // FrmPrincipal
             // 

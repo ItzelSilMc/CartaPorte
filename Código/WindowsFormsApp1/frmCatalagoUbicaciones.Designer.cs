@@ -29,15 +29,9 @@
         private void InitializeComponent()
         {
             this.dataCatalago = new System.Windows.Forms.DataGridView();
-            this.ADDR_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADDR_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ZIPCODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COUNTRY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.dataUbicacion = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumExterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumInterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +42,13 @@
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.ADDR_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADDR_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ZIPCODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COUNTRY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataCatalago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataUbicacion)).BeginInit();
             this.SuspendLayout();
@@ -69,35 +69,6 @@
             this.dataCatalago.Size = new System.Drawing.Size(646, 260);
             this.dataCatalago.TabIndex = 0;
             this.dataCatalago.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataCatalago_CellDoubleClick);
-            // 
-            // ADDR_NO
-            // 
-            this.ADDR_NO.HeaderText = "Direccion";
-            this.ADDR_NO.Name = "ADDR_NO";
-            // 
-            // NAME
-            // 
-            this.NAME.FillWeight = 150F;
-            this.NAME.HeaderText = "Nombre";
-            this.NAME.Name = "NAME";
-            this.NAME.Width = 150;
-            // 
-            // ADDR_1
-            // 
-            this.ADDR_1.FillWeight = 150F;
-            this.ADDR_1.HeaderText = "Dirección";
-            this.ADDR_1.Name = "ADDR_1";
-            this.ADDR_1.Width = 150;
-            // 
-            // ZIPCODE
-            // 
-            this.ZIPCODE.HeaderText = "C.P.";
-            this.ZIPCODE.Name = "ZIPCODE";
-            // 
-            // COUNTRY
-            // 
-            this.COUNTRY.HeaderText = "País";
-            this.COUNTRY.Name = "COUNTRY";
             // 
             // label1
             // 
@@ -138,15 +109,6 @@
             this.dataUbicacion.Name = "dataUbicacion";
             this.dataUbicacion.Size = new System.Drawing.Size(646, 96);
             this.dataUbicacion.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Ubicación Seleccionada:";
             // 
             // calle
             // 
@@ -200,6 +162,15 @@
             this.CP.HeaderText = "C.P.";
             this.CP.Name = "CP";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(40, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Ubicación Seleccionada:";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(623, 445);
@@ -209,6 +180,35 @@
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ADDR_NO
+            // 
+            this.ADDR_NO.HeaderText = "Dirección";
+            this.ADDR_NO.Name = "ADDR_NO";
+            // 
+            // NAME
+            // 
+            this.NAME.FillWeight = 150F;
+            this.NAME.HeaderText = "Nombre";
+            this.NAME.Name = "NAME";
+            this.NAME.Width = 150;
+            // 
+            // ADDR_1
+            // 
+            this.ADDR_1.FillWeight = 150F;
+            this.ADDR_1.HeaderText = "Dirección";
+            this.ADDR_1.Name = "ADDR_1";
+            this.ADDR_1.Width = 150;
+            // 
+            // ZIPCODE
+            // 
+            this.ZIPCODE.HeaderText = "C.P.";
+            this.ZIPCODE.Name = "ZIPCODE";
+            // 
+            // COUNTRY
+            // 
+            this.COUNTRY.HeaderText = "País";
+            this.COUNTRY.Name = "COUNTRY";
             // 
             // frmCatalagoUbicaciones
             // 
@@ -222,7 +222,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataCatalago);
             this.Name = "frmCatalagoUbicaciones";
-            this.Text = "frmCatalagoUbicaciones";
+            this.Text = "Catálogo de ubicaciones";
             ((System.ComponentModel.ISupportInitialize)(this.dataCatalago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataUbicacion)).EndInit();
             this.ResumeLayout(false);
@@ -234,11 +234,6 @@
 
         private System.Windows.Forms.DataGridView dataCatalago;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ADDR_NO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ADDR_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ZIPCODE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COUNTRY;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.DataGridView dataUbicacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn calle;
@@ -253,5 +248,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CP;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ADDR_NO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ADDR_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ZIPCODE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COUNTRY;
     }
 }
